@@ -1,12 +1,9 @@
 == README
 
-<<<<<<< HEAD
-This change made for testing Branch-Master
+
+Change from branch master
 
 This README would normally document whatever steps are necessary to get the
-=======
-This-Bemi README would normally document whatever steps are necessary to get the
->>>>>>> cbb58b53ade6b4bfb32767ea2874f41a15c09606
 application up and running.
 
 Things you may want to cover:
