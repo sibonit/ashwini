@@ -1,11 +1,31 @@
 Rails.application.routes.draw do
 
-# get 'static_pages/home'
- get 'static_pages/home' => 'static_pages#home', as: 'home'
+# KA: Replace the above with named Route. THis route can be called using help_path
+
+
+# KA:Routes for sample layout pages
+get 'sample_layouts/onecolumn' => 'sample_layouts#onecolumn', as: 'onecolumn'
+get 'sample_layouts/twocolumneven' => 'sample_layouts#twocolumneven', as: 'twocolumneven'
+get 'sample_layouts/twocolumnuneven' => 'sample_layouts#twocolumnuneven', as: 'twocolumnuneven'
+get 'sample_layouts/threecolumneven' => 'sample_layouts#threecolumneven', as: 'threecolumneven'
+get 'sample_layouts/threecolumnpanel' => 'sample_layouts#threecolumnpanel', as: 'threecolumnpanel'
+get 'sample_layouts/fourcolumneven' => 'sample_layouts#fourcolumneven', as: 'fourcolumneven'
+
+get 'sample_layouts/tab' => 'sample_layouts#tab', as: 'tab'
+get 'sample_layouts/newslist' => 'sample_layouts#newslist', as: 'newslist'
+get 'sample_layouts/newsitem' => 'sample_layouts#newsitem', as: 'newsitem'
+get 'sample_layouts/leftsidebar' => 'sample_layouts#leftsidebar', as: 'leftsidebar'
+get 'sample_layouts/contact' => 'sample_layouts#contact', as: 'samplecontact'
+#==================
+ 
 
 # get 'static_pages/help'
-# AK: Replace the above with named Route. THis route can be called using help_path
+# KA: Replace the above with named Route. THis route can be called using help_path
 get 'static_pages/help' => 'static_pages#help', as: 'help'
+
+
+# get 'static_pages/home'
+ get 'static_pages/home' => 'static_pages#home', as: 'home'
 
 
 # get 'static_pages/about'

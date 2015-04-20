@@ -89,7 +89,7 @@ p {
 /* universal */
 
 body {
-  padding-top: 60px;
+  padding-top: 20px;
 }
 
 section {
@@ -108,6 +108,60 @@ textarea {
     margin-bottom: 10px;
   }
 }
+
+
+/* Super Menu styles 
+Credits: Geedmo@yamm
+*/
+.supermenu .nav,
+.supermenu .collapse,
+.supermenu .dropup,
+.supermenu .dropdown {
+  position: static;
+ 
+}
+.supermenu .container {
+  position: relative;
+}
+.supermenu .dropdown-menu {
+  left: auto;
+}
+.supermenu .supermenu-content {
+  padding: 20px 30px;
+}
+.supermenu .dropdown.supermenu .dropdown-menu {
+  left: 0;
+  right: 0;
+}
+
+
+
+/* menu styes */
+.list-unstyled,
+.list-unstyled ul { min-width: 50px }
+
+
+.column-width {width: 400px }
+
+/*=================*/
+
+#topnavbar {
+    margin: 0;
+}
+#topnavbar.affix {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+#banner {
+     	padding-bottom: 15px;
+	text-align: center;
+        }
+
+
+/*==============*/
+
 
 
 

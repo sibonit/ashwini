@@ -1,5 +1,16 @@
-<div class="navbar yamm navbar-inverse navbar-fixed-top">
-   <div class="container">
+    <div class="container" id="banner" >
+      <div class="row"> 
+ 		<img src="https://www.life.illinois.edu/index/assets/UIUC_logo.png" height="60">
+		 <h1 style="color: #003366;"> School of Integrative Biology </h1>
+	</div>
+    </div>
+
+
+<!--<div class="navbar supermenu navbar-inverse navbar-fixed-top">-->
+
+<div class="navbar supermenu navbar-inverse navbar-static-top" role ="navigation" id="topnavbar" >
+   <div class="container-fluid">
+
       <div class="navbar-header">
          <button type="button" data-toggle="collapse" data-target="#navbar-collapse-1" class="navbar-toggle"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="#" class="navbar-brand"> School of Integrative Biology</a>
       </div>
@@ -7,10 +18,10 @@
     <!-- Menu Item-1 -->
      <div id="navbar-collapse-1" class="navbar-collapse collapse">
 	<ul class="nav navbar-nav">
-	   <li class="dropdown yamm-fw"><a href="#" data-toggle="dropdown" class="dropdown-toggle">About<b class="caret"></b></a>
+	   <li class="dropdown supermenu"><a href="#" data-toggle="dropdown" class="dropdown-toggle">About<b class="caret"></b></a>
 	     <ul class="dropdown-menu">
 	       <li>
-	          <div class="yamm-content">
+	          <div class="supermenu-content">
 		    <div class="row">
 			<ul class="col-sm-2 list-unstyled">
 			  <li><p><strong>--Title??-- </strong></p></li>
@@ -49,10 +60,10 @@
 
 
     <!-- Menu Item-2 -->
-    <li class="dropdown yamm-fw "><a href="#" data-toggle="dropdown" class="dropdown-toggle">Undergraduate <b class="caret"></b></a>
+    <li class="dropdown supermenu "><a href="#" data-toggle="dropdown" class="dropdown-toggle">Undergraduate <b class="caret"></b></a>
       <ul class="dropdown-menu">
 	<li>
-	   <div class="yamm-content">
+	   <div class="supermenu-content">
 	    <div class="row">
 
 	      <ul class="col-sm-2 list-unstyled">
@@ -117,10 +128,10 @@
 
 
     <!-- Menu Item-3 -->
-    <li class="dropdown yamm-fw"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Graduate <b class="caret"></b></a>
+    <li class="dropdown supermenu"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Graduate <b class="caret"></b></a>
       <ul class="dropdown-menu">
 	<li>
-	   <div class="yamm-content">
+	   <div class="supermenu-content">
 	    <div class="row">
 	      <ul class="col-sm-2 list-unstyled">
 		<li> <p><strong>--Title??-- </strong></p></li>
@@ -145,11 +156,54 @@
        </ul>
     </li>
 
+
+    <!-- Menu Item-4 -->
+    <li class="dropdown supermenu"><a href="#" data-toggle="dropdown" class="dropdown-toggle">KA Layout Samples <b class="caret"></b></a>
+      <ul class="dropdown-menu">
+	<li>
+	   <div class="supermenu-content">
+	    <div class="row">
+	      <ul class="col-sm-2 list-unstyled">
+		<li> <p><strong> Various Columns </strong></p></li>
+		<li><%= link_to "1 Column", onecolumn_path %></li><br>
+		<li><%= link_to "2 Column Even", twocolumneven_path %></li><br>
+		<li><%= link_to "2 Column UnEven", twocolumnuneven_path %></li><br>
+		<li><%= link_to "3 Column Even", threecolumneven_path %></li><br>
+		<li><%= link_to "3 Column Panel", threecolumnpanel_path %></li><br>
+		<li><%= link_to "4 Column Even", fourcolumneven_path %></li><br>
+	      </ul>
+    	      <ul class="col-sm-2 list-unstyled">
+		<li> <p><strong> Other Layouts </strong></p></li>
+		<li><%= link_to "Tabbed Pages", tab_path %></li><br>
+		<li><%= link_to "News Listing", newslist_path %></li><br>
+		<li><%= link_to "News Item", newsitem_path %></li><br>
+		<li><%= link_to "Page with Left Sidebar", leftsidebar_path %></li><br>
+		<li><%= link_to "Contact Page", samplecontact_path %></li><br>
+	      </ul>
+	   
+	    </div>
+         </div>
+        </li>
+       </ul>
+    </li>
+
+ <!-- Menu Item-4 - End-->
+
+
+
+
+
    </ul>
   </div>
  </div>
 </div>
 
 
+ <!-- Header Image -->
+   <div class="container-fluid">
+     <div class="row">
+        <img src="<%= asset_path( 'university_of_illinois.jpg' ) %>" class="img-responsive">
+     </div>
+   </div>
 
 

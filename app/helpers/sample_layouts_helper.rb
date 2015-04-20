@@ -1,0 +1,2 @@
+module SampleLayoutsHelper
+end
