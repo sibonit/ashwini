@@ -1,8 +1,10 @@
 class ArticlesController < ApplicationController
   
 #KA: The show action expects an id parameter that needs to be passed. Run rake routes to see the route patters.
-  
+
+ 
   def index
+#KA: The name Article is the same as the one defined in /app/models/article.rb
     @articles = Article.all
   end
 

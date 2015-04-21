@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
 
-# KA: Replace the above with named Route. THis route can be called using help_path
 
+get 'posts/index' => 'posts#index', as: 'postslist'
+
+get 'news/index' => 'news#index', as: 'newslist'
+
+
+# KA: Replace the above with named Route. THis route can be called using help_path
 
 # KA:Routes for sample layout pages
 get 'sample_layouts/onecolumn' => 'sample_layouts#onecolumn', as: 'onecolumn'
@@ -12,7 +17,7 @@ get 'sample_layouts/threecolumnpanel' => 'sample_layouts#threecolumnpanel', as: 
 get 'sample_layouts/fourcolumneven' => 'sample_layouts#fourcolumneven', as: 'fourcolumneven'
 
 get 'sample_layouts/tab' => 'sample_layouts#tab', as: 'tab'
-get 'sample_layouts/newslist' => 'sample_layouts#newslist', as: 'newslist'
+#get 'sample_layouts/newslist' => 'sample_layouts#newslist', as: 'newslist'
 get 'sample_layouts/newsitem' => 'sample_layouts#newsitem', as: 'newsitem'
 get 'sample_layouts/leftsidebar' => 'sample_layouts#leftsidebar', as: 'leftsidebar'
 get 'sample_layouts/contact' => 'sample_layouts#contact', as: 'samplecontact'
@@ -34,10 +39,9 @@ get 'static_pages/about' => 'static_pages#about', as: 'about'
 # get  'static_pages/contact'
 get 'static_pages/contact' => 'static_pages#contact', as: 'contact'
 
+get 'signup'  => 'users#new'
 
- get 'signup'  => 'users#new'
-
-  resources :users
+resources :users
   get 'articles/new'
 
   get 'welcome/index'
