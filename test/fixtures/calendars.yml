@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  eventId: 1
+  startDate: 2015-04-22
+  startTime: 2015-04-22 10:57:15
+  endDate: 2015-04-22
+  endTime: 2015-04-22 10:57:15
+  titleLong: MyString
+  titleLink: MyString
+  locationText: MyText
+  sponsorText: MyText
+  contactNameText: MyText
+  contactEmail: MyString
+  contactPhone: MyString
+  eventType: MyString
+  originatingCalendarName: MyString
+
+two:
+  eventId: 1
+  startDate: 2015-04-22
+  startTime: 2015-04-22 10:57:15
+  endDate: 2015-04-22
+  endTime: 2015-04-22 10:57:15
+  titleLong: MyString
+  titleLink: MyString
+  locationText: MyText
+  sponsorText: MyText
+  contactNameText: MyText
+  contactEmail: MyString
+  contactPhone: MyString
+  eventType: MyString
+  originatingCalendarName: MyString

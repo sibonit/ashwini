@@ -36,5 +36,18 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, et temporibus, facere perferendis veniam beatae non debitis, numquam blanditiis necessitatibus vel mollitia dolorum laudantium, voluptate dolores iure maxime ducimus fugit.</p>
             </div>
         </div>
+
+
+<a class="button right" href="/calendar_events/">See Full Calendar</a>
+      <h1 class="footer-callout-header">Calendar</h1>
+      <div class="mini-calendar-roll">
+        <%= render 'layouts/calendar_events_by_day', events: Calendar.current( Time.now.at_midnight ).top_5 %>
+      </div>
+
+
+
+
+
+
    </div>
 

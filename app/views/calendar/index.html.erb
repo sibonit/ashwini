@@ -1,0 +1,66 @@
+<% @page_title = "Calendar Events" %>
+
+<% require 'date' %>
+<h1>Calendar Events</h1>
+               
+<p id="jump_links">
+<!--style="margin-left: 70px"-->
+<%
+  ### jump links
+  jump_to_label_times = Array.new
+  @calendar_events.each do |c|
+    jump_to_label_times << c.start.beginning_of_month
+  end
+  current_year = 0
+  jump_to_label_times.uniq.sort.each do |j|
+    if current_year != j.year
+%>
+    <%= "<br>".html_safe unless current_year == 0 %>
+    <%= j.year %>:
+<%    current_year = j.year
+    end
+%>
+    <%= link_to( j.strftime( "%b" ), "##{ j.year }_#{ j.month }" ) %>
+<% end %>
+</p>
+
+
+<% current_month = nil %>
+<% @calendar_events.group_by(&:startDate).each do |start_date, events| %>
+    <% reset_cycle %>
+    <% start_date = Date.strptime(start_date, '%m/%d/%Y') %>
+
+    <%= "<a name=\"#{ start_date.year }_#{ start_date.month }\"></a>".html_safe if current_month != start_date.month %>
+    <% current_month = start_date.month %>
+
+    <h3><%= start_date.strftime( '%A, %B %d, %Y' ) %></h3>
+
+    <table class="striped">
+      <% events.each do |e| %>
+        <% cycle_val = cycle("", "striped") %>
+        <tr class="<%= cycle_val %>">
+          <td class="event_time">
+            <%= out = e.startTime.to_s
+              if e.endDate == e.startDate
+                out += " - #{ e.endTime }" unless e.endTime.blank?
+              else
+                out += "<br>" unless e.startTime.blank?
+                out += "through <br>"
+                out += "#{ e.endTime }, " unless e.endTime.blank?
+                out += "#{ e.endDate }" unless e.endDate == e.startDate
+              end
+              out.html_safe
+            %>
+          </td>
+          <td class="event_info">
+            <p><%= link_to e.titleLong, "http://illinois.edu/calendar/detail/1233?eventId=#{ e.eventId }" %></p>
+         <p><%= e.locationText %></p>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+<% end %>
+                                                                                            
+
+
+ 

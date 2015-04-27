@@ -5,6 +5,10 @@ source 'https://rubygems.org'
 #Feedjira
 gem 'feedjira'
 
+#Event Calendar
+gem 'event-calendar', :require => 'event_calendar'
+
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 

@@ -1,0 +1,14 @@
+<% events.group_by(&:startDate).each do |date, daily_events| %>
+  <article class="calendar-date">
+    <h1 class="calendar-date-title"><%= Date.strptime(date, '%m/%d/%Y').strftime( '%A, %B %d, %Y' ) %></h1>
+    <% daily_events.each do |event| %>
+      <article class="calendar-event">
+        <% if event.startTime %>
+          <strong class="calendar-event-time"><%= event.startTime %></strong>
+        <% end %>
+        <%= link_to event.titleLong, "http://illinois.edu/calendar/detail/1233?eventId=#{ event.eventId }", :target => "_blank" %>
+      </article>
+    <% end %>
+  </article>
+<% end %>
+~                  

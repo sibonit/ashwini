@@ -5,6 +5,7 @@ get 'posts/index' => 'posts#index', as: 'postslist'
 
 get 'news/index' => 'news#index', as: 'newslist'
 
+  get 'calendar/index'
 
 # KA: Replace the above with named Route. THis route can be called using help_path
 
