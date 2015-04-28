@@ -124,7 +124,7 @@ textarea {
 }
 
 
-/* Super Menu styles 
+/* KA: Super Menu styles 
 Credits: Geedmo@yamm
 */
 .supermenu .nav,
@@ -132,7 +132,7 @@ Credits: Geedmo@yamm
 .supermenu .dropup,
 .supermenu .dropdown {
   position: static;
- 
+   
 }
 .supermenu .container {
   position: relative;
@@ -148,7 +148,10 @@ Credits: Geedmo@yamm
   right: 0;
 }
 
-
+/* KA:Show menu options on hover */
+ul.nav li.dropdown:hover > ul.dropdown-menu {
+    display: block;    
+}
 
 /* menu styes */
 .list-unstyled,
@@ -211,6 +214,9 @@ Credits: Geedmo@yamm
      }
 
 /*==========================*/
-/* SIB logo */
+/* Fixed panel */
 
-
+ .fixed-panel {
+             	height: 150px;
+				
+               }
