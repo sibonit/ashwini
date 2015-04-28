@@ -233,3 +233,13 @@ ul.nav li.dropdown:hover > ul.dropdown-menu {
              	height: 150px;
 				
                }
+
+
+/* KA: Left padding for 1st li in nav bar. 
+	The padding width is based on the width of SIB logo and 244px results in the least jump during the logo toggle (upon scrool up/down) on navbar
+	Note: If you decide to change the logo or its width, make sure this padding width is adjusted based on that.
+*/
+	
+#navitem1{
+	padding-left: 244px;
+}
