@@ -1,6 +1,9 @@
+/* KA: Custom css in addition to bootstrap */
+
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "bootstrap-social";
 
 
 /* footer
@@ -45,33 +48,6 @@ header {
 }
 
 
-
-
-/* header
-
-AK: Using Nested rules. To nest the hover attribute with it's parent element #logo, in SCSS, we use ampersand.
-
- */
-
-
-#logo {
-  float: left;
-  margin-right: 10px;
-  font-size: 1.7em;
-  color: #fff;
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  padding-top: 9px;
-  font-weight: bold;
-  &:hover {
-    color: #fff;
-    text-decoration: none;
-  }
-}
-
-
-
-
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
@@ -98,6 +74,9 @@ p {
   font-size: 1.1em;
   line-height: 1.7em;
 }
+
+
+
 
 
 /* universal */
@@ -132,50 +111,95 @@ Credits: Geedmo@yamm
 .supermenu .dropup,
 .supermenu .dropdown {
   position: static;
-   
+ 
 }
 .supermenu .container {
   position: relative;
+  
 }
 .supermenu .dropdown-menu {
   left: auto;
-}
+ }
 .supermenu .supermenu-content {
   padding: 20px 30px;
-}
+  
+ }
 .supermenu .dropdown.supermenu .dropdown-menu {
   left: 0;
   right: 0;
-}
+  }
+
+/*Top navbar-level 1-menu font styles  */
+.supermenu .dropdown .dropdown-toggle{
+	color: white;
+	font-size: 14px;
+ &:hover{
+	background-color: white; 
+	color: black;
+	}
+      }
+
+	
 
 /* KA:Show menu options on hover */
-ul.nav li.dropdown:hover > ul.dropdown-menu {
-    display: block;    
-}
+	ul.nav li.dropdown:hover > ul.dropdown-menu {
+    	display: block;       
+		}
 
-/* menu styes */
+
+@media handheld {
+	ul.nav li.dropdown:hover > ul.dropdown-menu {
+    	display: none;       
+		}
+	}
+
+
+
+/* Navbar-level 2 - menu styes */
 .list-unstyled,
 .list-unstyled ul { min-width: 50px }
 
 
 .column-width {width: 400px }
 
-/*=================*/
 
+/*SIB logo on navbar  */
+.navbar-header .navbar-brand{
+	color: white;
+   &:hover{
+	background-color: white; 
+	color: black;
+	}
+      }
+
+/* Navbar toggle button on right */
+.navbar-toggle .icon-bar{
+ 	display: block;
+	background-color: #cccccc;
+	}
+
+
+
+/*=================*/
+/* TopNav bar background color & level 2 menu heading color */
 #topnavbar {
     margin: 0;
+    background-color: #E87722;	/* illinois orange */
+    color: #002058;		/* illinois blue */
+
 }
 #topnavbar.affix {
     position: fixed;
     top: 0;
     width: 100%;
+    
 }
-
+/*
 #banner {
      	padding-bottom: 15px;
 	text-align: center;
-	        }
-
+       }
+*/
 
 /*==============*/
 /* KA: Home Page News Slider */
@@ -190,7 +214,7 @@ ul.nav li.dropdown:hover > ul.dropdown-menu {
 }
 
 /*====================*/
-/* KA: Carousel controls */
+/* KA: News slider- Carousel controls */
 .carousel .fill {
     width: 100%;
     height: 100%;
@@ -241,5 +265,114 @@ ul.nav li.dropdown:hover > ul.dropdown-menu {
 */
 	
 #navitem1{
-	padding-left: 244px;
+	padding-left: 245px;
 }
+
+
+
+/* kA: Styles for collapsed Navbar*/
+@media (max-width: 767px) {
+	/*Hide the top banner in small screens*/
+	#banner {
+		  display: none;		
+		}
+
+	/* Remove padding for 1st div */
+	#navitem1{
+		padding-left: 0px;
+	}
+
+	/* Disable menu hover on small screen*/
+	ul.nav li.dropdown:hover > ul.dropdown-menu {
+    		display: none;       
+	}
+
+
+/*---------------------*/
+/* Small screen styles*/
+
+
+#navbar-collapse-1,
+#navbar-collapse-1 ul,
+#navbar-collapse-1 li,
+#navbar-collapse-1 a {  
+   position: relative;
+
+}
+
+/* Level 1 background*/
+#navbar-collapse-1  > ul > li{
+  background: #f6f6df;
+  background: linear-gradient(#f6f6df 0%, #f5f5dc 100%);
+  border-radius: 3px 3px 0 0;
+    }
+
+
+#navbar-collapse-1  > ul > li> a {
+  padding: 15px 10px;
+   border: none;
+  border-top: 1px solid #818176;
+  border-radius: 3px 3px 0 0;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 300;
+  text-shadow: 0 -1px 1px white;
+  color: #404040;
+ 
+}
+
+#navbar-collapse-1 > ul > li:hover {
+  background: #e5e5e5;					    
+/*  background: linear-gradient(#e5e5e5 0%, #f2f2f2 100%);    */
+ }
+
+#navbar-collapse-1  > ul > li > a.dropdown-toggle {
+  background: url(expand.png) 96% center no-repeat;
+}
+
+#navbar-collapse-1 > ul > li.dropdown.supermenu.active > a.dropdown-toggle  {
+  background: url(collapse.png) 96% center no-repeat;
+
+}
+
+
+#navbar-collapse-1 ul ul li {
+  padding: 0;
+  border-bottom: 1px solid #d4d4d4;     
+  border-top: none;
+  background: #f7f7f7;				
+  background: linear-gradient(#f7f7f7 0%, #ececec 100%);	
+  width:767px;
+
+
+ display:inline-block;
+ height: auto;
+ max-height: 700px;
+ overflow-x: hidden; 
+
+}
+
+#navbar-collapse-1 ul ul a {
+  padding: 10px 10px 10px 25px;
+  display: block;
+  color: #676767;	
+  font-size: 12px;
+  font-weight: normal;
+
+  }
+
+#navbar-collapse-1 ul ul a:before {
+  content: "»";
+  position: absolute;
+  left: 10px;
+  color: #e94f31;	
+
+}
+
+#navbar-collapse-1 ul ul a:hover {
+    color: #e94f31;	
+}
+
+/*=============================*/
+}
+

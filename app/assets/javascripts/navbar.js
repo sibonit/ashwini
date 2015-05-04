@@ -8,26 +8,28 @@
 
 */
 
-
-
-
 var ready;
-
 ready = function() {
-	
-		$("#logo_div").hide();
+
+	    if ($(window).width() > 767) {
+	  	$("#logo_div > a").hide();
+	    }
 		var topofbanner = $("#banner").outerHeight();
-
+						
  		$(window).scroll(function() {
-        		if($(window).scrollTop() > topofbanner) { 
-			$("#logo_div").show()
-			$("#navbar-collapse-1 > ul > li").attr('style','padding-left: 0px;');
 
+		  if ($(window).width() > 767) {
+        		if($(window).scrollTop() > topofbanner) { 
+			$("#logo_div > a").show()
+			$("#navbar-collapse-1 > ul > li").attr('style','padding-left: 0px;');
 			}
+		}
 			if($(window).scrollTop() < topofbanner) { 
-		        $("#logo_div").hide(); 
-			$("#navbar-collapse-1 > ul > li").eq(0).attr('style','padding-left: 244px;');	
+		 if ($(window).width() > 767) {
+		      	$("#logo_div > a").hide();
+	   		$("#navbar-collapse-1 > ul > li").eq(0).attr('style','padding-left: 245px;');	
        			}
+		}
 		});
 
 
@@ -38,7 +40,46 @@ ready = function() {
 		    }
 		})
 
-	};
+	/*KA: SHow the SIB logo by default on small screens*/
+
+/*	 if $("#navbar-toggle").is(":visible"){
+        	   $("#logo_div > a").show();
+	}
+
+  if ($(window).width() < 767) {
+	$("#logo_div > a").show();
+	}
+
+*/
+
+/*-----------------------------------------*/
+$('#navbar-collapse-1 > ul > li > a').click(function() {
+  $('#navbar-collapse-1 li').removeClass('active');
+  $(this).closest('li').addClass('active');	
+  var checkElement = $(this).next();
+  if((checkElement.is('ul')) && (checkElement.is(':visible'))) {
+    $(this).closest('li').removeClass('active');
+    checkElement.slideUp('normal');
+  }
+  if((checkElement.is('ul')) && (!checkElement.is(':visible'))) {
+    $('#navbar-collapse-1 ul ul:visible').slideUp('normal');
+    checkElement.slideDown('normal');
+  }
+  if($(this).closest('li').find('ul').children().length == 0) {
+    return true;
+  } else {
+    return false;	
+  }		
+});
+
+
+/*-----------------------------------------*/
+
+};
 
 $(document).ready(ready);
 $(document).on('page:load', ready);
+
+
+
+

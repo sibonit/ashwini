@@ -17,6 +17,9 @@ get 'sample_layouts/threecolumneven' => 'sample_layouts#threecolumneven', as: 't
 get 'sample_layouts/threecolumnpanel' => 'sample_layouts#threecolumnpanel', as: 'threecolumnpanel'
 get 'sample_layouts/fourcolumneven' => 'sample_layouts#fourcolumneven', as: 'fourcolumneven'
 
+get 'sample_layouts/secondlevel' => 'sample_layouts#secondlevel', as: 'secondlevel'
+get 'sample_layouts/advising' => 'sample_layouts#advising', as: 'advising'
+
 get 'sample_layouts/tab' => 'sample_layouts#tab', as: 'tab'
 #get 'sample_layouts/newslist' => 'sample_layouts#newslist', as: 'newslist'
 get 'sample_layouts/newsitem' => 'sample_layouts#newsitem', as: 'newsitem'

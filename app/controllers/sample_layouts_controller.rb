@@ -44,6 +44,10 @@ class SampleLayoutsController < ApplicationController
 
   end
 
+ def advising 
+
+  end
+
 
 
 end

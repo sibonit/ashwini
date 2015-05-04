@@ -13,6 +13,8 @@ gem 'event-calendar', :require => 'event_calendar'
 gem 'rails', '4.2.1'
 
 gem 'bootstrap-sass',       '3.2.0.0'
+gem 'bootstrap-social-rails'
+gem 'font-awesome-rails'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
