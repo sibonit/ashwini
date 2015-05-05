@@ -1,18 +1,17 @@
-<h2>News from Database</h2>
+<h2> </h2>
+
 <ul>
 <%@articles.each do |t|%>
 
     <div class="row">
-            <div class="col-md-1 text-center">
-                <p><i class="fa fa-camera fa-4x"></i>
-                </p>
+            <div class="col-md-3">
+               	  <%= image_tag 'advising/IBspotlight.png',  alt: "IB Spotlight", width: "100" %>
              </div>
-            <div class="col-md-6">
+            <div class="col-md-9">
                 <h3>
                     <a href="newsitem.html"><%=t.title%></a>
                 </h3>
-                 <p><%=t.text%></p>
-                <a class="btn btn-primary" href="newsitem.html">Read More <i class="fa fa-angle-right"></i></a>
+                 <p><%=t.text%></p>               
 		<hr>
             </div>
         </div>

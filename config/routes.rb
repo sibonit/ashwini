@@ -19,6 +19,9 @@ get 'sample_layouts/fourcolumneven' => 'sample_layouts#fourcolumneven', as: 'fou
 
 get 'sample_layouts/secondlevel' => 'sample_layouts#secondlevel', as: 'secondlevel'
 get 'sample_layouts/advising' => 'sample_layouts#advising', as: 'advising'
+get 'sample_layouts/test' => 'sample_layouts#test', as: 'test'
+get 'sample_layouts/ugrad' => 'sample_layouts#ugrad', as: 'ugrad'
+
 
 get 'sample_layouts/tab' => 'sample_layouts#tab', as: 'tab'
 #get 'sample_layouts/newslist' => 'sample_layouts#newslist', as: 'newslist'
@@ -42,6 +45,13 @@ get 'static_pages/about' => 'static_pages#about', as: 'about'
 
 # get  'static_pages/contact'
 get 'static_pages/contact' => 'static_pages#contact', as: 'contact'
+
+get 'static_pages/ugrad_advising' => 'static_pages#ugrad_advising', as: 'ugrad_advising'
+get 'static_pages/ugrad_prospective' => 'static_pages#ugrad_prospective', as: 'ugrad_prospective'
+get 'static_pages/ugrad_programs' => 'static_pages#ugrad_programs', as: 'ugrad_programs'
+get 'static_pages/ugrad_options' => 'static_pages#ugrad_options', as: 'ugrad_options'
+get 'static_pages/ugrad_special_programs' => 'static_pages#ugrad_special_programs', as: 'ugrad_special_programs'
+
 
 get 'signup'  => 'users#new'
 
