@@ -1,0 +1,102 @@
+/* KA: Super Menu styles 
+Credits: Geedmo@yamm
+*/
+.supermenu .nav,
+.supermenu .collapse,
+.supermenu .dropup,
+.supermenu .dropdown {
+	position: static;
+}
+
+.supermenu .container {
+	  position: relative;
+}
+
+.supermenu .dropdown-menu {
+	  left: auto;
+ }
+
+.supermenu .supermenu-content {
+	  padding: 20px 30px;
+ }
+
+.supermenu .dropdown.supermenu .dropdown-menu {
+	  left: 0;
+	  right: 0;
+	  max-width: 960px;
+  }
+
+/*Top navbar-level 1-menu font styles  */
+.supermenu .dropdown .dropdown-toggle{
+	color: white;
+	font-size: 14px;
+ &:hover{
+	background-color: white; 
+	color: black;
+	}
+      }
+
+	
+
+/* KA:Show menu options on hover */
+	ul.nav li.dropdown:hover > ul.dropdown-menu {
+    	display: block;       
+		}
+
+
+/* Navbar-level 2 - menu styes */
+	.list-unstyled,
+	.list-unstyled ul { min-width: 50px }
+	.column-width {width: 400px }
+
+
+/*SIB logo on navbar  */
+.navbar-header .navbar-brand{
+	color: white;
+   &:hover{
+	background-color: white; 
+	color: black;
+	}
+      }
+
+/* Navbar toggle button on right */
+.navbar-toggle .icon-bar{
+ 	display: block;
+	background-color: #cccccc;
+	}
+
+
+
+/*=================*/
+/* TopNav bar background color & level 2 menu heading color */
+#topnavbar {
+    margin: 0;
+    background-color: #E87722;	/* illinois orange */
+    color: #002058;		/* illinois blue */
+
+}
+#topnavbar.affix {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    
+}
+/*
+#banner {
+     	padding-bottom: 15px;
+	text-align: center;
+       }
+*/
+
+/*==============*/
+/* KA: Left padding for 1st li in nav bar. 
+	The padding width is based on the width of SIB logo and 244px results in the least jump during the logo toggle (upon scrool up/down) on navbar
+	Note: If you decide to change the logo or its width, make sure this padding width is adjusted based on that.
+*/
+	
+#navitem1{
+	padding-left: 245px;
+}
+
+
+

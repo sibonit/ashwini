@@ -12,8 +12,9 @@ gem 'event-calendar', :require => 'event_calendar'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 
-gem 'bootstrap-sass',       '3.2.0.0'
-gem 'bootstrap-social-rails'
+gem 'bootstrap-sass',       '~> 3.2.0.2'
+#gem 'bootstrap-social-rails'
+gem 'bootstrap-social-rails', '~> 4.8.0'
 gem 'font-awesome-rails'
 
 # Use sqlite3 as the database for Active Record

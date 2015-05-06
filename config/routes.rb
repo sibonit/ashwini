@@ -7,6 +7,16 @@ get 'news/index' => 'news#index', as: 'newslist'
 
   get 'calendar/index'
 
+
+
+get 'ugrad/advising' => 'ugrad#advising', as: 'advising'
+get 'ugrad/prospective' => 'ugrad#prospective', as: 'prospective'
+get 'ugrad/options' => 'ugrad#options', as: 'options'
+get 'ugrad/programs' => 'ugrad#programs', as: 'programs'
+get 'ugrad/special_programs' => 'ugrad#special_programs', as: 'special_programs'
+
+
+
 # KA: Replace the above with named Route. THis route can be called using help_path
 
 # KA:Routes for sample layout pages
@@ -18,7 +28,6 @@ get 'sample_layouts/threecolumnpanel' => 'sample_layouts#threecolumnpanel', as: 
 get 'sample_layouts/fourcolumneven' => 'sample_layouts#fourcolumneven', as: 'fourcolumneven'
 
 get 'sample_layouts/secondlevel' => 'sample_layouts#secondlevel', as: 'secondlevel'
-get 'sample_layouts/advising' => 'sample_layouts#advising', as: 'advising'
 get 'sample_layouts/test' => 'sample_layouts#test', as: 'test'
 get 'sample_layouts/ugrad' => 'sample_layouts#ugrad', as: 'ugrad'
 
@@ -34,23 +43,10 @@ get 'sample_layouts/contact' => 'sample_layouts#contact', as: 'samplecontact'
 # get 'static_pages/help'
 # KA: Replace the above with named Route. THis route can be called using help_path
 get 'static_pages/help' => 'static_pages#help', as: 'help'
-
-
-# get 'static_pages/home'
  get 'static_pages/home' => 'static_pages#home', as: 'home'
-
-
-# get 'static_pages/about'
 get 'static_pages/about' => 'static_pages#about', as: 'about'
-
-# get  'static_pages/contact'
 get 'static_pages/contact' => 'static_pages#contact', as: 'contact'
 
-get 'static_pages/ugrad_advising' => 'static_pages#ugrad_advising', as: 'ugrad_advising'
-get 'static_pages/ugrad_prospective' => 'static_pages#ugrad_prospective', as: 'ugrad_prospective'
-get 'static_pages/ugrad_programs' => 'static_pages#ugrad_programs', as: 'ugrad_programs'
-get 'static_pages/ugrad_options' => 'static_pages#ugrad_options', as: 'ugrad_options'
-get 'static_pages/ugrad_special_programs' => 'static_pages#ugrad_special_programs', as: 'ugrad_special_programs'
 
 
 get 'signup'  => 'users#new'
