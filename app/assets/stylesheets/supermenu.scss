@@ -1,0 +1,161 @@
+/* KA: Super Menu styles for big screens*/
+
+.supermenu {max-width: 960px;}
+
+.supermenu .nav,
+.supermenu .collapse,
+.supermenu .dropup,
+.supermenu .dropdown {
+	position: static;
+  
+}
+
+.supermenu .container {
+	  position: relative;
+	 	  }
+
+.supermenu .dropdown-menu {
+	  left: auto;
+  }
+
+.supermenu .supermenu-content {
+	padding: 20px 30px; 
+    /* KA: Set background image for only big screens */	
+    @media (min-width: 768px) {
+	background-image: url("students-faded.png");
+	background-repeat: no-repeat;
+	background-position: right;
+	}
+ }
+
+.supermenu .dropdown.supermenu .dropdown-menu {
+	  left: 0;
+	  right: 0;
+ 	  max-width: 960px;
+  }
+
+/*Top navbar-level 1-menu font styles  */
+.supermenu .dropdown .dropdown-toggle{
+	color: white;
+	font-size: 14px;
+	font-weight: bold;
+ &:hover{
+	background-color: white; 
+	color: black;		
+	}
+      }
+
+
+	
+/*
+// KA:Show menu options on hover 
+	 @media (min-width: 768px) {
+		ul.nav li.dropdown:hover > ul.dropdown-menu {
+	     	display: block;   	    
+		   }
+	}
+
+*/
+
+
+/* Navbar-level 2 - menu styes */
+	.list-unstyled,
+	.list-unstyled ul { min-width: 50px }
+	.column-width {width: 400px }
+
+//KA: Navbar list items on hover
+	.list-unstyled li:hover { 			 
+ 				padding: 0px 10px 0px 0px;
+				a {
+				color: #E87722;
+				display: block;	
+			   	background-color: #f6f6f6;}
+				}
+
+/* Navbar toggle button on right (3 horizontal lines)*/
+.navbar-toggle .icon-bar{
+ 	display: block;
+	background-color: #cccccc;
+	}
+
+/*=================*/
+/* TopNav bar background color & level 2 menu heading color */
+#topnavbar {
+    margin: 0;
+    background-color: #E87722;	/* illinois orange */
+    color: #002058;		/* illinois blue */
+
+}
+#topnavbar.affix {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    
+}
+
+/* KA: Left padding for 1st li in nav bar. 
+	The padding width is based on the width of SIB logo and 244px results in the least jump during the logo toggle (upon scrool up/down) on navbar
+	Note: If you decide to change the logo or its width, make sure this padding width is adjusted based on that.
+*/
+
+
+
+
+ @media (min-width: 768px) {
+
+		/*18-May-2015: Changing the About in Navbar to School of Integrative Biology*/
+		#navitem1{
+	 		/*padding-left: 245px;*/
+			padding-left: 50px;
+		}
+		
+		/* KA:Show menu options on hover */
+		ul.nav li.dropdown:hover > ul.dropdown-menu {
+	     	display: block;   	    
+		   }
+		
+		/* Hide the carets on big screen */
+		#navbar_caret { 
+		     display: none;
+		}
+
+
+
+}
+
+
+
+
+
+/*==============*/
+/*
+#banner {
+     	padding-bottom: 15px;
+	text-align: center;
+       }
+
+header {
+  color: #777;
+  a {
+    color: #555;
+    &:hover {
+      color: #fff;
+      background-color: #707070;
+      }
+  }
+}
+
+/*SIB logo on navbar .navbar-header .navbar-brand{
+	color: white;
+   &:hover{
+	background-color: white; 
+	color: black;	
+	}
+      }
+ */
+
+
+
+
+
+

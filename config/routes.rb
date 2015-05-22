@@ -1,14 +1,21 @@
 Rails.application.routes.draw do
 
-
-get 'posts/index' => 'posts#index', as: 'postslist'
-
 get 'news/index' => 'news#index', as: 'newslist'
+get 'calendar/index'
+get 'welcome/index'
 
-  get 'calendar/index'
+#KA: Assign named routed to About pages
+get 'about'  => 'about#index', as: 'about_home'
+get 'about/contact' => 'about#contact', as: 'about_contact'
+get 'about/convocation' => 'about#convocation', as: 'about_convocation'
+get 'about/departments' => 'about#departments', as: 'about_depts'
+get 'about/faq' => 'about#faq', as: 'about_faq'
+get 'about/whyib' => 'about#whyib', as: 'about_whyib'
 
 
 
+#KA: Assign named routed to Ugrad pages
+get 'undergraduate'  => 'ugrad#index', as: 'undergrad_home'
 get 'ugrad/advising' => 'ugrad#advising', as: 'advising'
 get 'ugrad/prospective' => 'ugrad#prospective', as: 'prospective'
 get 'ugrad/options' => 'ugrad#options', as: 'options'
@@ -16,49 +23,38 @@ get 'ugrad/programs' => 'ugrad#programs', as: 'programs'
 get 'ugrad/special_programs' => 'ugrad#special_programs', as: 'special_programs'
 
 
-
-# KA: Replace the above with named Route. THis route can be called using help_path
-
-# KA:Routes for sample layout pages
-get 'sample_layouts/onecolumn' => 'sample_layouts#onecolumn', as: 'onecolumn'
-get 'sample_layouts/twocolumneven' => 'sample_layouts#twocolumneven', as: 'twocolumneven'
-get 'sample_layouts/twocolumnuneven' => 'sample_layouts#twocolumnuneven', as: 'twocolumnuneven'
-get 'sample_layouts/threecolumneven' => 'sample_layouts#threecolumneven', as: 'threecolumneven'
-get 'sample_layouts/threecolumnpanel' => 'sample_layouts#threecolumnpanel', as: 'threecolumnpanel'
-get 'sample_layouts/fourcolumneven' => 'sample_layouts#fourcolumneven', as: 'fourcolumneven'
-
-get 'sample_layouts/secondlevel' => 'sample_layouts#secondlevel', as: 'secondlevel'
-get 'sample_layouts/test' => 'sample_layouts#test', as: 'test'
-get 'sample_layouts/ugrad' => 'sample_layouts#ugrad', as: 'ugrad'
+#KA: Assign named routed to Graduate pages
+get 'graduate'  => 'graduate#index', as: 'grad_home'
+get 'graduate/departments' => 'graduate#departments', as: 'grad_depts'
+get 'graduate/grants' => 'graduate#grants', as: 'grad_grants'
+get 'graduate/news' => 'graduate#news', as: 'grad_news'
+get 'graduate/support' => 'graduate#support', as: 'grad_support'
 
 
-get 'sample_layouts/tab' => 'sample_layouts#tab', as: 'tab'
-#get 'sample_layouts/newslist' => 'sample_layouts#newslist', as: 'newslist'
-get 'sample_layouts/newsitem' => 'sample_layouts#newsitem', as: 'newsitem'
-get 'sample_layouts/leftsidebar' => 'sample_layouts#leftsidebar', as: 'leftsidebar'
-get 'sample_layouts/contact' => 'sample_layouts#contact', as: 'samplecontact'
-#==================
- 
 
-# get 'static_pages/help'
+
+#KA: Assign named routed to People pages
+get 'people'  => 'people#index', as: 'people_home'
+get 'people/academics' => 'people#academics', as: 'people_academics'
+get 'people/faculty' => 'people#faculty', as: 'people_faculty'
+get 'people/faculty_interviews' => 'people#faculty_interviews', as: 'people_faculty_interviews'
+get 'people/faculty_other' => 'people#faculty_other', as: 'people_faculty_other'
+get 'people/grad_students' => 'people#grad_students', as: 'people_grad_students'
+get 'people/staff' => 'people#staff', as: 'people_staff'
+
+
+
+
 # KA: Replace the above with named Route. THis route can be called using help_path
 get 'static_pages/help' => 'static_pages#help', as: 'help'
  get 'static_pages/home' => 'static_pages#home', as: 'home'
 get 'static_pages/about' => 'static_pages#about', as: 'about'
 get 'static_pages/contact' => 'static_pages#contact', as: 'contact'
-
-
-
 get 'signup'  => 'users#new'
 
-resources :users
-  get 'articles/new'
+get 'sample_layouts/test'  => 'sample_layouts#test', as: 'sample_layouts_test'
 
-  get 'welcome/index'
 
-  resources :articles do
-    resources :comments
-  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

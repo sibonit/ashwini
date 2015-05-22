@@ -1,0 +1,215 @@
+# line format: 
+#   (spaces)(dashes - to indicate level)(spaces)(* - optional)(spaces)(LinkText)(spaces)(==)(spaces)(Path)
+#
+# use * before text for page the doesn't appear within sidebar
+#    yet should show a specific sidebar context
+#    *-line's position determines context
+# i.e.: *Advising  == /blurt/doc.html
+# can use regular expressions to match any path that starts with a specific string
+#
+# use - for first sublevel
+# use -- for second sublevel
+#
+#
+# use # at beginning of line for comment
+# blank lines are ok
+
+
+### what is ==* ?
+
+Home					== /
+- Calendar & News			== /
+
+About IB				== /
+- People				== /
+- Research				== /
+- Departments				== /
+- Programs				== /
+- Contact Us				== /
+
+Undergraduate Programs			== /
+- Prospective Students			== /
+- Courses				== /
+- Honors				== /
+- Advising				== /
+
+Graduate Programs			== /
+- Prospective Students			== /
+- Courses				== /
+
+Alumni & Friends			== /
+
+Resources				== /
+- For Faculty & Staff			== /
+-- what					== /
+- test					== /
+
+#### old
+#- *Giving catch-all			== ^/giving/.*
+#
+##About MCB              		 	== /about/
+#
+##- Welcome               		== /about/index.html
+##- Administration        		== /about/org.html
+#
+#About MCB              		 	== /about/welcome.html
+#- Calendars             		== /about/calendar.html
+#-- *calendar_events             	== ^/calendar_events/?.*
+#- Contacts              		== /about/contactus.html
+#- Directory             		==* /people
+##- Directory             		== /people
+##-- *People catch-all                    == ^/people/.*
+#-- *Faculty by_keyword			== ^/faculty/by_keyword
+#- Employment          			== /employment/
+#- Facts (PDF)           		== /facts/2013_MCB_facts.pdf
+#- MCB Magazine					== /magazine
+#- News                  		== /news/
+#-- *News catch-all       		== ^/news/.*
+## - Visitor's Guide       		== /about/visitorsguide.html
+## matches all URLs that start with /about or /news
+## - *About catch-all      		== ^/about/.*
+#
+##Faculty				== /faculty_research/
+#Faculty					==* /people
+#- Directory	                   	== /people
+#-- *People catch-all                    == ^/people/.*
+#-- *Faculty profile catch-all		== ^/faculty/profile/.*
+#- Overview				== /faculty_research/
+#- Research Interests          		== /faculty/by_research
+#- Disease Research Interests		== /faculty/by_disease_research
+#- Video Interviews			== /faculty/videos
+## matches all URLs that start with /faculty_research, /faculty
+#- *Faculty Research catch-all		== ^/faculty_research/.*
+##- *Faculty catch-all         		== ^/faculty/.*
+#
+#Departments				== /departments/
+#- Biochemistry				== /departments/biochemistry/
+#-- Contact Us				== /departments/biochemistry/contact.html
+#-- Faculty				== /faculty/biochemistry
+#--- *Faculty catch-all			== ^/faculty/biochemistry.*
+#-- Graduate Program			== /departments/biochemistry/graduate.html
+#--- *Graduate Program catch-all		== /departments/biochemistry/grad.*
+#-- Undergraduate Program		== /departments/biochemistry/undergrad.html
+#-- Seminars and Events			== /departments/biochemistry/seminars.html
+##-- Alumni				== /departments/biochemistry/alumni.html
+#--Alumni & Giving			== /departments/biochemistry/giving
+## matches all URLs that start with /alumni
+#- *Alumni catch-all			== ^/alumni/[^g].*
+#--Facebook				==https://www.facebook.com/BiochemistryAtIllinois
+#
+#
+#- Cell and Developmental Biology	== /departments/cdb/
+#-- Faculty				== /faculty/cdb
+#--- *Faculty catch-all			== ^/faculty/cdb.*
+#-- Graduate Program			== /departments/cdb/graduate.html
+#--- Current				== /departments/cdb/gradcurrent.html
+#--- Prospective				== /departments/cdb/gradprospect.html
+#--- *Graduate Program catch-all		== /departments/cdb/grad.*
+##-- Undergraduate Program		== /departments/cdb/undergraduate.html
+#-- Seminars and Events			== /departments/cdb/seminars.html
+#-- Contact Us				== /departments/cdb/contact.html
+##-- Alumni				== /departments/cdb/alumni.html
+#-- Giving				== /giving/
+#
+#- Microbiology				== /departments/microbiology/
+#-- Contact Us				== /departments/microbiology/contact.html
+#-- Faculty				== /faculty/microbiology
+#--- *Faculty catch-all			== ^/faculty/microbiology.*
+#-- Graduate Program			== /departments/microbiology/graduate.html
+#--- *Graduate Program catch-all		== /departments/microbiology/grad.*
+##-- Undergraduate Program		== /departments/microbiology/undergraduate.html
+#-- Seminars and Events			== /departments/microbiology/seminars.html
+##--- *Research_Confernce		== ^/departments/microbiology/research_conference/.*
+##-- *Seminars and Events catch-all	== ^/departments/microbiology/.*
+##-- Alumni				== /departments/microbiology/alumni.html
+#-- Microbial Evolution and Ecology Research == /microecology/
+#-- Giving				== /giving/
+#
+#- Molecular and Integrative Physiology	== /departments/mip/
+#-- Faculty				== /faculty/mip
+#--- *Faculty catch-all			== ^/faculty/mip.*
+#-- Graduate Program			== /departments/mip/graduate.html
+#--- *Graduate Program catch-all		== /departments/mip/grad.*
+##-- Undergraduate Program		== /departments/mip/undergraduate.html
+##-- Seminars and Events			== /departments/mip/seminars.html
+#-- Newsletter					== /departments/mip/newsletter
+##-- Alumni				== /departments/mip/alumni.html
+#-- Awards				== /departments/mip/awards.html
+#-- Giving				== /giving/
+#-- Contact Us				== /departments/mip/contact.html
+#
+#- Affiliated Programs			== /departments/affiliates.html
+#-- Biophysics and CB			== http://biophysics.illinois.edu/
+#-- Medical Scholars Program		== https://www.med.illinois.edu/MSP/
+#-- Neuroscience Program			== http://neuroscience.illinois.edu/
+## matches all URLs that start with /departments
+#- *Departments catch-all		== ^/departments/.*
+#
+#Undergraduate Studies			== /undergrad/
+#- Prospective Undergrads 		== /undergrad/undergradprospect.html
+#- Current Undergrads     		== /undergrad/undergradcurrent.html
+#- Advising             			== /undergrad/advising
+#- Calendar				== http://illinois.edu/calendar/Calendar?calId=973
+#- Career Services      			== /undergrad/careers.html
+#- Courses              			== /courses/undergraduate
+#-- All Courses				== /courses/undergraduate
+#-- Approved Advanced Courses		== /courses/undergraduate?type=Adv
+#- Degree Requirements			== /undergrad/degreerequirements.html
+#- Graduation         			== /undergrad/commencement/
+#- Graduation With Distinction		==/undergrad/research.html#distinction
+#- Minor in MCB              		== /undergrad/minor.html
+##- Specialized Curriculum in Biochemistry == /departments/biochemistry/undergrad.html
+#- Enrichment           			== /undergrad/enrichment.html
+#- Undergraduate Research   		== /undergrad/research.html
+#-- *Undergraduate Research catch-all	== ^/undergradlab/.*
+## matches all URLs that start with /undergrad
+## - *Undergrad catch-all		== ^/undergrad/.*
+#
+#Pre-Med							== /undergrad/opportunities/pre-med
+#
+#Graduate Studies       			== /graduate/
+#- Prospective Grad Students	 	== /graduate/gradprospect.html
+#- Current Grad Students     		== /graduate/gradcurrent.html
+#- Courses              			== /courses/graduate
+#- Ph.D. Programs			== /graduate/gradpgmstudy.html
+#- Interdisciplinary Programs		== /graduate/gradinterdiscipline.html
+#- Center for Research in Reproduction and Infertility 	== /crri
+## - Reproductive Biology Training Program	== http://mcb.illinois.edu/repro/
+#- Microbial Evolution and Ecology Research == /microecology/
+## matches all URLs that start with /graduate
+#- *Graduate catch-all  			== ^/graduate/.*
+#
+#Resources       				== /resources/index.html
+#- Business Affairs     			== /about/business.html
+#-- Procurement 					== /about/procurement.html
+#-- Grants and Accounts			== /about/businessgrants.html
+## - *Business Affairs catch-all         == ^/about/business.*
+#-- *Business Affairs catch-all		== ^/about/businessgrants.*
+##- Communications Office 		== /resources/communications.html
+##-- Contact 						== /resources/commscontactus.html
+##-- Editorial/Media Services 		== /resources/editorialmedia.html
+##-- MCB and Campus Style 		== /resources/communicators.html
+#- Charles Miller Auditorium		== /auditorium
+#- Electronics Shop				== http://www.life.illinois.edu/facilities/Electronics%20Shop/eshophome.html
+#- EPR							== /epr/
+#-- *EPR catch-all				== ^/epr/.*
+#- Facilities and Operations		== http://www.life.illinois.edu/facilities/
+#- Faculty & Staff Intranet		== /private/
+##- Human Resources      			== /about/hr.html
+#- Information Technology    		== http://www.life.illinois.edu/help/
+#- Machine Shop			     	== http://www.life.illinois.edu/facilities/MachineShop/mshophome.html
+#- Microscopy					== /microscopy/
+#-- *Microscopy catch-all		== ^/microscopy/.*
+#- *Business Affairs catch-all		== ^/about/procurement.*
+#- Storeroom				== http://www.life.illinois.edu/facilities/Storeroom/storeroomhome.html
+#
+##Video						== /video
+#
+#Alumni & Friends			== /alumni/
+## matches all URLs that start with /alumni
+#- *Alumni catch-all			== ^/alumni/[^g].*
+## matches all URLs that start with /alums
+#- *Alumni catch-all			== ^/alums/[^g].*
+#
+#Giving					== /giving/
+#- *Giving catch-all			== ^/giving/.*

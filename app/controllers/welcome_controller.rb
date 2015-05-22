@@ -2,8 +2,8 @@ class WelcomeController < ApplicationController
  
 #KA: USing for news on home page
  def index
-	 @articles = Article.all
-	 @events = Calendar.all
+	 @news = NewsItem.all
+	 @events = CalendarEvent.all
 
  end
 

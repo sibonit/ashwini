@@ -1,0 +1,7 @@
+class GraduateController < ApplicationController
+
+
+
+
+
+end

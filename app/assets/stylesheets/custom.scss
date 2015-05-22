@@ -1,0 +1,200 @@
+/* KA: Custom css in addition to bootstrap */
+
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "bootstrap-social";
+
+
+/* footer
+
+KA: Using Nesting techniques to nest attributes with the element.
+*/
+
+
+body{
+	background-color: #EEE;
+	font-size: 11px;
+	line-height: 16px;
+}
+
+#main_content {
+	padding-left: 10px;
+	padding-right: 10px;
+	}
+
+
+
+#container {
+	//width: 960px;
+	//margin: 0 auto;
+	background:white;
+	margin-right: auto;
+	margin-left: auto;
+	max-width: 960px; 
+
+	}
+
+//Footer
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #777;
+  a {
+    color: #555;
+    &:hover {
+      color: #fff;
+    }
+  }
+  small {
+    float: left;
+  }
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      float: left;
+      margin-left: 15px;
+    }
+  }
+}
+
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.row h2 {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 2.5em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: #E87722;
+}
+
+
+.row h4 {
+   font-family: 'Ubuntu', sans-serif;
+  font-size: 1.3em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  font-weight: normal;
+  color: #002058;
+}
+
+.row h3 {
+   font-family: 'Ubuntu', sans-serif;
+   font-size: 1.0em;
+   letter-spacing: -1px;
+   margin-bottom: 10px;
+   font-weight: normal;
+   color: #002058;
+}
+
+
+p {
+  font-size: 12px;
+  line-height: 1.7em;
+}
+
+
+ a {
+    color: red;
+    &:hover {
+      color: #fff;
+    }
+  }
+
+
+
+/* universal */
+
+body {
+  padding-top: 0px;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+
+
+.center {
+  text-align: center;
+  h1 {
+    margin-bottom: 10px;
+  }
+}
+
+
+
+//KA: column divs padding
+
+//KA: Adding this class will reduce the gap between 2 divs a little bit, but when the window is resized it will not wrap the contents well. Hence, commenting this for now.
+/*
+.col-md-8.no-gutter{
+   	padding-left: 0px;
+ 	margin-left: 0px;
+
+}
+*/
+
+.col-md-9.no-gutter{
+   	padding-left: 0px;
+ 	margin-left: 0px;
+
+}
+
+//-----------Font awesome-ICONS---------------
+
+//KA: The info bullet icon for lists
+.fa-info-circle,
+.fa-lightbulb-o,
+.fa-user,
+.fa-external-link   
+	{
+	    color: #E87722;
+	    text-shadow: 1px 1px 1px #ccc;
+	    font-size: 1.5em;
+	}
+
+.glyphicon-chevron-right,
+.glyphicon-tags,
+.glyphicon-tag     
+			{
+			    color: #E87722;
+			    text-shadow: 1px 1px 1px #ccc;
+			 }
+
+
+//=============================
+
+//KA: used in /alumni_2 page to show featured alumni
+.portfolio-item {
+    margin-bottom: 25px;
+	img{width: 180px;
+	    height: 140px;
+		}
+		}
+
+
+
+
+

@@ -1,0 +1,187 @@
+/* kA: Super menu styles for small screens (collapsed Navbar) */
+
+
+@media (max-width: 767px) {
+
+
+//=================================
+/*Testing */
+
+#collapsed_id a{
+		color: black;
+		text-align: left;
+
+		}
+
+
+.row.collapsed_menu {
+	left: auto;
+	padding: 20px 30px; 
+    	  left: 0;
+	  right: 0;
+ 	  max-width: 960px;
+        background-color: white;
+	color: black;
+	font-size: 14px;
+	font-weight: bold;
+ &:hover{
+	background-color: white; 
+	color: black;		
+	}
+
+li > a {color: black;}
+      }
+
+
+
+
+
+//==================================
+
+
+
+	/* Hide the Home icon */
+	#navbar-collapse-1  > ul > li:first-child { 
+		display: none;
+	}
+
+	/*Hide the top banner in small screens*/
+	#banner {
+		  display: none;		
+		}
+
+	/*Reduce the distance between dropdown items*/
+	#navbar-collapse-1 hr { margin: 3px 0 3px 0; }	
+
+	/*Styles for small screen menu*/
+	#navbar-collapse-1,
+	#navbar-collapse-1 ul,
+	#navbar-collapse-1 li,
+	#navbar-collapse-1 a {
+	   position: relative;
+	}
+
+	/* Level 1 background*/
+	 #navbar-collapse-1  > ul > li{
+	   background: white;
+	   /*background: linear-gradient(#f6f6df 0%, #f5f5dc 100%);*/
+	   border-radius: 3px 3px 0 0;
+    	}
+
+	#navbar-collapse-1  > ul > li> a {
+	  /*padding: 15px 10px;*/
+	  border: none;
+	  border-top: 1px solid #818176;
+	  border-radius: 3px 3px 0 0;
+	  text-align: left;
+	  font-size: 16px;
+	  font-weight: 400;
+	  /*text-shadow: 0 -1px 1px white;*/
+	  color: #404040;
+	}
+
+	#navbar-collapse-1  > ul > li> a:hover {
+	 background: #7e7e7e;
+	}
+    
+	#navbar-collapse-1 ul ul li {
+	  /*border-bottom: 1px solid #d4d4d4;*/
+	  border-top: none;
+	  padding: 0;
+	  width:767px;
+	  display:inline-block;
+	  height: auto;
+ 	  max-height: 700px;
+	  overflow-x: hidden;
+	  line-height: 1px;
+	  background-color: white;
+	}
+
+	#navbar-collapse-1 ul ul a {
+	 padding: 10px 10px 10px 25px; 
+	  display: block;
+	  color: #676767;
+	  font-size: 12px;
+	  font-weight: normal;
+	  }
+
+	#navbar-collapse-1 ul ul a:before {
+	  content: "»";
+	  position: absolute;
+	  left: 10px;
+	  color: #e94f31;		/*Illinois Orange*/
+	}   
+
+	#navbar-collapse-1 ul ul a:hover {
+	    color: black;
+	    background-color: #EEE;
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*======KA: For future refererence: =========*/
+
+/*
+@media handheld {
+	ul.nav li.dropdown:hover > ul.dropdown-menu {
+    	display: none;       
+		}
+	}
+
+
+// Remove padding for 1st div
+	#navitem1{-webkit-padding-left: 0px;}
+	
+
+
+// Disable menu hover on small screen
+	ul.nav li.dropdown:hover > ul.dropdown-menu {
+    		display: none;       
+	}
+
+
+	#navbar-collapse-1 > ul > li:hover {
+	 background: yellow;
+	 background: linear-gradient(#e5e5e5 0%, #f2f2f2 100%);    
+	 }
+
+
+	#navbar-collapse-1  > ul > li > a.dropdown-toggle {
+	  background: url(expand.png) 96% center no-repeat;  
+	  }
+
+	#navbar-collapse-1 > ul > li.dropdown.supermenu.active > a.dropdown-toggle  {
+	background: url(collapse.png) 96% center no-repeat; 
+	 background: yellow;
+		}
+*/
+//==============================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
