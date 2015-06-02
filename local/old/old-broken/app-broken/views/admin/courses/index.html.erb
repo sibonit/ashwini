@@ -1,0 +1,91 @@
+
+<% content_for :submenu do %>
+				<ul>
+                	<li>&nbsp;</li>
+                	<li id="FirstItem"><%= link_to 'Courses', :controller => "courses", :action => "index" %></li>
+                    <li><%= link_to 'All IB Courses', :controller => "courses", :action => "index" %></a></li>
+                    <li><%= link_to 'SIB Area Courses', :controller => "courses", :action => "area" %></li>
+                    <li><%= link_to 'Additional Approved Courses', :controller => "courses", :action => "additional" %></li>
+                    <li><%= link_to 'Special Topics Courses', :controller => "courses", :action => "special" %></li>
+                    <li>&nbsp;</li>
+				</ul>
+<% end %>
+<% content_for :breadcrumbs do %>IB Courses<% end %>
+
+
+
+
+
+
+<h1>All IB Courses</h1>
+
+  
+
+<%= link_to 'New Course', :action => 'new' %>
+
+
+<div class="course_table">
+  <table cellspacing="0px">
+    <tr>
+      <th>Course No.</th>
+      <th>Cross-list</th>
+      <th>Course Title</th>
+      <th>Credit (hours)</th>
+      <th>Offered</th>
+      <th colspan="2">IB Area or Additional Courses<sup>1</sup></th>
+    </tr>
+	
+	
+	
+
+	<%= render :partial => "admin/courses/course", :collection => @courses %>
+
+
+
+  </table>
+  
+
+
+
+  
+  <p><sup>1</sup><a href="../IB_Major.htm#requirements">IB Area or Additional Courses</a> as it relates to the undergraduate degree in Integrative Biology.<br/> 
+  <a href="../area_courses.htm#1">A1</a> = Area I course (Organismal &amp; Evolutionary Biology),<br/> 
+  <a href="../area_courses.htm#2">A2</a> = Area II course (Behavior, Ecology &amp; the Environment),<br/> 
+  <a href="../area_courses.htm#3">A3</a> = Area III course (Integrative Anatomy, Physiology, &amp; Molecular Biology), and<br/> 
+  <a href="../add_courses.htm">AA</a> = additional approved IB course.</p>
+  <p>&nbsp;</p>
+  <p>* indicates a laboratory or field component.</p>
+  <p>&nbsp;</p>
+  <p><sup>#</sup> (G) = graduate credit, (U) = undergraduate credit</p>
+  
+  <br/>
+
+	<h2 style="margin-bottom: 0; padding-bottom: 0;">Other Courses</h2>
+	
+  <table cellspacing="0px">
+    <tr>
+      <th width="200">Course</th><th>Add This Course?</th><th>&nbsp;</th>
+	</tr>
+	
+
+	<% @other_courses.each do |course| %>
+	  <tr>
+		<td><%=h course.course_number %></td>
+		
+		<td>
+			<% form_for :course, :url => { :action => 'show', :id => course.id } do |f| %><%= f.submit 'Show' %><% end %>
+			<% form_for :course, :url => edit_admin_course_path(course.id) do |f| %><%= f.submit 'Edit' %><% end %>
+			<% form_for :course, :url => { :action => 'update', :id => course.id } do |f| %><%= f.hidden_field :ib_course, :value => 1 %><%= f.submit 'Add' %><% end %>
+		</td>
+		<td><% form_for :course, :url => { :action => 'destroy', :id => course.id } do |f| %><%= f.submit 'Delete' %><% end %></td>
+	  </tr>
+
+	  
+	<% end %>
+
+
+
+  </table>	
+  
+  </div>
+  

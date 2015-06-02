@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>
+		<% if @page && @page.current_path %><%= @page.current_path.title %><% else %><%= yield :title %><% end %><% if @page && @page.current_path && @page.current_path.category_group && @page.current_path.category_group.category_path %>, <%= @page.current_path.category_group.category_path.page.title %><% end %><% if @page && @page.current_path && @page.current_path.tab_group && @page.current_path.tab_group.tab_path %>, <%= @page.current_path.tab_group.tab_path.page.title %>		<% end %></title>
+
+    <%= stylesheet_link_tag "application", media: "all" %>
+	<% if get_css != "" %>
+		<%= stylesheet_link_tag get_css, media: "all" %>
+	<% end %>
+    <%= javascript_include_tag "application", "sib" %>
+    <%= csrf_meta_tag %>
+
+</head>
+
+<% if @page && @page.current_path %>
+	<body data-path="<%= @page.current_path.path %>">
+<% else %>
+	<body data-path="paths">
+<% end %>
+    <div class="container">
+    
+        <div class="header">
+			<div class="logo"><a href="http://illinois.edu"><span>illinois.edu</span></a></div>
+			<% if @page && @page.current_path && @page.current_path.tab_group && @page.current_path.tab_group.tab_path %>
+				<h1><%= @page.current_path.tab_group.tab_path.page.title %></h1>
+			<% end %>
+			<% if @page && @page.current_path && @page.current_path.category_group && @page.current_path.category_group.category_path %>
+				<h2><%= @page.current_path.category_group.category_path.page.title %></h2>
+			<% end %>
+			<h3>School of Integrative Biology, University of Illinois at Urbana-Champaign</h3>
+        </div>
+        
+        <div class="banner_image">
+        	<div class="Welcomes">
+				<%= get_welcome %>
+			</div>
+			<div class="right"></div>
+        </div>
+        
+        <div class="Tabs">
+			<%= get_tabs %>
+        </div>
+        
+        <div class="Categories">
+			<%= get_categories %>
+		</div>
+        
+        <div class="Content">
+			
+			<div class="page_admin">
+				
+				<% if controller.action_name == 'new' %> 
+					<h1>Making new <%= controller.controller_name.singularize %></h1>&nbsp;
+				<% elsif controller.action_name == 'edit' %> 
+					<h1>Editing <%= controller.controller_name.singularize %></h1>&nbsp;
+				<% elsif controller.action_name == 'index' %> 
+					<h1>List of <%= controller.controller_name %></h1>&nbsp;
+				<% end %>
+				
+				<% if controller.action_name == 'show' && check_access? %> 
+					<%= link_to 'Edit ' + controller.controller_name.singularize, request.env[ 'REQUEST_URI' ].gsub(/\&/,'%26') + '/edit' %>&nbsp;
+				<% end %>
+				
+				
+				<div class="page_alerts"><%= flash[:notice] %></div>
+				
+				<% if session[ :logged_in ] %>
+					
+				<% end %>
+				
+				<div class="page_login">
+					<% if session[ :logged_in ] %>
+						<%= link_to 'Logout ' + session[ :netid ], '/logout?previous_page=' + request.env[ 'REQUEST_URI' ].gsub(/\&/,'%26') %>
+					<% else %>
+						<%= link_to 'Login', '/login?previous_page=' + request.env[ 'REQUEST_URI' ].gsub(/\&/,'%26') %>
+					<% end %>
+				</div>
+				
+			</div>
+			
+				
+			<%= yield  %>
+            
+        </div>
+    
+    </div>
+
+</body>
+</html>

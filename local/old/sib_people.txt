@@ -1,0 +1,218 @@
+Ainsworth	Elizabeth	ainswort@illinois.edu	265-9887	147 ERML/1408 IGB	Faculty	Plant Biology
+Alleyne	Marianne	vanlaarh@life.illinois.edu	333-8652	317 Morrill Hall	Academic	Entomology
+Anderson-Teixeira	Kristina	kateixei@illinois.edu	244-2710	1409 IGB	Academic	Plant Biology
+Augspurger	Carol K.	carolaug@illinois.edu	333-1298	155 Morrill Hall	Faculty	Plant Biology
+Baker	Scott	s-baker6@life.illinois.edu	333-0609	59 Burrill Hall	Staff	Molecular and Cellular Biology
+Batzli	George O.	g-batzli@life.illinois.edu	333-0894	200 Shelford Vivarium	Faculty	Animal Biology
+Bell	Alison	alisonmb@life.illinois.edu	265-5469	433 Morrill Hall	Faculty	Animal Biology
+Berenbaum	May R.	maybe@illinois.edu	333-2910 / 333-7784	318B Morrill Hall / 216A Morrill Hall	Faculty	Entomology
+Berlocher	Stewart H.	stewartb@life.illinois.edu	333-2929	304A Morrill Hall	Faculty	Entomology
+Beshers	Samuel N.	beshers@life.illinois.edu	333-4971	318B Morrill Hall	Faculty	Entomology
+Black	Deborah	black3@illinois.edu	333-7857	1220 Plant Sci Lab	Academic	Plant Biology
+Bohnert	Hans	hbohnert@illinois.edu	265-5475	196 ERML	Faculty	Plant Biology
+Boise	Lisa	boise@illinois.edu	333-3261	265 Morrill Hall	Staff	Plant Biology
+Brawn	Jeffrey D.	jbrawn@illinois.edu	244-5937	W-503 Turner Hall	Faculty	Animal Biology
+Briskin	Donald	dbriskin@illinois.edu	244-1115	30 NSRC	Faculty	Plant Biology
+Brockmann	Axel	abrockma@life.illinois.edu	265-0968	434 Morrill Hall	Academic	Entomology
+Broga	Penny	broga@life.illinois.edu	333-0292	506 Morrill Hall	Academic	Integrative Biology
+Buck	Steven R.	sbuck@life.illinois.edu	333-6458	116 Shelford Vivarium	Staff	
+Bynum	Lee	leebynum@life.illinois.edu	333-1403	289 Morrill Hall	Academic	Integrative Biology
+Cáceres	Carla	caceres@life.illinois.edu	244-2139	477B Morrill Hall	Faculty	Animal Biology
+Cameron	Sydney A.	scameron@life.illinois.edu	333-2340	215B Morrill Hall	Faculty	Entomology
+Cameron	Jo Ann	joanncam@life.illinois.edu	333-8208	286 Morrill Hall	Faculty	Cell and Developmental Biology
+Mongold-Diers	Judith	jdiers@illinois.edu	333-7783	420 Morrill Hall	Academic	None
+Cheeseman	John M.	j-cheese@illinois.edu	265-5475	196 ERML	Faculty	Plant Biology
+Chipman	Melissa	mfarmer2@illinois.edu	244-9871	171A Morrill Hall	Graduate Student	None
+Cheng	C.-H. Christina	c-cheng@illinois.edu; cdevries@life.illinois.edu	333-2832	17E Burrill Hall	Faculty	Animal Biology
+Clem	Kelly	k-clem@life.illinois.edu	333-9761	C107 CLSL	Staff	Molecular and Cellular Biology
+Dana	Catherine	cdana2@illinois.edu	333-1165	204 Morrill Hall	Graduate Student	Entomology
+Dalling 	James 	dallingj@life.illinois.edu 	244-8914 	149 Morrill Hall 	Faculty	Plant Biology
+Dawson 	Jeffrey 	jdawson2@illinois.edu 	333-9281 	1316 PSL 	Faculty	Plant Biology
+Delcomyn 	Fred 	delcomyn@life.illinois.edu 	333-8793 	422A Morrill Hall 	Faculty	Entomology
+DeLucia 	Evan H. 	delucia@illinois.edu 	333-6177 	1404 IGB 	Faculty	Plant Biology
+DeVries 	Arthur L. 	adevries@illinois.edu 	333-4245	17J Burrill Hall 	Faculty	Animal Biology
+Dole 	R. Edward 	r-dole@life.illinois.edu 	333-4396 	401 NHB 	Academic	Plant Biology
+Downie 	Stephen 	sdownie@life.illinois.edu 	333-1275 	239 Morrill Hall  	Faculty	Plant Biology
+Enstrom 	David A. 	denstrom@inhs.illinois.edu; denstrom@illinois.edu 	244-6872 	I-Bldg. 	Faculty	
+Flesher 	William 	wflesher@illinois.edu 	244-3479 	64 Burrill Hall 	Staff	Molecular and Cellular Biology
+Francis 	Bettina M. 	bfrancis@illinois.edu 	333-5136 	679 Morrill Hall 	Faculty	Entomology
+Frazzetta 	Thomas H. 	tomfrazz@life.illinois.edu 	333-4199 	233 Morrill Hall 	Faculty	Animal Biology
+Huber	Joan	jlhuber1@illinois.edu	333-5498	265 Morrill Hall	Academic	Plant Biology
+Fuller 	Rebecca 	fuller@life.illinois.edu 	333-9065 	104 Shelford Vivarium 	Faculty	Animal Biology
+Gabay-Laughnan 	Susan 	gabaylau@life.illinois.edu 	333-2919 	355 Morrill Hall 	Academic	Plant Biology
+Gerard 	Don 	dgerard@illinois.edu 	333-3047 	533 Morrill Hall 	Staff	Molecular and Cellular Biology
+Govindjee 		gov@illinois.edu 	333-1794 	669 Morrill Hall 	Faculty	Plant Biology
+Grennan 	Aleel 	agrennan@illinois.edu 	333-7768 	1406 IGB 	Academic	Plant Biology
+Haas 	Jeffrey 	jeff@life.illinois.edu 	333-7525 	333 Morrill Hall  	Academic	Integrative Biology
+Hall 	Carol A. 	cahall@illinois.edu 	333-8208 	286 Morrill Hall 	Staff	Integrative Biology
+Helton 	Toni 	thelton@life.illinois.edu 	333-3488 	286 Morrill Hall 	Academic	Integrative Biology
+Henze 	Tonja 	thenze@ad.illinois.edu 	333-6672 	20 Morrill Hall 	Staff	Molecular and Cellular Biology
+Heske 	Edward J. 	eheske@illinois.edu 	244-2173 	2006 I Bldg., 1816 S. Oak 	Faculty	Animal Biology
+Hieser 	Jerry 	j-hieser@life.illinois.edu 	333-6864 	20 Morrill Hall 	Staff	Molecular and Cellular Biology
+Hill 	Steven 	srhill@inhs.illinois.edu 	244-8452 	382 NRB 	Faculty	Plant Biology
+Hill 	Walter 	wrhill@illinois.edu 	244-2103 	133 NRSA 	Faculty	
+Hu 	Feng Sheng 	fshu@life.illinois.edu 	244-2982 	177 Morrill Hall 	Faculty	Plant Biology
+Huber 	Steven 	schuber1@life.illinois.edu	265-0909 	197 ERML 	Faculty	Plant Biology
+Jacobs 	Thomas W. 	t-jacobs@life.illinois.edu 	333-1518 	331 ERML 	Faculty	Plant Biology
+Manaster	Joanne	joannema@illinois.edu	244-2489	286 Morrill Hall	Faculty	None
+Allan	Brian	ballan@life.illinois.edu	244-1341	339A Morrill Hall	Faculty	Entomology
+Katz-Downie 	Deborah 	dkatzdow@illinois.edu 	333-1275 	239 Morrill Hall 	Academic	Plant Biology
+King 	Cecil 	cking@life.illinois.edu 	333-6333 	506 Morrill Hall 	Staff	Integrative Biology
+Kotowski 	Katrina 	kotowski@illinois.edu 	244-8341 	533 Morrill Hall 	Staff	Molecular and Cellular Biology
+Lanter 	Debbie 	dlanter@illinois.edu 	333-3044 	286 Morrill Hall 	Staff	Integrative Biology
+Larkin 	Ronald P. 	r-larkin@illinois.edu 	333-7513 	2021 I-Bldg. 	Faculty	
+Leakey 	Andrew 	leakey@life.illinois.edu 	244-0302 	1402 IGB 	Faculty	Plant Biology
+Levin 	Geoffrey 	levin1@illinois.edu 	244-7481 	1012 Forbes Building	Faculty	Plant Biology
+Long 	Stephen 	stevel@life.illinois.edu; slong@illinois.edu 	333-2487 	379 ERML/134 IGB 	Faculty	
+Grissom	Evanielis	egrissom@life.illinois.edu	244-9588	286 Morrill Hall	Faculty	None
+Mao 	Wenfu 	mao@life.illinois.edu 	333-1165 	204 Morrill Hall 	Academic	Entomology
+Marcot 	Jonathan 	jmarcot@life.illinois.edu 	244-6826 	665 Morrill Hall 	Academic, Faculty	Animal Biology
+Miller 	Andrew 	amiller@inhs.illinois.edu 	244-0439 	381 NRB 	Faculty	Plant Biology
+Ming 	Ray 	rming@life.illinois.edu 	333-1221 	148 ERML 	Faculty	Plant Biology
+Morgan 	Beth 	bamorgan@life.illinois.edu 	333-7428 	301 NHB 	Academic	Plant Biology
+Morphew 	Nicholas 	morphew2@life.illinois.edu 	244-7350 	300 NHB 	Academic	Integrative Biology
+Mulrooney 	Patrick 	mulroony@life.illinois.edu 	333-7525	332 Morrill Hall 	Academic	Integrative Biology
+Nakea 	Cindy 	cnakea@illinois.edu 	244-3590 	101 Burrill Hall 	Staff	Biology Library
+Nanney 	David L. 	d-nanney@life.illinois.edu 	333-2308 	437 Morrill Hall 	Faculty	Animal Biology
+Nardi 	James 	j-nardi@life.illinois.edu 	333-6590 	339A Morrill Hall 	Academic	Entomology
+Nevling 	Lorin I. 	nevling@illinois.edu 	244-2750 	299 NRB 	Faculty	Plant Biology
+Newman 	Katie 	florador@illinois.edu 	265-5386		Faculty, Academic	Molecular and Cellular Biology
+Newman 	Thomas 	newmant5550@life.illinois.edu 	333-6843 	451 Morrill Hall 	Academic	Entomology
+Ort 	Donald R. 	d-ort@life.illinois.edu 	333-2093 	1406 IGB 	Faculty	Plant Biology
+Paige 	Ken N. 	k-paige@life.illinois.edu 	333-7802 	515 Morrill Hall 	Faculty	Animal Biology
+Philipp 	David P. 	philipp@illinois.edu 	244-5055 	237 NRSA 	Faculty	Animal Biology
+Phillips 	Christopher A. 	caphilli@illinois.edu 	244-7077	185 NRB 	Faculty	Animal Biology
+Phillips 	Tom L. 	tlphilli@life.illinois.edu 	333-0653 	57 Morrill Hall 	Faculty	Plant Biology
+Plummer 	Martha 	mplummer@life.illinois.edu 	333-2377 	265 Morrill Hall 	Staff	Plant Biology
+Robertson 	Hugh M. 	hughrobe@illinois.edu 	333-0489 	417 Morrill Hall 	Faculty	Entomology
+Robertson 	Kenneth R. 	krrobert@illinois.edu 	244-2171 	393 NRB 	Faculty	Plant Biology
+Robinson 	Gene E. 	generobi@illinois.edu 	265-0309 	449 Morrill Hall 	Faculty	Entomology
+Sargent	Malcolm L. 	malcolms@life.illinois.edu 	333-0287 	629 Morrill Hall 	Faculty	Plant Biology
+Schlipf 	Karl 	karl@life.illinois.edu 	333-7525 	332 Morrill Hall 	Academic	Integrative Biology
+Schmidt 	Diane 	dcschmid@illinois.edu; dcschmid@life.illinois.edu 	333-0281 	101 Burrill Hall 	Academic	Biology Library
+Schuler 	Mary 	schuler@life.illinois.edu 	333-8785 	162 ERML 	Faculty	Plant Biology
+Scott 	Gail 	gscott@life.illinois.edu 	333-7693 	C107 CLSL 	Staff	Molecular and Cellular Biology
+Sears 	Karen 	ksears@life.illinois.edu 	244-7855	465B Morrill Hall 	Faculty	Animal Biology
+Seigler 	David S. 	seigler@life.illinois.edu 	333-7577/333-2522 	633 Morrill Hall/1023 Evers Lab 	Faculty	Plant Biology
+Shearer 	Carol A. 	carolshe@illinois.edu 	333-2796 	655B Morrill Hall 	Faculty	Plant Biology
+Smith 	Lisa J. 	ljsmith1@illinois.edu 	333-7802 	515 Morrill Hall 	Staff	Animal Biology
+Osterbur	Michael	mdosterb@illinois.edu	333-9761	C107 CLSL		None
+Spezia 	Gary 	spezia@life.illinois.edu 	333-6774 	173 Burrill Hall 	Academic	Integrative Biology
+Suarez 	Andrew 	avsuarez@life.illinois.edu 	244-6631 	681 Morrill Hall 	Faculty	
+Sylavong 	Bounthanh 	sylavong@illinois.edu 	333-9626 	590-B Burrill Hall Addition 	Staff	Molecular and Cellular Biology
+Taft 	John 	taft@inhs.illinois.edu 	244-5046 	1909 S. Oak St.	Faculty	Plant Biology
+Cech	Juraj	cech3@life.illinois.edu	333-7811	272 Morrill Hall	Graduate	None
+Trame 	Karen 	ktrame@life.illinois.edu 	333-2910 	320 Morrill Hall 	Staff	Entomology
+Treakle 	Norma 	ntreakle@illinois.edu 	244-9406 	533 Morrill Hall 	Staff	Molecular and Cellular Biology
+Uebele 	Thomas 	thom@life.illinois.edu 	333-7525 	332 Morrill Hall 	Academic	Integrative Biology
+Wahl 	David H. 	d-wahl@illinois.edu 	333-0006 	235 NRSA 	Faculty	None
+Waldbauer 	Gilbert P. 		333-1265 	457 Morrill Hall 	Faculty	Entomology
+Walden 	Kim 	k-walden@life.illinois.edu 	333-0489 	417 Morrill Hall 	Academic	Entomology
+Wang 	Liping 	lpwang@illinois.edu 	244-0557 	264D Burrill Hall 	Academic	Molecular and Cellular Biology
+Arias-Penna	Diana Carolina	ariaspe1@life.illinois.edu	333-2567	272 Morrill Hall	Graduate	None
+Deem	Lesley	ldeem@life.illinois.edu	333-2070	357 Morrill Hall	Academic	Entomology
+Weatherhead 	Patrick 	pweather@illinois.edu 	244-0319 	203A Shelford Vivarium 	Faculty	Animal Biology
+Weatherspoon 	Fay 	ftspoon@illinois.edu 	244-3590 	101 Burrill Hall 	Staff	Biology Library
+Weinstein 	Audra 	audra@life.illinois.edu 	244-2888 	320 Morrill Hall 	Staff	Entomology
+Whitfield 	Charles W. 	cww@illinois.edu	244-2889 	349B Morrill Hall 	Faculty	Entomology
+Whitfield 	James B. 	jwhitfie@life.illinois.edu 	333-2567 	215 Morrill Hall 	Faculty	Entomology
+Whitt 	Gregory S. 	gswhitt@illinois.edu 	333-4645 	469 Morrill Hall 	Faculty	Animal Biology
+Wraight 	Colin A. 	cwraight@illinois.edu 	333-3245 	160 Davenport 	Faculty	Plant Biology
+Debevec	Andrew	debevec2@illinois.edu	333-2170	215 Morrill Hall	Graduate Student	Entomology
+Agunbiade	Tolulope	toluagunbiade@life.illinois.edu	333-6538	518 Morrill Hall	Graduate	None
+Zielinski 	Raymond E. 	zielinsk@life.illinois.edu 	333-6785 	249 Morrill Hall 	Faculty	Plant Biology
+Hanzawa	Yoshie	yhanzawa@illinois.edu	333-4685	259 ERML	Faculty	
+Tobin	Damien	DamienTobin@hotmail.com	244-4906	252 Davenport Hall	Graduate	None
+Barrett	Carolyn	cbarrett@life.illinois.edu	244-9871	265 Morrill Hall	Graduate	None
+Grimm	Eric	egrimm@illinois.edu	785-4846	Illinois State Museum	Faculty	Plant Biology
+Berdan	Emma	eberdan2@illinois.edu	333-2235	202 Shelford Vivarium	Graduate	None
+Betzelberger	Amy	betzelbe@illinois.edu	265-9884	147 ERML	Graduate	None
+Bilyk	Kevin	kbilyk@life.illinois.edu	244-2931	17C Burrill Hall	Academic	Animal Biology
+Katz	Aron	aronkatz@illinois.edu	244-4552	291 NRB	Graduate	None
+Clegg	Benjamin	bclegg@life.illinois.edu	244-9871	167 Morrill Hall	Academic	Plant Biology
+Davros	Nicole	ndavros2@illinois.edu	333-2235	201 Shelford Vivarium	Graduate	None
+McNeill	Matthew	mcneill@illinois.edu	333-6843	439 Morrill Hall	Academic	None
+Masters	Michael	mmasters@illinois.edu	244-7418	1400 IGB	Academic	Plant Biology
+Hickman	George	ghickma2@illinois.edu	333-8048	193 ERML	Graduate	None
+Puckett	Gwyn	puckett4@illinois.edu	244-5047	137 NSRC	Graduate	None
+Johnson	Ashley	ajohns66@illinois.edu	333-2235	202 Shelford Vivarium	Graduate	None
+Davis	Sarah	davissc@igb.illinois.edu	244-5952	143 IGB	Faculty	None
+Punyasena	Surangi	punyasena@life.illinois.edu	244-8049	139 Morrill Hall	Faculty	Plant Biology
+Johnson	Kevin	kjohnson@inhs.illinois.edu	244-9267	1816 S. Oak	Faculty	
+Dietrich	Christopher	dietrich@inhs.uiuc.edu	244-7408	282 NRB	Faculty	Entomology
+Dietze	Michael	mdietze@illinois.edu	265-8020	1405 IGB	Faculty	Plant Biology
+Douglas	Marlis	mrd@illinois.edu	333-6896	607 E. Peabody, 183 NRB	Faculty	
+Douglas	Michael	med1@illinois.edu	333-3685	1816 S. Oak St., Rm. 2008	Faculty	
+Stein	Laura	stein12@illinois.edu	333-2308	437 Morrill Hall	Graduate	None
+Woese	Carl	c-woese@illinois.edu	333-9369	3112 IGB	Faculty	Animal Biology
+Tinerella	Paul	ptinerll@illinois.edu	244-2149		Faculty	Entomology
+Wong	Joseph	wong62@illinois.edu	333-7783	420 Morrill Hall	Graduate	None
+Weinzierl	Richard	weinzier@illinois.edu	333-6651		Faculty	Entomology
+Voegtlin	David	dvoegtli@illinois.edu	244-2152		Faculty	Entomology
+Soucek	David	soucek@illinois.edu	265-5489		Faculty	Entomology
+Soto-Adames	Felipe	fsoto@illinois.edu	244-4552		Faculty	Entomology
+Solter	Leellen	lsolter@illinois.edu	244-5047	140 NSRC	Faculty	Entomology
+DeWalt	Ed	edewalt@inhs.illinois.edu	649-7414	296 NRB	Faculty	Entomology
+Rittschof	Clare	ccr22@illinois.edu	265-7614	2414 IGB	Academic	Entomology
+Schneider	Daniel	ddws@illinois.edu	244-7681	M220 Temple Buell Hall	Faculty	Entomology
+Lampman	Richard	richlamp@illinois.edu	333-1186		Faculty	Entomology
+Onstad	David	onstad@illinois.edu	333-6820	278 NSRC	Faculty	Entomology
+Gray	Michael	megray@illinois.edu	333-6652	N-305 Turner Hall	Faculty	Entomology
+Kent	Lauren	lkent@life.illinois.edu	333-0489	417 Morrill Hall	Graduate	None
+Krishnankutty	Sindhu	skrishn3@illinois.edu	778-3074	1816 S. Oak	Graduate	None
+Lagos	Doris	dlagos@illinois.edu	244-2152	131 SRC	Graduate	None
+Laskowski	Katie	klaskow3@illinois.edu	244-3869	429 Morrill Hall 	Graduate	None
+Musser	Allison	amusser3@life.illinois.edu	217-333-6774	127 Burrill Hall	Academic	Integrative Biology
+Lobo	Elena	elobo2@illinois.edu	244-8914	150 Morrill Hall	Graduate	None
+Markelz	Cody	markelz@illinois.edu	244-0302	1500 IGB 	Graduate	None
+Meier	Linnea	lrmeier2@illinois.edu	333-7783	420C Morrill Hall	Graduate Student	Entomology
+Yendrek	Craig	cyendrek@illinois.edu	265-9884	147 ERML	Academic	None
+Meyer	Mathys	mathysm@inhs.illinois.edu	333-8689	287 NRB	Graduate	None
+Mitchell	Robert	rmitche3@life.illinois.edu	333-7783	420 Morrill Hall	Graduate	None
+Naeger	Nick	nnaeger2@illinois.edu	265-0968	482 Morrill Hall	Graduate	None
+Schleicher	Barbara	bschleic@illinois.edu	333-7857	1220 Plant Sciences Lab	Academic	None
+Pan	Yinghong	pan4@illinois.edu	333-8785	161 ERML	Graduate	None
+Seufferheld	Francisco	fjseuffe@illinois.edu	333-6538	518 Morrill Hall	Academic	Entomology
+Wu	Xia	xiawu2@illinois.edu	244-0034	197 ERML	Academic	Plant Biology
+Jogesh	Tania	tjogesh@life.illinois.edu	333-1165	204 Morrill Hall	Graduate	None
+Krebs	Bethany	krebs2@illinois.edu	333-2235	201 Shelford Vivarium	Graduate	None
+Lawrance	Allen	alawran2@illinois.edu	333-1165	204 Morrill Hall	Graduate Student	Entomology
+Schmitz	Patrick	pschmitz@gmail.com	244-6317	379 ERML	Graduate	None
+Wang	Dan	dwng@illinois.edu	244-5548	1400 IGB	Academic	Plant Biology
+Jonson	Kevin	kljonson@illinois.edu	217-265-8489	2111 South Oak St, Suite 100,Champaign, IL	Academic	None
+Shreve	Scott	smshreve@illinois.edu	333-8689	287 NRB	Graduate	None
+Siddappaji	Madhura	msiddap2@illinois.edu	333-8002	491 Morrill Hall	Graduate	None
+Welsh	Daniel	dwelsh2@illinois.edu	333-2235	202 Shelford Vivarium	Graduate	None
+Wills	Bill	bwills2@illinois.edu	333-3687	689 Morrill Hall	Graduate	None
+Li	Hongmei	hmli@illinois.edu	333-6538	518 Morrill Hall	Academic	None
+Zhuang	Xuan	xzhuang3@illinois.edu	244-2931	17C Burrill Hall	Graduate	None
+Balfe	Susan	balfe@illinois.edu	333-6538	518 Morrill Hall	Academic	Entomology
+Fredericks	Page	lpfreder@illinois.edu	244-3023	339 Morrill Hall	Academic	None
+Sun	Weilin	wsn@illinois.edu	333-6538	518 Morrill Hall	Academic	None
+Ratcliffe	Susan	sratclif@illinois.edu	333-9656		Faculty	Entomology
+Tracy	Amanda	ajtracy@life.illinois.edu	244-9896	506 Morrill Hall	Staff	Integrative Biology
+Nye	Charley	dnye@illinois.edu	333-0977	2304 S. Lincoln	Academic	None
+Fischer	Jason	fischer9@illinois.edu	265-4818	W-411Turner Hall	Graduate	None
+Freeney	Kevin	freeney2@illinois.edu	244-0891	237H Davenport Hall	Graduate	None
+Devotta	Denise	devotta2@illinois.edu	244-9871	171 Morrill Hall	Graduate	None
+Harrison	Terry	tharriso@illinois.edu	333-1165	216C Morrill Hall	Academic	None
+Lee	Matthew	mblee2@illinois.edu	244-6843	B414 Beckman Institute	Graduate	None
+Pittendrigh	Barry	pittendr@illinois.edu	244-0567	518A Morrill Hall	Faculty	Entomology
+Hickox	Tracey	hickox@life.illinois.edu	265-8073	303 NHB	Academic	None
+Urban	Michael	urban1@illinois.edu	244-9871	165 Morrill Hall	Graduate	None
+Zeng	Fanchang	fczeng@illinois.edu	244-6110	148 ERML	Academic	Plant Biology
+Taylor	Steve	sjtaylor@illinois.edu	649-0240	1816 S. Oak Street	Faculty	Entomology
+Powers	Lisa	lpowers@life.illinois.edu	333-5136	677 Morrill Hall 	Graduate	None
+Sanogo	Osee	sanogo@illinois.edu	244-3869	433 Morrill Hall	Academic	None
+McGhee	Katie	kemcghee@illinois.edu	244-3869	433 Morrill Hall	Academic	None
+Olds	Brett	bolds2@illinois.edu	333-8002	491 Morrill Hall	Graduate	None
+Heath	Katy	kheath@illinois.edu	265-5473	192 ERML	Faculty	Plant Biology
+Zhang	Qiong	qiong@illinois.edu	244-6110	148 ERML	Academic	Plant Biology
+Zhang	Jisen	zjisen@illinois.edu	244-6110	148 ERML	Academic 	Plant Biology
+Black	Christopher	black11@illinois.edu	333-1632	1500 IGB	Graduate	Plant Biology
+Walters	Kent	kwalte2@life.illinois.edu	333-6538	516 Morrill Hall	Academic	None
+DeBoom	Corey	deboom@illinois.edu	333-0006	2103 Forbes Natural History Bldg.	Graduate	None
+Thomas-Eichorn	Shelly	seichorn@illinois.edu	333-7801	515 Morrill Hall	Staff	Animal Biology
+Muturi 	Ephantus Juma		217-244-3410 	1902 Griffith Drive	Affiliate	Entomology
+Bear	Jared	jbear@life.illinois.edu	333-0609	59 Burrill Hall		None
+Hermann	Ted	thermann@illinois.edu	244-9896	506 Morrill Hall	Staff	None

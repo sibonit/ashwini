@@ -1,0 +1,500 @@
+   68  vi /etc/group
+   69  pam-auth-update 
+   70  cd /rails/dev.sib/app/controllers/
+   71  ls
+   72  rails generate controller static
+   73  gvim static_controller.rb 
+   74  cd ../views/
+   75  ls
+   76  cd layouts/
+   77  ls
+   78  gvim application.html.erb 
+   79  cd ..
+   80  ls
+   81  cd static/
+   82  ls
+   83  gvim index.html.erb
+   84  cd ../..
+   85  cd ../
+   86  vi config/routes.rb 
+   87  vi Gemfile
+   88  bundle update
+   89  vi Gemfile
+   90  apache2ctl restart
+   91  cd /etc/apache2/sites-enabled/
+   92  ls
+   93  cd /home/admin/hagen-2014-12-10/etc/apache2/sites-enabled/
+   94  ls
+   95  cd ../sites-available/
+   96  ls
+   97  cp dev.life /etc/apache2/sites-available/
+   98  cp dev.mcb /etc/apache2/sites-available/
+   99  cp staging.mcb /etc/apache2/sites-available/
+  100  more default-ssl 
+  101  cd /etc/apache2/sites-available/
+  102  ls
+  103  mv dev.life dev.life.conf
+  104  mv dev.mcb dev.mcb.conf
+  105  mv staging.mcb staging.mcb.conf
+  106  ls
+  107  a2ensite dev.life
+  108  cd ../sites-enabled/
+  109  ls -l
+  110  gvim dev.life.conf 
+  111  gvim dev.sib
+  112  gvim dev.sib.conf 
+  113  apache2ctl configtest
+  114  mkdir /etc/ssl/local; cp /home/admin/hagen-2014-12-10//etc/ssl/local/dev.life.pem /etc/ssl/local
+  115  ls /etc/ssl/local
+  116  apache2ctl configtest
+  117  cp /home/admin/hagen-2014-12-10//etc/ssl/local/incommon.chain.pem /etc/ssl/local
+  118  apache2ctl configtest
+  119  mkdir /var/log/apache2/dev.life
+  120  apache2ctl configtest
+  121  mkdir /usr/local/dev.life
+  122  apache2ctl configtest
+  123  ls /rails
+  124  cd /usr/local/dev.life/
+  125  ls
+  126  cd /home
+  127  ls
+  128  mkdir thom
+  129  chown -R thom:thom thom
+  130  mkdir uebele
+  131  rmdir uebele/
+  132  mkdir uebele
+  133  chown -R uebele:uebele uebele
+  134  rmdir thom
+  135  rm -rf jeff
+  136  pam-auth-update 
+  137  vi /etc/group
+  138  apache2ctl configtest
+  139  apache2ctl restart
+  140  cd /usr/local/dev.life/
+  141  ls
+  142  ln -s /usr/local/rails/ashwini/public ashwini
+  143  gvim /var/log/apache2/dev.life/error.log 
+  144  gvim /var/log/apache2/dev.life/access.log 
+  145  ls -l /var/log/apache2/
+  146  ls -l /var/log/apache2/dev.sib/
+  147  vi /etc/network/interfaces
+  148  ifup eth0:1
+  149  ifconfig
+  150  apache2ctl restart
+  151  cd /usr/local/rails/ashwini/db
+  152  ls -l
+  153  vi /etc/group
+  154  cd ..
+  155  ls -l
+  156  chgrp -R webdev *
+  157  chmod -R g+w *
+  158  ls -l
+  159  cd ashwini/
+  160  cd db
+  161  ls
+  162  cd ..
+  163  cd config/
+  164  ls
+  165  vi database.yml 
+  166  cd /rails/ashwini/app/
+  167  cd assets/stylesheets/
+  168  ls
+  169  gvim custom.css.scss 
+  170  exit
+  171  cd /etc/apache2/sites-enabled/
+  172  gvim dev.mcb.conf 
+  173  cd /rails
+  174  ls
+  175  mv dev.mcb
+  176  mv mcb dev.mcb
+  177  ls
+  178  cd dev.mcb/
+  179  ;s
+  180  ls
+  181  l s-l
+  182  ls -l
+  183  rm *.sql
+  184  ls
+  185  rm public.new/
+  186  rm -rf public.new/
+  187  ls html
+  188  ls -lR html
+  189  rm -rf html
+  190  ls
+  191  gvim Gemfile
+  192  gem list --local
+  193  gem install paperclip
+  194  bundle update
+  195  gem update coffee-rails
+  196  gem list coffee-rails
+  197  bundle update
+  198  apache2ctl configtest
+  199  cd /etc/ssl
+  200  ls
+  201  cd local
+  202  ls
+  203  cd /home/admin/hagen-2014-12-10/etc/ssl/local
+  204  ls
+  205  cp mcb-dev.pem /etc/ssl/local/dev.mcb.pem
+  206  apache2ctl configtest
+  207  mkdir /var/log/apache2/dev.mcb
+  208  apache2ctl configtest
+  209  sync
+  210  apache2ctl restart
+  211  cd /rails
+  212  ls -l
+  213  getent group webdev
+  214  vi /etc/group
+  215  chown -R admin:mcbdev dev.mcb
+  216  ls -l
+  217  vi /etc/group
+  218  ls -l
+  219  chown -R admin:mcbdev dev.mcb
+  220  ls -l
+  221  service nscd restart
+  222  ls -l
+  223  chown -R admin:mcbdev dev.mcb
+  224  ls -l
+  225  cd /var/log/apache2/dev.mcb
+  226  ls
+  227  ls -l
+  228  tail -f error.log 
+  229  cd /etc/apache2/sites-enabled/
+  230  gvim dev.sib.conf 
+  231  apache2ctl restart
+  232  cd /rails/mcb
+  233  cd /rails/dev.mcb/local
+  234  ls
+  235  cd ..
+  236  more config/database.yml 
+  237  mysql -u root -p
+  238  mysql -u root -p mcb_development < mcb_20150427.sql
+  239  ls
+  240  cd local
+  241  ls
+  242  mysql -u root -p mcb_development < mcb_20150427.sql
+  243  cd ../app/models/
+  244  gvim calendar_event.rb 
+  245  gvim course.rb 
+  246  cd ..
+  247  ls
+  248  grep -r check_letter controllers/
+  249  grep -r check_letter helpers/
+  250  grep -r check_letter mailers/
+  251  grep -r check_letter models/
+  252  grep -r check_letter views/
+  253  gvim ../local/rails_4.2_upgrade_20150428.txt
+  254  cd models/
+  255  ls
+  256  ls -ltr
+  257  more calendar_event.rb 
+  258  ls -ltr
+  259  more course.rb 
+  260  cd ..
+  261  cd models/
+  262  ls -ltr
+  263  more research_topic.rb 
+  264  ls -ltr
+  265  more person.rb 
+  266  ls -l
+  267  gvim news_item.rb 
+  268  irb
+  269  gvim news_item.rb 
+  270  rails db
+  271  exit
+  272  cd /rails/dev.sib/
+  273  cd local
+  274  ls
+  275  gvim to_do.txt 
+  276  vi /etc/bash.bashrc 
+  277  vi /etc/environment 
+  278  man environment
+  279  gsmartcontrol &
+  280  fdisk -l
+  281  cd /rails/ashwini/
+  282  ls
+  283  ls app/views/
+  284  cd app/views/static_pages/
+  285  ls
+  286  cd ../sample_layouts/
+  287  ls
+  288  ls /rails/dev.sib//public/
+  289  cd /rails/ashwini/app/assets/images/
+  290  ls
+  291  mkdir adivsing
+  292  cd adivsing/
+  293  wget http://sib.illinois.edu/images/people/AllisonMusserTHUMB.jpg
+  294  wget http://sib.illinois.edu/images/people/Tonya%20Pulley-Baillie.jpg
+  295  wget http://sib.illinois.edu/images//blog.png
+  296  wget http://sib.illinois.edu/images/linkedin.png
+  297  wget http://sib.illinois.edu/images/IBspotlight.png
+  298  ls
+  299  wget http://sib.illinois.edu/images/Twitter.png
+  300  ls
+  301  rm *.png.*
+  302  ls
+  303  wget http://sib.illinois.edu/images/facebook.png
+  304  ls
+  305  cd /rails/ashwini/app/views/
+  306  ls
+  307  cd sample_layouts/
+  308  ls
+  309  cp twocolumnuneven.html.erb secondlevel.html.erb
+  310  gvim secondlevel.html.erb 
+  311  gvim /rails/ashwini/config/routes.rb 
+  312  ls
+  313  cd /rails/ashwini/app/assets
+  314  ls
+  315  cd images/
+  316  ls
+  317  ls -l
+  318  cd adivsing/
+  319  cd ..
+  320  mv adivsing/ advising
+  321  cd /rails/ashwini/app//views/sample_layouts/
+  322  ls
+  323  gvim leftsidebar.html.erb 
+  324  diff mcb-dev.pem /etc/ssl/local/dev.mcb.pem 
+  325  cd /ec/ssl/local
+  326  cd /etc/ssl/local
+  327  openssl req -new -key dev.mcb.pem -out dev.mcb.csr
+  328  ls
+  329  ls -l dev.mcb.csr 
+  330  more dev.mcb.csr
+  331  arping fshu-mbp
+  332  exit
+  333  cd /rails/ashwini//app/views/layouts/
+  334  ls
+  335  gvim _sidebar_ugrad_advising.html.erb
+  336  fdisk -l
+  337  dmesg
+  338  fdisk -l
+  339  ls
+  340  gvim /rails/dev.sib/db/schema.rb 
+  341  rails db
+  342  cd /rails/dev.sib/
+  343  ls
+  344  rails db
+  345  mysql -u root -p sib_development
+  346  cd ../dev.mcb/local/bin
+  347  ls
+  348  gvim sync_calendar_events.rb 
+  349  crontab -e
+  350  cd /rails/dev.sib/app/views/welcome/
+  351  ls
+  352  gvim index.html.erb 
+  353  cd /etc/ssl
+  354  ls
+  355  cd local
+  356  ls
+  357  more dev.life.pem 
+  358  openssl req -new -key dev.life.pem -out dev.life.20150506.csr
+  359  ls
+  360  cd ..
+  361  ls
+  362  gvim openssl.cnf 
+  363  cd local/
+  364  openssl req -new -key dev.life.pem -out dev.life.20150506.csr
+  365  ls
+  366  more dev.life.
+  367  more dev.life.20150506.csr 
+  368  cd /rails/dev.sib/local
+  369  ls
+  370  cd ..
+  371  ls
+  372  cd app
+  373  cd models/
+  374  ls
+  375  cd ..
+  376  ls
+  377  cd /rails/dev.mcb/local/bin
+  378  ls
+  379  cp sync_calendar_events.rb /rails/dev.sib/local
+  380  cd /rails/dev.sib/local
+  381  mkdir bin
+  382  mv sync_calendar_events.rb bin
+  383  ls
+  384  cd bin
+  385  ls
+  386  gvim sync_calendar_events.rb 
+  387  ./sync_calendar_events.rb 
+  388  gvim sync_calendar_events.rb 
+  389  cd ../..
+  390  gvim app/models/calendar_event.rb 
+  391  gvim /rails/dev.mcb/app/models/calendar_event.rb 
+  392  ./sync_calendar_events.rb 
+  393  cd local/bin
+  394  ./sync_calendar_events.rb 
+  395  mysql -u root -p sib_development
+  396  ./sync_calendar_events.rb 
+  397  rails c 
+  398  mysql -u root -p sib_development
+  399  cd /etc/ssl/local
+  400  ls
+  401  cp dev.life.pem dev.life.pem.old
+  402  gvim dev.life.pem
+  403  gvim chain.pem
+  404  gvim /etc/apache2/sites-enabled/dev.life.conf 
+  405  apache2ctl restart
+  406  ls
+  407  grep incommon /etc/apache2/sites-enabled/*
+  408  gvim /etc/apache2/sites-enabled/dev.sib.conf
+  409  rm incommon.chain.pem 
+  410  ls
+  411  scp chain.pem admin@histo:~
+  412  scp chain.pem admin@commons2:~
+  413  cd /rails/dev.sib/app/views/
+  414  ls
+  415  lll
+  416  ls
+  417  cd layouts/
+  418  ls
+  419  gvim application.html.erb 
+  420  gvim _header.html.erb 
+  421  cd ../about/
+  422  ls
+  423  gvim index.html.erb 
+  424  cd ..
+  425  grep -r html_safe .
+  426  gvim welcome/index.html.erb 
+  427  rails c
+  428  vi ../models/news_item.rb 
+  429  rails c
+  430  screen -r
+  431  cd ../../.local
+  432  cd ../../local
+  433  ls
+  434  scp admin@dkiosk1:~/Desktop/sib_navigation.txt
+  435  scp admin@dkiosk1:~/Desktop/sib_navigation.txt .
+  436  mv /home/admin/test_ldap_auth.rb .
+  437  ./test_ldap_auth.rb 
+  438  gvim test_ldap_auth.rb 
+  439  ./test_ldap_auth.rb 
+  440  cp test_ldap_auth.rb test_ldap_auth_rebind.rb
+  441  ./test_ldap_auth.rb 
+  442  cp test_ldap_auth.rb test_ldap_auth_rebind.rb
+  443  ./test_ldap_auth.rb 
+  444  ls
+  445  more test_ldap_auth_rebind.rb 
+  446  ls
+  447  cp test_ldap_auth_rebind.rb t2
+  448  ./test_ldap_auth.rb 
+  449  ./test_ldap_auth.rb
+  450  gvim test_ldap_auth_rebind.rb 
+  451  ./test_ldap_auth_rebind.rb 
+  452  ls
+  453  more test_ldap_auth_rebind.rb 
+  454  cd ../app/views/
+  455  ls
+  456  cd welcome/
+  457  ls
+  458  gvim index.html.erb 
+  459  ls -l
+  460  cd ../..
+  461  ls
+  462  cd ..
+  463  ls
+  464  ls -l
+  465  getent group webdev
+  466  chgrp -R webdev .
+  467  chmod -R g+rw .
+  468  aptitude update && aptitude full-upgrade
+  469  vi /etc/rsyncd.conf
+  470  chmod 600 /etc/rsyncd.conf
+  471  vim /etc/default/rsync
+  472  service rsync start
+  473  iptables -L
+  474  vi /etc/firewall-rules 
+  475  nslookup zobee
+  476  vi /etc/firewall-rules 
+  477  iptables-restore < /etc/firewall-rules
+  478  iptables -L
+  479  df -h
+  480  arping kwastlenovo
+  481  aptitude install arping
+  482  arping kwastlenovo
+  483  nmap -p 497 -P0 kwastlenovo
+  484  aptitude update && aptitude full-upgrade
+  485  df -h
+  486  cd /etc/ssl/local
+  487  ls
+  488  scp chain.pem admin@grappelli:~
+  489  scp chain.pem admin@parker:~
+  490  scp chain.pem admin@braxton:~
+  491  scp chain.pem admin@mckenna:~
+  492  scp chain.pem admin@mckenna.life.uiuc.edu:~
+  493  aptitude update && aptitude full-upgrade
+  494  vi /etc/bash.bashrc 
+  495  cd /home/admin/
+  496  ls
+  497  ls -a
+  498  more .bashrc 
+  499  sync
+  500  init 0
+  501  cd /rails
+  502  ls
+  503  mv /home/admin/neuroscience.tar.bz2 .
+  504  tar xjvf neuroscience.tar.bz2 
+  505  ls
+  506  mv neuroscience neuroscience.rails2
+  507  rails new -db mysql neuroscience
+  508  gem update rails
+  509  ls
+  510  man rails
+  511  rails
+  512  mv -b/ neuroscience
+  513  mv \-b neuroscience
+  514  mv - -b neuroscience
+  515  mv - \-b neuroscience
+  516  ls
+  517  mv - -b/ neuroscience
+  518  mv -- -b/ neuroscience
+  519  ls
+  520  nslookup dev.neuroscience.illinois.edu
+  521  ping 130.126.48.83
+  522  cd /etc/network/interfaces
+  523  gvim /etc/network/interfaces
+  524  nslookup
+  525  ifconfig
+  526  ifup eth0:3
+  527  ifconfig
+  528  cd /etc/apache2/sites-available/
+  529  ls
+  530  locate neuroscience
+  531  locate neuroscience | grep admin
+  532  cp /home/admin/hagen-2014-12-10/home/admin/dev.neuroscience . 
+  533  gvim /home/admin/hagen-2014-12-10/home/admin/dev.neuroscience
+  534  cp /home/admin/hagen-2014-12-10/home/admin/dev.neuroscience . 
+  535  ls
+  536  mv dev.neuroscience dev.neuroscience.conf
+  537  ls
+  538  locate .pem
+  539  locate .pem | grep local
+  540  locate .pem | grep ssl.local
+  541  cd /etc/ssl/local/
+  542  cp dev.life.pem dev.neuroscience.pem
+  543  a2en dev.neuroscience
+  544  a2ensite dev.neuroscience
+  545  apache2ctl graceful
+  546  cd /rails
+  547  ls
+  548  mv neuroscience dev.neuroscience
+  549  apache2ctl graceful
+  550  rm -rf dev.neuroscience/
+  551  rails new -d mysql dev.neuroscience
+  552  apache2ctl graceful
+  553  history
+  554  history > neuroscience_session
+  555  ls
+  556  cd /home
+  557  ls 
+  558  cd admin
+  559  ls
+  560  mysql -u root -p 
+  561  mysql -u root -p neuroscience_development < neuroscience.sql
+  562  cd /rails/dev.neuroscience/config/
+  563  gvim database.yml 
+  564  touch /rails/dev.neuroscience/tmp/restart.txt
+  565  gvim database.yml 
+  566  touch /rails/dev.neuroscience/tmp/restart.txt
+  567  history > /rails/neuroscience_session-2

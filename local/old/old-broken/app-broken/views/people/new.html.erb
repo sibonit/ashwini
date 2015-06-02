@@ -1,0 +1,8 @@
+
+<% content_for :breadcrumbs_left do %><%= link_to 'Logout ' + session[ :netid ], '/logout?previous_page=/people?' + request.env[ 'QUERY_STRING' ].gsub(/\&/,'%26') %><% end %>
+
+<h1>New person</h1>
+
+<%= render(:partial => "form") %>
+
+<%= link_to 'Back', :action => 'index' %>

@@ -1,0 +1,101 @@
+<% content_for :title do %>Additional Approved IB Courses, School of Integrative Biology, University of Illinois<% end %>
+<% content_for :keywords do %>Additional Approved Integrative Biology Courses, Illinois, Midwest, sib, uiuc<% end %>
+<% content_for :description do %>The list below shows the additional advanced SIB courses that fulfill requirements in the IB major for additional courses.<% end %>
+<% content_for :submenu do %>
+				<ul>
+                	<li>&nbsp;</li>
+                	<li id="FirstItem"><%= link_to 'Courses', :controller => "courses", :action => "index" %></li>
+                    <li><%= link_to 'All IB Courses', :controller => "courses", :action => "index" %></a></li>
+                    <li><%= link_to 'SIB Area Courses', :controller => "courses", :action => "area" %></li>
+                    <li><%= link_to 'Additional Approved Courses', :controller => "courses", :action => "additional" %></li>
+                    <li><%= link_to 'Special Topics Courses', :controller => "courses", :action => "special" %></li>
+                    <li>&nbsp;</li>
+				</ul>
+<% end %>
+<% content_for :breadcrumbs do %><%= link_to 'Courses', courses_path %> &gt;&gt; Additional Approved IB Courses<% end %>
+
+
+
+
+<h1>Additional Approved IB Courses</h1>
+
+	
+	<%= link_to 'New Course', :action => 'new' %>
+
+<div class="course_table">
+  <table cellspacing="0px" width="100%">
+    <tr>
+      <th width="17%">Course No.</th>
+      <th width="40%">Course Title</th>
+      <th width="11%">Credit (hours)</th>
+      <th width="23%">Offered</th>
+    </tr>
+	
+	
+	
+
+	<% @courses.each do |course| %>
+	  <tr>
+		<td>
+			<% if !course.website.empty? %>
+				<a href="<%=h course.website %>"><%=h course.course_number %></a>
+			<% else %>
+				<%=h course.course_number %>
+			<% end %>
+		</td>
+		<td><%=h course.course_title %><% if course.lab_section != "None" %>*<% end %></td>
+		<td><%=h course.credit_hours %></td>
+		<td>
+			<% if !course.offered.empty? %><%=h course.offered %><% end %>
+		</td>
+		<td>
+			<% form_for :course, :url => { :action => 'show', :id => course.id } do |f| %><%= f.submit 'Show' %><% end %>
+			<% form_for :course, :url => { :action => 'edit', :id => course.id } do |f| %><%= f.submit 'Edit' %><% end %>
+			<% form_for :course, :url => { :action => 'update', :id => course.id } do |f| %><%= f.hidden_field :additional_approved_course, :value => 0 %><%= f.submit 'Add' %><% end %>
+		</td>		
+	  </tr>
+	  
+	<% end %>
+
+
+
+  </table>
+  
+  
+  <p>&nbsp;</p>
+  <p>* indicates a laboratory or field component.</p>
+  <p>&nbsp;</p>
+  
+    <br/>
+	
+	<h2 style="margin-bottom: 0; padding-bottom: 0;">Other Courses</h2>
+	
+  <table cellspacing="0px">
+    <tr>
+      <th width="200">Course</th><th>Add This Course?</th><th>&nbsp;</th>
+	</tr>
+	
+
+	<% @other_courses.each do |course| %>
+	  <tr>
+		<td><%=h course.course_number %></td>
+		
+		<td>
+			<% form_for :course, :url => { :action => 'show', :id => course.id } do |f| %><%= f.submit 'Show' %><% end %>
+			<% form_for :course, :url => { :action => 'edit', :id => course.id } do |f| %><%= f.submit 'Edit' %><% end %>
+			<% form_for :course, :url => { :action => 'update', :id => course.id } do |f| %><%= f.hidden_field :additional_approved_course, :value => 1 %><%= f.submit 'Add' %><% end %>
+		</td>
+		<td><% form_for :course, :url => { :action => 'destroy', :id => course.id } do |f| %><%= f.submit 'Delete' %><% end %></td>
+	  </tr>
+
+	  
+	<% end %>
+
+
+
+  </table>  
+  
+  
+  
+  </div>
+  

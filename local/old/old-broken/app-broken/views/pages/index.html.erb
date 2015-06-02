@@ -1,0 +1,41 @@
+<% content_for :tabs do %><%#= get_tabs(tabs).html_safe %><% end %>
+			
+			
+
+
+<%= form_tag new_page_path, method: :get do %>
+	<%= submit_tag "New Page", name: nil, class: "upper_right_button" %>
+<% end %>
+
+<table>
+
+	<tr>
+		<th>Location</th>
+		<th colspan="3">&nbsp;</th>
+		<th>Title</th>
+		<th>Path(s)</th>
+	</tr>
+	
+	<% @pages.each do |page| %>
+		<tr>
+			<td><%= page.location %></td>
+			<td><%= link_to 'Edit', '/' + page.paths.first.path + '/edit' %></td>
+			<td><%= link_to 'Copy', '/' + page.paths.first.path + '/copy' %></td>
+			<td><%= link_to "Destroy", '/' + page.paths.first.path + '/destroy', method: :delete, data: {confirm: "Are you sure?"} %></td>
+			
+			<% page.paths.each do |path| %>
+				<% if path.path == page.paths.first.path %>
+					<td><%= path.title %></td>
+					<td><%= link_to path.path, '/' + path.path %></td>
+				<% else %>
+					<td colspan="3">&nbsp;</td>
+					<td><%= path.title %></td>
+					<td><%= link_to path.path, '/' + path.path %></td>
+				<% end %>
+				</tr>
+			<% end %>
+		</tr>
+	<% end %>
+	
+</table>
+

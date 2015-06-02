@@ -1,0 +1,19 @@
+<div>
+	<%= gp.hidden_field :_destroy %>
+	<%= link_to "Remove", '#', class: "remove_fields" %>
+	<%= gp.hidden_field :id %>
+	<%= gp.hidden_field :group_id, :value => @group.id %>
+	<%= gp.hidden_field :role, :value => role %>
+			
+			
+	<%= gp.fields_for :people, gp.object.person do |p| %>
+		<% if p.object %>
+			<% temp_id = p.object.id %>
+			<span class="details"><%= Person.where(id: temp_id).first.full_name %></span>
+		<% else %>
+			<span class="details">Name</span>
+		<% end %>
+	<% end %>
+		
+	<%= gp.hidden_field :person_id %>
+</div>

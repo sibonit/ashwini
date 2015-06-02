@@ -1,0 +1,175 @@
+<% content_for :title do %>Area Courses, School of Integrative Biology, University of Illinois<% end %>
+<% content_for :keywords do %>Area Integrative Biology Courses, Illinois, Midwest, sib, uiuc<% end %>
+<% content_for :description do %>The list below shows the SIB courses that fulfill area requirements in the IB major and which area they fall into.<% end %>
+<% content_for :submenu do %>
+				<ul>
+                	<li>&nbsp;</li>
+                	<li id="FirstItem"><%= link_to 'Courses', :controller => "courses", :action => "index" %></li>
+                    <li><%= link_to 'All IB Courses', :controller => "courses", :action => "index" %></a></li>
+                    <li><%= link_to 'SIB Area Courses', :controller => "courses", :action => "area" %></li>
+                    <li><%= link_to 'Additional Approved Courses', :controller => "courses", :action => "additional" %></li>
+                    <li><%= link_to 'Special Topics Courses', :controller => "courses", :action => "special" %></li>
+                    <li>&nbsp;</li>
+				</ul>
+<% end %>
+<% content_for :breadcrumbs do %><%= link_to 'Courses', courses_path %> &gt;&gt; Area Approved IB Courses<% end %>
+
+
+
+
+<h1>SIB Area Courses</h1>
+
+	<%= link_to 'New Course', :action => 'new' %>
+    
+    <p>&nbsp;</p>
+
+<div class="course_table">
+  <table cellspacing="0px" width="100%">
+    <tr>
+	  <th width="20%">Course No.</th>
+      <th width="30%">Course Title</th>
+      <th width="25%">Credit (hours)</th>
+      <th width="25%">Offered</th>
+    </tr>
+	
+
+    <tr>
+      <td colspan="4">
+      <a href="#1" name="1" class="anchorFix"></a>
+        <p align="left"><strong>Area I:&nbsp; Organismal &amp; Evolutionary Biology</strong></p></td>
+    </tr>	
+
+	<% @courses.each do |course| %>
+	<% if course.area1_course %>
+	  <tr>
+		<td>
+			<% if !course.website.empty? %>
+				<a href="<%=h course.website %>"><%=h course.course_number %></a>
+			<% else %>
+				<%=h course.course_number %>
+			<% end %>
+		</td>
+		<td><%= course.course_title %><% if course.area3_requirement %>***<% end %></td>
+		<td><%=h course.credit_hours %><% if course.lab_section == "Required" %>*<% end %><% if course.lab_section == "Optional" %>**<% end %></td>
+		<td>
+			<% if !course.offered.empty? %><%=h course.offered %><% end %>
+		</td>
+		<td>
+			<% form_for :course, :url => { :action => 'show', :id => course.id } do |f| %><%= f.submit 'Show' %><% end %>
+			<% form_for :course, :url => { :action => 'edit', :id => course.id } do |f| %><%= f.submit 'Edit' %><% end %>
+			<% form_for :course, :url => { :action => 'update', :id => course.id } do |f| %><%= f.hidden_field :area1_course, :value => 0 %><%= f.submit 'Remove' %><% end %>
+		</td>		
+	  </tr>
+	<% end %>
+	<% end %>
+	
+	
+    <tr>
+      <td colspan="4">
+          <a href="#2" name="2" class="anchorFix"></a>
+          <p align="left"><strong>Area II:&nbsp; Behavior, Ecology, &amp; the Environment</strong></p>      </td>
+    </tr>	
+
+	<% @courses.each do |course| %>
+	<% if course.area2_course %>
+	  <tr>
+		<td>
+			<% if !course.website.empty? %>
+				<a href="<%=h course.website %>"><%=h course.course_number %></a>
+			<% else %>
+				<%=h course.course_number %>
+			<% end %>
+		</td>
+		<td><%= course.course_title %><% if course.area3_requirement %>***<% end %></td>
+		<td><%=h course.credit_hours %><% if course.lab_section == "Required" %>*<% end %><% if course.lab_section == "Optional" %>**<% end %></td>
+		<td>
+			<% if !course.offered.empty? %><%=h course.offered %><% end %>
+		</td>
+		<td>
+			<% form_for :course, :url => { :action => 'show', :id => course.id } do |f| %><%= f.submit 'Show' %><% end %>
+			<% form_for :course, :url => { :action => 'edit', :id => course.id } do |f| %><%= f.submit 'Edit' %><% end %>
+			<% form_for :course, :url => { :action => 'update', :id => course.id } do |f| %><%= f.hidden_field :area2_course, :value => 0 %><%= f.submit 'Remove' %><% end %>
+		</td>		
+	  </tr>
+	<% end %>
+	<% end %>
+	
+	
+    <tr>
+      <td colspan="4">
+      	<a href="#3" name="3" class="anchorFix"></a>
+        <p align="left"><strong>Area III:&nbsp; Integrative Anatomy, Physiology, &amp; Molecular Biology</strong></p>      </td>
+    </tr>
+	
+	<% @courses.each do |course| %>
+	<% if course.area3_course %>
+	  <tr>
+		<td>
+			<% if !course.website.empty? %>
+				<a href="<%=h course.website %>"><%=h course.course_number %></a>
+			<% else %>
+				<%=h course.course_number %>
+			<% end %>
+		</td>
+		<td><%= course.course_title %><% if course.lab_section == "Required" %>*<% end %><% if course.lab_section == "Optional" %>**<% end %></td>
+		<td><%=h course.credit_hours %><% if course.area3_requirement %>***<% end %></td>
+		<td>
+			<% if !course.offered.empty? %><%=h course.offered %><% end %>
+		</td>
+		<td>
+			<% form_for :course, :url => { :action => 'show', :id => course.id } do |f| %><%= f.submit 'Show' %><% end %>
+			<% form_for :course, :url => { :action => 'edit', :id => course.id } do |f| %><%= f.submit 'Edit' %><% end %>
+			<% form_for :course, :url => { :action => 'update', :id => course.id } do |f| %><%= f.hidden_field :additional_approved_course, :value => 0 %><%= f.submit 'Remove' %><% end %>
+		</td>		
+	  </tr>
+	<% end %>
+	<% end %>
+
+  </table>
+  
+  <p>&nbsp;</p>
+  <p><sup>1</sup><a href="../IB_Major.htm#requirements">IB Area or Additional Courses</a> as it relates to the undergraduate degree in Integrative Biology.<br/> 
+
+  <p>&nbsp;</p>
+  <p>&nbsp;*&nbsp; = Course with field or laboratory component</p>
+  <p>&nbsp;</p>
+  <p>**&nbsp; = Course may be taken with or without laboratory</p>
+  <p>&nbsp;</p>
+  <p>*** = Two of these four courses are required to meet the Area III requirement</p>
+  <p>&nbsp;</p>
+  
+    <br/>
+	
+  	<h2 style="margin-bottom: 0; padding-bottom: 0;">Other Courses</h2>
+	
+  <table cellspacing="0px">
+    <tr>
+      <th width="200">Course</th><th>Add This Course?</th><th>&nbsp;</th>
+	</tr>
+	
+
+	<% @other_courses.each do |course| %>
+	  <tr>
+		<td><%=h course.course_number %></td>
+		
+		<td>
+			<% form_for :course, :url => { :action => 'show', :id => course.id } do |f| %><%= f.submit 'Show' %><% end %>
+			<% form_for :course, :url => { :action => 'edit', :id => course.id } do |f| %><%= f.submit 'Edit' %><% end %>
+			<% form_for :course, :url => { :action => 'update', :id => course.id } do |f| %><%= f.hidden_field :area1_course, :value => 1 %><%= f.submit 'Add to Area 1' %><% end %>
+			<% form_for :course, :url => { :action => 'update', :id => course.id } do |f| %><%= f.hidden_field :area2_course, :value => 1 %><%= f.submit 'Add to Area 2' %><% end %>
+			<% form_for :course, :url => { :action => 'update', :id => course.id } do |f| %><%= f.hidden_field :area3_course, :value => 1 %><%= f.submit 'Add to Area 3' %><% end %>
+			<% form_for :course, :url => { :action => 'update', :id => course.id } do |f| %><%= f.hidden_field :additional_approved_course, :value => 1 %><%= f.submit 'Add to Additional Approved' %><% end %>
+		</td>
+		<td><% form_for :course, :url => { :action => 'destroy', :id => course.id } do |f| %><%= f.submit 'Delete' %><% end %></td>
+	  </tr>
+
+	  
+	<% end %>
+
+
+
+  </table>  
+  
+  
+  </div>
+  

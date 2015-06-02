@@ -1,0 +1,47 @@
+<div style="padding: 10px; margin: 10px; background: #ddd;">
+
+	<%= f.fields_for :group_paths, f.object.group_paths do |gp| %>
+		<%= render "group_path_fields", :gp => gp, :path_id => f.object.id %>
+	<% end %>
+	
+
+	<%= f.label :path %>
+	<%= f.text_field :path %>
+	
+	&nbsp;&nbsp;
+    
+	<%= f.label :title %>
+    <%= f.text_field :title %>
+	
+	&nbsp;&nbsp;
+    
+	<%= f.label :sub_title %>
+    <%= f.text_field :sub_title %>
+	
+	<br class="menus_select" />
+
+	<%= f.label :tabs_id, "Tab Menu", :class => "menus_select" %>
+	<%= f.select :tabs_id, @page.tab_options, {}, :class => "menus_select tab_select" %>
+	
+	&nbsp;&nbsp;
+
+	<%= f.label :categories_id, "Category Menu", :class => "menus_select" %>
+	<%= f.select :categories_id, @page.category_options, {}, :class => "menus_select category_select" %>
+	
+	<br class="menus_select" />
+
+	<%= f.label :stylesheets_id, "Stylesheet", :class => "menus_select" %>
+	<%= f.select :stylesheets_id, @page.stylesheet_options, {:include_blank => 'SIB Basic'}, :class => "menus_select stylesheet_select" %>
+	
+	&nbsp;&nbsp;
+
+	<%= f.label :welcomes_id, "Welcome Menu", :class => "menus_select" %>
+	<%= f.select :welcomes_id, @page.welcome_options, {:include_blank => 'None'}, :class => "menus_select welcome_select" %>
+	
+	<br class="menus_select" />
+	
+	<%= f.hidden_field :_destroy %>
+	<%= link_to "Remove Path", '#', class: "remove_fields" %>
+	
+	
+</div>

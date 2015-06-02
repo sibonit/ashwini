@@ -1,0 +1,85 @@
+<% content_for :title do %>All IB Courses, School of Integrative Biology, University of Illinois<% end %>
+<% content_for :keywords do %>Courses, Integrative Biology, Illinois, Midwest, sib, uiuc<% end %>
+<% content_for :description do %>The list below shows all courses offered by SIB or by other departments at illinois with an SIB cross-listing, both graduate and undergraduate, in numerical order.<% end %>
+<% content_for :submenu do %>
+				<ul>
+                	<li>&nbsp;</li>
+                	<li id="FirstItem"><%= link_to 'Courses', courses_path %></li>
+                    <li><%= link_to 'All IB Courses', courses_path %></a></li>
+                    <li><%= link_to 'SIB Area Courses', :controller => "courses", :action => "area" %></li>
+                    <li><%= link_to 'Additional Approved Courses', :controller => "courses", :action => "additional" %></li>
+                    <li><%= link_to 'Special Topics Courses', :controller => "courses", :action => "special" %></li>
+                    <li>&nbsp;</li>
+				</ul>
+<% end %>
+<% if session[ :logged_in ] %>
+	<% content_for :breadcrumbs_left do %><%= link_to 'Logout ' + session[ :netid ], '/logout?previous_page=/courses?' + request.env[ 'QUERY_STRING' ].gsub(/\&/,'%26') %><% end %>
+<% else %>
+	<% content_for :breadcrumbs_left do %><%= link_to 'Login', '/login?previous_page=/courses?' + request.env[ 'QUERY_STRING' ].gsub(/\&/,'%26') %><% end %>
+<% end %>
+<% content_for :breadcrumbs do %><%= link_to 'Courses', courses_path %> &gt;&gt; All IB Courses<% end %>
+<% content_for :content_image do %><img src="/images/PageHeader/courses1.jpg" alt="Content Splash Image" /><% end %>
+
+
+
+<h1>All IB Courses</h1>
+
+	<p>The list below shows all courses offered by SIB or by other departments with an SIB cross-listing, both graduate and 
+    undergraduate, in numerical order.  Courses at the 100, 200, or 300 level may be taken for credit by undergraduate 
+    students only.  (Graduate students may enroll but will not receive academic credit for the courses.)  Courses at the 
+    400 level may be taken for credit by both graduate and undergraduate students.  Courses at the 500 level may be taken 
+    by graduate students only.  For courses that offer graduate credit, graduate students earn 1/4 unit credit per hour of 
+    listed credit.</p>
+    
+    <p>&nbsp;</p>
+
+	<p>Use the (orange) menu at the left to view a list of courses that fill area requirements for the undergraduate major 
+    or a list of additional approved courses for the IB major.</p>
+    
+    <p>&nbsp;</p>
+
+	<p>Separate lists of <a href="../IB_Major.htm#requirements">courses required for the IB major</a> and for <a href="../honors.htm#requirements">courses required for the 
+    IB Honors concentration</a> are also available.  Admittance to Honors is by interview in the 
+    second semester of the freshman year.  Graduate students should look under their specific departments or programs 
+    (blue menu at left) for a list of course requirement specific to their units.</p>
+    
+    <p>&nbsp;</p>
+    
+	<p>Other University of Illinois <a href="https://my.illinois.edu/">information about courses</a>, including 
+    current class schedules and catalogs of all available UI courses, may be found on the University of Illinois web site.</p>
+	
+	<% if session[ :admin ] %><span style="float:right;"><%= link_to 'New Person', new_course_path %></span><% end %>
+
+<div class="course_table">
+  <table cellspacing="0px" <% if session[ :admin ] %>width="790px"<% end %>>
+    <tr>
+      <th>Course No.</th>
+      <th>Cross-list</th>
+      <th>Course Title</th>
+      <th>Credit (hours)</th>
+      <th style="width: 103px;">Offered</th>
+      <th>IB Area or Additional Courses<sup>1</sup></th>
+    </tr>
+	
+	
+	<%= render @courses %>
+	
+
+  </table>
+  
+  
+  <p><sup>1</sup><a href="../IB_Major.htm#requirements">IB Area or Additional Courses</a> as it relates to the undergraduate degree in Integrative Biology.<br/> 
+  <a href="../area_courses.htm#1">A1</a> = Area I course (Organismal &amp; Evolutionary Biology),<br/> 
+  <a href="../area_courses.htm#2">A2</a> = Area II course (Behavior, Ecology &amp; the Environment),<br/> 
+  <a href="../area_courses.htm#3">A3</a> = Area III course (Integrative Anatomy, Physiology, &amp; Molecular Biology), and<br/> 
+  <a href="../add_courses.htm">AA</a> = additional approved IB course.</p>
+  <p>&nbsp;</p>
+  <p>* indicates a laboratory or field component.</p>
+  <p>&nbsp;</p>
+  <p><sup>#</sup> (G) = graduate credit, (U) = undergraduate credit</p>
+  
+  <br/>
+  
+  
+  </div>
+  

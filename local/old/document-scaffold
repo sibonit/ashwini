@@ -1,0 +1,7 @@
+#!/bin/bash
+
+cd /usr/local/rails/sib
+ruby script/generate scaffold  Document\
+  name:string \
+  creation_date:date \
+  content:text

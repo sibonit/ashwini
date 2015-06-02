@@ -1,0 +1,49 @@
+Navigation
+
+  Level 1 & 2 from top.
+    Sidebar for level 3
+
+  How to display them?
+#    Wide menu, but leave a little room on the side
+#      examples: engineering
+#    Drop down on hover
+#      remove caret from menu heading
+    weird idea: have increasing translucency for last 10's of pixels
+      in dropdown menu div
+      currently using shadow - looks nice
+
+  Search spyglass (and home icon?) in navigation bar
+    with drop shadow looks nice (engineering)
+
+
+Layout
+  Get large blue header to appear above nav
+
+  Front page
+    Top navigation + giant image + footer
+      or
+    Top navigation + news slideshow, calendar + footer
+      slideshow - wide, like illinois
+
+  develop CSS
+    top & secondary pages
+
+
+Slideshow layout
+#  overlay text
+#    with translucent highlight color
+    need a little left & right padding
+
+
+News
+  Layout
+    let's try row of image & headline in one column
+    then we can have selectors like Current, 2015, 2014, etc.
+  need other fields?  Borrowed from MCB.
+  News items should have a picture.  What if it doesn't?
+
+
+Calendar
+  Need master & other calendars in Toolbox to pull events from
+  Database / views
+  Syncing script

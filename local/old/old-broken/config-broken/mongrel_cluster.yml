@@ -1,0 +1,10 @@
+--- 
+user: mongrel
+cwd: /usr/local/rails/sib
+port: "8020"
+environment: development
+#environment: production
+group: mongrel
+address: 127.0.0.1
+pid_file: log/mongrel.pid
+servers: 2

@@ -1,0 +1,66 @@
+
+<% content_for :submenu do %>
+				<ul>
+                	<li>&nbsp;</li>
+                	<li id="FirstItem"><%= link_to 'Courses', courses_path %></li>
+                    <li><%= link_to 'All IB Courses', courses_path %></a></li>
+                    <li><%= link_to 'SIB Area Courses', :controller => "courses", :action => "area" %></li>
+                    <li><%= link_to 'Additional Approved Courses', :controller => "courses", :action => "additional" %></li>
+                    <li><%= link_to 'Special Topics Courses', :controller => "courses", :action => "special" %></li>
+                    <li>&nbsp;</li>
+				</ul>
+<% end %>
+<% content_for :breadcrumbs do %><%= link_to 'Courses', courses_path %> &gt;&gt; Show Course<% end %>
+
+
+  <table>
+	  <tr><td>Course Number:</td><td><%=h @course.course_number %></td>
+	  <td>Cross Listings:</td><td><%=h @course.cross_listings %></td></tr>
+	  
+	  <tr><td>Course Title:</td><td><%= @course.course_title %></td>
+	  <td>Lab Section:</td><td colspan="3"><%=h @course.lab_section %></td></tr>
+	  
+	  <tr><td>Credit Hours:</td><td colspan="3"><%=h @course.credit_hours %></td></tr>
+	  
+	  <tr><td>Website:</td><td colspan="3"><a href="<%=h @course.website %>"><%=h @course.website %></a></td></tr>
+	  
+	  <tr><td>Offered:</td><td><%=h @course.offered %></tr>
+	  
+	  <tr><td>&nbsp;</td></tr>
+	  
+	  <% if @course.area1_course %><tr><td colspan="4">Area I Organismal & Evolutionary Biology</td></tr><% end %>
+	  <% if @course.area2_course %><tr><td colspan="4">Area II Behavior, Ecology, & the Environment</td></tr><% end %>
+	  <% if @course.area3_course %><tr><td colspan="4">Area III Integrative Anatomy, Physiology, & Molecular Biology</td></tr><% end %>
+	  
+	  <% if @course.area3_requirement %><tr><td colspan="3"><li>Area III Requirement</li></td></tr><% end %>
+	  
+	  <tr><td>&nbsp;</td></tr>
+	  
+	  <% if @course.advanced_comp %><tr><td>Advanced Comp</td></tr><% end %>
+	  <% if @course.additional_approved_course %><tr><td NOWRAP>Additional Approved</td></tr><% end %>
+	  
+	  <% if @course.ecology %><tr><td>Ecology Option</td></tr><% end %>
+	  <% if @course.general %><tr><td>General Option</td></tr><% end %>
+	  
+	  <% if @course.organisms %><tr><td>Organisms Option</td></tr><% end %>
+	  <% if @course.prehealth %><tr><td>Prehealth Option</td></tr><% end %>
+	  
+	  <tr><td>&nbsp;</td></tr>
+	  
+	  <% if @course.special_topic %>
+		<tr><td>Special Topic - The following only apply to Special Topics</td></tr>
+		  
+		<tr><td>Call Number:</td><td><%=h @course.call_number %></td>
+		<td>Course Time:</td><td><%=h @course.course_time %></td></tr>
+		  
+		<tr><td>Course Instructor:</td><td><%= @course.instructor %></td>
+	    <td>Course Location:</td><td><%= @course.course_location %></td></tr>
+	  
+	  
+	  
+	    <tr><td valign="top">Description:</td><td colspan="3"><%= @course.description %></td></tr>
+	  <% end %>
+
+  </table>
+
+<%= link_to 'Back', :action => 'index' %>

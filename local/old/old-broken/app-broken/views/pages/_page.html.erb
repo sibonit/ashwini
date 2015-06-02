@@ -1,0 +1,59 @@
+
+
+
+<%= form_for @page do |f| %>
+
+  <p class="upper_right_button">
+    <%= f.hidden_field :id, :value => @page.id %>
+    <%= f.submit "Save Page", :class => "submit_fields" %>
+  </p>
+  
+  <%= render "shared/error_messages", :target => @page %>
+
+  <p>
+    <%= f.hidden_field :old_location, :value => @page.location %>
+  
+    <%= f.label :location %>
+    <%= f.text_field :location %>
+	
+	&nbsp;
+    
+	<%= f.label :title %>
+    <%= f.text_field :title %>
+	
+	&nbsp;
+	
+	<%= f.label :page_type, "Page Type" %>
+	<%= f.select :page_type, ["Content", "Tabs", "Categories", "Welcomes", "Person", "People"], {} %>
+  </p>
+
+  <div style="padding-left: 20px;">
+	  <%= f.fields_for :paths do |builder| %>
+		<%= render "path_fields", :f => builder %>
+	  <% end %>
+	  <%= link_to_add_fields "Add Path", f, :paths %>
+  </div>
+  
+  <br />
+  
+  <div class="Content_Box">
+    <%= f.text_area :body, class: "tinymce" %>
+  </div>
+  
+	<div class="Person_Box Person_Box_Select">
+		<%= f.select :featured_person, Person.all.collect {|x| [x.full_name, x.id]}, {:include_blank => 'Select Person'}, class: 'person_select' %>
+	</div>
+  
+	<div class="Person_Box">
+		<% if @page.page_type = "Person" && @page.featured_person %>
+			<%= f.fields_for :featured_people do |builder| %>
+				<%= render "people/person_fields", :f => builder %>
+			<% end %>
+		<% end %>
+	</div>
+  
+<% end %>
+
+<%= set_focus( "page_location" ) %>
+
+<%= tinymce content_css: asset_path('sib.css?body=1'), body_class: @page.page_type %>

@@ -1,0 +1,21 @@
+
+	  <tr>
+		<td> <%= contact.first_name %> </td>
+		<td> <%= contact.last_name %> </td>
+		<td> <%= contact.degree_type %> </td>
+		<td> <%= contact.email %> </td>
+		<td> <%= contact.country %> </td>
+		<td> <%= contact.zip_code %> </td>
+		<td> (<%= contact.area_code %>) - <%= contact.phone1 %> - <%= contact.phone2 %> <% if contact.phone_ext != '' %>EXT: <%= contact.phone_ext %> <% end %></td>
+		<td> <%= contact.date.try(:strftime, "%m/%d/%y") %> </td>
+		<td>
+			<%= form_for contact do |f| %>
+			  <%= f.check_box :emailed %>
+			  <%= f.submit "Update" %>
+			<% end %>
+		</td>
+		<td><%= link_to 'Show', contact %></td>
+		<td><%= link_to 'Edit', edit_contact_path(contact) %></td>
+		<td><%= link_to "Destroy", contact, method: :delete, data: {confirm: "Are you sure?"} %></td>
+	  </tr>
+	  

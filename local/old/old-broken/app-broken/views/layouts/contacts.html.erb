@@ -1,0 +1,25 @@
+<html>
+	
+	<head>
+
+    <%= stylesheet_link_tag "application", media: "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tag %>
+	
+	<%= javascript_include_tag 'contacts.js' %>
+	
+	
+	</head>
+	
+	<body>
+		
+			<%= yield :breadcrumbs_left %>
+		
+			
+		<p style="color: green"><%= flash[:notice] %></p>
+		
+		<%= yield  %>
+	
+	</body>
+
+</html>

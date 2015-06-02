@@ -1,0 +1,30 @@
+<% content_for :title do %><%=h @header_info.directory_title %>, School of Integrative Biology, University of Illinois<% end %>
+
+
+
+		Name\, Title\, Home Address/Phone,
+		Dept/Prog,
+		Office/Phone,
+		Lab/Phone<%=h "\n" %>
+
+
+		<% letter = "@" %>
+		<% for person in @people %>
+            <%=h person.full_name %>,
+			<% if !person.department.nil?  && person.department != "18" && person.position_status == "Faculty" %><%=h person.department_show %><% end %><% if !person.program.nil?  && person.program != "1" && person.position_status != "Staff" %><%=h person.program_show %><% end %>,
+			<% if !person.office_address.empty? %><%=h person.office_address %><% end %>,
+			<% if !person.lab_address.empty? %><%=h person.lab_address %><% end %><%=h "\n" %>
+			
+			<% if !person.title.empty? %><%= person.title %><% end %>,
+			<% if !person.mail_code.empty? %><%=h person.mail_code %><% end %>,
+			<% if !person.office_phone.empty? %><%=h person.office_phone %><% end %>,
+			<% if !person.lab_phone.empty? %><%=h person.lab_phone %><% end %><%=h "\n" %>
+			
+			<% if !person.mail_address.empty? %>MAIL: <%=h person.mail_address %><% end %>,
+			<% if !person.position_status.empty? %><%=h person.position_status %><% end %>,
+			<% if !person.email.empty? %>EMAIL: <%=h person.email %><% end %><%=h "\n" %>
+		<% end %>
+
+
+
+

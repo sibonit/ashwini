@@ -1,0 +1,32 @@
+
+
+    <table width="100%">
+
+		<% if @people.empty? %><tr><td colspan="4" align="center"><br/>
+			<h2>There is nobody in this category.  Try broadening your search.</h2>
+		</td></tr><% end %>
+
+		<% for person in @people %>
+            <tr>
+            	<td width="50px">			
+					<% unless person.picture.empty? %><img src="<%=h person.picture %>" width="48px" />
+					<% else %>&nbsp;
+					<% end %>
+                </td>
+  				<td >
+					<strong><%=h person.full_name %></strong><br/>
+					
+                 	<% if !person.title.empty? %><%= person.title %><br/><% end %>
+					
+					<% if !person.department.nil?  && person.department != "18" %><%=h person.department_show %><br/><% end %>
+					
+					<% if !person.program.nil?  && person.program != "1" && person.program_show != person.department_show %><%=h person.program_show %><br/><% end %>
+					
+				</td>
+				<td width="auto">
+					<% if !person.office_address.empty? %><% if !person.lab_address.empty? && person.lab_address != person.office_address %><strong>Office: </strong><% end %><%=h person.office_address %><br/><% end %>
+					<% if !person.lab_address.empty? && person.lab_address != person.office_address %><% if !person.office_address.empty? %><strong>Lab: </strong><% end %><%=h person.lab_address %><br/><% end %>
+				</td>
+            </tr>
+		<% end %>
+    </table>   

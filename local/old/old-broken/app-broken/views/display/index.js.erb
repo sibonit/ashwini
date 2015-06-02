@@ -1,0 +1,245 @@
+
+
+// alert('Test');
+
+function adminDir() {
+	if ($('div#MCB_Left').is(":visible")) {
+		$('div#MCB_Left').hide();
+		$('div#directory').height($('div#directory').height()+71);
+		$("#MCB_Directory input#school").val("mcb");
+		$("#MCB_Directory input[type=submit]").removeClass("display-state-selected");
+		$("#MCB_Left input[type=submit]").removeClass("display-state-selected");
+	}
+	else if ($('div#IB_Left').is(":visible")) {
+		$('div#IB_Left').hide();
+		$('div#directory').height($('div#directory').height()+71);
+		$("#IB_Directory input#school").val("ib");
+		$("#IB_Directory input[type=submit]").removeClass("display-state-selected");
+		$("#IB_Left input[type=submit]").removeClass("display-state-selected");
+	}
+	if ('<%=h @display_parameters[:building] %>' == 'Morrill') {
+		$("#directory").html("<%= escape_javascript(render(:partial => 'directoryAdmin')) %>");
+		$('.Not_Morrill').hide();
+	}
+	else {
+		$("#directory").html("<%= escape_javascript(render(:partial => 'directoryAdmin')) %>");
+		$('.Not_Morrill').show();
+	}
+	
+	$("#Admin_Directory input[type=submit]").addClass("display-state-selected");
+	$("#Building_Directory input#department").val('');
+	$("#Building_Directory input#program").val('');
+}
+
+function ibDir() {
+	if ($('div#MCB_Left').is(":visible")) {
+		$('div#MCB_Left').hide();
+		$('div#directory').height($('div#directory').height()+71);
+		$("#MCB_Directory input#school").val("mcb");
+		$("#MCB_Directory input[type=submit]").removeClass("display-state-selected");
+		$("#MCB_Left input[type=submit]").removeClass("display-state-selected");
+	}
+	if ($('div#IB_Left').is(":not(:visible)")) {
+		$('div#directory').height($('div#directory').height()-71);
+		$('div#IB_Left').show();
+	}
+	
+	$("#IB_Left input[type=submit]").removeClass("display-state-selected");
+	$("#Building_Directory input#school").val("ib");
+	$("#IB_Directory input[type=submit]").addClass("display-state-selected");
+	$("#Admin_Directory input[type=submit]").removeClass("display-state-selected");
+	$("#directory").html("<%= escape_javascript(render(:partial => 'directory')) %>");
+	$("#Building_Directory input#department").val('');
+	$("#Building_Directory input#program").val('');
+}
+
+function mcbDir() {
+	if ($('div#IB_Left').is(":visible")) {
+		$('div#IB_Left').hide();
+		$('div#directory').height($('div#directory').height()+71);
+		$("#IB_Directory input#school").val("ib");
+		$("#IB_Directory input[type=submit]").removeClass("display-state-selected");
+		$("#IB_Left input[type=submit]").removeClass("display-state-selected");
+	}
+	if ($('div#MCB_Left').is(":not(:visible)")) {
+		$('div#directory').height($('div#directory').height()-71);
+		$('div#MCB_Left').show();
+		$("#MCB_Directory input#school").val("All");
+	}
+	
+	$("#MCB_Left input[type=submit]").removeClass("display-state-selected");
+	$("#Building_Directory input#school").val("mcb");
+	$("#MCB_Directory input[type=submit]").addClass("display-state-selected");
+	$("#Admin_Directory input[type=submit]").removeClass("display-state-selected");
+	$("#directory").html("<%= escape_javascript(render(:partial => 'directory')) %>");
+	$("#Building_Directory input#department").val('');
+	$("#Building_Directory input#program").val('');
+}
+
+
+
+// alert('<%=h @display_parameters[:source] %>');
+
+switch('<%=h @display_parameters[:source] %>')
+{
+	case 'Building_Directory':
+		if ( $('div#MCB_Left').is(":visible") || $('div#IB_Left').is(":visible") ) {
+			$("#directory").html("<%= escape_javascript(render(:partial => 'directory')) %>");
+		}
+		if ('<%=h @display_parameters[:building] %>' == 'Morrill') {
+			$("#Building_Directory input#building").val("All");
+			$("form:not(#Building_Directory) input#building").val("Morrill");
+			$("#Building_Directory input[type=submit]").addClass("display-state-selected");
+			$('.Not_Morrill').hide();
+		}
+		else {
+			$("#Building_Directory input#building").val("Morrill");
+			$("form:not(#Building_Directory) input#building").val("All");
+			$("#Building_Directory input[type=submit]").removeClass("display-state-selected");
+			$('.Not_Morrill').show();
+		}		
+		// $("#Admin_Directory input[type=submit]").removeClass("display-state-selected");
+	break;
+	case 'IB_Directory':
+		ibDir();
+	break;
+	case 'MCB_Directory':
+		mcbDir();
+	break;
+	case 'Animal_Directory':
+		$("#IB_Left :not(#Animal_Directory) input[type=submit]").removeClass("display-state-selected");
+		$("#Animal_Directory input[type=submit]").addClass("display-state-selected");
+		if ( $("#Building_Directory input#program").val() == '8' ) {
+			$("#Building_Directory input#department").val('');
+			$("#Building_Directory input#program").val('');
+		}
+		else {
+			$("#Building_Directory input#department").val('1');
+			$("#Building_Directory input#program").val('8');
+		}
+		$("#directory").html("<%= escape_javascript(render(:partial => 'directory')) %>");
+	break;	
+	case 'Entomology_Directory':
+		$("#IB_Left :not(#Entomology_Directory) input[type=submit]").removeClass("display-state-selected");
+		$("#Entomology_Directory input[type=submit]").addClass("display-state-selected");
+		if ( $("#Building_Directory input#program").val() == '11' ) {
+			$("#Building_Directory input#department").val('');
+			$("#Building_Directory input#program").val('');
+		}
+		else {
+			$("#Building_Directory input#department").val('4');
+			$("#Building_Directory input#program").val('11');
+		}
+		$("#directory").html("<%= escape_javascript(render(:partial => 'directory')) %>");
+	break;
+	case 'Plant_Directory':
+		$("#IB_Left :not(#Plant_Directory) input[type=submit]").removeClass("display-state-selected");
+		$("#Plant_Directory input[type=submit]").addClass("display-state-selected");
+		if ( $("#Building_Directory input#program").val() == '14' ) {
+			$("#Building_Directory input#department").val('');
+			$("#Building_Directory input#program").val('');
+		}
+		else {
+			$("#Building_Directory input#department").val('6');
+			$("#Building_Directory input#program").val('14');
+		}
+		$("#directory").html("<%= escape_javascript(render(:partial => 'directory')) %>");
+	break;
+	case 'Peec_Directory':
+		$("#IB_Left :not(#Peec_Directory) input[type=submit]").removeClass("display-state-selected");
+		$("#Peec_Directory input[type=submit]").addClass("display-state-selected");
+		if ( $("#Building_Directory input#program").val() == '3' ) {
+			$("#Building_Directory input#department").val('');
+			$("#Building_Directory input#program").val('');
+		}
+		else {
+			$("#Building_Directory input#department").val('0');
+			$("#Building_Directory input#program").val('3');
+		}
+		$("#directory").html("<%= escape_javascript(render(:partial => 'directory')) %>");
+	break;
+	case 'Pmpb_Directory':
+		$("#IB_Left :not(#Pmpb_Directory) input[type=submit]").removeClass("display-state-selected");
+		$("#Pmpb_Directory input[type=submit]").addClass("display-state-selected");
+		if ( $("#Building_Directory input#program").val() == '5' ) {
+			$("#Building_Directory input#department").val('');
+			$("#Building_Directory input#program").val('');
+		}
+		else {
+			$("#Building_Directory input#department").val('0');
+			$("#Building_Directory input#program").val('5');
+		}
+		$("#directory").html("<%= escape_javascript(render(:partial => 'directory')) %>");
+	break;
+	case 'Masters_Directory':
+		$("#IB_Left :not(#Masters_Directory) input[type=submit]").removeClass("display-state-selected");
+		$("#Masters_Directory input[type=submit]").addClass("display-state-selected");
+		if ( $("#Building_Directory input#program").val() == '4' ) {
+			$("#Building_Directory input#department").val('');
+			$("#Building_Directory input#program").val('');
+		}
+		else {
+			$("#Building_Directory input#department").val('0');
+			$("#Building_Directory input#program").val('4');
+		}
+		$("#directory").html("<%= escape_javascript(render(:partial => 'directory')) %>");
+	break;
+	case 'BIOCHEM_Directory':
+		$("#MCB_Left :not(#BIOCHEM_Directory) input[type=submit]").removeClass("display-state-selected");
+		$("#BIOCHEM_Directory input[type=submit]").addClass("display-state-selected");
+		if ( $("#Building_Directory input#department").val() == 'BIOCHEM' ) {
+			$("#Building_Directory input#department").val('');
+			$("#Building_Directory input#program").val('');
+		}
+		else {
+			$("#Building_Directory input#department").val('BIOCHEM');
+			$("#Building_Directory input#program").val('');
+		}
+		$("#directory").html("<%= escape_javascript(render(:partial => 'directory')) %>");
+	break;
+	case 'CDB_Directory':
+		$("#MCB_Left :not(#CDB_Directory) input[type=submit]").removeClass("display-state-selected");
+		$("#CDB_Directory input[type=submit]").addClass("display-state-selected");
+		if ( $("#Building_Directory input#department").val() == 'CDB' ) {
+			$("#Building_Directory input#department").val('');
+			$("#Building_Directory input#program").val('');
+		}
+		else {
+			$("#Building_Directory input#department").val('CDB');
+			$("#Building_Directory input#program").val('');
+		}
+		$("#directory").html("<%= escape_javascript(render(:partial => 'directory')) %>");
+	break;
+	case 'MICRO_Directory':
+		$("#MCB_Left :not(#MICRO_Directory) input[type=submit]").removeClass("display-state-selected");
+		$("#MICRO_Directory input[type=submit]").addClass("display-state-selected");
+		if ( $("#Building_Directory input#department").val() == 'MICRO' ) {
+			$("#Building_Directory input#department").val('');
+			$("#Building_Directory input#program").val('');
+		}
+		else {
+			$("#Building_Directory input#department").val('MICRO');
+			$("#Building_Directory input#program").val('');
+		}
+		$("#directory").html("<%= escape_javascript(render(:partial => 'directory')) %>");
+	break;
+	case 'MIP_Directory':
+		$("#MCB_Left :not(#MIP_Directory) input[type=submit]").removeClass("display-state-selected");
+		$("#MIP_Directory input[type=submit]").addClass("display-state-selected");
+		if ( $("#Building_Directory input#department").val() == 'MIP' ) {
+			$("#Building_Directory input#department").val('');
+			$("#Building_Directory input#program").val('');
+		}
+		else {
+			$("#Building_Directory input#department").val('MIP');
+			$("#Building_Directory input#program").val('');
+		}
+		$("#directory").html("<%= escape_javascript(render(:partial => 'directory')) %>");
+	break;
+	case 'Admin_Directory':
+		adminDir();
+	break;
+	default:
+		alert('No action found');
+}
+

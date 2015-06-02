@@ -1,0 +1,156 @@
+# Proposed
+
+IB (Home)
+  #Calendar & News
+  People (Directory)
+  Research
+  Departments
+    Animal Biology
+    Entomology
+    Plant Biology
+  Programs
+
+Undergraduate (Programs)
+  Prospective
+  Courses
+  Honors
+  Advising
+
+Graduate (Programs)
+  Prospective
+  Courses
+
+Alumni & Friends
+  
+Resources
+  For Faculty & Staff
+
+
+# Current
+Home
+
+About Us
+  Departments & Programs
+    Animal Biology
+    Entomology
+    Plant Biology
+    PEEC
+    NSP
+    MST
+    Online M.S. in Teaching
+  FAQs
+  Why Major in IB
+  News & Features
+  Calendar
+  Seminar Series
+  Integravie Biology Blog
+  Giving to IB
+  Contact Us
+
+Research
+  Directory
+    Behavior
+    Ecology
+    Evo. & Systematics
+    Genetics & Biochem.
+    Physiology & Dev.
+  Undergraduate Research
+  Features
+  University Resources
+
+Undergraduate
+  Advising
+    *
+  Prospective
+    *
+  What Can I Do with IB?
+    *
+  Programs of Study
+    *
+  Undergraduate Research
+  Special Programs
+    *
+  Prepare for the Next Step
+  Guidelines: Skills for IB Majors
+  Undergraduate Support
+  Convocation
+
+Graduate
+  Departments & Programs
+    (same as above)
+  Support
+  News & Features
+
+Alumni
+  Featured Alumni
+  News & Features
+  UI Alumni Association
+  LAS Alumni
+  Giving to SIB
+
+People
+#    Faculty
+#    Staff
+#    Academics
+#    Graduate Students
+#    Faculty Interviews
+#    390/490 Faculty
+
+Courses
+  All IB Courses
+  Advanced Courses By Semester
+  Advanced Area Courses
+  Additional Approved Advanced Courses
+  Special Topics Courses
+  Proficiency Exams
+
+For Faculty & Staff
+  Intra-School Links
+  Business Office
+    Human Resources
+    Purchasing
+    Reimbursements / Vouchers
+    Grant Preparation
+
+
+
+==========================================
+Where will these pages go??
+---------------------------
+-About
+	-FAQ
+	-Why Major in IB
+	-Contact Us
+	-Convocation
+
+--Ugrad
+	-What can I do with IB
+	-Programs of Study
+	-Special Programs
+	
+-Grad
+	-Department & Programs
+	-Grants & Awards
+	-Support
+	-News & Features
+
+
+-Courses
+	-All IB
+	-Advanced by Semester
+	-Advanced Area
+	-Additional
+	-Special Topic
+	-Proficiency Exams
+
+-People
+	-Faculty
+	-Staff
+	-Academics
+	-Graduate Students
+	-Faculty Interviews
+	-390/490 Faculty
+
+
+
+

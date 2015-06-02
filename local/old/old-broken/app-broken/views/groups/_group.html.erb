@@ -1,0 +1,116 @@
+
+
+
+<%= form_for @group do |g| %>
+	<%= render "shared/error_messages", :target => @group %>
+
+
+	<p class="upper_right_button">
+		<%= g.hidden_field :id, :value => @group.id %>
+		<%= g.submit "Save Group", :class => "submit_fields" %>
+	</p>
+
+	<p>
+		<%= g.label :name %>: 
+		<%= g.text_field :name %>
+	
+		<% if controller.action_name == 'new' %> 
+			&nbsp;
+			
+			<%= g.label :group_type %>: 
+			<%= g.select :group_type, Group.select('DISTINCT group_type').map(&:group_type) %>
+		<% else %>
+			<%= g.hidden_field :group_type, :value => @group.group_type %>
+		<% end %>
+		
+		<%# if @group.group_type == 'Paths' %> 
+			<br/>
+			
+			<%= g.label :tabs_id, "Tab Menu" %>
+			<%= g.select :tabs_id, Path.joins(:page).where('pages.page_type' => 'Tabs').order("pages.title ASC").map {|x| [x.title, x.id]}, {:include_blank => 'None'} %> 
+			
+			<%= g.label :categories_id, "Category Menu" %>
+			<%= g.select :categories_id, Path.joins(:page).where('pages.page_type' => 'Categories').order("pages.title ASC").map {|x| [x.title, x.id]}, {:include_blank => 'None'} %>	
+			
+			<br/>
+			
+			<%= g.label :welcomes_id, "Welcome Menu" %>
+			<%= g.select :welcomes_id, Path.joins(:page).where('pages.page_type' => 'Welcomes').order("pages.title ASC").map {|x| [x.title, x.id]}, {:include_blank => 'None'} %>	
+			
+			<%= g.label :stylesheet, "Stylesheet Menu" %>
+			<%= g.text_field :stylesheet %>
+		<%# end %>	
+		
+	</p>
+
+	<div class="Content_half"><div class="fields_from_select">
+		
+		<%= g.fields_for :group_people, g.object.group_people.where("role='Owner'") do |gp| %>
+			<%= render "group_person_fields", {:gp => gp, :role => "Owner"} %>
+		<% end %>
+		
+		
+		<% new_object = g.object.send(:group_people).klass.new %>
+		<% id = new_object.object_id %>
+		<%= fields = g.fields_for(:group_people, new_object, child_index: id) do |gp| %>
+			<%= render "group_person_fields", {:gp => gp, :role => "Owner"} %>
+		<% end %>
+		
+		
+		<%= link_to("Add Owner", '#', class: "fields_from_select", data: {id: id}) %>
+
+		<%= g.select :person_ids, Person.all.collect {|x| [x.full_name, x.id]}, {:include_blank => 'Add Owner'}, class: 'fields_to_add' %>
+
+		
+	</div></div>
+
+	<div class="Content_half"><div class="fields_from_select">
+  		
+		<%= g.fields_for :group_people, g.object.group_people.where("role='Member'") do |gp| %>
+			<%= render "group_person_fields", {:gp => gp, :role => "Member"} %>
+		<% end %>
+		
+		
+		<% new_object = g.object.send(:group_people).klass.new %>
+		<% id = new_object.object_id %>
+		<%= fields = g.fields_for(:group_people, new_object, child_index: id) do |gp| %>
+			<%= render "group_person_fields", {:gp => gp, :role => "Member"} %>
+		<% end %>
+		
+		
+		<%= link_to("Add Member", '#', class: "fields_from_select", data: {id: id}) %>
+
+		<%= g.select :person_ids, Person.all.collect {|x| [x.full_name, x.id]}, {:include_blank => 'Add Member'}, class: 'fields_to_add' %>
+
+		
+	</div></div>
+	
+	<p class="Content">&nbsp;</p>
+
+	<div class="Content_half"><div class="fields_from_select">
+  		
+		<%= g.fields_for :group_paths, g.object.group_paths do |gp| %>
+			<%= render "group_path_fields", :gp => gp %>
+		<% end %>
+		
+		
+		<% new_object = g.object.send(:group_paths).klass.new %>
+		<% id = new_object.object_id %>
+		<%= fields = g.fields_for(:group_paths, new_object, child_index: id) do |gp| %>
+		  <%= render "group_path_fields", :gp => gp %>
+		<% end %>
+		
+		
+		<%= link_to("Add Path", '#', class: "fields_from_select", data: {id: id}) %>
+
+		<%= g.select :path_ids, Path.all.collect { |x| [x.title, x.id]}, {:include_blank => 'Add Path, If Any'}, class: 'fields_to_add' %>
+
+		
+	</div></div>
+  
+<% end %>
+
+
+<%= set_focus( "group_name" ) %>
+
+<%= tinymce %>

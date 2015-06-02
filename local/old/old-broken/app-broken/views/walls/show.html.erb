@@ -1,0 +1,33 @@
+<% content_for :title do %><%=h @wall.name %>'s Wall, School of Integrative Biology, University of Illinois<% end %>
+<% content_for :css do %><link href="/stylesheets/wall.css" rel="stylesheet" type="text/css" media="screen"/><% end %>
+<% content_for :content_image do %><img src="/images/PageHeader/wall/<%=h @wall.id %>.jpg" alt="" /><% end %>
+
+<% if session[ :logged_in ] %>
+	<% content_for :breadcrumbs_left do %><%= link_to 'Logout ' + session[ :netid ], '/logout?previous_page=' + wall_path(@wall) + request.env[ 'QUERY_STRING' ].gsub(/\&/,'%26') %><% end %>
+<% else %>
+	<% content_for :breadcrumbs_left do %><%= link_to 'Login', '/login?previous_page=' + wall_path(@wall) + request.env[ 'QUERY_STRING' ].gsub(/\&/,'%26') %><% end %>
+<% end %>
+
+<h1><%=h @wall.name %>'s Wall</h1>
+
+<% if @wall.description %>
+	<p><%=h @wall.description %></p>
+<% end %>
+
+<p>&nbsp;</p>
+
+<% if session[ :admin ] %>
+	<div id="wall_admin">
+		<%= link_to 'Edit Wall', edit_wall_path(@wall) %> |
+		<%= link_to 'See All Walls', walls_path %>
+	</div>
+<% end %>
+
+<%= render :partial => 'comment_form' %> 
+
+<hr/>
+
+<%= render :partial => 'comment', :collection => @wall.comments.reverse %> 
+
+
+

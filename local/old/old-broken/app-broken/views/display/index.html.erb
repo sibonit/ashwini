@@ -1,0 +1,237 @@
+
+<div class="container">
+
+  <div id="SplashImage"><img src="/images/Morrill_Display/SplashImage.jpg" onClick="$('div#SplashImage').css('display', 'none'); $('div#Interface').show();" /></div>
+  
+  <div id="Interface">
+
+	  <div id="title">
+		<img src="/images/Morrill_Display/title.jpg" alt="Welcome to Morrill Hall" />
+	  </div>
+  
+  
+    <!-- end .header -->
+	
+	<div id="left_container"> 
+	  <div id="directory">
+		
+		<%= render(:partial => "directoryAdmin") %>
+		
+		
+	  </div>
+		
+		
+		<div id="MCB_Left" style="display: none;">
+		
+			<%= form_tag(  {controller: "display", action: "index"}, method: "get", class: "directory_control", id: "BIOCHEM_Directory" )  do %>
+				<%= hidden_field_tag :source,  "BIOCHEM_Directory" %>
+				<%= hidden_field_tag :admin, "False" %>
+				<%= hidden_field_tag :department,  "BIOCHEM" %>
+				<%= hidden_field_tag :program, "" %>
+				<%= hidden_field_tag :school,  "mcb" %>
+				<%= hidden_field_tag :building,  @building %>
+				<%= submit_tag "Biochemistry" %>
+			<% end %>
+		
+			<%= form_tag(  {controller: "display", action: "index"}, method: "get", class: "directory_control", id: "CDB_Directory" )  do %>
+				<%= hidden_field_tag :source,  "CDB_Directory" %>
+				<%= hidden_field_tag :admin, "False" %>
+				<%= hidden_field_tag :department,  "CDB" %>
+				<%= hidden_field_tag :program, "" %>
+				<%= hidden_field_tag :school,  "mcb" %>
+				<%= hidden_field_tag :building,  @building %>
+				<%= submit_tag "Cell &amp; Developmental Biology".html_safe %>
+			<% end %>
+		
+			<%= form_tag(  {controller: "display", action: "index"}, method: "get", class: "directory_control", id: "MICRO_Directory" ) do %>
+				<%= hidden_field_tag :source,  "MICRO_Directory" %>
+				<%= hidden_field_tag :admin, "False" %>
+				<%= hidden_field_tag :department,  "MICRO" %>
+				<%= hidden_field_tag :program, "" %>
+				<%= hidden_field_tag :school,  "mcb" %>
+				<%= hidden_field_tag :building,  @building %>
+				<%= submit_tag "Microbiology" %>
+			<% end %>
+		
+			<%= form_tag(  {controller: "display", action: "index"}, method: "get", class: "directory_control", id: "MIP_Directory" ) do %>
+				<%= hidden_field_tag :source,  "MIP_Directory" %>
+				<%= hidden_field_tag :admin, "False" %>
+				<%= hidden_field_tag :department,  "MIP" %>
+				<%= hidden_field_tag :program, "" %>
+				<%= hidden_field_tag :school,  "mcb" %>
+				<%= hidden_field_tag :building,  @building %>
+				<%= submit_tag "Molecular &amp; Integrative Physiology".html_safe %>
+			<% end %>
+			
+		</div>
+		
+		<div id="IB_Left" style="display: none;">
+		
+			<%= form_tag(  {controller: "display", action: "index"}, method: "get", class: "directory_control", id: "Animal_Directory" ) do %>
+				<%= hidden_field_tag :source,  "Animal_Directory" %>
+				<%= hidden_field_tag :admin, "False" %>
+				<%= hidden_field_tag :department,  "1" %>
+				<%= hidden_field_tag :program, "8" %>
+				<%= hidden_field_tag :school,  "ib" %>
+				<%= hidden_field_tag :building,  @building %>
+				<%= submit_tag "Animal Biology" %>
+			<% end %>
+		
+			<%= form_tag(  {controller: "display", action: "index"}, method: "get", class: "directory_control", id: "Entomology_Directory" ) do %>
+				<%= hidden_field_tag :source,  "Entomology_Directory" %>
+				<%= hidden_field_tag :admin, "False" %>
+				<%= hidden_field_tag :department,  "4" %>
+				<%= hidden_field_tag :program,  "11" %>
+				<%= hidden_field_tag :school,  "ib" %>
+				<%= hidden_field_tag :building,  @building %>
+				<%= submit_tag "Entomology" %>
+			<% end %>
+		
+			<%= form_tag(  {controller: "display", action: "index"}, method: "get", class: "directory_control", id: "Plant_Directory" ) do %>
+				<%= hidden_field_tag :source,  "Plant_Directory" %>
+				<%= hidden_field_tag :admin, "False" %>
+				<%= hidden_field_tag :department,  "6" %>
+				<%= hidden_field_tag :program,  "14" %>
+				<%= hidden_field_tag :school,  "ib" %>
+				<%= hidden_field_tag :building,  @building %>
+				<%= submit_tag "Plant Biology" %>
+			<% end %>
+			
+			<br/>
+		
+			<%= form_tag(  {controller: "display", action: "index"}, method: "get", class: "directory_control", id: "Peec_Directory" ) do %>
+				<%= hidden_field_tag :source,  "Peec_Directory" %>
+				<%= hidden_field_tag :admin, "False" %>
+				<%= hidden_field_tag :department,  "0" %>
+				<%= hidden_field_tag :program,  "3" %>
+				<%= hidden_field_tag :school,  "ib" %>
+				<%= hidden_field_tag :building,  @building %>
+				<%= submit_tag "PEEC" %>
+			<% end %>
+		
+			<%= form_tag(  {controller: "display", action: "index"}, method: "get", class: "directory_control", id: "Pmpb_Directory" ) do %>
+				<%= hidden_field_tag :source,  "Pmpb_Directory" %>
+				<%= hidden_field_tag :admin, "False" %>
+				<%= hidden_field_tag :department,  "0" %>
+				<%= hidden_field_tag :program,  "5" %>
+				<%= hidden_field_tag :school,  "ib" %>
+				<%= hidden_field_tag :building,  @building %>
+				<%= submit_tag "PMPB" %>
+			<% end %>
+		
+			<%= form_tag(  {controller: "display", action: "index"}, method: "get", class: "directory_control", id: "Masters_Directory" ) do %>
+				<%= hidden_field_tag :source,  "Masters_Directory" %>
+				<%= hidden_field_tag :admin, "False" %>
+				<%= hidden_field_tag :department,  "0" %>
+				<%= hidden_field_tag :program,  "4" %>
+				<%= hidden_field_tag :school,  "ib" %>
+				<%= hidden_field_tag :building,  @building %>
+				<%= submit_tag "Masters in Biology" %>
+			<% end %>
+			
+		</div>
+		
+		<div id="left_controls">
+		
+			<h4>Directory Listings</h4>
+		
+			<%= form_tag(  {controller: "display", action: "index"}, method: "get", class: "directory_control", id: "IB_Directory" ) do %>
+				<%= hidden_field_tag :source,  "IB_Directory" %>
+				<%= hidden_field_tag :admin, "False" %>
+				<%= hidden_field_tag :department,  @department %>
+				<%= hidden_field_tag :program,  @program %>
+				<%= hidden_field_tag :school,  "ib" %>
+				<%= hidden_field_tag :building,  @building %>
+				<%= submit_tag "Integrative Biology", :id => "ib_button" %>
+			<% end %>
+		
+			<%= form_tag(  {controller: "display", action: "index"}, method: "get", class: "directory_control", id: "MCB_Directory" ) do %>
+				<%= hidden_field_tag :source,  "MCB_Directory" %>
+				<%= hidden_field_tag :admin, "False" %>
+				<%= hidden_field_tag :department,  @department %>
+				<%= hidden_field_tag :program,  @program %>
+				<%= hidden_field_tag :school,  "mcb" %>
+				<%= hidden_field_tag :building,  @building %>
+				<%= submit_tag "Molecular &amp; Cellular Biology".html_safe, :id => "mcb_button"  %>
+			<% end %>
+		
+			<%= form_tag(  {controller: "display", action: "index"}, method: "get", class: "directory_control", id: "Building_Directory" ) do %>
+				<%= hidden_field_tag :source,  "Building_Directory" %>
+				<%= hidden_field_tag :admin, "False" %>
+				<%= hidden_field_tag :department,  @department %>
+				<%= hidden_field_tag :program,  @program %>
+				<%= hidden_field_tag :school,  @school %>
+				<%= hidden_field_tag :building,  "Morrill" %>
+				<%= submit_tag "Morrill Hall Only", :id => "morrill_button"  %>
+			<% end %>
+		
+			<%= form_tag(  {controller: "display", action: "index"}, method: "get", class: "directory_control", id: "Admin_Directory" ) do %>
+				<%= hidden_field_tag :source,  "Admin_Directory" %>
+				<%= hidden_field_tag :admin, "True" %>
+				<%= hidden_field_tag :department,  @department %>
+				<%= hidden_field_tag :program,  @program %>
+				<%= hidden_field_tag :school,  @school %>
+				<%= hidden_field_tag :building,  @building %>
+				<%= submit_tag "School &amp; Department Offices".html_safe, :class => "display-state-selected", :id => "office_button" %>
+			<% end %>
+	
+			
+		<!-- end .left_controls --></div>
+	</div>
+	
+    <div id="center_container">
+	  <div id="content" style="background-color: #F47F23;">
+		<img src="/images/Morrill_Display/Morrill_First_Floor.jpg" id="Center_Image" id="content_image" />
+	  
+		<div id="content_text">
+			Welcome to Morrill Hall, home to the School of Integrative Biology, the School of Molecular and Cellular Biology, and numerous research laboratories. Known as the "Entomology Building" during construction, Justin Smith Morrill Hall was completed around 1964.
+		</div>
+	
+	
+		<!-- end .content --></div>
+		
+	  <div id="footer">
+	  
+	  <h4>Morrill Hall Floorplans</h4>
+	  
+	  <form>
+		<input type="button" value="Basement" class="ui-button ui-widget ui-state-default ui-corner-all" onClick="$('#Center_Image').attr('src','/images/Morrill_Display/Morrill_Basement.jpg'); $('#footer input').not(this).removeClass('display-state-selected'); $(this).toggleClass('display-state-selected');" />
+		<input type="button" value="First Floor" class="ui-button ui-widget ui-state-default ui-corner-all display-state-selected" onClick="$('#Center_Image').attr('src','/images/Morrill_Display/Morrill_First_Floor.jpg'); $('#footer input').not(this).removeClass('display-state-selected'); $(this).toggleClass('display-state-selected');" />
+		<input type="button" value="Second Floor" class="ui-button ui-widget ui-state-default ui-corner-all" onClick="$('#Center_Image').attr('src','/images/Morrill_Display/Morrill_Second_Floor.jpg'); $('#footer input').not(this).removeClass('display-state-selected'); $(this).toggleClass('display-state-selected');" />
+		<input type="button" value="Third Floor" class="ui-button ui-widget ui-state-default ui-corner-all" onClick="$('#Center_Image').attr('src','/images/Morrill_Display/Morrill_Third_Floor.jpg'); $('#footer input').not(this).removeClass('display-state-selected'); $(this).toggleClass('display-state-selected');" />
+		
+		<br/>
+		
+		<input type="button" value="Fourth Floor" class="ui-button ui-widget ui-state-default ui-corner-all" onClick="$('#Center_Image').attr('src','/images/Morrill_Display/Morrill_Fourth_Floor.jpg'); $('#footer input').not(this).removeClass('display-state-selected'); $(this).toggleClass('display-state-selected');" />
+		<input type="button" value="Fifth Floor" class="ui-button ui-widget ui-state-default ui-corner-all" onClick="$('#Center_Image').attr('src','/images/Morrill_Display/Morrill_Fifth_Floor.jpg'); $('#footer input').not(this).removeClass('display-state-selected'); $(this).toggleClass('display-state-selected');" />
+		<input type="button" value="Sixth Floor" class="ui-button ui-widget ui-state-default ui-corner-all" onClick="$('#Center_Image').attr('src','/images/Morrill_Display/Morrill_Sixth_Floor.jpg'); $('#footer input').not(this).removeClass('display-state-selected'); $(this).toggleClass('display-state-selected');" />
+		<input type="button" value="Campus Map" class="ui-button ui-widget ui-state-default ui-corner-all" onClick="$('#Center_Image').attr('src','/images/Morrill_Display/Campus.jpg'); $('#footer input').not(this).removeClass('display-state-selected'); $(this).toggleClass('display-state-selected');" />
+	  </form>
+	  </div>
+	  
+	</div>
+	
+	
+	<div id="right_container">
+		<div id="calendar">
+	  
+			<%= render(:partial => "calendar") %>
+	
+		</div>
+		
+		
+		<div id="right_bottom3" style="display: none;">
+			
+		</div>
+		
+		<div id="right_bottom2" style="display: none;">
+			
+		</div>
+		
+  		<%= render(:partial => "time") %>
+  		<%= render(:partial => "weather") %>
+		
+	  <!-- end .container --></div>
+	</div>
+
+</div>

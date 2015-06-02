@@ -1,0 +1,200 @@
+<% content_for :title do %><%=h @header_info.directory_title %>, School of Integrative Biology, University of Illinois<% end %>
+<% content_for :keywords do %><%=h @header_info.directory_title %>, Integrative Biology, Illinois, Midwest, sib, uiuc<% end %>
+<% content_for :description do %>Use this page to search through our faculty, staff and student directories.<% end %>
+<% content_for :submenu do %>
+				<ul>
+                	<li>&nbsp;</li>
+                	<li id="FirstItem"><a href="http://sib.illinois.edu/research.htm">Research Information</a></li>
+                    <li><a href="/people/spreadsheet?position_status=<%=h @header_info.position_status %>&department=&program=&research_area=<%=h @header_info.research_area %>&accepting_students=<%=h @header_info.accepting_students %>">All Departments &amp; Programs</a></li>
+                    <li><a href="/people/spreadsheet?position_status=<%=h @header_info.position_status %>&department=1&program=8&research_area=<%=h @header_info.research_area %>&accepting_students=<%=h @header_info.accepting_students %>">Animal Biology</a></li>
+                    <li><a href="/people/spreadsheet?program=11&research_area=<%=h @header_info.research_area %>&accepting_students=<%=h @header_info.accepting_students %>&department=4&position_status=<%=h @header_info.position_status %>">Entomology</a></li>
+                    <li><a href="/people/spreadsheet?program=14&research_area=<%=h @header_info.research_area %>&accepting_students=<%=h @header_info.accepting_students %>&department=6&position_status=<%=h @header_info.position_status %>">Plant Biology</a></li>
+                    <li><a href="/people/spreadsheet?department=0&research_area=<%=h @header_info.research_area %>&accepting_students=<%=h @header_info.accepting_students %>&program=3&position_status=<%=h @header_info.position_status %>">PEEC</a></li>
+                    <li><a href="/people/spreadsheet?department=0&research_area=<%=h @header_info.research_area %>&accepting_students=<%=h @header_info.accepting_students %>&program=5&position_status=<%=h @header_info.position_status %>">PMPB</a></li>
+                    <li><a href="/people/spreadsheet?department=0&research_area=<%=h @header_info.research_area %>&accepting_students=<%=h @header_info.accepting_students %>&program=4&position_status=<%=h @header_info.position_status %>">Masters in Biology</a></li>
+                    <li><a href="http://sib.illinois.edu/research_undergrad.htm">Undergraduate Research</a></li>
+                    <li>&nbsp;</li>
+				</ul>
+<% end %>
+<% if session[ :logged_in ] %>
+	<% content_for :breadcrumbs_left do %><%= link_to 'Logout ' + session[ :netid ], '/logout?previous_page=/people?' + request.env[ 'QUERY_STRING' ].gsub(/\&/,'%26') %><% end %>
+<% else %>
+	<% content_for :breadcrumbs_left do %><%= link_to 'Login', '/login?previous_page=/people?' + request.env[ 'QUERY_STRING' ].gsub(/\&/,'%26') %><% end %>
+<% end %>
+<% content_for :breadcrumbs do %><%=h @header_info.directory_title %><% end %>
+<% content_for :content_image do %><img src="/images/PageHeader/directory/<%=h @header_info.content_image %>.jpg" alt="Content Splash Image" /><% end %>
+
+
+
+
+
+<div class="directory_table">
+    <table width="628px">
+			<tr class="header">
+				<td align="center" colspan="1">
+					<% if @header_info.research_area == "1" %>
+						<a href="/people/spreadsheet?position_status=<%=h @header_info.position_status %>&department=<%=h @header_info.department %>&program=<%=h @header_info.program %>&accepting_students=<%=h @header_info.accepting_students %>&research_area=1" class="no_underline">
+							<img  src="http://sib.illinois.edu/images/researchIcons/PhysIcon.jpg" alt="Physiology &amp; Development" width="90px"/>
+						</a>
+					<% elsif @header_info.research_area == "2" %>
+						<a href="/people/spreadsheet?position_status=<%=h @header_info.position_status %>&department=<%=h @header_info.department %>&program=<%=h @header_info.program %>&accepting_students=<%=h @header_info.accepting_students %>&research_area=2" class="no_underline">
+							<img src="http://sib.illinois.edu/images/researchIcons/EcoIcon.jpg" width="90px" alt="Ecology"/>
+						</a>
+					<% elsif @header_info.research_area == "3" %>
+						<a href="/people/spreadsheet?position_status=<%=h @header_info.position_status %>&department=<%=h @header_info.department %>&program=<%=h @header_info.program %>&accepting_students=<%=h @header_info.accepting_students %>&research_area=3" class="no_underline">
+							<img src="http://sib.illinois.edu/images/researchIcons/SysIcon.jpg" width="90px" alt="Evolution &amp; Systematics"/>
+						</a>
+					<% elsif @header_info.research_area == "4" %>
+						<a href="/people/spreadsheet?position_status=<%=h @header_info.position_status %>&department=<%=h @header_info.department %>&program=<%=h @header_info.program %>&accepting_students=<%=h @header_info.accepting_students %>&research_area=4" class="no_underline">
+							<img src="http://sib.illinois.edu/images/researchIcons/BehavIcon.jpg" width="90px" alt="Behavior"/>
+						</a>
+					<% elsif @header_info.research_area == "5" %>
+						<a href="/people/spreadsheet?position_status=<%=h @header_info.position_status %>&department=<%=h @header_info.department %>&program=<%=h @header_info.program %>&accepting_students=<%=h @header_info.accepting_students %>&research_area=5" class="no_underline">
+							<img src="http://sib.illinois.edu/images/researchIcons/GenIcon.jpg" width="90px" alt="Genetics &amp; Biochemistry"/>
+						</a>
+					<% else %>
+						&nbsp;
+					<% end %>
+            	</td>
+				<td align="center" colspan="3"><h1 style="padding: .5em; padding-bottom: 0em; margin-bottom: 0em;"><%=h @header_info.directory_title %></h1></td>
+			</tr>
+        	<tr class="header">
+
+				<td colspan="4">
+					<table width="100%" style="border-spacing: .5em;">
+                    <tr>
+                        <td style="padding: 1px;" width="30px">
+							<a href="/people/spreadsheet?position_status=<%=h @header_info.position_status %>&department=<%=h @header_info.department %>&program=<%=h @header_info.program %>&accepting_students=<%=h @header_info.accepting_students %>&research_area=1" class="no_underline">
+								<img  src="http://sib.illinois.edu/images/researchIcons/PhysIcon.jpg" alt="Physiology &amp; Development" width="30px"/>
+							</a>
+						</td>
+                        <td style="padding: 1px;">
+							<a href="/people/spreadsheet?position_status=<%=h @header_info.position_status %>&department=<%=h @header_info.department %>&program=<%=h @header_info.program %>&accepting_students=<%=h @header_info.accepting_students %>&research_area=1" class="no_underline">
+								Physiology &amp; Development
+							</a>
+						</td>
+						<td style="padding: 1px;">
+							<a href="/people/spreadsheet?position_status=<%=h @header_info.position_status %>&department=<%=h @header_info.department %>&program=<%=h @header_info.program %>&accepting_students=<%=h @header_info.accepting_students %>&research_area=3" class="no_underline">
+								<img src="http://sib.illinois.edu/images/researchIcons/SysIcon.jpg" width="30px" alt="Evolution &amp; Systematics"/>
+							</a>
+						</td>
+                        <td style="padding: 1px;">
+							<a href="/people/spreadsheet?position_status=<%=h @header_info.position_status %>&department=<%=h @header_info.department %>&program=<%=h @header_info.program %>&accepting_students=<%=h @header_info.accepting_students %>&research_area=3" class="no_underline">
+								Evolution &amp; Systematics
+							</a>
+						</td>
+                        <td style="padding: 1px;">
+							<a href="/people/spreadsheet?position_status=<%=h @header_info.position_status %>&department=<%=h @header_info.department %>&program=<%=h @header_info.program %>&accepting_students=<%=h @header_info.accepting_students %>&research_area=4" class="no_underline">
+								<img src="http://sib.illinois.edu/images/researchIcons/BehavIcon.jpg" width="30px" alt="Behavior"/>
+							</a>
+						</td>
+                        <td style="padding: 1px;">
+							<a href="/people/spreadsheet?position_status=<%=h @header_info.position_status %>&department=<%=h @header_info.department %>&program=<%=h @header_info.program %>&accepting_students=<%=h @header_info.accepting_students %>&research_area=4" class="no_underline">
+								Behavior
+							</a>
+						</td>
+                    </tr>
+                    <tr>
+						<td style="padding: 1px;" width="30px">
+							<a href="/people/spreadsheet?position_status=<%=h @header_info.position_status %>&department=<%=h @header_info.department %>&program=<%=h @header_info.program %>&accepting_students=<%=h @header_info.accepting_students %>&research_area=2" class="no_underline">
+								<img src="http://sib.illinois.edu/images/researchIcons/EcoIcon.jpg" width="30px" alt="Ecology"/>
+							</a>
+						</td>
+                        <td style="padding: 1px;">
+							<a href="/people/spreadsheet?position_status=<%=h @header_info.position_status %>&department=<%=h @header_info.department %>&program=<%=h @header_info.program %>&accepting_students=<%=h @header_info.accepting_students %>&research_area=2" class="no_underline">
+								Ecology
+							</a>
+						</td>
+						<td style="padding: 1px;">
+							<a href="/people/spreadsheet?position_status=<%=h @header_info.position_status %>&department=<%=h @header_info.department %>&program=<%=h @header_info.program %>&accepting_students=<%=h @header_info.accepting_students %>&research_area=5" class="no_underline">
+								<img src="http://sib.illinois.edu/images/researchIcons/GenIcon.jpg" width="30px" alt="Genetics &amp; Biochemistry"/>
+							</a>
+						</td>
+                        <td style="padding: 1px;">
+							<a href="/people/spreadsheet?position_status=<%=h @header_info.position_status %>&department=<%=h @header_info.department %>&program=<%=h @header_info.program %>&accepting_students=<%=h @header_info.accepting_students %>&research_area=5" class="no_underline">
+								Genetics &amp; Biochemistry
+							</a>
+						</td>
+						<td style="padding: 1px;">
+							<a href="/people/spreadsheet?position_status=<%=h @header_info.position_status %>&department=<%=h @header_info.department %>&program=<%=h @header_info.program %>&accepting_students=<%=h @header_info.accepting_students %>&research_area=" class="no_underline">
+								<img src="http://sib.illinois.edu/images/researchIcons/AllIcon.jpg" width="30px"/>
+							</a>
+						</td>
+                        <td style="padding: 1px;">
+							<a href="/people/spreadsheet?position_status=<%=h @header_info.position_status %>&department=<%=h @header_info.department %>&program=<%=h @header_info.program %>&accepting_students=<%=h @header_info.accepting_students %>&research_area=" class="no_underline">
+								All Areas
+							</a>
+						</td>
+					</tr> 
+				</table>
+				
+              
+				</td>
+            </tr>
+
+<!-- Sort Box:  This carries everything forward
+	<a href="/people/spreadsheet?position_status=<%=h @header_info.position_status %>&department=<%=h @header_info.department %>&program=<%=h @header_info.program %>&research_area=<%=h @header_info.research_area %>&accepting_students=<%=h @header_info.accepting_students %>">All</a
+-->
+
+
+		<tr>
+			<td colspan="4" align="center">
+				<a href="#A">A</a> <a href="#B">B</a> <a href="#C">C</a>
+				<a href="#D">D</a> <a href="#E">E</a> <a href="#F">F</a>
+				<a href="#G">G</a> <a href="#H">H</a> <a href="#I">I</a>
+				<a href="#J">J</a> <a href="#K">K</a> <a href="#L">L</a>
+				<a href="#M">M</a> <a href="#N">N</a> <a href="#O">O</a>
+				<a href="#P">P</a> <a href="#Q">Q</a> <a href="#R">R</a>
+				<a href="#S">S</a> <a href="#T">T</a> <a href="#U">U</a>
+				<a href="#V">V</a> <a href="#W">W</a> <a href="#X">X</a>
+				<a href="#Y">Y</a> <a href="#Z">Z</a><br/>
+			
+			
+				<a href="/people/spreadsheet?position_status=&department=<%=h @header_info.department %>&program=<%=h @header_info.program %>&research_area=<%=h @header_info.research_area %>&accepting_students=<%=h @header_info.accepting_students %>" <% if @header_info.position_status == "" %>style="font-weight: bold;"<% end %>>All</a> | 
+				<a href="/people/spreadsheet?position_status=faculty&department=<%=h @header_info.department %>&program=<%=h @header_info.program %>&research_area=<%=h @header_info.research_area %>&accepting_students=<%=h @header_info.accepting_students %>" <% if @header_info.position_status == "faculty" %>style="font-weight: bold;"<% end %>>Faculty</a> | 
+				<a href="/people/spreadsheet?position_status=staff&department=<%=h @header_info.department %>&program=<%=h @header_info.program %>&research_area=<%=h @header_info.research_area %>&accepting_students=<%=h @header_info.accepting_students %>" <% if @header_info.position_status == "staff" %>style="font-weight: bold;"<% end %>>Staff</a> | 
+				<a href="/people/spreadsheet?position_status=academic&department=<%=h @header_info.department %>&program=<%=h @header_info.program %>&research_area=<%=h @header_info.research_area %>&accepting_students=<%=h @header_info.accepting_students %>" <% if @header_info.position_status == "academic" %>style="font-weight: bold;"<% end %>>Academic</a> | 
+				<a href="/people/spreadsheet?position_status=graduate&department=<%=h @header_info.department %>&program=<%=h @header_info.program %>&research_area=<%=h @header_info.research_area %>&accepting_students=<%=h @header_info.accepting_students %>" <% if @header_info.position_status == "graduate" %>style="font-weight: bold;"<% end %>>Graduate</a> |
+				Spreadsheet: <a href="/people?position_status=<%=h @header_info.position_status %>&department=<%=h @header_info.department %>&program=<%=h @header_info.program %>&research_area=<%=h @header_info.research_area %>&accepting_students=<%=h @header_info.accepting_students %>" >Back</a> 
+				/ <a href="/people/spreadsheet.csv?position_status=<%=h @header_info.position_status %>&department=<%=h @header_info.department %>&program=<%=h @header_info.program %>&research_area=<%=h @header_info.research_area %>&accepting_students=<%=h @header_info.accepting_students %>" >Download</a>
+			</td>
+		</tr>
+
+
+
+		<tr>
+			<th><strong>Name, Title, Home Address/Phone</strong></th>
+			<th><strong>Dept/Prog</strong></th>
+			<th><strong>Office/Phone</strong></th>
+			<th><strong>Lab/Phone</strong></th>
+		</tr>
+
+
+		<% letter = "@" %>
+		<% for person in @people %>
+            <tr>
+  				<td><strong><%=h person.full_name %></strong></td>
+				<td>
+					<% if !person.department.nil?  && person.department != "18" && person.position_status == "Faculty" %><%=h person.department_show %><% end %>
+					<% if !person.program.nil?  && person.program != "1" && person.position_status != "Staff" %><%=h person.program_show %><% end %>
+				</td>
+				<td><% if !person.office_address.empty? %><%=h person.office_address %><% end %></td>
+				<td><% if !person.lab_address.empty? %><%=h person.lab_address %><% end %></td>
+			</tr>
+			<tr>
+				<td><% if !person.title.empty? %><%= person.title %><% end %></td>
+				<td><% if !person.mail_code.empty? %><%=h person.mail_code %><% end %></td>
+				<td><% if !person.office_phone.empty? %><%=h person.office_phone %><% end %></td>
+				<td><% if !person.lab_phone.empty? %><%=h person.lab_phone %><% end %></td>
+			</tr>
+			<tr>
+				<td><% if !person.mail_address.empty? %>MAIL: <%=h person.mail_address %><% end %></td>
+				<td><% if !person.position_status.empty? %><%=h person.position_status %><% end %></td>
+				<td colspan="2"><% if !person.email.empty? %>EMAIL: <%=h person.email %><% end %></td>
+			</tr>
+		<% end %>
+    </table>   
+
+
+</div>
+

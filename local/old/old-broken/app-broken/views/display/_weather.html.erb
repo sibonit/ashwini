@@ -1,0 +1,21 @@
+
+<div id="weather"></div>
+
+<script type='text/javascript' >
+
+	$(function() {			
+		$.simpleWeather({
+			location: 'Urbana, Illinois',
+			unit: 'f',
+			success: function(weather) {
+				$("#weather").append('<strong style="padding-top: 10px;">'+weather.city+', '+weather.region+'</strong><br/>');
+				$("#weather").css("background-image", "url(" + weather.image + ")");
+				$("#weather").append(weather.temp+'&deg; '+weather.units.temp+'<span> / '+weather.currently+'</span>');
+			},
+			error: function(error) {
+				$("#weather").html('<p>'+error+'</p>');
+			}
+		});
+	});
+	
+</script>

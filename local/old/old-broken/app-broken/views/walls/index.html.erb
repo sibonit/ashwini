@@ -1,0 +1,30 @@
+<h1>Listing walls</h1>
+
+
+<% if session[ :logged_in ] %>
+	<% content_for :breadcrumbs_left do %><%= link_to 'Logout ' + session[ :netid ], '/logout?previous_page=' + walls_path + request.env[ 'QUERY_STRING' ].gsub(/\&/,'%26') %><% end %>
+<% else %>
+	<% content_for :breadcrumbs_left do %><%= link_to 'Login', '/login?previous_page=' + walls_path + request.env[ 'QUERY_STRING' ].gsub(/\&/,'%26') %><% end %>
+<% end %>
+
+<% if session[ :admin ] %>
+	<% @walls.each do |wall| %>
+		<table>
+		  <tr>
+			<td><%=h wall.name %></td>
+			<td><%= link_to 'Show', wall %></td>
+			<td><%= link_to 'Edit', edit_wall_path(wall) %></td>
+			<td><%= link_to 'Destroy', wall, method: :delete, data: {confirm: "Are you sure?"} %></td>
+		  </tr>
+		</table>
+	<% end %>
+	
+	<p>&nbsp;</p>
+	
+	<%= render(:partial => "form") %>
+<% else %>
+	You must log in to see the list of walls.
+<% end %>
+
+<br />
+

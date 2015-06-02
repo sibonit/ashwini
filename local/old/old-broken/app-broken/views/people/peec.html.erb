@@ -1,0 +1,94 @@
+<% content_for :title do %><%=h @header_info.directory_title %>, School of Integrative Biology, University of Illinois<% end %>
+<% content_for :keywords do %><%=h @header_info.directory_title %>, Research, Ecology, Evolution, Conservation, peec, Biology, Illinois, Midwest, college, sib, uiuc<% end %>
+<% content_for :description do %>Use this page to search through our <%=h @header_info.directory_title %> in Ecology, Evolution &amp; Conservation Biology.<% end %>
+
+<% content_for :breadcrumbs do %><%=h @header_info.directory_title %><% end %>
+<% content_for :content_image do %><img src="http://sib.illinois.edu/images/PageHeader/directory/<%=h @header_info.content_image %>.jpg" alt="Content Splash Image" /><% end %>
+
+
+
+<h1><%=h @header_info.directory_title %></h1>
+
+<p>The University of Illinois at Urbana-Champaign
+has a long tradition of excellence in ecology and evolutionary biology. From the
+early 1900's with such scientists as Stephen A. Forbes and Victor E. Shelford to today,
+our faculty and graduate students have made major contributions to these disciplines.&nbsp;For faculty research interests, see <a href="http://sib.illinois.edu/research.htm">research areas</a>.</p> 
+
+<p>&nbsp;</p>
+
+<center>
+<strong>
+	<a href="#A">A</a> <a href="#B">B</a> <a href="#C">C</a> <a href="#D">D</a> <a href="#E">E</a> 
+	<a href="#F">F</a> <a href="#G">G</a> <a href="#H">H</a> <a href="#I">I</a>
+    <a href="#J">J</a> <a href="#K">K</a> <a href="#L">L</a> <a href="#M">M</a>  
+    <a href="#N">N</a> <a href="#O">O</a> <a href="#P">P</a> <a href="#Q">Q</a>
+	<a href="#R">R</a> <a href="#S">S</a> <a href="#T">T</a> <a href="#U">U</a> <a href="#V">V</a>
+	<a href="#W">W</a> <a href="#X">X</a> <a href="#Y">Y</a> <a href="#Z">Z</a>
+</strong>
+</center>
+
+<p>&nbsp;</p>
+
+
+  <table border="0" cellpadding="2" width="98%">
+  
+	<% if @people.empty? %><tr><td colspan="4" align="center"><br/>
+		<h2>There is nobody in the School of Integrative Biology in this category.  Try broadening your search.</h2>
+	</td></tr><% end %>
+
+	<% letter = "@" %>
+	<% background_color = "CCFFCC" %>
+	<% for person in @people %>
+		<% if letter != person.last_name[0,1] %>
+			<tr>
+				<td valign="top">
+					<br/>
+					<h2>
+					<% while (letter != person.last_name[0,1]) and letter <= "Z" %>
+						<% letter = letter.next %>
+						<%=h letter %><a href="#<%=h letter %>" name="<%=h letter %>" id="<%=h letter %>" class="anchorFix"></a>
+					<% end %>
+					</h2>
+				</td>
+				<td valign="top" colspan="2">&nbsp;</td>
+			</tr>
+		<% end%>  
+		
+		<% if background_color == "CCFFCC" %><% background_color = "FFFFCC" %>
+		<% elsif background_color == "FFFFCC"%><% background_color = "CCFFFF" %>
+		<% elsif background_color == "CCFFFF"%><% background_color = "FFCC99" %>
+		<% elsif background_color == "FFCC99"%><% background_color = "CCFFCC" %>
+		<% end %>
+	
+		
+		<tr>
+            <td style="padding: 0; width: 56px;">
+                <% if !person.personal_webpage.empty? %><a class="no_underline" href="<%=h person.personal_webpage %>">
+				<% elsif !person.lab_webpage.empty? %><a class="no_underline" href="<%=h person.lab_webpage %>">
+				<% end %>				
+					<% unless person.picture.empty? %><img src="<%=h person.picture %>" width="56" />
+					<% else %><img src="http://sib.illinois.edu/images/no_image.jpg" width="56" align="middle" />
+					<% end %>
+				<% if !person.personal_webpage.empty? || !person.lab_webpage.empty? %></a><% end %>
+          	</td>		
+			<td valign="top" bgcolor="#<%=h background_color %>" width="32%">
+				<strong>
+               	<% if !person.personal_webpage.empty? %><a href="<%=h person.personal_webpage %>"><%=h person.full_name %></a>
+				<% elsif !person.lab_webpage.empty? %><a href="<%=h person.lab_webpage %>"><%=h person.full_name %></a>
+				<% else %><%=h person.full_name %>
+				<% end %></strong><br/>
+				
+				<% if !person.title.empty? %><%= person.title %><br/><% end %>
+				
+				<% if !person.email.empty? %><a href="mailto:<%=h person.email %>"><%=h person.email %></a><% end %>
+			</td>
+			<td valign="top" bgcolor="#<%=h background_color %>" width="64%">
+				Research: <% if !person.research_statement.empty? %><%=h person.research_statement %><% else %>&nbsp;<% end %>
+			</td>
+		</tr>
+	<% end %>
+  </table>
+
+
+<br />
+		

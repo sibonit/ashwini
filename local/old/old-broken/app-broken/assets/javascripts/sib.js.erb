@@ -1,0 +1,100 @@
+
+//$(document).ready(function () {
+	
+//    $('form').('.remove_fields').click(function () {
+//		$(this).prev('input[type=hidden]').val('1')
+//		$(this).closest('fieldset').hide()
+//		event.preventDefault()
+//    });
+	
+//    $(".add_fields").click(function () {
+//		time = new Date().getTime()
+//		regexp = new RegExp($(this).data('id'), 'g')
+//		$(this).before($(this).data('fields').replace(regexp, time))
+//		event.preventDefault()
+//    });
+	
+//});
+
+$(document).ready(function () {
+
+	var remove_fields = function (event) {
+		event.preventDefault();
+		$(this).prev("input[type=hidden]").val('1');
+		$(this).parent().hide();
+		return false;
+	}
+
+    $(".remove_fields").on("click", remove_fields);
+
+    $(".submit_fields").on("click", function (event) { 
+		$(".fields_to_add").attr("disabled", true); 
+	} );
+
+	$(".add_fields").click(function (event) {
+		event.preventDefault();
+		time = new Date().getTime();
+		regexp = new RegExp($(this).data('id'), 'g');
+		$(this).before($(this).data('fields').replace(regexp, time));
+		$(this).prev("div").children("a.remove_fields").on("click", remove_fields);
+		return false;
+	});
+
+//	$(".fields_to_add").change(function (event) {
+//		person_id = $(this).val();
+//		person_name = $(this).find("option[value='" + person_id + "']").text();
+//	});
+	
+	$(".fields_from_select").click(function(event) {
+	
+		selected = $(this).next(".fields_to_add");
+		id = $(selected).val();
+		name = $(selected).find("option[value='" + id + "']").text();
+		  
+		event.preventDefault()
+	
+		lastNestedForm = $(this).prev("div");
+		newNestedForm  = $(this).prev("div").clone();
+		time = new Date().getTime();
+	
+		$(newNestedForm).find('label').each( function() {
+			oldLabel = $(this).attr('for');
+			newLabel = oldLabel.replace(new RegExp(/_[0-9]+_/), '_'+time+'_');
+			$(this).attr('for', newLabel);
+		});
+	
+		$(newNestedForm).find('select, input').each( function() {
+			oldId = $(this).attr('id');
+			newId = oldId.replace(new RegExp(/_[0-9]+_/), '_'+time+'_');
+			oldName = $(this).attr('name');
+			newName = oldName.replace(new RegExp(/[0-9]+/), time);
+			$(this).attr('id', newId);
+			$(this).attr('name', newName);
+		});
+			  
+			
+		$(newNestedForm).find('input[type=hidden]').last().val(id);
+		$(newNestedForm).find(".details").last().html(name);
+		
+		$(newNestedForm).children().attr("disabled", false);
+		$(newNestedForm).show();
+	
+		$( newNestedForm ).insertBefore( lastNestedForm );
+		
+    	$(".remove_fields").on("click", remove_fields);
+			
+		return true;
+	});
+	
+	$(".fields_to_add").attr("disabled", false);
+	
+	$(".fields_from_select").prev("div").children().attr("disabled", true);
+	$(".fields_from_select").prev("div").hide();
+	
+	
+
+	
+		
+	$("div.Categories").height( Math.max($("div.Content").outerHeight(),$("div.Categories").outerHeight()) );
+	
+});

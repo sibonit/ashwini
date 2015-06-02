@@ -1,0 +1,24 @@
+#!/bin/bash
+
+cd /usr/local/rails/sib
+ruby script/generate scaffold  Person \
+  first_name:string \
+  last_name:string \
+  title:string \
+  department:string \
+  program:string \
+  email:string \
+  office_address:string \
+  office_phone:string \
+  lab_address:string \
+  lab_phone:string \
+  mail_address:string \
+  mail_code:string \
+  research_statement:string \
+  accepting_students:string \
+  picture:string \
+  research_area:string \
+  lab_webpage:string \
+  personal_webpage:string \
+  position_status:string \
+  netid:string

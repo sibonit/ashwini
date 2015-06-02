@@ -1,0 +1,41 @@
+
+<% content_for :breadcrumbs_left do %><%= link_to 'Logout ' + session[ :netid ], '/logout?previous_page=/contacts/' + @contact.to_s + '?' + request.env[ 'QUERY_STRING' ].gsub(/\&/,'%26') %><% end %>
+
+<p>
+  <b>First name:</b>
+  <%=h @contact.first_name %>
+</p>
+
+<p>
+  <b>Last name:</b>
+  <%=h @contact.last_name %>
+</p>
+
+<p>
+  <b>Degree Type:</b>
+  <%= @contact.degree_type %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%=h @contact.email %>
+</p>
+
+<p>
+  <b>Country:</b>
+  <%=h @contact.country %>
+</p>
+
+<p>
+  <b>Zip Code:</b>
+  <%=h @contact.zip_code %>
+</p>
+
+<p>
+  <b>Phone Number:</b>
+  (<%=h @contact.area_code %>) - <%=h @contact.phone1 %> - <%=h @contact.phone2 %> X <%=h @contact.phone_ext %>
+</p>
+<br/>
+
+<%= link_to 'Edit', :action => 'edit', :id => @contact %> |
+<%= link_to 'Back', :action => 'index' %>

@@ -1,0 +1,31 @@
+<div class="page_error"><%= flash[:error] %></div>
+<%#= error_messages_for( :session ) %>
+
+<%= form_tag session_create_url do %>
+
+<%= hidden_field_tag 'previous_page', params[:previous_page]  %>
+<p>
+Please log in using your campus Active Directory credentials.
+</p>
+
+<table>
+  <tr>
+    <td>Netid:</td>
+    <td>
+    <%= text_field_tag :netid %>
+    </td>
+  </tr>
+  <tr>
+    <td>Password:</td>
+    <td>
+    <%= password_field_tag :password %>
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+    <td><input type="submit" value=" Login " /></td>
+  </tr>
+</table>
+<% end %>
+
+<%= set_focus( "netid" ) %>

@@ -1,19 +1,6 @@
-      
-   <!--KA: Uneven columns with image-->
+<% content_for( :title, 'Undergraduate Programs' ) %>
+<% content_for( :sidebar, 'ugrad_programs' ) %>
 
-
-  <div class="row">
-            <div class="col-lg-12"><p></div>
-
-
-<!--KA: Sidebar start-->
-	<div class="col-md-4">
-	      <%= render 'layouts/sidebar_ugrad_programs' %>
-	 </div>
-<!--KA: Sidebar end-->
-
-	 <!--div-col-8 start -->
-      <div class="col-md-8">  
 		<h2 style="text-align: center;">Undergraduate Programs</h2>
 		<h4>The School of Integrative Biology offers three ways to earn an undergraduate degree:</h4>
   
@@ -68,7 +55,7 @@
                		<a class="no_underline"><%= image_tag 'sib/animalBio1.jpg',  alt: "animalBio", size: "160x150" %></a>
 	           </div>
         	   <div class="col-md-8">
-                	<h4><a href="http://sib.illinois.edu/minor">Integrative Biology</a></h4>
+                	<h4><a href="/minor">Integrative Biology</a></h4>
 			<p>For students intending to have a career in a field other than biology, but for whom a background in biology is complementary.</p>
 		   </div>
 		</div>
@@ -82,14 +69,7 @@
                		<a class="no_underline"><%= image_tag 'sib/ecbminor.jpg',  alt: "ecb minor", size: "160x150" %></a>
 	           </div>
         	   <div class="col-md-8">
-                	<h4><a href="http://sib.illinois.edu/minor/ecology">Ecology & Conservation Biology</a></h4>
+                	<h4><a href="/minor/ecology">Ecology & Conservation Biology</a></h4>
 			<p>Prepares students for careers in this growing sub-discipline of biology.</p>
 		   </div>
 	       </div>
-
-      </div>   <!--div:col-8 end -->
-
-</div>  	<!--div:row end
-
-
-

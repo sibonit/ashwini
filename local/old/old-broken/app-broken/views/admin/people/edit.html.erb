@@ -1,0 +1,101 @@
+<h1>Editing person</h1>
+
+<#% form_for :person, :url => { :action => 'update', :id => @person } do |f| %>
+<% form_for [ :admin, @person ] do |f| -%>
+  <%= f.error_messages %>
+
+  <div style="float: left; padding: .5em;">
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name %>
+  </div>
+  <div style="float: left; padding: .5em;">
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name %>
+  </div>
+  <div style="float: left; padding: .5em;">
+    <%= f.label :department %><br />
+	<select multiple="multiple" name="person[department_list][]">
+   		<%= options_for_select([['None','18'], ['Animal Biology','1'], ['Animal Sciences','13'], ['Biology Library','2'], ['Cell and Developmental Biology','3'], 
+   							    ['Entomology','4'], ['Integrative Biology','5'], ['Molecular and Cellular Biology','7'], ['Plant Biology','6'],
+								['INHS-CDB','8'], ['INHS-CAE','10'], ['INHS','11'], ['MIP','12'], ['Crop Science','14'], ['NRES','9'],
+								['Biophysics','16'], ['IGB','17'], ['Biochemistry','19'], ['Electrical and Computer Engineering','20'], ['Microbiology','15']], @person.department_list )%>
+  	</select> 
+  </div>
+  <div style="float: left; padding: .5em;">
+    <%= f.label :program %><br />
+    <select multiple="multiple" name="person[program_list][]">
+   		<%= options_for_select([['Biology','1'], ['PHD','2'], ['PEEC','3'], 
+   							    ['Masters in Biology','4'], ['PMPB','5'], ['NSP','6'], ['MST','7'], 
+   							    ['Animal Biology','8'], ['Biology Library','9'], ['Cell and Developmental Biology','10'], ['Entomology','11'], 
+   							    ['Integrative Biology','12'], ['Molecular and Cellular Biology','13'], ['Plant Biology','14'], ['PSM Program','PSM']], 
+								@person.program_list )%>
+	</select>
+  </div>
+  <div style="float: left; padding: .5em;">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div style="float: left; padding: .5em;">
+    <%= f.label :office_address %><br />
+    <%= f.text_field :office_address %>
+  </div>
+  <div style="float: left; padding: .5em;">
+    <%= f.label :office_phone %><br />
+    <%= f.text_field :office_phone %>
+  </div>
+  <div style="float: left; padding: .5em;">
+    <%= f.label :lab_address %><br />
+    <%= f.text_field :lab_address %>
+  </div>
+  <div style="float: left; padding: .5em;">
+    <%= f.label :lab_phone %><br />
+    <%= f.text_field :lab_phone %>
+  </div>
+  <div style="float: left; padding: .5em;">
+    <%= f.label :mail_address %><br />
+    <%= f.text_field :mail_address %>
+  </div>
+  <div style="float: left; padding: .5em;">
+    <%= f.label :mail_code %><br />
+    <%= f.text_field :mail_code %>
+  </div>
+  <div style="float: left; padding: .5em;">
+    <%= f.label :position_status %><br />
+    <%= f.text_field :position_status %>
+  </div>
+  <div style="float: left; padding: .5em;">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div style="float: left; padding: .5em;">
+    <%= f.label :research_statement %><br />
+    <%= f.text_field :research_statement %>
+  </div>
+  <div style="float: left; padding: .5em;">
+    <%= f.label :accepting_students %><br />
+    <%= f.text_field :accepting_students %>
+  </div>
+  <div style="float: left; padding: .5em;">
+    <%= f.label :picture %><br />
+    <%= f.text_field :picture %>
+  </div>
+  <div style="float: left; padding: .5em;">
+    <%= f.label :research_area %><br />
+    <select multiple="multiple" name="person[research_list][]">
+   		<%= options_for_select([['Physiology & Development','1'], ['Ecology','2'], ['Systematics & Evolution','3'], 
+   							    ['Behavior','4'], ['Biochemistry & Genetics','5'], ['None', '6']], @person.research_list )%>
+	</select>
+  </div>
+  <div style="float: left; padding: .5em;">
+    <%= f.label :lab_webpage %><br />
+    <%= f.text_field :lab_webpage %>
+  </div>
+  <div style="float: left; padding: .5em;">
+    <%= f.label :personal_webpage %><br />
+    <%= f.text_field :personal_webpage %>
+  </div>
+    <%= f.submit "Update" %>
+<% end %>
+
+<%= link_to 'Show', :action => 'show', :id => @person %> |
+<%= link_to 'Back', :action => 'index' %>

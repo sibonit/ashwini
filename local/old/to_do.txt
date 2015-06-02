@@ -1,0 +1,92 @@
+# October 6, 2014
+People_Audit
+  recreate index form from directory/index
+  make sure that every field can be edited
+  does anyone have multiple Departments/Programs/Units?
+    Where are all the PEEC people? - PEEC directory
+
+    
+# September 22, 2014
+people_audit
+  index
+    remove all but name & netid (email?)
+  edit
+    assigning groups
+      remove extra 'as' word
+      remove any unused groups (what are they?)
+    comment out access settings (since we will abandon these eventually?)
+    show block that will be presented on /directory (the show page?)
+
+NetIDs
+  Let's encourage adding a NetID for each person
+  Change each controller so only 'admins' can log in
+
+Store people photos as Paperclip objects in Rails
+  currently coming from any URL
+
+What are? How are they used?
+  contacts
+  courses (all from 2010)
+
+Remove
+  walls
+  comments
+  documents (empty)
+
+# September 3, 2014 START
+
+# September 13, 2014 Thom Update
+See, add, edit people_audit records by admins only
+  add people_audit to config/routes.rb
+  copy over people_audit_controller & views/people_audit folder
+    make most files in views/people_audit unavialable (or s-links)
+    change "Back to Directory" in show to "Back to People Audit"
+    change "Directory" in edit/new to "People Audit"
+    before_filter :admin in people_audit_controller 
+      generalize: flash[ :error ] = 'No access to ' + params[ :id ] in app_cont 
+  validate last_name exists in models/person
+w/Jeff: Follow People Index, New Person and make available to Admins
+  find out who needs to edit people and get them in (disapearing)
+
+# September 22, 2014 Thom Update
+people_audit/index changes:
+  "New Person" link always available
+  Cleared out old comments
+  Centered Header and Navigation
+  Quick access "Dir" links on the left
+http://sib./pages changed /research/people to /research/directory
+  views/people/_person_list.html.erb fixed menu to /research/directory 
+
+Fix jump links #B
+Give Access to Kim Leigh and Staci Sears
+Create / Find New Person link
+
+# STILL TODO
+[]    need style for Error: <div id="errorExplanation">
+[]    need solution for uncapitalized last names
+        before_save :capitalize_names
+        http://stackoverflow.com/questions/10210493/rails-ensure-capitalization-in-model
+[] make PEOPLE sidebar usefull to check views
+
+[]  what is quesion mark after people or people_audit when logging in?
+
+Carla Prioirities:
+  SEP People Directory Editing
+  OCT Home Page Edits: adding calendar, plus more
+  NOV Work on www.life portal page?
+  Also: Replace Sidebar layout, People page links removed, Public cleared
+    static.html.erb, spreadsheet.html.erb, sib.html.erb, people.html.erb ?
+
+Get rid of /directory?filter=Faculty and use /peec/directory/faculty style
+  provide automated first-letter links, so only existing show up
+  provide location-based top-links, so not sloppy
+  provide old-style graphic and info pages at the top for research areas
+
+Allow admins to edit all Person records
+   Support many-to-many relations from people, which are:
+	has_many :group_people
+	# has_many :groups, through: :group_people
+	has_one :page, foreign_key: :featured_person_id
+
+Fix/simplify authentication
+  Seeing options when not logged in, and blocked when logged in

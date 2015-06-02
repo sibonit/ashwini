@@ -4,6 +4,9 @@ get 'news/index' => 'news#index', as: 'newslist'
 get 'calendar/index'
 get 'welcome/index'
 
+get 'alumni' => 'welcome#alumni', as: 'alumni'
+get 'alumni_2' => 'welcome#alumni_2', as: 'alumni_2'
+
 #KA: Assign named routed to About pages
 get 'about'  => 'about#index', as: 'about_home'
 get 'about/contact' => 'about#contact', as: 'about_contact'
@@ -13,7 +16,6 @@ get 'about/faq' => 'about#faq', as: 'about_faq'
 get 'about/whyib' => 'about#whyib', as: 'about_whyib'
 
 
-
 #KA: Assign named routed to Ugrad pages
 get 'undergraduate'  => 'ugrad#index', as: 'undergrad_home'
 get 'ugrad/advising' => 'ugrad#advising', as: 'advising'
@@ -21,6 +23,8 @@ get 'ugrad/prospective' => 'ugrad#prospective', as: 'prospective'
 get 'ugrad/options' => 'ugrad#options', as: 'options'
 get 'ugrad/programs' => 'ugrad#programs', as: 'programs'
 get 'ugrad/special_programs' => 'ugrad#special_programs', as: 'special_programs'
+get 'ugrad/courses' => 'ugrad#courses', as: 'ugrad_courses'
+get 'ugrad/honors' => 'ugrad#honors', as: 'ugrad_honors'
 
 
 #KA: Assign named routed to Graduate pages
@@ -29,8 +33,8 @@ get 'graduate/departments' => 'graduate#departments', as: 'grad_depts'
 get 'graduate/grants' => 'graduate#grants', as: 'grad_grants'
 get 'graduate/news' => 'graduate#news', as: 'grad_news'
 get 'graduate/support' => 'graduate#support', as: 'grad_support'
-
-
+get 'graduate/prospective' => 'graduate#prospective', as: 'grad_prospective'
+get 'graduate/courses' => 'graduate#courses', as: 'grad_courses'
 
 
 #KA: Assign named routed to People pages
@@ -43,7 +47,7 @@ get 'people/grad_students' => 'people#grad_students', as: 'people_grad_students'
 get 'people/staff' => 'people#staff', as: 'people_staff'
 
 
-
+#=====================================================================================
 
 # KA: Replace the above with named Route. THis route can be called using help_path
 get 'static_pages/help' => 'static_pages#help', as: 'help'
@@ -52,9 +56,10 @@ get 'static_pages/about' => 'static_pages#about', as: 'about'
 get 'static_pages/contact' => 'static_pages#contact', as: 'contact'
 get 'signup'  => 'users#new'
 
-get 'sample_layouts/test'  => 'sample_layouts#test', as: 'sample_layouts_test'
+get 'removed' => 'welcome#removed', as: 'removed'
 
 
+#=================================================================================
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -111,4 +116,8 @@ get 'sample_layouts/test'  => 'sample_layouts#test', as: 'sample_layouts_test'
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  # route for 'static' content
+  get '*path' => 'static#index'
+
 end

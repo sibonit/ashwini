@@ -1,0 +1,20 @@
+
+<div id="new_comment">
+	<%= form_for(@comment) do |f| %>
+	  <%= f.hidden_field :wall_id %>
+	
+	  <h2>Enter a new message for <%= @comment.wall.name %></h2>
+	  
+	  <p>
+		<%= f.submit "Submit Message" %>
+	  </p>
+	  
+	  <p><%= f.text_area :content, :cols => 72, :rows => 7 %></p>
+	
+	  <p>
+		<%= f.text_area :signature, :cols => 30, :rows => 1 %>
+		<%= f.label :signature %>
+	  </p>
+	
+	<% end %>
+</div>

@@ -1,0 +1,25 @@
+
+
+
+<%= form_tag new_group_path, method: :get do %>
+	<%= submit_tag "New Group", name: nil, class: "upper_right_button" %>
+<% end %>
+
+<table>
+
+	<tr>
+		<th>Groups</th>
+		<th colspan="2">&nbsp;</th>
+	</tr>
+	
+	<% @groups.each do |group| %>
+		<tr>
+			<td><%= group.name %></td>
+			<td><%= link_to 'Edit', edit_group_path(group) %></td>
+			<td><%= link_to 'Copy', '/groups/' + group.id.to_s + '/copy' %></td>
+			<td><%= link_to "Destroy", group, method: :delete, data: {confirm: "Are you sure?"} %></td>
+		</tr>
+	<% end %>
+	
+</table>
+

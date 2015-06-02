@@ -1,0 +1,137 @@
+<% content_for :title do %>Area Courses, School of Integrative Biology, University of Illinois<% end %>
+<% content_for :keywords do %>Area Integrative Biology Courses, Illinois, Midwest, sib, uiuc<% end %>
+<% content_for :description do %>The list below shows the SIB courses that fulfill area requirements in the IB major and which area they fall into.<% end %>
+<% content_for :submenu do %>
+				<ul>
+                	<li>&nbsp;</li>
+                	<li id="FirstItem"><%= link_to 'Courses', courses_path %></li>
+                    <li><%= link_to 'All IB Courses', courses_path %></a></li>
+                    <li><%= link_to 'SIB Area Courses', :controller => "courses", :action => "area" %></li>
+                    <li><%= link_to 'Additional Approved Courses', :controller => "courses", :action => "additional" %></li>
+                    <li><%= link_to 'Special Topics Courses', :controller => "courses", :action => "special" %></li>
+                    <li>&nbsp;</li>
+				</ul>
+<% end %>
+<% if session[ :logged_in ] %>
+	<% content_for :breadcrumbs_left do %><%= link_to 'Logout ' + session[ :netid ], '/logout?previous_page=/courses/area?' + request.env[ 'QUERY_STRING' ].gsub(/\&/,'%26') %><% end %>
+<% else %>
+	<% content_for :breadcrumbs_left do %><%= link_to 'Login', '/login?previous_page=/courses/area?' + request.env[ 'QUERY_STRING' ].gsub(/\&/,'%26') %><% end %>
+<% end %>
+<% content_for :breadcrumbs do %><%= link_to 'Courses', courses_path %> &gt;&gt; Area Approved IB Courses<% end %>
+<% content_for :content_image do %><img src="/images/PageHeader/courses2.jpg" alt="Content Splash Image" /><% end %>
+
+
+
+
+<h1>SIB Area Courses</h1>
+
+	<p>The list below shows the SIB courses that fulfill area requirements in the IB major and the area(s) into which they fall. <a href="../advising/options/">Click here</a> to see the list of IB Advising Options and links to courses suggested for each.</p>
+    
+    <p>&nbsp;</p>
+
+<div class="course_table">
+  <table cellspacing="0px" width="100%">
+    <tr>
+	  <th width="20%">Course No.</th>
+      <th width="30%">Course Title</th>
+      <th width="25%">Credit (hours)</th>
+      <th width="25%">Offered</th>
+    </tr>
+	
+
+    <tr>
+      <td colspan="4">
+      <a href="#1" name="1" class="anchorFix"></a>
+        <p align="left"><strong>Area I:&nbsp; Organismal &amp; Evolutionary Biology</strong></p></td>
+    </tr>	
+
+	<% @courses.each do |course| %>
+	<% if course.area1_course %>
+	  <tr>
+		<td>
+			<% if !course.website.empty? %>
+				<a href="<%=h course.website %>"><%=h course.course_number %></a>
+			<% else %>
+				<%=h course.course_number %>
+			<% end %>
+		</td>
+		<td><%= course.course_title %><% if course.area3_requirement %>***<% end %></td>
+		<td><%=h course.credit_hours %><% if course.lab_section == "Required" %>*<% end %><% if course.lab_section == "Optional" %>**<% end %></td>
+		<td>
+			<% if !course.offered.empty? %><%=h course.offered %><% end %>
+		</td>
+		
+	  </tr>
+	<% end %>
+	<% end %>
+	
+	
+    <tr>
+      <td colspan="4">
+          <a href="#2" name="2" class="anchorFix"></a>
+          <p align="left"><strong>Area II:&nbsp; Behavior, Ecology, &amp; the Environment</strong></p>      </td>
+    </tr>	
+
+	<% @courses.each do |course| %>
+	<% if course.area2_course %>
+	  <tr>
+		<td>
+			<% if !course.website.empty? %>
+				<a href="<%=h course.website %>"><%=h course.course_number %></a>
+			<% else %>
+				<%=h course.course_number %>
+			<% end %>
+		</td>
+		<td><%= course.course_title %><% if course.area3_requirement %>***<% end %></td>
+		<td><%=h course.credit_hours %><% if course.lab_section == "Required" %>*<% end %><% if course.lab_section == "Optional" %>**<% end %></td>
+		<td>
+			<% if !course.offered.empty? %><%=h course.offered %><% end %>
+		</td>
+		
+	  </tr>
+	<% end %>
+	<% end %>
+	
+	
+    <tr>
+      <td colspan="4">
+      	<a href="#3" name="3" class="anchorFix"></a>
+        <p align="left"><strong>Area III:&nbsp; Integrative Anatomy, Physiology, &amp; Molecular Biology</strong></p>      </td>
+    </tr>
+	
+	<% @courses.each do |course| %>
+	<% if course.area3_course %>
+	  <tr>
+		<td>
+			<% if !course.website.empty? %>
+				<a href="<%=h course.website %>"><%=h course.course_number %></a>
+			<% else %>
+				<%=h course.course_number %>
+			<% end %>
+		</td>
+		<td><%= course.course_title %><% if course.lab_section == "Required" %>*<% end %><% if course.lab_section == "Optional" %>**<% end %></td>
+		<td><%=h course.credit_hours %><% if course.area3_requirement %>***<% end %></td>
+		<td>
+			<% if !course.offered.empty? %><%=h course.offered %><% end %>
+		</td>
+		
+	  </tr>
+	<% end %>
+	<% end %>
+
+  </table>
+  
+  <p>&nbsp;</p>
+  <p><sup>1</sup><a href="../IB_Major.htm#requirements">IB Area or Additional Courses</a> as it relates to the undergraduate degree in Integrative Biology.<br/> 
+
+  <p>&nbsp;</p>
+  <p>&nbsp;*&nbsp; = Course with field or laboratory component</p>
+  <p>&nbsp;</p>
+  <p>**&nbsp; = Course may be taken with or without laboratory</p>
+  <p>&nbsp;</p>
+  <p>*** = Two of these four courses are required to meet the Area III requirement</p>
+  <p>&nbsp;</p>
+  
+  
+  </div>
+  

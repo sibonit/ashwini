@@ -1,0 +1,73 @@
+$(document).ready(function () {
+
+	$("#page_page_type").change(function (event) {
+		switch( $(this).val() ) {
+		case 'Tabs':
+		case 'Categories':
+		case 'Welcomes':
+			$(".remove_fields:not(:first)").click();
+			$(".add_fields").hide();
+			$(".menus_select").attr("disabled", true);
+			$(".menus_select").hide();
+		break;
+		default:
+			$(".add_fields").show();
+			$(".menus_select").attr("disabled", false);
+			$(".menus_select").show();
+		}
+		
+		if ( $(this).val() == 'Person' ) {
+			$(".Person_Box").show();
+		} else {
+			$(".Person_Box").hide();
+		}
+		
+		//alert($("body#tinymce").object());
+		//$("body#tinymce").attr('class', $(this).val().toLowerCase());
+	});
+	
+	$("#page_page_type").change();
+	
+	
+	$(".tab_select").change(function (event) {	
+		$.ajax({
+			url: $("body").first().data('path') + 'update_tabs',
+			data: {
+				tab_path : $(this).val()
+			},
+			dataType: "script"
+		});
+	});
+	
+	$(".category_select").change(function (event) {	
+		$.ajax({
+			url: $("body").first().data('path') + 'update_categories',
+			data: {
+				category_path : $(this).val()
+			},
+			dataType: "script"
+		});
+	});
+	
+	$(".stylesheet_select").change(function (event) {	
+		$.ajax({
+			url: $("body").first().data('path') + 'update_stylesheet',
+			data: {
+				stylesheet : $(this).val()
+			},
+			dataType: "script"
+		});
+	});
+	
+	$(".welcome_select").change(function (event) {	
+		$.ajax({
+			url: $("body").first().data('path') + '/update_welcome',
+			data: {
+				welcome_path : $(this).val()
+			},
+			dataType: "script"
+		});
+	});
+
+
+});

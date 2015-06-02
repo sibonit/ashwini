@@ -1,0 +1,44 @@
+<% content_for :title do %><%=h @header_info.directory_title %>, School of Integrative Biology, University of Illinois<% end %>
+
+
+<div class="directory_table">
+    <table>
+
+
+
+		<tr>
+			<th><strong>Name, Title, Address/Phone</strong></th>
+			<th><strong>Dept/Prog</strong></th>
+			<th><strong>Office/Phone</strong></th>
+			<th><strong>Lab/Phone</strong></th>
+		</tr>
+
+
+		<% letter = "@" %>
+		<% for person in @people %>
+            <tr>
+  				<td><strong><%=h person.full_name %></strong></td>
+				<td>
+					<% if !person.department.nil?  && person.department != "18" && person.position_status == "Faculty" %><%=h person.department_show %><% end %>
+					<% if !person.program.nil?  && person.program != "1" && person.position_status != "Staff" %><%=h person.program_show %><% end %>
+				</td>
+				<td><% if !person.office_address.empty? %><%=h person.office_address %><% end %></td>
+				<td><% if !person.lab_address.empty? %><%=h person.lab_address %><% end %></td>
+			</tr>
+			<tr>
+				<td><% if !person.title.empty? %><%= person.title %><% end %></td>
+				<td><% if !person.mail_code.empty? %><%=h person.mail_code %><% end %></td>
+				<td><% if !person.office_phone.empty? %><%=h person.office_phone %><% end %></td>
+				<td><% if !person.lab_phone.empty? %><%=h person.lab_phone %><% end %></td>
+			</tr>
+			<tr>
+				<td><% if !person.mail_address.empty? %>MAIL: <%=h person.mail_address %><% end %></td>
+				<td><% if !person.position_status.empty? %><%=h person.position_status %><% end %></td>
+				<td colspan="2"><% if !person.email.empty? %>EMAIL: <%=h person.email %><% end %></td>
+			</tr>
+		<% end %>
+    </table>   
+</div>
+
+
+

@@ -1,0 +1,59 @@
+<% content_for :title do %>Special Topic Courses, School of Integrative Biology, University of Illinois<% end %>
+<% content_for :keywords do %>IB 496 Special Topics, Integrative Biology, Illinois, Midwest, sib, uiuc<% end %>
+<% content_for :description do %>The list below shows the IB 496 Special Topics courses that are being offered at Illinois.<% end %>
+<% content_for :submenu do %>
+				<ul>
+                	<li>&nbsp;</li>
+                	<li id="FirstItem"><%= link_to 'Courses', courses_path %></li>
+                    <li><%= link_to 'All IB Courses', courses_path %></a></li>
+                    <li><%= link_to 'SIB Area Courses', :controller => "courses", :action => "area" %></li>
+                    <li><%= link_to 'Additional Approved Courses', :controller => "courses", :action => "additional" %></li>
+                    <li><%= link_to 'Special Topics Courses', :controller => "courses", :action => "special" %></li>
+                    <li>&nbsp;</li>
+				</ul>
+<% end %>
+<% content_for :breadcrumbs do %><%= link_to 'Courses', courses_path %> &gt;&gt; IB 496 Special Topics Courses<% end %>
+<% content_for :content_image do %><img src="/images/PageHeader/courses4.jpg" alt="Content Splash Image" /><% end %>
+
+
+
+	<h1 style="text-align: center; padding: 0 4em 0 4em; margin-bottom: 0; padding-bottom: 0;">IB 496 Special Topics Courses</h1>
+    <h2 style="padding-left: 2em; padding-right: 2em; text-align: center;">SPRING 2010</h2>
+
+<div class="course_table">
+  <table cellspacing="0px" width="100%">
+    <tr>
+      <th width="200">Course</th>
+      <th width="400">Topic</th>
+	
+
+	<% @courses.each do |course| %>
+	  <tr>
+		<td>
+			<% if !course.website.empty? %>
+				<a href="<%=h course.website %>"><%=h course.course_number %></a>
+			<% else %>
+				<%=h course.course_number %>
+			<% end %>
+			<% if !course.call_number.empty? %>(<%=h course.call_number %>)<% end %><br/>
+			<% if !course.credit_hours.empty? %><%=h course.credit_hours %> Hour<br/><% end %>
+			<% if !course.course_time.empty? %><%=h course.course_time %><br/><% end %>
+			<% if !course.instructor.empty? %>Instructor(s): <%= course.instructor %><% end %>
+		</td>
+		<td><% if !course.description.empty? %><%= course.description %><% end %></td>
+	  </tr>
+
+	  
+	<% end %>
+
+
+
+  </table>
+  
+
+  
+  <br/>
+  
+  
+  </div>
+  

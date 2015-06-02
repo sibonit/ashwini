@@ -1,0 +1,621 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/SIB_main.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<!-- InstanceBeginEditable name="doctitle" -->
+<title><%= yield :title %></title>
+<!-- InstanceEndEditable -->
+
+    <%= stylesheet_link_tag "application", media: "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tag %>
+	
+	
+
+<link href="/stylesheets/screenSIB.css" rel="stylesheet" type="text/css" media="screen"/>
+<link href="/stylesheets/print.css" rel="stylesheet" type="text/css" media="print"/>
+<link href="/stylesheets/handheld.css" rel="stylesheet" type="text/css" media="handheld"/>
+<%= yield :css %>
+
+<!--[if lt IE 8]><link href="/stylesheets/IE_sib.css" rel="stylesheet" type="text/css" media="screen"/><![endif]-->
+<!--[if IE 8]><link href="/stylesheets/IE8_sib.css" rel="stylesheet" type="text/css" media="screen"/><![endif]-->
+
+<style type="text/css">
+</style>
+
+<!-- InstanceBeginEditable name="left_height" -->
+<style type="text/css">
+</style>
+<!-- InstanceEndEditable -->
+
+
+<%= javascript_include_tag 'sib.js' %>
+
+<script type="text/javascript"><!--//--><![CDATA[//><!--
+
+if ((navigator.appVersion. indexOf('Windows') != -1)) {document.write('<link href="/stylesheets/win_sib.css" rel="styleSheet" type="text/css" media="all">'); }
+
+
+startList = function() 
+{
+	if (document.all&&document.getElementById) 
+	{
+<!--[if !IE]>		cssdropdownRoot = document.getElementById("mainitems");<![endif]-->
+<!--[if IE]>		cssdropdownRoot = document.getElementById("mainitems");<![endif]-->
+		for (var x=0; x<cssdropdownRoot.childNodes.length; x++) 
+		{
+			node = cssdropdownRoot.childNodes[x];
+			if (node.nodeName=="LI") 
+			{
+				node.onmouseover=function() 
+				{
+					this.className+=" over";
+				}
+				node.onmouseout=function() 
+				{
+					this.className=this.className.replace(" over", "");
+				}
+			}
+		}
+	}
+}
+
+if (window.attachEvent)
+window.attachEvent("onload", startList)
+else
+window.onload=startList;
+
+
+
+
+var googleResultUrl = 'http://sib.illinois.edu/search.htm';
+var cx              = '015858819844230299856:ppuichpc1u8';
+var cof             = 'FORID:11';
+
+//leave skinId blank to use the campus default
+var skinId              = '2702';
+
+function sendSearch(){
+		document.gs.cx.value = cx;
+		document.gs.cof.value = cof;
+		document.gs.id = cx;
+		document.gs.action = googleResultUrl;
+}
+function checkSearchValue(){
+    if(document.gs.q.value == 'Search'){document.gs.q.value ='';}
+}
+
+//--><!]]></script>
+
+
+<!-- InstanceBeginEditable name="head" -->
+
+<meta name="keywords" content="<%= yield :keywords %>" />
+
+<meta name="description" content="<%= yield :description %>" />
+
+<!-- InstanceEndEditable -->
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-3947911-2");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+</head>
+
+<body <% if session[ :admin ] %>style="width: 1083px;"<% end %>>
+<div id="container">
+<div id="banner">
+	<a href="/index.html"><img src="/images/template/banner_school.png" alt="School of Integrative Biology"/></a>
+    <a href="http://illinois.edu/"><img src="/images/template/banner_university.png" alt="University of Illinois"/></a></div>
+<!--banner-->
+<div id="navigation">
+<h1 style="display: none;">Navigation Menu</h1>
+<div class="navblock">
+	<div id="logo"><a href="http://illinois.edu"><span>illinois.edu</span></a></div>
+    <div id="slogan"><div><img src="/images/template/menu_phrase.png" alt="Redefining the frontiers of biology..." /></div></div>
+</div>
+<div class="navblock">
+	<h2 style="display: none;">Main Links</h2>
+	<ul id="left_menu">
+	  <li class ="mainitems">
+      	<a href="/index.html">Integrative Biology Home</a>
+      </li>
+	  <li class ="mainitems">
+		<a href="/departme.htm">Departments &amp; Programs </a>
+		<ul class="subuls">
+        	<li><a href="/departme.htm">Departments &amp; Programs Home</a></li>
+			<li><a href="http://www.life.illinois.edu/animalbiology/">Animal Biology</a></li>
+			<li><a href="http://www.life.illinois.edu/entomology/index.html">Entomology</a></li>
+			<li><a href="http://www.life.illinois.edu/plantbio/">Plant Biology</a></li>
+			<li><a href="/peec/">Program in Ecology, Evolution, &amp; Conservation Biology (PEEC)</a></li>
+			<li><a href="http://www.life.illinois.edu/plantbio/pmpb/">Physiological &amp; Molecular Plant Biology Program (PMPB)</a></li>
+			<li><a href="http://www.neuroscience.illinois.edu/">Neuroscience Program (NSP)</a></li>
+            <li><a href="http://www.life.illinois.edu/programs/BMP/">Masters in Biology</a></li>
+            <li><a href="http://www.life.illinois.edu/programs/BMP/MST%20in%20Biology.htm">Masters in the Teaching of Biology (MST)</a></li>
+		</ul>	
+	  </li>
+	  <li class ="mainitems">
+      	<a href="/courses/index.html">Course Information</a>
+        <ul class="subuls">
+        	<li><a href="/courses/index.html">All IB Courses</a></li>
+            <li><a href="/courses/area_courses.htm">IB Area Courses</a></li>
+            <li><a href="/courses/add_courses.htm">Additional Approved Courses</a></li>
+            <li><a href="/courses/special_courses.htm">Special Topics Courses</a></li>
+        </ul>
+      </li>
+	  <li class ="mainitems">
+        <a href="/research.htm">Research Information</a>
+        <ul class="subuls">
+        	<li><a href="/research.htm">Research Home</a></li>
+            <li><a href="/people">All Departments &amp; Programs</a></li>
+         	<li><a href="/people?department=1&amp;program=8">Animal Biology</a></li>
+           	<li><a href="/people?department=4&amp;program=11">Entomology</a></li>
+        	<li><a href="/people?department=6&amp;program=14">Plant Biology</a></li>
+            <li><a href="/people?department=0&amp;program=3">PEEC</a></li>
+            <li><a href="/people?department=0&amp;program=5">PMPB</a></li>
+            <li><a href="/people?department=0&amp;program=4">Masters in Biology</a></li>
+         	<li><a href="/research_undergrad.htm">Undergraduate Research</a></li>
+        </ul>        
+      </li>
+	  <li class ="mainitems">
+	  	<a href="/graduate.htm">For Graduate Students</a>
+		<ul class="subuls">
+        	<li><a href="/graduate.htm">Graduate Students Home</a></li>
+			  <li class ="mainitems">
+                <a href="/departme.htm">Departments &amp; Programs </a>
+                <ul class="subuls">
+                	<li><a href="/departme.htm">Departments &amp; Programs Home</a></li>
+                    <li><a href="http://www.life.illinois.edu/animalbiology/">Animal Biology</a></li>
+                    <li><a href="http://www.life.illinois.edu/entomology/index.html">Entomology</a></li>
+                    <li><a href="http://www.life.illinois.edu/plantbio/">Plant Biology</a></li>
+                    <li><a href="/peec/">Program in Ecology, Evolution, &amp; Conservation Biology (PEEC)</a></li>
+                    <li><a href="http://www.life.illinois.edu/plantbio/pmpb/">Physiological &amp; Molecular Plant Biology Program (PMPB)</a></li>
+                    <li><a href="http://www.neuroscience.illinois.edu/">Neuroscience Program</a></li>
+                    <li><a href="http://www.life.illinois.edu/programs/BMP/">Masters in Biology</a></li>
+                    <li><a href="http://www.life.illinois.edu/programs/BMP/MST%20in%20Biology.htm">Masters in the Teaching of Biology (MST)</a></li>
+				</ul>	
+			  </li>
+              <li class ="mainitems">
+                <a href="/courses/index.html">Course Information</a>
+                <ul class="subuls">
+                    <li><a href="/courses/index.html">All IB Courses</a></li>
+                    <li><a href="/courses/area_courses.htm">IB Area Courses</a></li>
+                    <li><a href="/courses/add_courses.htm">Additional Approved Courses</a></li>
+                    <li><a href="/courses/special_courses.htm">Special Topics Courses</a></li>
+                </ul>
+              </li>
+              <li class ="mainitems">
+                <a href="/research.htm">Research Information</a>
+                <ul class="subuls">
+                	<li><a href="/research.htm">Research Home</a></li>
+                    <li><a href="/people">All Departments &amp; Programs</a></li>
+                    <li><a href="/people?department=1&amp;program=8">Animal Biology</a></li>
+                    <li><a href="/people?department=4&amp;program=11">Entomology</a></li>
+                    <li><a href="/people?department=6&amp;program=14">Plant Biology</a></li>
+                    <li><a href="/people?department=0&amp;program=3">PEEC</a></li>
+                    <li><a href="/people?department=0&amp;program=5">PMPB</a></li>
+                    <li><a href="/people?department=0&amp;program=4">Masters in Biology</a></li>
+                 	<li><a href="/research_undergrad.htm">Undergraduate Research</a></li>
+                </ul>        
+              </li>
+            <li><a href="/grants.htm">Grants &amp; Awards</a></li>
+			<li><a href="http://www.grad.illinois.edu/events/">Dates &amp; Deadlines</a></li>
+			<li><a href="/people?position_status=Graduate">Graduate Student Directory</a></li>
+		</ul>	  
+	  </li>
+	  <li>
+		<a href="/undergra.htm">For Undergraduate Students</a>
+		<ul class="subuls">
+        	<li><a href="/undergra.htm">Undergraduate Students Home</a></li>
+        	<li><a href="/prospective_majors.htm">For Prospective IB Majors</a></li>
+        	<li><a href="/IB_Major.htm">About the IB Major</a></li>
+        	<li><a href="/advising/options/index.html">IB Advising Options</a></li>
+        	<li><a href="/declaring_IB.htm">Declaring an IB Major</a></li>
+        	<li><a href="/advising/minors/index.html">About the Minors in IB</a></li>
+        	<li><a href="/FAQ_advising.htm">Advising FAQs</a></li>
+        	<li class="mainitems">
+				<a href="/advising/index.html">Advising for Undergraduates</a>
+				<ul class="subuls">
+                 	<li><a href="/advising/index.html">Advising Home</a></li>
+                    <li><a href="/advising/scheduler/">Make an Appointment</a></li>
+                    <li><a href="/IB_Major.htm">About the IB Major</a></li>
+                    <li><a href="/advising/options/index.html">IB Advising Options</a></li>
+                    <li><a href="/declaring_IB.htm">Declaring an IB Major</a></li>
+                    <li><a href="/advising/minors/index.html">About the Minors in IB</a></li>
+                    <li><a href="/advising/spotlight.htm">Newsletter (Spotlight)</a></li>
+                    <li><a href="http://www.oar.uiuc.edu/current/registration/index.html">Registration</a></li>
+                    <li><a href="/FAQ_advising.htm">FAQs</a></li>
+                    <li><a href="/advising/index.html">IB Careers</a></li>
+                    <li><a href="/advising/resume.htm">Enhance Your Resume</a></li>
+                    <li><a href="/advising/internships.htm">Internships</a></li>
+                    <li><a href="/advising/student_clubs.htm">Student Clubs</a></li>
+                    <li><a href="/advising/workshops.htm">IB Workshops</a></li>
+                    <li><a href="/advising/peer_advising.html">Peer Advising</a></li>
+                    <li><a href="http://www.oar.uiuc.edu/current/dars/index.html">DARS</a></li>
+                    <li><a href="/advising/tools/gpa_calc.html">GPA Calculator</a></li>
+				</ul>			
+			</li>	
+            <li class ="mainitems">
+                <a href="/courses/index.html">Course Information</a>
+                <ul class="subuls">
+                    <li><a href="/courses/index.html">All IB Courses</a></li>
+                    <li><a href="/courses/area_courses.htm">IB Area Courses</a></li>
+                    <li><a href="/courses/add_courses.htm">Additional Approved Courses</a></li>
+                    <li><a href="/courses/special_courses.htm">Special Topics Courses</a></li>
+                </ul>
+            </li>
+            <li><a href="http://www.oar.uiuc.edu/current/registration/index.html">Registration</a></li>
+            <li><a href="/honors.htm">IB Honors</a></li>
+            <li><a href="/merit.htm">IB Merit</a></li>
+            <li><a href="/SkillGuidelines/">Guidelines: Skills for IB Majors</a></li>
+            <li><a href="/research_undergrad.htm">Undergraduate Research</a></li>
+            <li><a href="/undergrad_support.htm">Undergraduate Support</a></li>
+            <li><a href="/Distinct%20Require.htm">Distinction</a></li>
+            <li><a href="/convocation.htm">Convocation</a></li> 
+		</ul>	  
+	  </li>
+      <li class="mainitems">
+			<a href="/advising/index.html">Advising for Undergraduates</a>
+			<ul class="subuls">
+                 <li><a href="/advising/index.html">Advising Home</a></li>
+                 <li><a href="/advising/scheduler/">Make an Appointment</a></li>
+                 <li><a href="/IB_Major.htm">About the IB Major</a></li>
+                 <li><a href="/advising/options/index.html">IB Advising Options</a></li>
+                 <li><a href="/declaring_IB.htm">Declaring an IB Major</a></li>
+                 <li><a href="/advising/minors/index.html">About the Minors in IB</a></li>
+                 <li><a href="/advising/spotlight.htm">Newsletter (Spotlight)</a></li>
+                 <li><a href="http://www.oar.uiuc.edu/current/registration/index.html">Registration</a></li>
+                 <li><a href="/FAQ_advising.htm">FAQs</a></li>
+                 <li><a href="/advising/index.html">IB Careers</a></li>
+                 <li><a href="/advising/resume.htm">Enhance Your Resume</a></li>
+                 <li><a href="/advising/internships.htm">Internships</a></li>
+                 <li><a href="/advising/student_clubs.htm">Student Clubs</a></li>
+                 <li><a href="/advising/workshops.htm">IB Workshops</a></li>
+                 <li><a href="/advising/peer_advising.html">Peer Advising</a></li>
+                 <li><a href="http://www.oar.uiuc.edu/current/dars/index.html">DARS</a></li>
+                 <li><a href="/advising/tools/gpa_calc.html">GPA Calculator</a></li>
+			</ul>			
+	  </li>
+	  <li>
+	  	<a href="/prospective.htm">For Prospective Students</a>
+		<ul class="subuls">
+        	<li><a href="/prospective.htm">Prospective Students Home</a></li>
+			<li><a href="/BiologyAtIllinois.htm">Biology at Illinois </a></li>
+            <li class="mainitems">
+                <a href="/prospective_undergrad.htm">Prospective Undergraduate Students</a>
+                <ul class="subuls">
+                	<li><a href="/prospective_undergrad.htm">Prospective Undergraduate Home</a></li>
+                	<li><a href="/WhatIsIB.htm">What is Integrative Biology?</a></li>                 
+                    <li><a href="/IB_Major.htm">About the IB Major</a></li>
+            		<li><a href="/advising/options/">IB Advising Options</a></li>
+            		<li><a href="/WhyIB.htm">Why Major in IB?</a></li>
+                    <li><a href="/advising/careers/index.html">IB Careers</a></li>
+                    <li><a href="/WhenIB.htm">When to Choose an IB Major</a></li>
+            		<li><a href="/FAQ_prospUndergrad.htm">FAQs</a></li>
+                    <li class ="mainitems">
+                        <a href="/courses/index.html">Course Information</a>
+                        <ul class="subuls">
+                            <li><a href="/courses/index.html">All IB Courses</a></li>
+                            <li><a href="/courses/area_courses.htm">IB Area Courses</a></li>
+                            <li><a href="/courses/add_courses.htm">Additional Approved Courses</a></li>
+                        </ul>
+                    </li>
+                    <li class="mainitems">
+                        <a href="/advising/index.html">Advising for Undergraduates</a>
+                        <ul class="subuls">
+                            <li><a href="/advising/index.html">Advising Home</a></li>
+                            <li><a href="/advising/scheduler/">Make an Appointment</a></li>
+                            <li><a href="/IB_Major.htm">About the IB Major</a></li>
+                            <li><a href="/advising/options/index.html">IB Advising Options</a></li>
+                            <li><a href="/declaring_IB.htm">Declaring an IB Major</a></li>
+                            <li><a href="/advising/minors/index.html">About the Minors in IB</a></li>
+                            <li><a href="/advising/spotlight.htm">Newsletter (Spotlight)</a></li>
+                            <li><a href="http://www.oar.uiuc.edu/current/registration/index.html">Registration</a></li>
+                            <li><a href="/FAQ_advising.htm">FAQs</a></li>
+                            <li><a href="/advising/index.html">IB Careers</a></li>
+                            <li><a href="/advising/resume.htm">Enhance Your Resume</a></li>
+                            <li><a href="/advising/internships.htm">Internships</a></li>
+                            <li><a href="/advising/student_clubs.htm">Student Clubs</a></li>
+                            <li><a href="/advising/workshops.htm">IB Workshops</a></li>
+                            <li><a href="/advising/peer_advising.html">Peer Advising</a></li>
+                            <li><a href="http://www.oar.uiuc.edu/current/dars/index.html">DARS</a></li>
+                            <li><a href="/advising/tools/gpa_calc.html">GPA Calculator</a></li>
+                        </ul>			
+                    </li>
+                    <li><a href="/honors.htm">IB Honors</a></li>
+                    <li><a href="merit.htm">IB Merit</a></li>
+            		<li><a href="http://www.las.illinois.edu/students/admission/">Application &amp; Admission</a></li>
+                </ul>
+            </li>
+            <li class="mainitems">
+                <a href="/prospective_transfer.htm">Prospective Transfer Students</a>
+                <ul class="subuls">
+                	<li><a href="/prospective_transfer.htm">Prospective Transfer Home</a></li>
+                    <li><a href="/WhatIsIB.htm">What is Integrative Biology?</a></li>               
+                    <li><a href="/IB_Major.htm">About the IB Major</a></li>
+            		<li><a href="/advising/options/">IB Advising Options</a></li>
+            		<li><a href="/WhyIB.htm">Why Major in IB?</a></li>
+                    <li><a href="/advising/careers/index.html">IB Careers</a></li>
+            		<li><a href="/FAQ_transfer.htm">FAQs</a></li>
+                    <li class ="mainitems">
+                       	<a href="/courses/index.html">Course Information</a>
+                        <ul class="subuls">
+                            <li><a href="/courses/index.html">All IB Courses</a></li>
+                            <li><a href="/courses/area_courses.htm">IB Area Courses</a></li>
+                            <li><a href="/courses/add_courses.htm">Additional Approved Courses</a></li>
+                        </ul>
+                    </li>
+                    <li class="mainitems">
+                        <a href="/advising/index.html">Advising for Undergraduates</a>
+                        <ul class="subuls">
+                            <li><a href="/advising/index.html">Advising Home</a></li>
+                            <li><a href="/advising/scheduler/">Make an Appointment</a></li>
+                            <li><a href="/IB_Major.htm">About the IB Major</a></li>
+                            <li><a href="/advising/options/index.html">IB Advising Options</a></li>
+                            <li><a href="/declaring_IB.htm">Declaring an IB Major</a></li>
+                            <li><a href="/advising/minors/index.html">About the Minors in IB</a></li>
+                            <li><a href="/advising/spotlight.htm">Newsletter (Spotlight)</a></li>
+                            <li><a href="http://www.oar.uiuc.edu/current/registration/index.html">Registration</a></li>
+                            <li><a href="/FAQ_advising.htm">FAQs</a></li>
+                            <li><a href="/advising/index.html">IB Careers</a></li>
+                            <li><a href="/advising/resume.htm">Enhance Your Resume</a></li>
+                            <li><a href="/advising/internships.htm">Internships</a></li>
+                            <li><a href="/advising/student_clubs.htm">Student Clubs</a></li>
+                            <li><a href="/advising/workshops.htm">IB Workshops</a></li>
+                            <li><a href="/advising/peer_advising.html">Peer Advising</a></li>
+                            <li><a href="http://www.oar.uiuc.edu/current/dars/index.html">DARS</a></li>
+                            <li><a href="/advising/tools/gpa_calc.html">GPA Calculator</a></li>
+                        </ul>			
+                    </li>
+                    <li><a href="/course_transfer.htm">Course Transfer</a></li>
+            		<li><a href="http://www.las.illinois.edu/students/admission/">Application &amp; Admission</a></li>
+                </ul>
+            </li>
+            <li class="mainitem">
+                <a href="/prospective_grad.htm">Prospective Graduate Students</a>
+                <ul class="subuls">
+                	<li><a href="/prospective_grad.htm">Prospective Graduate Home</a></li>
+                    <li class ="mainitems">
+                    	<a href="/departme.htm">Departments &amp; Programs </a>
+                        <ul class="subuls">
+                        	<li><a href="/departme.htm">Departments &amp; Programs Home</a></li>
+                        	<li><a href="http://www.life.illinois.edu/animalbiology/">Animal Biology</a></li>
+                            <li><a href="http://www.life.illinois.edu/entomology/index.html">Entomology</a></li>
+                            <li><a href="http://www.life.illinois.edu/plantbio/">Plant Biology</a></li>
+                            <li><a href="/peec/">Program in Ecology, Evolution, &amp; Conservation Biology (PEEC)</a></li>
+                            <li><a href="http://www.life.illinois.edu/plantbio/pmpb/">Physiological &amp; Molecular Plant Biology Program (PMPB)</a></li>
+                            <li><a href="http://www.neuroscience.illinois.edu/">Neuroscience Program</a></li>
+                            <li><a href="http://www.life.illinois.edu/programs/BMP/">Masters in Biology</a></li>
+                            <li><a href="http://www.life.illinois.edu/programs/BMP/MST%20in%20Biology.htm">Masters in the Teaching of Biology (MST)</a></li>
+                        </ul>	
+                    </li>
+                    <li><a href="/FAQ_graduate.htm">FAQs</a></li>
+                    <li class ="mainitems">
+                    	<a href="/courses/index.html">Course Information</a>
+                        <ul class="subuls">
+                            <li><a href="/courses/index.html">All IB Courses</a></li>
+                            <li><a href="/courses/area_courses.htm">IB Area Courses</a></li>
+                            <li><a href="/courses/add_courses.htm">Additional Approved Courses</a></li>
+                            <li><a href="/courses/special_courses.htm">Special Topics Courses</a></li>
+                        </ul>
+                    </li>                            
+                    <li class ="mainitems">
+                      	<a href="/research.htm">Research Information</a>
+                        <ul class="subuls">
+                        	<li><a href="/research.htm">Research Home</a></li>
+                            <li><a href="/people">All Departments &amp; Programs</a></li>
+                            <li><a href="/people?department=1&amp;program=8">Animal Biology</a></li>
+                            <li><a href="/people?department=4&amp;program=11">Entomology</a></li>
+                            <li><a href="/people?department=6&amp;program=14">Plant Biology</a></li>
+                            <li><a href="/people?department=0&amp;program=3">PEEC</a></li>
+                            <li><a href="/people?department=0&amp;program=5">PMPB</a></li>
+                            <li><a href="/people?department=0&amp;program=4">Masters in Biology</a></li>
+                            <li><a href="/research_undergrad.htm">Undergraduate Research</a></li>
+                        </ul>        
+                    </li>
+                    <li><a href="http://www.grad.illinois.edu/events/">Dates &amp; Deadlines</a></li>
+            		<li><a href="/grad_admissions.htm">Application &amp; Admission</a></li>   	
+                </ul>
+            </li>
+            <li><a href="/visit_illinois.htm">Visiting Illinois</a></li>
+        </ul>	  
+      </li> 
+	  <li>
+	  	<a href="/faculty.htm">For Faculty &amp; Staff</a>
+		<ul class="subuls">
+        	<li><a href="/faculty.htm">Faculty &amp; Staff Home</a></li>
+        	<li><a href="/people">SIB Directory</a></li>
+            <li><a href="http://illinois.edu/ows/PH">UI Directory</a></li>
+            <li><a href="https://apps.uillinois.edu/selfservice/">UI Enterprise</a></li>
+            <li><a href="http://www.provost.illinois.edu/communication/index.html">Provost Communications</a></li>
+            <li><a href="https://nessie.uihr.uillinois.edu/cf/index.cfm">Nessie</a></li>
+            <li><a href="http://www.uihr.uillinois.edu/panda-cf/employment/index.cfm">Benefits Office</a></li>
+            <li><a href="http://www.surs.com/homepage.surs">SURS</a></li>
+		    <li><a href="http://illinois.edu/resourcesfor/faculty_staff/instructional_resources.html">Faculty Instructional Resources</a></li>
+		</ul>	  
+	  </li>
+	  <li class ="mainitems">
+		<a href="/alumni.htm">For Alumni</a>
+		<ul class="subuls">
+        	<li><a href="/alumni.htm">Alumni Home</a></li>
+            <li><a href="/visit_illinois.htm">Visiting Illinois</a></li>
+            <li><a href="/people">SIB Directory</a></li>
+            <li><a href="/news.htm">News / Information / Awards</a></li>
+            <li><a href="http://www.uiaa.org/urbana/">UI Alumni Association</a></li>
+            <li><a href="http://www.las.illinois.edu/alumni/">LAS Alumni</a></li>
+            <li class="mainitems">
+            	<a href="/donations.htm">Giving to SIB</a>
+                <ul class="subuls">
+                	<li><a href="/donations.htm">Giving to SIB Home</a></li>
+           			<li><a href="/donations_impact.htm">Making an Impact</a></li>
+           			<li><a href="/donations_major.htm">Legacy Gifts</a></li>
+            	</ul>        
+           	</li>
+		</ul>	
+	  </li>
+	  <li class ="mainitems">
+		<a href="/visitors.htm">For Visitors</a>
+		<ul class="subuls">
+        	<li><a href="/visitors.htm">Visitors Home</a></li>
+			<li><a href="/visit_illinois.htm">Visiting Illinois</a></li>
+            <li><a href="/people">SIB Directory</a></li>
+			<li><a href="http://illinois.edu/ows/PH">UI Directory</a></li>
+			<li class="mainitems">
+            	<a href="/visitors_maps.htm">Campus Maps</a>
+                <ul class="subuls">
+                	<li><a href="/visitors_maps.htm">Campus Directions</a></li>
+                	<li><a href="http://illinois.edu/ricker/CampusMap">Campus Building Map</a></li>
+                    <li><a href="http://www.parking.illinois.edu/campus_map/">Campus Parking Map</a></li>
+                </ul>  
+          	</li> 
+		</ul>	
+	  </li>
+	</ul>
+  </div>
+<div class="navblock" id="level2menu">
+	<h2 style="display: none;">Local Links</h2>
+<!-- InstanceBeginEditable name="Submenu" -->
+
+		<%= yield :submenu %>
+                
+<!-- InstanceEndEditable -->
+</div>
+<div class="navblock">
+	<center>
+    
+<!-- SiteSearch Google -->
+            <form method='get' name='gs' onsubmit='sendSearch()' action=''>
+                <input type='hidden' name='search'/>
+                <input type='hidden' name='search_type' value='all'/>
+                <input type='hidden' name='skinId' value='2702'/>
+                <input type='hidden' name='cx' value='' />
+                <input type='hidden' name='cof' value='' />
+                <input name='q' id='q' class='searchbox' type='text' size='20' value='Search IB' onfocus='checkSearchValue()' />
+                <input type='submit' name='sa' value='Go' class='searchbutton' id='go' />
+            </form>
+<!-- SiteSearch Google -->
+    
+    </center>
+</div>
+	<div class="navblock" id="footer">
+	  
+		<ul id="left_footer">
+        	<li style="display: none"><h2 style="display: none">Integrative Biology Links</h2></li>
+			<li class="FirstItem">Integrative Biology Links</li>
+			<li class="mainitems">
+            	<a href="/business_office.htm">Business Office</a>
+                <ul class="subuls">
+                    <li><a href="/business_HR.htm">Human Resources</a></li>
+                    <li><a href="/business_purchasing.htm">Purchasing</a></li>
+                    <li><a href="/business_reimbursements.htm">Reimbursements / Vouchers</a></li>
+                    <li><a href="/business_grants.htm">Grant Preparation</a></li>
+                </ul>
+            </li>
+			<li><a href="/people">SIB Directory</a></li>
+			<li><a href="/news.htm">News / Information / Awards</a></li>
+			<li><a href="/donations.htm">Giving to SIB</a></li> 
+            <li><a href="http://illinois.edu/calendar/Calendar?calId=2479">Calendar</a></li>	 
+            <li><a href="http://illinois.edu/calendar/Calendar?calId=2731">Seminar Series</a></li>	
+
+			<li>&nbsp;</li>
+            <li style="display: none"><h2 style="display: none">Life Science Links</h2></li>
+			<li class="FirstItem">Life Science Links</li>
+			<li><a href="http://www.life.illinois.edu/facilities/">Facilities &amp; Operations</a></li>
+			<li><a href="http://www.life.illinois.edu/">Life Science Resources</a></li>
+			<li class="mainitems">
+            	<a href="http://webmail.life.illinois.edu/">Email</a>
+                <ul class="subuls">
+                	<li><a href="https://webmail.life.illinois.edu/">Life Science Webmail</a></li>
+                    <li><a href="https://login.express.cites.illinois.edu/">Cites Express Email</a></li>
+                </ul>
+			</li>
+			<li class="mainitems">
+            	<a href="http://www.library.illinois.edu/bix/">Library</a>
+                <ul class="subuls">
+                	<li><a href="http://www.library.illinois.edu/bix/">Biology Library</a></li>
+                    <li><a href="http://www.library.illinois.edu/">UI Main Library</a></li>
+                </ul>
+          	</li>
+			<li><a href="http://www.life.illinois.edu/help/">Office of Information Technology</a></li>
+
+			<li>&nbsp;</li>
+            <li style="display: none"><h2 style="display: none">University Links</h2></li>
+			<li class="FirstItem">University Links</li>
+			<li><a href="http://illinois.edu/ds/search">Find UI People</a></li>
+			<li class="mainitems">
+            	<a href="http://illinois.edu/ricker/CampusMap">Campus Maps</a>
+                <ul class="subuls">
+                	<li><a href="http://illinois.edu/ricker/CampusMap">Building Map</a></li>
+                    <li><a href="http://www.parking.illinois.edu/campus_map/">Parking Map</a></li>
+                </ul>  
+          	</li>          
+			<li><a href="http://illinois.edu/">University of Illinois</a></li>
+			<li><a href="http://www.las.illinois.edu/">College of Liberal Arts &amp; Sciences</a></li>
+			<li><a href="http://www.grad.illinois.edu/">Graduate College</a></li>
+			<li><a href="http://www.inhs.illinois.edu/">Natural History Survey</a></li> 
+			<li><a href="http://www.igb.illinois.edu/">Institute for Genomic Biology</a></li> 
+            
+            
+    
+            <li>&nbsp;</li>
+            <li style="display: none"><h2 style="display: none">Contact Information</h2></li>
+            <li class="FirstItem">Contact Information</li>
+            <li><a href="/contact_us.htm">Contact Us</a></li>
+            <li><a href="mailto:leebynum@illinois.edu">Contact Webmaster</a></li>            
+            <li><a href="listFiles.php">Site Map</a></li>
+		</ul>
+	</div>
+</div>
+<div id="content" <% if session[ :admin ] %>style="width: 818px;"<% end %>>
+	
+    <div id="content_image"><!-- InstanceBeginEditable name="Content_Image" -->
+	<%= yield :content_image %>
+	<!-- InstanceEndEditable --></div>
+	
+	
+  <div id="breadcrumbs_left" >
+<!-- InstanceBeginEditable name="Breadcrumbs_Left" -->
+    <p><%= yield :breadcrumbs_left %></p>
+<!-- InstanceEndEditable -->
+  </div>
+    
+	<div id="breadcrumbs" >
+<!-- InstanceBeginEditable name="Breadcrumbs" -->
+    <p><a href="http://illinois.edu">Illinois</a> &gt;&gt; <a href="/">SIB</a> &gt;&gt; <%= yield :breadcrumbs %>
+ 	</p>
+<!-- InstanceEndEditable -->
+  </div>
+
+	<div id="main_content">    
+<!-- InstanceBeginEditable name="Content" -->
+
+    
+<p style="color: green"><%= flash[:notice] %></p>
+
+<%= yield  %>
+
+          
+<!-- InstanceEndEditable -->          
+</div>
+
+
+
+</div>
+
+
+<div id="right_column">&nbsp;</div>
+
+</div>
+
+<!-- UIUC Emergency Web Alert System
+       See: http://www.publicaffairs.illinois.edu/resources/webalert.html -->
+  <script type="text/javascript" src="http://emergency.webservices.illinois.edu/illinois.js"></script>
+
+</body>
+<!-- InstanceEnd --></html>

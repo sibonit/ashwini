@@ -1,0 +1,47 @@
+
+<% content_for :breadcrumbs_left do %><%= link_to 'Logout ' + session[ :netid ], '/logout?previous_page=/contacts?' + request.env[ 'QUERY_STRING' ].gsub(/\&/,'%26') %><% end %>
+
+<% if session[ :admin ] || session[ :MSTOnline ] %>
+
+	<h1>Edit Contact</h1>
+	
+	<%= form_for(@contact, :url => {  :action => 'update' } )  do |f| %>
+	
+	  <div style="float: left; padding: .5em;">
+		<%= f.label :first_name %><br />
+		<%= f.text_field :first_name %>
+	  </div>
+	  <div style="float: left; padding: .5em;">
+		<%= f.label :last_name %><br />
+		<%= f.text_field :last_name %>
+	  </div>
+	  <div style="float: left; padding: .5em;">
+		<%= f.label :degree_type %><br />
+		<select name="contact[degree_type]">
+			<%= options_for_select([['No Specialization','None'], ['Certificate (2 IB, 1 Cl courses)','Certificate'], ['Masters in Science Teaching (32 Credit Hours)','Masters'], ['Not Sure','Unsure']], @contact.degree_type )%>
+		</select>
+	  </div>
+	  <div style="float: left; padding: .5em;">
+		<%= f.label :email %><br />
+		<%= f.text_field :email %>
+	  </div>
+	  <div style="float: left; padding: .5em;">
+		<%= f.label :country %><br />
+		<%= f.text_field :country %>
+	  </div>
+	  <div style="float: left; padding: .5em;">
+		<%= f.label :zip_code %><br />
+		<%= f.text_field :zip_code %>
+	  </div>
+	  <div style="float: left; padding: .5em;">
+		<%= f.label :Phone_Number %><br />
+		(<%= f.text_field :area_code %>) - <%= f.text_field :phone1 %> - <%= f.text_field :phone2 %> X <%= f.text_field :phone_ext %>
+	  </div>
+	  <div style="float: left; padding: .5em;">
+		<%= f.button "Edit" %>
+	  </div>
+	<% end %>
+
+<% end %>
+
+<%= link_to 'Back', :action => 'index' %>

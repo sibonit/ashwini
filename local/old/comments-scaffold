@@ -1,0 +1,7 @@
+#!/bin/bash
+
+cd /usr/local/rails/sib
+ruby script/generate scaffold  Comment \
+  person_from:string \
+  person_to:string \
+  last_name:string

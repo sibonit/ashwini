@@ -1,0 +1,41 @@
+<%= form_for(@contact, :url => {  :action => 'create' } )  do |f| %>
+        
+        <table width="100%">
+    <!--    <tr><td colspan="2"><label for="contact_degree_type">What type of degree are you considering?</label></td></tr>
+        <tr><td colspan="2"><select name="contact[degree_type]">
+			<option value="None" selected="selected">No Specialization</option>
+<option value="Certificate">Certificate - 2 IB, 1 Cl courses</option>
+<option value="Masters">Masters in Science Teaching - 32 Credit Hours</option>
+<option value="Unsure">Not Sure</option>
+		</select></td></tr>  -->
+        
+        <tr>
+        	<td><label for="contact_first_name">First name:</label></td>
+	 		<td><input id="contact_first_name" name="contact[first_name]" size="12" type="text" /></td>
+        </tr>
+        <tr>
+        	<td><label for="contact_last_name">Last name:</label></td>
+			<td><input id="contact_last_name" name="contact[last_name]" size="12" type="text" /></td>
+        </tr>
+        <tr>
+        	<td><label for="contact_email">Email:</label></td>
+			<td><input id="contact_email" name="contact[email]" size="12" type="text" /></td>
+        </tr>
+        <tr>
+        	<td><label for="contact_country">Country:</label></td>
+			<td><input id="contact_country" name="contact[country]" size="12" type="text" /></td>
+        </tr>
+        <tr>
+        	<td><label for="contact_zip_code">Zip code:</label></td>
+			<td><input id="contact_zip_code" name="contact[zip_code]" size="5" type="text" /></td>
+        </tr>
+        <tr>
+        	<td>Phone #:</td>
+            <td>(<input id="contact_area_code" name="contact[area_code]" size="1.5" type="text" />)-<input id="contact_phone1" name="contact[phone1]" size="1.5" type="text" />-<input id="contact_phone2" name="contact[phone2]" size="2" type="text" />X<input id="contact_phone_ext" name="contact[phone_ext]" size="2" type="text" /></td>
+        </tr>
+        <tr><td colspan="2" align="center"><input id="contact_submit" class="button" name="commit" type="submit" value="Submit Information" onClick="send(); return false;" /></td></tr>
+        </table>
+        
+
+	<% end %>
+

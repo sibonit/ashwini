@@ -1,0 +1,88 @@
+<h1>Editing person</h1>
+
+<% form_for(@person) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :course_number %><br />
+    <%= f.text_field :course_number %>
+  </p>
+  <p>
+    <%= f.label :course_title %><br />
+    <%= f.text_field :course_title %>
+  </p>
+  <p>
+    <%= f.label :cross_listings %><br />
+    <%= f.text_field :cross_listings %>
+  </p>
+  <p>
+    <%= f.label :website %><br />
+    <%= f.text_field :website %>
+  </p>
+  <p>
+    <%= f.label :credit_hours %><br />
+    <%= f.text_field :credit_hours %>
+  </p>
+  <p>
+    <%= f.label :offered_fall %><br />
+    <%= f.text_field :offered_fall %>
+  </p>
+  <p>
+    <%= f.label :offered_spring %><br />
+    <%= f.text_field :offered_spring %>
+  </p>
+  <p>
+    <%= f.label :offered_summer %><br />
+    <%= f.text_field :offered_summer %>
+  </p>
+  <p>
+    <%= f.label :area3_requirement %><br />
+    <%= f.text_field :area3_requirement %>
+  </p>
+  <p>
+    <%= f.label :advanced_comp %><br />
+    <%= f.text_field :advanced_comp %>
+  </p>
+  <p>
+    <%= f.label :area_course %><br />
+    <%= f.text_field :area_course %>
+  </p>
+  <p>
+    <%= f.label :additional_approved_course %><br />
+    <%= f.text_field :additional_approved_course %>
+  </p>
+  <p>
+    <%= f.label :lab_section %><br />
+    <%= f.text_field :lab_section %>
+  </p>
+  <p>
+    <%= f.label :special_topic %><br />
+    <%= f.text_field :special_topic %>
+  </p>
+  <p>
+    <%= f.label :call_number %><br />
+    <%= f.text_field :call_number %>
+  </p>
+  <p>
+    <%= f.label :course_time %><br />
+    <%= f.text_field :course_time %>
+  </p>
+  <p>
+    <%= f.label :course_location %><br />
+    <%= f.text_field :course_location %>
+  </p>
+  <p>
+    <%= f.label :instructor %><br />
+    <%= f.text_field :instructor %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @person %> |
+<%= link_to 'Back', people_path %>

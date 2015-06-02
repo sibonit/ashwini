@@ -1,0 +1,14 @@
+
+
+<div class="comment">
+
+  <%= simple_format h(comment.content) %>
+  <i><%=h simple_format comment.signature %></i>
+
+  <% if session[ :admin ] %>
+	<div class="delete">
+      <%= link_to 'Delete Comment', comment, method: :delete, data: {confirm: "Are you sure?"} %>
+	</div>
+  <% end %>
+
+</div>

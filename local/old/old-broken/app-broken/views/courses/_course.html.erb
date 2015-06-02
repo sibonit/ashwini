@@ -1,0 +1,49 @@
+
+	  <tr>
+		<td>
+			<% if !course.website.empty? %>
+				<a href="<%=h course.website %>"><%=h course.course_number %></a>
+			<% else %>
+				<%=h course.course_number %>
+			<% end %>
+		</td>
+		<td NOWRAP><%= course.cross_listings %></td>
+		<td><%= course.course_title %></td>
+		<td><%=h course.credit_hours %></td>
+		<td>
+			<% if session[ :admin ] %>
+				<% remote_form_for course do |f| %>	
+			  		<%= f.check_box :advanced_comp %>
+					<select name="course[offered]">
+						<%= options_for_select([['Fall, Spring & Summer','Fall, Spring & Summer'], ['Fall','Fall'], ['Spring','Spring'], ['Summer','Summer'], ['Variable','Variable'], ['Not Offered','Not Offered']], course.offered )%>
+					</select>
+					<%= f.label :offered_year %>
+					<select name="course[offered_year]">
+						<%= options_for_select([[' ',' '], ['Even','Even'], ['Odd','Odd']], course.offered_year )%>
+					</select><br/>
+					<%= f.label :online_section %>
+					<select name="course[online_section]">
+						<%= options_for_select([['Yes','1'], ['No','0']], course.online_section )%>
+					</select><br/>
+					<%= f.label :offered_note %>
+					<%= f.text_field :offered_note %>
+					
+					<%= f.submit "Add Note" %>
+				<% end %>
+			<% else %>
+				<% if !course.offered.empty? %><%=h course.offered %><% end %>
+				<% if !course.offered_note.empty? %><br/><%=h course.offered_note %><% end %>
+			<% end %>
+			
+		</td>
+		<td><%= course.area_and_additional %></td>
+		
+		<% if session[ :admin ] %>
+			<td>
+				<%= link_to 'Show', :action => 'show', :id => course %>
+				<%= link_to 'Edit', :action => 'edit', :id => course %>
+				<%= link_to 'Destroy', :action => 'destroy', :id => course, :confirm => 'Are you sure?', :method => :delete %>
+			</td>
+		<% end %>
+	  </tr>
+	  

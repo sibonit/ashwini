@@ -1,0 +1,320 @@
+### changes - October 31, 2014
+
+rm -r /rails/sib*/Templates
+
+local/bin/update_position_status.rb
+
+update files:
+app/controllers/application_controller.rb
+app/views/layouts/application.html.erb
+
+### October 27, 2014
+
+# Remove groups
+Access
+  ignore until Group is removed
+  # delete
+
+Directory
+  boolean for in SIB Directory or PEEC Directory
+    list_sib
+    list_peec
+  
+  # later
+  #PEEC directories are not used from database. It's a static page.
+  #  Let's create many-to-many PEEC categories, so this can be displayed from data.
+
+Menu
+  ignore until Group is removed
+  # delete
+
+Position Status
+  # use existing position_status field in Person
+  # alumni - delete because there is no existing data
+  # run local/bin/update_position_status.rb
+
+Research Area
+  create ResearchArea model
+  create people_research_areas join table
+  People
+    has_and_belongs_to_many :research_areas
+
+Unit
+  remove existing 'department' field in Person
+
+  create Unit model
+  create people_units join table
+  People
+    has_and_belongs_to_many :units
+
+### end of group
+
+# Allow IB to edit people
+  validations
+    netid - unique & present 
+    last_name - present
+    email - present
+
+#Remove all references to Menu and Access in forms, so they can be removed from database
+
+
+# Remove pages that list people from Pages controler
+#  and add to new controllers
+#   find correct tabs & sidebars
+
+http://sib.illinois.edu/directory
+  directory#index
+#not http://sib.illinois.edu/directory%filter
+http://sib.illinois.edu/directory/faculty
+  directory#faculty
+http://sib.illinois.edu/directory/graduate
+  directory#graduate
+http://sib.illinois.edu/directory/staff
+?http://sib.illinois.edu/directory/academic
+http://sib.illinois.edu/directory/research
+  directory#research
+http://sib.illinois.edu/directory/behavior
+  directory#behavior
+http://sib.illinois.edu/directory/ecology
+http://sib.illinois.edu/directory/evolution_and_systematics
+http://sib.illinois.edu/directory/genetics_and_biochemistry
+http://sib.illinois.edu/directory/physiology_and_development
+
+http://sib.illinois.edu/peec/directory
+  directory#peec
+http://sib.illinois.edu/peec/directory/faculty
+  directory#peec_faculty
+http://sib.illinois.edu/peec/directory/postdocs
+  directory#peec_postdocs
+http://sib.illinois.edu/peec/directory/students
+  directory#peec_students
+
+http://sib.illinois.edu/peec/alumni - move this to new place in tree
+
+
+
+
+Are Kim, Laura & Staci admins to edit People records?
+
+Up next: change the fields and look of all directory listings
+
+### end October 27, 2014
+
+
+
+cd /rails/sib-dev
+#cd /rails/sib
+
+*** did this on development --jeff 9/26/2014
+*** ok to do on production?
+
+### can't do this yet - old template & public pages use public/stylesheets
+## install correct CSS to support Tags & Menus
+mv app/assets/stylesheets/sib.css app/assets/stylesheets/sib-hold.css
+cp -a public/stylesheets/sib.css app/assets/stylesheets/sib.css
+#mv public/stylesheets/sib.css app/assets/stylesheets/sib.css
+#mv public/stylesheets public/stylesheets-hold
+
+# delete these tables
+mysql -u root -p sib_development
+drop table comments;
+drop table courses;
+drop table documents;
+drop table walls;
+
+# to update schema.rb
+rake db:migrate
+
+# but what are contacts?
+
+# delete these models
+rm app/models/comment.rb
+rm app/models/header.rb
+rm app/models/list_position.rb
+rm app/models/list.rb
+rm app/models/page_type.rb
+rm app/models/wall.rb
+
+# delete these controllers
+rm app/controllers/comments_controller.rb
+rm app/controllers/walls_controller.rb
+
+# delete these helpers
+rm app/helpers/comments_helper.rb
+rm app/helpers/walls_helper.rb
+
+# delete these views
+rm -rf app/views/lists
+rm -rf app/views/walls
+
+*** end: did this on development --jeff 9/26/2014
+
+
+
+##########################################
+To simplify the content and structure of pages
+##########################################
+# Can we eliminate
+/app/views/static/Content
+  guidelines?
+  Hu
+  Test
+  yang - is in use?
+
+# what to do with:
+ Categories (sidebars)
+ Forms
+ People
+ Tabs (overhead navigation)
+ Welcomes 
+  is this used currently?
+    there is a No Welcome
+    Yang is used but empty
+
+
+
+##########################################3
+clean up videos
+##########################################3
+Only keep mp4s in public/videos
+remove links from app/static/Content/sib/videos/index.htm
+  path: http://sib.illinois.edu/videos/sib
+
+
+
+
+##########################################3
+# Information
+##########################################3
+
+# how may files in ./public
+find .|wc -l
+2467
+
+# how many HTML files in ./public?
+find . -iname "*.htm*"|wc -l
+382
+
+# many are JQuery-UI examples, how many without these?
+find . -iname "*.htm*"|grep -v javascript|wc -l
+205
+
+# is 'walls' found in any of the ./public HTML files?
+find . -iname "*.htm*" -exec grep walls "{}" \;
+# nope
+
+# URLs for inspection
+./absrf/about.html
+./absrf/contact.html
+./absrf/faculty.html
+./absrf/index.html
+./advising/tools/gpa_calc_bak.html
+./advising/tools/gpa_calc.html
+./curriculum_explanation.htm
+./faculty_interviews.htm
+./grants_Emerson.htm
+./grants_luckmann_form.htm
+./grants_norton_form.htm
+./grants_ross_form.htm
+./grants_sibEnhancement.htm
+./grants_vancleave_form.htm
+./grants_vancleave.htm
+./grants_WeldonLarimore.htm
+./headlines/2009StudentPicnic.htm
+./headlines/2010Opportunities.htm
+./headlines/Alumni-Stoyas.html
+./headlines/Antkey.html
+./headlines/archive.htm
+./headlines/Bat-Fungus.html
+./headlines/beekeeping496.htm
+./headlines/BiologyOpenHouse.htm
+./headlines/CassieWesseln.htm
+./headlines/ChrisChengAAAS.html
+./headlines/CongratsDrMing.htm
+./headlines/CongratsDrOrt.htm
+./headlines/CongratsDrPaige.htm
+./headlines/CongratulationsDrRobinson.htm
+./headlines/convocation2012.html
+./headlines/DannyRoche.html
+./headlines/DeVries.htm
+./headlines/elementaryOutreach.html
+./headlines/EnhancementStory.htm
+./headlines/FallAdvising.htm
+./headlines/Fear2010.htm
+./headlines/FulbrightGrobis.html
+./headlines/GirlsSummerCamp.html
+./headlines/greenhouse.htm
+./headlines/index.html
+./headlines/iView.htm
+./headlines/KamilInSpace.html
+./headlines/PEEC2010.htm
+./headlines/photo_contest13.html
+./headlines/photo_contest.html
+./headlines/plantbioPSM.htm
+./headlines/PSM1stClass.html
+./headlines/Seminars.htm
+./headlines/UndergradsInAction.htm
+./headlines/WelcomeFall10.htm
+./headlines/WelcomeFall12.html
+./headlines/welcome_new_director.htm
+./headlines/Whitfield_Say_Award.htm
+./images/5_27_2011/index.htm
+./images/Greenhouse_Slideshow/index.htm
+./SkillGuidelines/BasicStatistics.html
+./SkillGuidelines/ExcelGuidelines2003.html
+./SkillGuidelines/ExcelGuidelines2010.html
+./SkillGuidelines/ExcelGuidelines2010temp.html
+./SkillGuidelines/FiguresStats.html
+./SkillGuidelines/GlossaryScientificProcess.html
+./SkillGuidelines/GuidelinesMakingPoster.html
+./SkillGuidelines/GuidelinesScientificProcess.html
+./SkillGuidelines/index.html
+./SkillGuidelines/LeadingDiscussion.html
+./SkillGuidelines/LibrarySearch.html
+./SkillGuidelines/ManuscriptOrganization.html
+./SkillGuidelines/OralPresentation.html
+./SkillGuidelines/ReadGraph.html
+./SkillGuidelines/WritingAbstract.html
+./undergrad_support_enhancement.htm
+./videos/borderstein/index.html
+./WhenIB.htm
+
+# probably delete?
+./calendar2.htm
+./courses/old/add_courses.htm
+./courses/old/area_courses.htm
+./courses/old/ecology.htm
+./courses/old/general.htm
+./courses/oldindex.html
+./courses/old/special_courses.htm
+./courses/sample_course/discussion.htm
+./courses/sample_course/grading.htm
+./courses/sample_course/index.html
+./courses/sample_course/intro.htm
+./courses/sample_course/lectures.htm
+./courses/sample_course/sample_course.htm
+./courses/sample_course/tainfo.htm
+./google659bee14d2f37089.html
+./images/index.htm
+./index.html.old
+./MSOnlineTeaching/admissio.htm
+./MSOnlineTeaching/course_descriptions.htm
+./MSOnlineTeaching/courses.htm
+./MSOnlineTeaching/criteria.htm
+./MSOnlineTeaching/index.html
+./MSOnlineTeaching/instructors.htm
+./MSOnlineTeaching/news.htm
+./MSOnlineTeaching/resource.htm
+./MSOnlineTeaching/timeline.htm
+./new/advising/typical5yearTeaching.htm
+./new/FAQ_prospUndergrad.htm
+./new/IB_Major.htm
+./new/IB_Structure.htm
+./new/IB_Teaching_Structure.htm
+./new/index.html
+./new/prospective_freshman.htm
+./new/prospective.htm
+./new/prospective_transfer_off_campus.htm
+./new/prospective_transfer_on_campus.htm
+./new/prospective_undergrad.htm
+./search.htm

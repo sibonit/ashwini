@@ -1,0 +1,76 @@
+
+<% content_for :submenu do %>
+				<ul>
+                	<li>&nbsp;</li>
+                	<li id="FirstItem"><%= link_to 'Courses', :controller => "courses", :action => "index" %></li>
+                    <li><%= link_to 'All IB Courses', :controller => "courses", :action => "index"  %></a></li>
+                    <li><%= link_to 'SIB Area Courses', :controller => "courses", :action => "area" %></li>
+                    <li><%= link_to 'Additional Approved Courses', :controller => "courses", :action => "additional" %></li>
+                    <li><%= link_to 'Special Topics Courses', :controller => "courses", :action => "special" %></li>
+                    <li>&nbsp;</li>
+				</ul>
+<% end %>
+<% content_for :breadcrumbs do %><%= link_to 'Courses', courses_path %> &gt;&gt; Edit a Course<% end %>
+
+
+
+<h1>Editing course</h1>
+
+<% form_for :course, :url => { :action => 'update', :id => @course } do |f| %>
+  <%= f.error_messages %>
+
+  <table>
+	  <tr><td><%= f.label :course_number %></td><td><%= f.text_field :course_number, :size => "20" %></td>
+	  <td><%= f.label :cross_listings %></td><td><%= f.text_field :cross_listings, :size => "20" %></td></tr>
+	  
+	  <tr><td><%= f.label :course_title %></td><td><%= f.text_field :course_title, :size => "20" %></td>
+	  <td><%= f.label :credit_hours %></td><td><%= f.text_field :credit_hours, :size => "20" %></td></tr>
+	  
+	  <tr><td><%= f.label :website %></td><td colspan="3"><%= f.text_field :website, :size => "60" %></td></tr>
+	  
+	  <tr><td><%= f.label :lab_section %> - </td><td colspan="3">None:<%= f.radio_button :lab_section, "None" %>, Required:<%= f.radio_button :lab_section, "Required" %>, Optional:<%= f.radio_button :lab_section, "Optional" %></td></tr>
+	  
+	  <tr><td><%= f.label :offered %></td><td><%= f.text_field :offered, :size => "20" %></td>
+	  <td>IB Course: </td><td><%= f.check_box :ib_course %></td></tr>
+	  
+	  <tr><td>&nbsp;</td></tr>
+	  
+	  <tr><td colspan="3">Area I Organismal & Evolutionary Biology:</td><td><%= f.check_box :area1_course %></td></tr>
+	  <tr><td colspan="3">Area II Behavior, Ecology, & the Environment:</td><td><%= f.check_box :area2_course %></td></tr>
+	  <tr><td colspan="3">Area III Integrative Anatomy, Physiology, & Molecular Biology:</td><td><%= f.check_box :area3_course %></td></tr>
+	  
+	  <tr><td colspan="3"><li>Area III Requirement</li></td><td><%= f.check_box :area3_requirement %></td></tr>
+	  
+	  <tr><td>&nbsp;</td></tr>
+	  
+	  <tr><td>Advanced Comp</td><td><%= f.check_box :advanced_comp %></td>
+	  <td NOWRAP>Additional Approved</td><td><%= f.check_box :additional_approved_course %></td></tr>
+	  
+	  <tr><td>Ecology Option</td><td><%= f.check_box :ecology %></td>
+	  <td>General Option</td><td><%= f.check_box :general %></td></tr>
+	  
+	  <tr><td>Organisms Option</td><td><%= f.check_box :organisms %></td>
+	  <td>Prehealth Option</td><td><%= f.check_box :prehealth %></td></tr>
+	  
+	  <tr><td>&nbsp;</td></tr>
+	  
+	  <tr><td><%= f.label :special_topic %></td><td colspan="3"><%= f.check_box :special_topic %> - The following only apply to Special Topics</td></tr>
+	  
+	  <tr><td><%= f.label :call_number %></td><td><%= f.text_field :call_number, :size => "20" %></td>
+	  <td><%= f.label :course_time %></td><td><%= f.text_field :course_time, :size => "20" %></td></tr>
+	  
+	  <tr><td><%= f.label :instructor %></td><td><%= f.text_field :instructor, :size => "20" %></td>
+	  <td><%= f.label :course_location %></td><td><%= f.text_field :course_location, :size => "20" %></td></tr>
+	  
+	  
+	  
+	  <tr><td valign="top"><%= f.label :description %></td><td colspan="3"><%= f.text_area :description, "rows" => 10, "cols" => 50 %></td></tr>
+	  
+	  
+	  <tr><td><%= f.submit 'Update' %></td></tr>
+  </table>
+
+<% end %>
+
+<%= link_to 'Show', :action => 'show', :id => @course %> |
+<%= link_to 'Back', :action => 'index' %>

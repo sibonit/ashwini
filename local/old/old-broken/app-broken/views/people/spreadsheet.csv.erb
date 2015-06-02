@@ -1,0 +1,47 @@
+<% content_for :title do %><%=h @header_info.directory_title %>, School of Integrative Biology, University of Illinois<% end %>
+
+
+
+<%- headers = ["First Name", "Last Name", "Title", "Department", "Program", "Email", "Office Address", "Lab Address", "Office Phone", "Lab Phone", "Mail Address", "Mail Code" ] -%>
+<%= CSV.generate_line headers %>
+<%-for person in @people -%>
+<%- row = [ person.first_name,
+            person.last_name,
+            person.title,
+            person.department_show,
+			person.program_show,
+			person.email,
+			person.office_address,
+			person.lab_address,
+			person.office_phone,
+			person.lab_phone,
+			person.mail_address,
+			person.mail_code ] -%>
+<%=   CSV.generate_line row %>
+<%- end -%>
+
+
+
+
+
+
+		First Name, Last Name, Title, Department, Program, Office Address, Lab Address, Mail Code, Office Phone, Lab Phone, Mail Address
+		<% letter = "@" %>
+		<% for person in @people %>
+            <%=h person.full_name %>,
+			<% if !person.title.empty? %><%= person.title %><% end %>,
+			<% if !person.department.nil?  && person.department != "18" && person.position_status == "Faculty" %><%=h person.department_show %><% end %>, 
+			<% if !person.program.nil?  && person.program != "1" && person.position_status != "Staff" %><%=h person.program_show %><% end %>,
+			<% if !person.position_status.empty? %><%=h person.position_status %><% end %>,
+			<% if !person.email.empty? %>EMAIL: <%=h person.email %><% end %><%=h "\n" %>, 
+			<% if !person.office_address.empty? %><%=h person.office_address %><% end %>, 
+			<% if !person.lab_address.empty? %><%=h person.lab_address %><% end %><%=h "\n" %>
+			
+			<% if !person.mail_code.empty? %><%=h person.mail_code %><% end %>,
+			<% if !person.office_phone.empty? %><%=h person.office_phone %><% end %>,
+			<% if !person.lab_phone.empty? %><%=h person.lab_phone %><% end %><%=h "\n" %>
+			
+			<% if !person.mail_address.empty? %>MAIL: <%=h person.mail_address %><% end %>
+		<% end %>
+
+

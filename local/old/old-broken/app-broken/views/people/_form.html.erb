@@ -1,0 +1,16 @@
+
+<%= form_for @person do |f| %>
+	<% if @person.errors.any? %>
+		<div id="errorExplanation">
+		<h2><%= pluralize(@person.errors.count, "error") %> prohibited this record from being saved:</h2>
+		<ul>
+		<% @person.errors.full_messages.each do |msg| %>
+		<li><%= msg %></li>
+		<% end %>
+		</ul>
+		</div>
+	<% end %>
+	
+	<%= render "person_fields", :f => f %>
+
+<% end %>

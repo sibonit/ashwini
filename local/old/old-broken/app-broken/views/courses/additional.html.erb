@@ -1,0 +1,67 @@
+<% content_for :title do %>Additional Approved IB Courses, School of Integrative Biology, University of Illinois<% end %>
+<% content_for :keywords do %>Additional Approved Integrative Biology Courses, Illinois, Midwest, sib, uiuc<% end %>
+<% content_for :description do %>The list below shows the additional advanced SIB courses that fulfill requirements in the IB major for additional courses.<% end %>
+<% content_for :submenu do %>
+				<ul>
+                	<li>&nbsp;</li>
+                	<li id="FirstItem"><%= link_to 'Courses', courses_path %></li>
+                    <li><%= link_to 'All IB Courses', courses_path %></a></li>
+                    <li><%= link_to 'SIB Area Courses', :controller => "courses", :action => "area" %></li>
+                    <li><%= link_to 'Additional Approved Courses', :controller => "courses", :action => "additional" %></li>
+                    <li><%= link_to 'Special Topics Courses', :controller => "courses", :action => "special" %></li>
+                    <li>&nbsp;</li>
+				</ul>
+<% end %>
+<% content_for :breadcrumbs do %><%= link_to 'Courses', courses_path %> &gt;&gt; Additional Approved IB Courses<% end %>
+<% content_for :content_image do %><img src="/images/PageHeader/courses3.jpg" alt="Content Splash Image" /><% end %>
+
+
+
+
+<h1>Additional Approved IB Courses</h1>
+
+	<p>The list below shows the advanced SIB courses that fulfill requirements in the IB major for additional courses. <a href="../advising/options/">Click here</a> to see the list of IB Advising Options and links to courses suggested for each.</p>
+
+<div class="course_table">
+  <table cellspacing="0px" width="100%">
+    <tr>
+      <th width="17%">Course No.</th>
+      <th width="40%">Course Title</th>
+      <th width="11%">Credit (hours)</th>
+      <th width="23%">Offered</th>
+    </tr>
+	
+	
+	
+
+	<% @courses.each do |course| %>
+	  <tr>
+		<td>
+			<% if !course.website.empty? %>
+				<a href="<%=h course.website %>"><%=h course.course_number %></a>
+			<% else %>
+				<%=h course.course_number %>
+			<% end %>
+		</td>
+		<td><%=h course.course_title %><% if course.lab_section != "None" %>*<% end %></td>
+		<td><%=h course.credit_hours %></td>
+		<td>
+			<% if !course.offered.empty? %><%=h course.offered %><% end %>
+		</td>
+		
+	  </tr>
+	  
+	<% end %>
+
+
+
+  </table>
+  
+  
+  <p>&nbsp;</p>
+  <p>* indicates a laboratory or field component.</p>
+  <p>&nbsp;</p>
+  
+  
+  </div>
+  

@@ -1,0 +1,19 @@
+<h1>Editing wall</h1>
+
+<%= form_for(@wall) do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  
+  <p>&nbsp;</p>
+  
+  <%= f.label :description %>
+  <%= f.text_area :description, :cols => 72, :rows => 5 %>
+    
+  <p>&nbsp;</p>
+  
+  <%= f.submit 'Update Wall' %> | 
+  <%= link_to 'Show Wall', @wall %> |
+  <%= link_to 'Back to List of Walls', walls_path %>
+  
+<% end %>

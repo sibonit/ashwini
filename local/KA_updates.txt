@@ -1,0 +1,271 @@
+21-May-2105:
+------------
+
+--Header image background
+	-Changed the blue gradient background to blue patterned background image 
+
+--Collapsed menu
+	-Work in Progress: Collapsed navbar dropdown and parent link click function
+
+
+
+
+=======================================================================================
+20-May-2015:
+------------
+--School of Integrative Biology link on Navbar
+	-The click on this page is same as the click on the Home icon. 
+--Collapsed menu
+	-Hide the home icon from the collapsed menu, because Home and SIB link are the same.
+	-Work in Progress: Collapsed navbar dropdown and parent link click function
+
+=========================================================================================
+19-May-2015:
+------------
+--Home page News Carousel:	
+	-Limited the number of news highlights to 5.
+	
+
+--Full Screen SUpermenu NavBar vs. Collapsed Navbar
+	Issue to resolve:
+	=================
+
+	Full Screen Navbar:
+	-------------------
+	-The full screen nav bar should show items on hover. 
+	 	--Done
+	-The parent element on the full screen navbar should be clickable
+		--Done
+
+	Collapsed Navbar:
+	----------------
+	-The collapsed navbar should NOT hover
+		--TBD
+	-The items should dropdown on click (use a caret maybe to dropdown the list, when clicked)
+		--TBD
+	-THe parent element should be clickable (when clicking on the main item)
+		--DONE
+
+
+=================================================================================================
+18-May-2015:
+============
+Based on meeting on 15-May-2015
+--------------------------------
+--Supermenu:
+	-Increased the hover area background color
+	-Replaced 'About' with 'School of Integrative Biology'
+	-Removed the navbar-SIB-logo appear/disaapear funtion upon page scroll up/down
+
+--Small screen Navbar
+	-Changed background color
+	-Changed text align from center to left
+	-Changed font sizes
+	-Fixed the problem of extra padding for the first item in Chrome
+
+
+
+====================================================================================================
+15-May-2105:
+===========
+--Alumni Home
+	-Alternate look for the home page: /alumni_2. Uses the portfolio method to show pictures, instead of a slider/carousel.
+--Contact us:
+	--Moved this page under About section.
+
+
+
+======================================================================================================
+14-May-2015:
+===========
+--Pages in Ipad/Tablet
+	-Fixed formatting issues for some pages in IPad/Tablet.
+
+--Working on mobile responsive sidebar
+   --Yayyy!!! I think I cracked this nut...finally! Here's what it can do now:
+	-The sidebar now expands to entire screen size when the screen is collapsed. 
+	-Before it would stick to the side with a fixed width making it hard to use the navigation on small screens 
+	-(especially phones)
+
+    --Previously available features on the sidebar, still stays:
+	-Sidebar menu title expands the items below and also opens the corresponding page
+	-E.g:click on title Advising in the sidebar, opens the Advising home page, and also expands the Advising list in the sidebar
+	-When navigating to a particular section from the Supermenu,it loads the page with the corresponding section in the sidebar expanded.
+	
+
+--Alumni Home page
+--New Sidebar Layout for Alumni Page - /layouts/_sidebar_alumni
+--New Sidebar Layout for Grads Page - /layouts/_sidebar_grad
+
+--About Link on Navbar
+	-In meeting today: Jeff proposed to change the word About, in the supermenu navbar, to 'School of Integrative Biology' 
+	-I currently have the words 'School of Integrative Biology' appear on the navbar only when you scroll down the browser and the top banner disspears. This was done sometime in the beginning of May, after Jeff felt that having to show the words 'School of Integrative Biology' on the banner and the navbar would be redundant.
+	-With the new proposal, the words 'School of Integrative Biology' will stay on the navbar all the time, along with the banner that also says 'School of Integrative Biology'.
+
+
+TBD: 
+
+1. The sidebar in collapsed/mobile view - DONE
+2. Sidebar: Modify the sidebar layout to accept variable for expanded/collapsed classes.
+
+==========================================================================================================
+13-May-2015:
+===========
+--Graduate Pages:
+	-Home: Arranged the links of interest section in a collapsed panel.
+--Removed pages:
+	--moved from the navbar to page /removed
+
+--Working on mobile responsive sidebar
+
+
+TBD: 
+
+1. The sidebar in collapsed/mobile view
+2. Sidebar: Modify the sidebar layout to accept variable for expanded/collapsed classes.
+
+===========================================================================================================
+12-May-2015:
+============
+--Undergraduate Pages:
+	-Programs of Study
+--Supermenu Navbar:
+	-Rearranged the menu items as per the sib_navigation.txt given by Jeff.
+	 (? for Jeff: Where will the other original links go, that are not included in the list for the menu?)
+	-Increased hover area for menu items
+--News slider on Home page:
+	-Increased padding around the caption text (on hover)
+--Git:
+	-Fixed Issue with large files: Next time make sure to exclude the images folder when pushing content to github.
+	
+
+TBD: 
+
+1. The sidebar in collapsed/mobile view
+2. Sidebar: Modify the sidebar layout to accept variable for expanded/collapsed classes.
+
+
+==============================================================================================================
+11-May-2015:
+============
+-- Supermenu Navbar:
+	-Fixed the Chrome issue of extra padding on the first div on navbar. Handled this in Jquery.
+	-Added, Home icon to the left, on the navbar.
+--Undergraduate Pages:
+	-Advising
+	-Prospective
+	-What Can I do with IB (options)
+	-Special Programs
+
+--Graduate
+	-Departments & Programs
+	-Grants & Awards
+
+
+TBD: 
+
+1. The extra padding of the supermenu navbar items. Only in CHrome. It removes the extra padding on hover.----DONE
+2. The sidebar in collapsed/mobile view
+3. Sidebar: Modify the sidebar layout to accept variable for expanded/collapsed classes.
+
+
+===========================================================================================
+08-May-2015:
+============
+--Supermenu Navbar: 
+	--Fixed the stretching of the supermenu bar, to full screen, upon scroll down
+--Added left/right padding to the main content section of the page
+--ABout pages: DONE creating, editing and styling all pages for About section.
+	--Departments & Programs
+	--FAQs
+	--WHy major in IB?
+	--Contact US
+	--Convocation
+
+
+TBD: 
+
+1. The extra padding of the supermenu navbar items. Only in CHrome. It removes the extra padding on hover.
+2. The sidebar in collapsed/mobile view
+3. Sidebar: Modify the sidebar layout to accept variable for expanded/collapsed classes.
+
+
+========================================================================================
+
+07-May-2015
+=============
+
+– Moved all files from /ashwini to /dev.sib
+- Created a GIT repository and github account for /dev.sib 
+--Collapsed Supermenu Navbar:
+	--Fixed the collapsed supermenu navbar. Loads without any extra padding and can be scrolled up and down
+	--Fixed the problem of dissapearing items in the sections when expanding a particular section without collapsing the previous one.
+
+Supermenu:
+	--Rearranged and restyled the items
+	--Fixed/removed some items in the menu sections
+	--Added background image (the GIMP edited image, with gradient)
+
+– Created several controllers and views for the supermenu (several new pages for menu items)
+
+
+TBD: 
+
+1. The extra padding of the supermenu navbar items. Only in Chrome. It removes the extra padding on hover.
+2. The sidebar in collapsed/mobile view
+
+
+========================================================================================
+05-May-2015
+============
+
+--Created a side navigation bar for Undergraduate.
+--Features of side navigation bar:
+	--When accessing the Ugrad pages from supermenu navbar, the page opens with its corresponding section in the sidebar expanded.
+	--The heading the sidebar is also a link and clicking on it will open the home page for that section (e.g: Advising, Prospective, Programs of Study etc)
+
+
+
+========================================================================================
+As of
+04-May-2015
+============
+-- Home page News slider
+	- Removed the additional padding on top.
+	- Increased the width of the slider to as big as the content section
+	- Added a link at the bottom of the slider to go to the entire News list
+
+– Home page logo
+	- Removed the padding on top of the logo.
+
+– All News list page
+	– Edited this page to show a random image for now. Linked this page to the link from the home page (/ashwini/news/index)
+
+
+– Top nav bar -Undergradaute
+	– Reduced the number of items in the supermenu for Ugrad
+	– Designed new pages for all the main links in the Ugrad section	
+	– Pages created are: ugrad: advising, prospective, options, programs, special programs
+
+========================================================================================
+
+Home page: As of 28-Apr-2015
+--------------------------------------------------
+1. Super menu bar - full page width
+
+2. News slider below the supermenu, loading news from database
+
+3. Calendar events, from DB, showing in 4 column panel format
+
+4. SIB logo show and lock on nab bar on scroll down and hide on scroll up
+
+5. Lock Nav bar on top of page upon scroll down
+
+6. First item (<li> element) in the menu bar has left padding on page load. This needs to be removed when the SIB logo appears on the menu bar. Also, it needs to be added back when the logo dissapears from the menu bar. This is handled using Jquery in navrbar.js file
+
+
+
+
+
+
+
