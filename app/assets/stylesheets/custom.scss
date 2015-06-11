@@ -64,6 +64,8 @@ footer {
 
 /* typography */
 
+span{font-size: 12px;}
+
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
 }
@@ -98,17 +100,22 @@ h1 {
 .row h3 {
    font-family: 'Ubuntu', sans-serif;
    font-size: 1.0em;
-   letter-spacing: -1px;
+   letter-spacing: 0.19px;
    margin-bottom: 10px;
    font-weight: normal;
    color: #002058;
 }
 
 
-p {
+p, ul, ol {
   font-size: 12px;
   line-height: 1.7em;
 }
+
+/*
+.ul_list {
+  font-size: 12px;}
+*/
 
 
  a {
@@ -118,7 +125,10 @@ p {
     }
   }
 
-
+/* KA: Because we have a fixed header, the jump links move a little lower than it is supposed to. 
+By setting a negative offset we can make it position in the place we need to.
+*/
+a.jump_link{display: block; position: relative; top: -150px; visibility: hidden;}
 
 /* universal */
 
@@ -168,7 +178,8 @@ textarea {
 .fa-info-circle,
 .fa-lightbulb-o,
 .fa-user,
-.fa-external-link   
+.fa-external-link,
+.fa-star   
 	{
 	    color: #E87722;
 	    text-shadow: 1px 1px 1px #ccc;
@@ -196,5 +207,31 @@ textarea {
 
 
 
+.sib_tables, th, td{
+	padding: 10px;
+	 font-size: 12px;
+}
 
 
+//from original================
+
+div.course_table
+{ border-spacing: 0px;
+	
+	
+}
+
+div.course_table tr th { text-decoration: none; font-weight: normal; color: #2657c0;  }
+#main_Content div.course_table tr th a { text-decoration: none; font-weight: normal; color: #2657c0;  }
+
+div.course_table tr td 
+{ 
+	border-top:0.4em solid #c2d4e8;
+	text-align: center;
+	padding: 2px;
+	background-color: #f9f9f9;
+}
+
+div.course_table tr h1, div.directory_table tr h1 { background-color: #FFFFF6; float: none; }
+
+div.course_table tr td + td { border-left: 1px solid #7C9BDF; }

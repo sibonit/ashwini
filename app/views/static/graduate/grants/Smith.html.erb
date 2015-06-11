@@ -1,0 +1,34 @@
+<!--
+03-Jun-2015: uebele@ moved, rails variables & links, validated, accessable
+-->
+<% # rails variables for title and sidebar
+content_for( :title, 'Smith Memorial Fund for Graduate Students' )
+content_for( :sidebar, 'grad' )
+content_for( :expand, 'grants_ex' )
+-%>
+<h2>Philip W. Smith Memorial Fund</h2>
+
+<p>Dorothy M. Smith and friends established the Fund in honor of her husband, Dr. Philip W. Smith, in recognition of his many accomplishments in education and research.</p>
+
+<p>Dr. Smith was a renowned herpetologist and ichthyologist.
+He was intensely interested in the taxonomy, natural history, and distributions of animals.
+After completing his Ph.D. at the University of Illinois, he spent his entire career at the Illinois Natural History Survey, retiring in 1979.
+He served as curator of the fish, reptile, and amphibian collections, as a researcher, and administrator.
+For the last 14 years of his career, he also served as a Professor of Zoology at the University of Illinois.
+He produced over 100 scientific publications.
+He is probably best known for his two authoritative monographs, The Amphibians and Reptiles of Illinois (1961) and The Fishes of Illinois (1979).</p>
+
+<p><strong>Purpose:</strong> The Philip W. Smith Memorial Fund supports research in any area of natural history, including, but not limited to, ecology, behavior, conservation biology, and systematics.
+Award amounts are typically $800 - $1,000.</p>
+
+<p><strong>Eligibility:</strong> Staff, faculty, and graduate students of the Illinois Natural History Survey and the University of Illinois at Urbana-Champaign are eligible for this award.
+Multi-investigator proposals must have as the principle investigator (PI) someone who meets these eligibility requirements.</p>
+
+<p><strong>Application:</strong> Submit proposal as either Microsoft Word or Adobe PDF files to
+<%= mail_to "smithaward@inhs.uiuc.edu" -%>.</p>
+
+<p><%= link_to "Click here", "Smith_instructions" %>
+for additional application instructions.</p>
+
+<p><strong>Closing Date:</strong> April 3, 2015</p>
+

@@ -1,0 +1,29 @@
+<div class="panel-group" id="accordion">
+  <div class="panel panel-default" >
+
+    <ul id="sidebar1" class="ugrad_menu">
+
+      <!-- Title Block: never expand for submenu -->
+      <li class="panel-title"><%= link_to 'RESOURCES', '/', class: 'collapsed', style: 'font-size:110%; text-align:center;' %></li>
+
+      <li class="panel-title">
+        <a class="collapsed" target="_self" href="/resources/school_links">Intra-School Links</a>
+      </li>
+
+
+      <li class="panel-title"><%= link_to "Business Office", '/resources/business', id: "business_ex", class: "collapsed", target: "_self" %>
+        <ul>
+          <li><%= link_to "Human Resources", '/resources/business/HR'%></li>
+          <li><%= link_to "Purchasing", '/resources/business/purchasing'%></li>
+          <li><%= link_to "Reimbursements/Vouchers", '/resources/business/reimbursements'%></li>
+          <li><%= link_to "Grant Preparation", '/resources/business/grants'%></li>
+         </ul>
+      </li>
+
+      
+    </ul>
+
+  </div>
+</div>
+
+

@@ -3,43 +3,6 @@
 
 @media (max-width: 767px) {
 
-
-//=================================
-/*Testing */
-
-#collapsed_id a{
-		color: black;
-		text-align: left;
-
-		}
-
-
-.row.collapsed_menu {
-	left: auto;
-	padding: 20px 30px; 
-    	  left: 0;
-	  right: 0;
- 	  max-width: 960px;
-        background-color: white;
-	color: black;
-	font-size: 14px;
-	font-weight: bold;
- &:hover{
-	background-color: white; 
-	color: black;		
-	}
-
-li > a {color: black;}
-      }
-
-
-
-
-
-//==================================
-
-
-
 	/* Hide the Home icon */
 	#navbar-collapse-1  > ul > li:first-child { 
 		display: none;

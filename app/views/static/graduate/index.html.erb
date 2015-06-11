@@ -1,0 +1,200 @@
+<%# 04-Jun-2015: uebele@ Rails content_for, migrated a-tags to Rails link_to,
+      accessable h-tags, validated HTML5
+    05-Jun-2015: uebele@ finished list-group link_to options, fixed all URLs
+      gave footer height to solve bouncing problem, formated footer links
+-%>
+<!-- Graduate Index page content
+       in /graduate/
+       updated by uebele@ Jun-2015 -->
+
+<% # rails variables for title and sidebar
+content_for( :title, 'Graduate Student Resources' )
+content_for( :sidebar, 'grad' )
+-%>
+<h2>Graduate Students</h2>
+
+<p>The School of Integrative Biology comprises three departments that offer graduate degrees.
+The School also sponsors several interdepartmental graduate programs.
+These graduate degree programs can all be accessed through the
+<%= link_to 'Departments', '/departments' %>
+link here or in the menu at left.</p>
+
+<p>As a graduate student, you will likely find most of the information you need under one of these specific graduate departments or programs.
+However, there are a number of resources that may be helpful to you irrespective of your home unit.
+Links to these resources are on this page.</p>
+
+<p>If you are looking for funds to help you carry out your research or to attend workshops or meetings, click on the
+<%= link_to 'Grants & Awards', '/graduate/grants/' %>
+link here or on the menu item at left.</p>
+
+<p>If you are thinking of applying to one of our graduate programs, you may also find useful our
+<%= link_to 'prospective graduate applicant information', '/graduate/prospective' -%>.</p>
+	
+<h2 style="text-align:center; font-size:180%; margin-bottom:.8em;">
+Links of General Interest
+</h2>
+
+<div id="menu">
+  <div class="panel list-group">
+
+<% # spans show icons
+  tag_icon='<span class="glyphicon glyphicon-tags pull-right"></span>'
+  bullet_icon='<span class="glyphicon glyphicon-chevron-right" style="margin:0 .5em 0 .9em;"></span>'
+  ext_icon='<span class="fa fa-external-link" style="margin-left:1em;"></span>'
+-%>
+
+    <h3 style="margin:-1px 0 -1px 0;">
+      <%= link_to raw('GRADUATE COLLEGE RESOURCES'+tag_icon), '#',
+                  class:'list-group-item', style:'font-weight:bold;',
+                  data:{toggle:'collapse', target:'#link1', parent:'#menu'} %>
+    </h3>
+    <div id="link1" class="sublinks collapse">
+
+      <%= link_to raw(bullet_icon+'The Graduate College'+ext_icon),
+                  'http://www.grad.illinois.edu/',
+                  class:'list-group-item small', target:'_blank' %>
+
+      <%= link_to raw(bullet_icon+'Career Services Office'+ext_icon),
+                  'http://www.grad.illinois.edu/careerservices/',
+                  class:'list-group-item small', target:'_blank' %>
+
+    </div>
+
+
+    <h3 style="margin:-1px 0 -1px 0;">
+      <%= link_to raw('FINANCIAL INFORMATION'+tag_icon), '#',
+                  class:'list-group-item', style:'font-weight:bold;',
+                  data:{toggle:'collapse', target:'#link2', parent:'#menu'} %>
+    </h3>
+    <div id="link2" class="sublinks collapse">
+
+      <%= link_to raw(bullet_icon+'Graduate College Assistantship Clearinghouse'+ext_icon),
+                  'http://www.grad.illinois.edu/clearinghouse/',
+                  class:'list-group-item small', target:'_blank' %>
+
+      <%= link_to raw(bullet_icon+'Fellowships - General'+ext_icon),
+                  'https://www.grad.illinois.edu/fellowship/',
+                  class:'list-group-item small', target:'_blank' %>
+
+      <%= link_to raw(bullet_icon+'Fellowships - Upcoming Deadlines'+ext_icon),
+                  'https://www.grad.illinois.edu/fellowship/upcoming/',
+                  class:'list-group-item small', target:'_blank' %>
+
+      <%= link_to raw(bullet_icon+'Campus Financial Aid'+ext_icon),
+                  'http://www.osfa.illinois.edu/',
+                  class:'list-group-item small', target:'_blank' %>
+
+      <%= link_to raw(bullet_icon+'IB Grants and Awards'),
+                  '/graduate/grants', class:'list-group-item small' %>
+
+      <%= link_to raw(bullet_icon+'Tuition and Fees'+ext_icon),
+                  'http://admissions.illinois.edu/Invest/tuition',
+                  class:'list-group-item small', target:'_blank' %>
+
+    </div>
+
+
+    <h3 style="margin:-1px 0 -1px 0;">
+      <%= link_to raw('INSURANCE AND RELATED INFORMATION'+tag_icon), '#',
+                  class:'list-group-item', style:'font-weight:bold;',
+                  data:{toggle:'collapse', target:'#link3', parent:'#menu'} %>
+    </h3>
+    <div id="link3" class="sublinks collapse">
+
+      <%= link_to raw(bullet_icon+'McKinley Health Center'+ext_icon),
+                  'http://www.mckinley.illinois.edu/',
+                  class:'list-group-item small', target:'_blank' %>
+
+      <%= link_to raw(bullet_icon+'Student Health Insurance'+ext_icon),
+                  'http://www.si.illinois.edu/',
+                  class:'list-group-item small', target:'_blank' %>
+
+      <%= link_to raw(bullet_icon+'Dental Insurance'+ext_icon),
+                  'http://www.grad.illinois.edu/current/dental.htm',
+                  class:'list-group-item small', target:'_blank' %>
+
+      <%= link_to raw(bullet_icon+'Vision Insurance'+ext_icon),
+                  'http://www.grad.illinois.edu/current/vision.htm',
+                  class:'list-group-item small', target:'_blank' %>
+
+    </div>
+
+
+    <h3 style="margin:-1px 0 -1px 0;">
+      <%= link_to raw('INFORMATION ABOUT CHAMPAIGN-URBANA'+tag_icon), '#',
+                  class:'list-group-item', style:'font-weight:bold;',
+                  data:{toggle:'collapse', target:'#link4', parent:'#menu'} %>
+    </h3>
+    <div id="link4" class="sublinks collapse">
+
+      <%= link_to raw(bullet_icon+"Cindy's Guide to Living [Cheaply] in C-U"+ext_icon),
+                  'http://biophysics.illinois.edu/students/guide/index.html',
+                  class:'list-group-item small', target:'_blank' %>
+
+      <%= link_to raw(bullet_icon+'The News Gazette'+ext_icon),
+                  'http://www.news-gazette.com/',
+                  class:'list-group-item small', target:'_blank' %>
+
+      <%= link_to raw(bullet_icon+'City of Champaign'+ext_icon),
+                  'http://ci.champaign.il.us/',
+                  class:'list-group-item small', target:'_blank' %>
+
+      <%= link_to raw(bullet_icon+'City of Urbana'+ext_icon),
+                  'http://urbanaillinois.us/',
+                  class:'list-group-item small', target:'_blank' %>
+
+    </div>
+
+
+    <h3 style="margin:-1px 0 -1px 0;">
+      <%= link_to raw('MAPS OF CAMPUS'+tag_icon), '#',
+                  class:'list-group-item', style:'font-weight:bold;',
+                  data:{toggle:'collapse', target:'#link5', parent:'#menu'} %>
+    </h3>
+    <div id="link5" class="sublinks collapse">
+
+      <%= link_to raw(bullet_icon+'Campus Resources'+ext_icon),
+                  'http://illinois.edu/map/view',
+                  class:'list-group-item small', target:'_blank' %>
+
+      <%= link_to raw(bullet_icon+'Parking'+ext_icon),
+                  'http://www.parking.illinois.edu/parking/visitors/campus-maps/campus-parking-map',
+                  class:'list-group-item small', target:'_blank' %>
+
+      <%= link_to raw(bullet_icon+'MTD Bus Routes'+ext_icon),
+                  'http://www.cumtd.com/maps-and-schedules/system-maps/campus',
+                  class:'list-group-item small', target:'_blank' %>
+
+    </div>
+
+
+    <h3 style="margin:-1px 0 -1px 0;">
+      <%= link_to raw('FOR INTERNATIONAL STUDENTS'+tag_icon), '#',
+                  class:'list-group-item', style:'font-weight:bold;',
+                  data:{toggle:'collapse', target:'#link6', parent:'#menu'} %>
+    </h3>
+    <div id="link6" class="sublinks collapse">
+
+      <%= link_to raw(bullet_icon+'Office of International Student and Scholar Services (ISSS)'+ext_icon),
+                  'http://isss.illinois.edu/',
+                  class:'list-group-item small', target:'_blank' %>
+
+      <%= link_to raw(bullet_icon+'ISSS Guides and Handbooks'+ext_icon),
+                  'http://isss.illinois.edu/publications/guides/',
+                  class:'list-group-item small', target:'_blank' %>
+
+      <%= link_to raw(bullet_icon+'Counseling Center, International Students'+ext_icon),
+                  'http://counselingcenter.illinois.edu/outreach-prevention/cultural-diversity-outreach/international-students/',
+                  class:'list-group-item small', target:'_blank' %>
+
+      <%= link_to raw(bullet_icon+'English as an International Language Student Resources'+ext_icon),
+                  'http://www.linguistics.illinois.edu/students/',
+                  class:'list-group-item small', target:'_blank' %>
+
+    </div>
+
+
+  </div>
+</div>
+
+

@@ -14,8 +14,6 @@
 var ready;
 ready = function() {
  
-
-
 	/*KA: Hide the Header and Lock/Freeze the Navigation bar upon scroll down   */
 		$('#topnavbar').affix({
 		    offset: {
@@ -24,11 +22,14 @@ ready = function() {
 		})
 
 
-
+/*KA: Work in Progress: Hide/show column divs for menu items based on large/small screens
  if ($(window).width() > 768) {
 	 $('#collapsed_id').hide();
 	 $('#navitem1').show();
 }
+
+*/
+
 
 
 

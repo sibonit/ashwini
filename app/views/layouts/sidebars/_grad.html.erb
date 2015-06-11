@@ -1,0 +1,64 @@
+<%# 01-Jun-2015 uebele@ validated, changed a-tags to Rails link_to 
+
+TODO: change ul class to "menu" for all menus
+      create better menu title style
+      make class-level icon-variables or adjust CSS to get rid of variables
+-%>
+<!-- Graduate Sidebar
+       used for content in /graduate/
+       updated by uebele@ Jun-2015 -->
+
+<% # spans show icons
+ext_icon='<span class="fa fa-external-link" style="margin-left:1em;"></span>'
+-%>
+<div class="panel-group" id="accordion">
+  <div class="panel panel-default" >
+    <ul id="sidebar1" class="ugrad_menu">
+
+      <li class="panel-title">
+        <%= link_to 'GRADUATE', '/graduate/', class: 'collapsed',
+                    style: 'font-size:110%; text-align:center;' %>
+      </li><!-- Title Block: never expand for submenu -->
+
+      <li class="panel-title">
+        <%= link_to 'Prospective Applicants', '/graduate/prospective',
+                    id: 'prospective_ex', class: 'collapsed' %>
+      </li><!-- no submenu, prospective.html only -->
+
+      <li class="panel-title">
+        <%= link_to 'Current Students', '/graduate/students/',
+                    id: 'students_ex', class: 'collapsed' %>
+      </li>
+<!-- in development, unknown submenu -->
+
+      <li class="panel-title">
+        <%= link_to 'Grants & Awards', '/graduate/grants/',
+                    id: 'grants_ex', class: 'collapsed' %>
+        <ul>
+<li><%= link_to 'Banks Memorial Fund',            'Banks' %></li>
+<li><%= link_to 'Clark Research Support Grant',   'Clark_research' %></li>
+<li><%= link_to 'Clark Summer Fellowship',        'Clark_summer' %></li>
+<li><%= link_to 'Emerson Memorial Award',         'Emerson' %></li>
+<li><%= link_to 'Govindjee Award for Excellence', 'Govindjee' %></li>
+<li><%= link_to 'Labinsky Award in Plant Biology','Labinsky' %></li>
+<li><%= link_to 'Larimore Scholarship',           'Larimore' %></li>
+<li><%= link_to 'Laughnan Fund in Plant Biology', 'Laughnan' %></li>
+<li><%= link_to 'Lebus Fund Award',               'Lebus' %></li>
+<li><%= link_to 'Luckmann Award',                 'Luckmann' %></li>
+<li><%= link_to 'Norton Award',                   'Norton' %></li>
+<li><%= link_to 'Odum-Kendeigh Fund',             'Odum-Kendeigh' %></li>
+<li><%= link_to 'Ross Memorial Fund',             'Ross' %></li>
+<li><%= link_to 'Smith Memorial Fund',            'Smith' %></li>
+<li><%= link_to 'Van Cleave Research Award',      'Van_Cleave' %></li>
+        </ul>
+      </li>
+
+      <li class="panel-title">
+        <%= link_to raw('The Graduate College'+ext_icon),
+                    'http://www.grad.illinois.edu/',
+                    class: 'collapsed', target: '_blank' %>
+      </li><!-- no submenu, external link only -->
+
+    </ul>
+  </div>
+</div>

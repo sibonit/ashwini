@@ -1,15 +1,23 @@
+<%# 05-Jun-2015: uebele@ rails link_to, fix jumpyness with footer height
+-%>
+<!-- Dev Site Footer
+       used for dev.sib.illinois.edu
+       updated by uebele@ Jun-2015 -->
 
+<footer style="height:2em;">
 
-<footer class="footer">
-  <small>
-    The <a href="https://dev.life.illinois.edu/ashwini">SIB Development Site</a>
-    by <a href="https://publish.illinois.edu/ashwini/">SIB ONIT</a>
+  <small style="margin: .1em 0 0 1em;">
+    The 
+<%= link_to "SIB Development Site", 'http://dev.sib.illinois.edu/' %>
+    by 
+<%= link_to "Life Sciences OIT", 'http://www.life.illinois.edu/help' %>
   </small>
-  <nav>
-    <ul>
-      <li><%= link_to "About",  about_path  %></li>
-      <li><%= link_to "Contact", contact_path %></li>
-      <li><a href="https://news.google.com/">News</a></li>
-    </ul>
+
+  <nav style="margin: .1em 1em 0 0; font-size: small;">
+      <ul>
+        <li><%= link_to "School of Integrative Biology", '/' %>
+        <li><%= link_to "Contact", '/about/contact' %>
+      </ul>
   </nav>
+
 </footer>
