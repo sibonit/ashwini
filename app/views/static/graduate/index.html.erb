@@ -2,6 +2,10 @@
       accessable h-tags, validated HTML5
     05-Jun-2015: uebele@ finished list-group link_to options, fixed all URLs
       gave footer height to solve bouncing problem, formated footer links
+    08-Jun-2015: uebele@ fixed targets in h3's '# -> '#/' to maintain position; 
+      added min-height of 43px per header to id="menu" to fix footer jumpyness
+
+TODO: still some header jumpyness to fix
 -%>
 <!-- Graduate Index page content
        in /graduate/
@@ -34,17 +38,18 @@ link here or on the menu item at left.</p>
 Links of General Interest
 </h2>
 
-<div id="menu">
-  <div class="panel list-group">
-
 <% # spans show icons
   tag_icon='<span class="glyphicon glyphicon-tags pull-right"></span>'
   bullet_icon='<span class="glyphicon glyphicon-chevron-right" style="margin:0 .5em 0 .9em;"></span>'
   ext_icon='<span class="fa fa-external-link" style="margin-left:1em;"></span>'
 -%>
 
+<!-- add min-height of 43px per menu header to fix jumpyness -->
+<div id="menu" style="min-height: 258px;">
+  <div class="panel list-group">
+
     <h3 style="margin:-1px 0 -1px 0;">
-      <%= link_to raw('GRADUATE COLLEGE RESOURCES'+tag_icon), '#',
+      <%= link_to raw('GRADUATE COLLEGE RESOURCES'+tag_icon), '#/',
                   class:'list-group-item', style:'font-weight:bold;',
                   data:{toggle:'collapse', target:'#link1', parent:'#menu'} %>
     </h3>
@@ -62,7 +67,7 @@ Links of General Interest
 
 
     <h3 style="margin:-1px 0 -1px 0;">
-      <%= link_to raw('FINANCIAL INFORMATION'+tag_icon), '#',
+      <%= link_to raw('FINANCIAL INFORMATION'+tag_icon), '#/',
                   class:'list-group-item', style:'font-weight:bold;',
                   data:{toggle:'collapse', target:'#link2', parent:'#menu'} %>
     </h3>
@@ -95,7 +100,7 @@ Links of General Interest
 
 
     <h3 style="margin:-1px 0 -1px 0;">
-      <%= link_to raw('INSURANCE AND RELATED INFORMATION'+tag_icon), '#',
+      <%= link_to raw('INSURANCE AND RELATED INFORMATION'+tag_icon), '#/',
                   class:'list-group-item', style:'font-weight:bold;',
                   data:{toggle:'collapse', target:'#link3', parent:'#menu'} %>
     </h3>
@@ -121,7 +126,7 @@ Links of General Interest
 
 
     <h3 style="margin:-1px 0 -1px 0;">
-      <%= link_to raw('INFORMATION ABOUT CHAMPAIGN-URBANA'+tag_icon), '#',
+      <%= link_to raw('INFORMATION ABOUT CHAMPAIGN-URBANA'+tag_icon), '#/',
                   class:'list-group-item', style:'font-weight:bold;',
                   data:{toggle:'collapse', target:'#link4', parent:'#menu'} %>
     </h3>
@@ -147,7 +152,7 @@ Links of General Interest
 
 
     <h3 style="margin:-1px 0 -1px 0;">
-      <%= link_to raw('MAPS OF CAMPUS'+tag_icon), '#',
+      <%= link_to raw('MAPS OF CAMPUS'+tag_icon), '#/',
                   class:'list-group-item', style:'font-weight:bold;',
                   data:{toggle:'collapse', target:'#link5', parent:'#menu'} %>
     </h3>
@@ -169,7 +174,7 @@ Links of General Interest
 
 
     <h3 style="margin:-1px 0 -1px 0;">
-      <%= link_to raw('FOR INTERNATIONAL STUDENTS'+tag_icon), '#',
+      <%= link_to raw('FOR INTERNATIONAL STUDENTS'+tag_icon), '#/',
                   class:'list-group-item', style:'font-weight:bold;',
                   data:{toggle:'collapse', target:'#link6', parent:'#menu'} %>
     </h3>
@@ -196,5 +201,3 @@ Links of General Interest
 
   </div>
 </div>
-
-

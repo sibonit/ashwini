@@ -1,61 +1,77 @@
+<%# 11-Jun-2015 ashwini@ Rearranged and fixed the sidebar links and sublinks
+    12-Jun-2105 uebele@ validated, bgcolor w/sidebar_header & header class,
+      gave About it's own panel-title, so sidebar_header would not expand
+
+TODO: make class-level icon-variables or adjust CSS to get rid of variables
+-%>
+<!-- PEEC Sidebar
+       used for content in /peec/
+       updated by uebele@ Jun-2015 -->
+
 <div class="panel-group" id="accordion">
   <div class="panel panel-default" >
+    <ul id="sidebar1" class="sidebar_menu">
 
-    <ul id="sidebar1" class="ugrad_menu">
-      <li class="panel-title"><%= link_to 'Peec Home', '/peec/', id: "peec_ex", class: "collapsed", target: "_self" %>
-        <ul>
-          <li><%= link_to "Seminars", '/peec/seminars/' %></li>
-        </ul>
+      <li class="panel-title sidebar_header">
+        <%= link_to 'PEEC', '/peec/', class: 'header' %>
       </li>
 
       <li class="panel-title">
+        <%= link_to 'About', '/peec/about', class: 'collapsed', id: "peec_ex" %>
+        <ul>
+          <li><%= link_to "Seminars", '/peec/seminars' %></li>
+        </ul>
+      </li>
+
       <li class="panel-title"><%= link_to 'Prospective Students', '/peec/prospective', id: 'prospective_ex', class: 'collapsed', target: '_self' %>
         <ul>
-          <li><%= link_to 'Before you Apply', '/peec/preapplication' %></li>
-          <li><%= link_to 'Admission Creteria', '/peec/creteria' %></li>
-          <li><%= link_to 'How to Apply', '/peec/apply' %></li>
+          <li><%= link_to 'Before you Apply', '/peec/prospective/pre_application' %></li>
+          <li><%= link_to 'Admission Criteria', '/peec/prospective/criteria' %></li>
+          <li><%= link_to 'How to Apply', '/peec/prospective/apply' %></li>
         </ul>
       </li>
 
-      <li class="panel-title">
       <li class="panel-title"><%= link_to 'Current Students', '/peec/current', id: 'current_ex', class: 'collapsed', target: '_self' %>
         <ul>
-          <li><%= link_to 'Student Deadlins', '/peec/deadlines' %></li>
-          <li><%= link_to 'Important Forms', '/peec/forms' %></li>
-          <li><%= link_to 'Milestone Timeline', '/peec/milestones' %></li>
-          <li><%= link_to 'Prelim Exam', '/peec/prelim' %></li>
-          <li><%= link_to 'Final Defense', '/peec/finaldefense' %></li>
-          <li><%= link_to 'Terminal Master Defense', '/peec/masterdefense' %></li>
-          <li><%= link_to 'Program Handbook', '/peec/handbook' %></li>
-          <li><%= link_to 'By-Laws', '/peec/bylaws' %></li>
-          <li><%= link_to 'Fellowships', '/peec/fellowships' %></li>
-          <li><%= link_to 'Facilities', '/peec/facilities' %></li>
-          <li><%= link_to 'Frequently Asked Questions', '/peec/faqs' %></li>
+          <li><%= link_to 'Student Deadlines', '/peec/current/deadlines' %></li>
+          <li><%= link_to 'Important Forms', '/peec/current/forms' %></li>
+          <li><%= link_to 'Milestone Timeline', '/peec/current/milestones' %></li>
+          <li><%= link_to 'Prelim Exam', '/peec/current/prelim' %></li>
+          <li><%= link_to 'Final Defense', '/peec/current/final_defense' %></li>
+          <li><%= link_to 'Terminal Master Defense', '/peec/current/masters_defense' %></li>
+          <li><%= link_to 'Program Handbook', '/peec/current/handbook' %></li>
+          <li><%= link_to 'By-Laws', '/peec/current/bylaws' %></li>
+          <li><%= link_to 'Fellowships', '/peec/current/fellowships' %></li>
+          <li><%= link_to 'Facilities', '/peec/current/facilities' %></li>
+          <li><%= link_to 'Frequently Asked Questions', '/peec/current/faqs' %></li>
         </ul>
       </li>
     
+      <li class="panel-title"><%= link_to 'Courses', '/peec/courses', id: 'courses_ex', class: 'collapsed', target: '_self' %>
+        <ul>
+          <li><%= link_to 'Core Courses', '/peec/courses/core' %></li>
+          <li><%= link_to 'Special Topic Courses', '/peec/courses/special' %></li>
+        </ul>
+      </li>
 
-      <li class="panel-title">
       <li class="panel-title"><%= link_to 'Research Areas', '/peec/research', id: 'research_ex', class: 'collapsed', target: '_self' %>
         <ul>
-          <li><a href="#">FAQ</a></li>
+          <li><%= link_to 'Ecology', '/peec/research/ecology' %></li>
+          <li><%= link_to 'Evolution and Systematics', '/peec/research/evolution' %></li>
+          <li><%= link_to 'Conservation', '/peec/research/conservation' %></li>
         </ul>
       </li>
 
-      <li class="panel-title">
-      <li class="panel-title"><%= link_to 'News', '/peec/news', id: 'news_ex', class: 'collapsed', target: '_self' %>
-        <ul>
-          <li><a href="#">FAQ</a></li>
+      <li class="panel-title"><%= link_to 'News', '/peec/announcements', id: 'peec_news_ex', class: 'collapsed', target: '_self' %> 
+ 	<ul>
+          <li><%= link_to 'Student Research', '/peec/student_research' %></li>
+          <li><%= link_to 'Featured Alumni', '/peec/alumni/featured' %></li>
         </ul>
-      </li>
+     </li>
 
-      <li class="panel-title">
-      <li class="panel-title"><%= link_to 'Directory', '#', id: 'research_ex', class: 'collapsed', target: '_self' %>
-        <ul>
-          <li><a href="#">FAQ</a></li>
-        </ul>
-      </li>
+      <li class="panel-title"><%= link_to 'Directory', '/peec/directory',  class: 'collapsed', target: '_self' %></li>
 
+    </ul>
   </div>
 </div>
 

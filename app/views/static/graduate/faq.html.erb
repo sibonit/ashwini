@@ -1,0 +1,92 @@
+<%# 04-Jun-2015: uebele@ rails vars & link_tos, validated HTML5, accessable
+    KA: June 2015 formatted it to look like the other 4 faq pages
+    09-Jun-2015: uebele@ validated, fixing &amp; with rails call
+-%>
+<!-- Graduate Prospective FAQ page content
+       in /graduate/
+       updated by uebele@ Jun-2015 -->
+
+<% # rails variables for title and sidebar
+content_for( :title, 'FAQ for Prospective Graduate Students' )
+content_for( :sidebar, 'grad' )
+-%>
+
+<h2>Prospective Graduate FAQ</h2>
+
+<p id="top">This page lists Frequently Asked Questions relevant to prospective graduate students in the Departments and Programs in or associated with the School of Integrative Biology. Other FAQs on the SIB web site can be found
+<%= link_to "here", '/about/faq' -%>.</p>
+
+<p>Graduate students must apply through the
+<%= link_to "The Graduate College", 'http://www.grad.illinois.edu/' -%>,
+indicating the department or program for which they are applying.
+Information about the application process may be found by following the "Apply" link on the Graduate College web page (under <em>Prospective Students</em>) or by
+<%= link_to "clicking here",
+            'http://www.grad.illinois.edu/admissions/apply/' -%>.
+Information about and links to the SIB departments and programs may be found in the menus at left
+<%= link_to "or here", '/departments/' -%>.</p>
+
+<p>The questions below are some asked by graduate students in all programs.
+For more specific information about the program you are interested in, go to the web page describing that department or program.</p>
+
+
+ <table class="table table-striped">
+        <tbody>
+		           <tr><td> <i class="fa fa-info-circle"></i>&nbsp; <a href="#1"> How do I apply to a graduate program at the University of Illinois?</a></td></tr>
+			   <tr><td> <i class="fa fa-info-circle"></i>&nbsp; <a href="#2"> When should I apply?ons?</a></td></tr>
+			   <tr><td> <i class="fa fa-info-circle"></i>&nbsp; <a href="#3"> What program code should I use when I apply?</a></td></tr>
+			   <tr><td> <i class="fa fa-info-circle"></i>&nbsp; <a href="#4"> When can I expect to hear whether I have been admitted?</a></td></tr>
+			   <tr><td> <i class="fa fa-info-circle"></i>&nbsp; <a href="#5"> Is a score for the general Graduate Record Examination (GRE) required for admission?</a></td></tr>
+			   <tr><td> <i class="fa fa-info-circle"></i>&nbsp; <a href="#6"> Is a score for the advanced biology section of the GRE required for admission??</a></td></tr>
+			   <tr><td> <i class="fa fa-info-circle"></i>&nbsp; <a href="#7"> What kind of financial support, if any, is available for my graduate study?</a></td></tr>			   
+	</tbody>
+   </table>
+
+
+
+	<h3><a  class="jump_link" id="1"></a>1. How do I apply to a graduate program at the University of Illinois?</h3>
+		<p>To begin, go to the web page for the Graduate College at the University of Illinois and click on the "Apply" link (under Prospective Students), or click here. The Graduate College web pages give you a great deal of useful information and complete instructions for applying. You will need to know the name of the graduate program to which you wish to apply and its program code (see question 3, below, for program codes). In addition, if you are from outside the USA, you should be aware that international students may be required to supply credentials in addition to those required of domestic students.</p>
+		<p><a href="#top"><em>Back to Top</em></a></p>
+
+		<h3><a  class="jump_link" id="2"></a>2. When should I apply?</h3>
+		<p>In general, apply in the fall of one year for admission starting for the fall of the next year. Most programs have admission deadlines around or just after the first of the year. In addition, most programs will accept students starting only in the fall, though there are exceptions. Check with the particular program you are interested in.</p>
+		<p><a href="#top"><em>Back to Top</em></a></p>
+
+		<h3><a class="jump_link" id="3"></a>3) 3. What program code should I use when I apply?</h3>
+		<p>The program code on your application identifies the specific program to which you are applying.</p>
+		<p>Use these program codes for <strong>doctoral programs</strong>:</p>
+			<ul style="list-style-type: circle;">
+				<li><a href="http://www.life.uiuc.edu/animalbiology/">Animal Biology</a> (program code: <strong>10KS0315PHD</strong>)</li>
+				<li><a href="http://www.life.uiuc.edu/entomology/">Entomology</a> (program code: <strong>10KS0324PHD</strong>)</li>
+				<li><a href="http://www.life.uiuc.edu/plantbio/">Plant Biology</a> (program code: <strong>10KS0320PHD</strong>)</li>
+				<li><a href="http://sib.illinois.edu/peec/">Program in Ecology, Evolution, and Conservation Biology</a> (program code: <strong>10KS05107PHD</strong>)</li>
+				<li><a href="http://www.neuroscience.uiuc.edu/">Neuroscience</a> (program code: <strong>10KS0323PHD</strong>)</li>
+			</ul>
+		<p>Use these program codes for <strong>master's programs</strong>:</p>
+			<ul style="list-style-type: circle;">
+				<li><a href="http://www.life.uiuc.edu/entomology/index.html">Entomology</a> (program code: <strong>10KS0324MS</strong>)</li>
+				<li><a href="http://www.life.uiuc.edu/plantbio/">Plant Biology</a> (program code: <strong>10KS0320MS</strong>)</li>
+				<li><a href="http://sib.illinois.edu/peec/">Program in Ecology, Evolution, and Conservation Biology</a> (program code: <strong>10KS5107MS</strong>)</li>
+				<li><a href="http://omst.sib.illinois.edu/">Online Master of Science Teaching Biology Program</a> (program code: <strong>10KS5278MSU</strong>)</li>
+			</ul>
+		<p><a href="#top"><em>Back to Top</em></a></p>
+
+		<h3><a class="jump_link" id="4"></a>4. When can I expect to hear whether I have been admitted?</h3>
+		<p>You will most likely hear about the status of your application within 2-3 months of the application deadline.</p>
+		<p><a href="#top"><em>Back to Top</em></a></p>
+
+		<h3><a class="jump_link" id="5"></a>5. Is a score for the general Graduate Record Examination (GRE) required for admission?</h3>
+		<p>All Ph.D. programs require a GRE test score or equivalent. The Neuroscience Program will accept a score on the MCAT test in lieu of the GRE for students applying for the MD-Ph.D. program. The masters programs may or may not require a GRE score. Scores must be reported via official transcripts, not just by a communication from you. Some programs require that the exam be taken within a minimum of years. Check with the specific program you are interested in for exact requirements.</p>
+		<p><a href="#top"><em>Back to Top</em></a></p>
+
+		<h3><a class="jump_link" id="6"></a>6. Is a score for the advanced biology section of the GRE required for admission?</h3>
+		<p>No. None of our programs require you to take the advanced GRE examination.</p>
+		<p><a href="#top"><em>Back to Top</em></a></p>
+
+		<h3><a class="jump_link" id="7"></a>7. What kind of financial support, if any, is available for my graduate study?</h3>
+		<p><%= "For Ph.D. programs, financial support in the form of fellowships, teaching assistantships, research assistantships, or tuition & fee (T&F) waivers are available.
+The first three usually include a T&F waiver as part of the package.
+Some masters programs offer support, but some do not.
+Check your particular program." -%></p>
+		<p><a href="#top"><em>Back to Top</em></a></p>
+
+

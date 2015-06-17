@@ -57,7 +57,7 @@
                   <div class="row">
                     <ul class="col-md-5 list-unstyled ul_navbar">
 			<li><strong><%= link_to "People", '/people' %></strong><hr></li>
-			<li><strong><%= link_to "Research", '/undergraduate/options/research' %></strong><hr></li>
+			<li><strong><%= link_to "Research", '/research' %></strong><hr></li>
 			<li><strong><%= link_to "Departments", '/departments' %></strong><hr></li>
 			<li><strong><%= link_to "Programs", '/programs' %></strong><hr></li>
 			<li><strong><%= link_to "Contact Us", '/about/contact' %></strong><hr></li>
@@ -100,16 +100,19 @@
                   <div class="row">
                     <ul class="col-md-5 list-unstyled ul_navbar">
                       <li><strong>
-<%= link_to 'Prospective Applicants', '/graduate/prospective' %>
+<%= link_to "Prospective Applicants", '/graduate/prospective' %>
                       </strong><hr></li>
                       <li><strong>
-<%= link_to 'Current Students', '/graduate/students/' %>
+<%= link_to "Current Students", '/graduate/current' %>
                       </strong><hr></li>
                       <li><strong>
-<%= link_to 'Grants & Awards', '/graduate/grants/' %>
+<%= link_to "PEEC - Program in Ecology, Evolution, and Conservation Biology",'/peec/' %>
                       </strong><hr></li>
                       <li><strong>
-<%= link_to raw('The Graduate College'+ext_icon),
+<%= link_to "Grants & Awards", '/graduate/grants/' %>
+                      </strong><hr></li>
+                      <li><strong>
+<%= link_to raw("The Graduate College"+ext_icon),
             'http://www.grad.illinois.edu/', target: '_blank' %>
                       </strong></li>
                     </ul>

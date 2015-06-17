@@ -1,0 +1,30 @@
+<%# KA: New Person %>
+
+<p> New Person </p>
+
+<% provide(:title, 'Sign up') %>
+<h1>Create New Person</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@person) do |f| %>
+      
+      <%= render 'shared/error_messages' %>
+
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name, class: 'form-control' %>
+
+      <%= f.label :email %>
+      <%= f.email_field :email, class: 'form-control' %>
+
+      <%= f.label :netid %>
+      <%= f.email_field :netid, class: 'form-control' %>
+
+
+      <%= f.submit "Create my account", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+
+<h4><%= link_to 'Show All People', '/people' %></h4>
+

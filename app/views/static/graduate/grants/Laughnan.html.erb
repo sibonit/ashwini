@@ -1,12 +1,28 @@
+<%# 10-Jun-2015 uebele@ moved/renamed, Rails content_for, accessable h-tags
+-%>
+<!-- Grant Detail page content
+       in /graduate/grants
+       updated by uebele@ Jun-2015 -->
 
-<!--KA: Got rid of the flickering in this page by adding "2 <p> tags with &nbsp in it" at the end of the page-->
+<% # rails variables for title and sidebar
+content_for( :title, 'Laughnan Fund' )
+content_for( :sidebar, 'grad' )
+content_for( :expand, 'grants_ex' )
+-%>
+<h2>John R. Laughnan Fund</h2>
+<h3 style="text-align:center; font-size:1.5em; margin:-20px 0 25px 0;">
+  In the Department of Plant Biology
+</h3>
 
-
-<h1 style="padding-bottom: 0; margin-bottom: 0;">John R. Laughnan Fund</h1>
-<h2 align="center">Department of Plant Biology</h2>
 <p>The John R. Laughnan Fund was established in 1995 to support travel to scientific meetings for graduate students in the Department of Plant Biology at the University of Illinois, Urbana-Champaign. The amount of the award will be approximately $600. Retroactive awards normally will not be considered.</p>
-<p><strong>Eligibility:</strong> Applicants must be full-time graduate students currently enrolled in graduate studies in the Department of Plant Biology. Applicants must be presenting either a talk or a poster in a national or international scientific meeting, as opposed to merely attending. Both the research and scholarship record of the applicant will be considered. Students receiving a Laughnan award will not be eligible a second time.</p>
-<p><strong>Application:</strong> Applications should include the following information:</p>
+
+
+<h3>Eligibility:</h3>
+<p> Applicants must be full-time graduate students currently enrolled in graduate studies in the Department of Plant Biology. Applicants must be presenting either a talk or a poster in a national or international scientific meeting, as opposed to merely attending. Both the research and scholarship record of the applicant will be considered. Students receiving a Laughnan award will not be eligible a second time.</p>
+
+
+<h3>Application:</h3> 
+<p><strong>Applications should include the following information:</strong></p>
 <ol>
 <li>Applicant's name and year of study.</li>
 <li>Student curriculum vitae (with current GPA indicated)</li>
@@ -19,6 +35,3 @@
 </ol>
 <p>Applications should be submitted to Rayme Dorsey (<a href="mailto:derosset@illinois.edu">rdorsey@illinois.edu</a>) no later than <strong>March 12, 2015. &nbsp;</strong>Announcement of the award will be made by late April and official recognition will be given at the SIB awards ceremony in May.</p>
 <p>It is expected that if, for any reason, the travel cannot be accomplished or there are anticipated changes, the Graduate Affairs Committee must be notified at once. If there is an opportunity in the student's presentation to acknowledge the John R. Laughnan award, it would be greatly appreciated.</p>
-
-<p>&nbsp;</p>
-<p>&nbsp;</p>

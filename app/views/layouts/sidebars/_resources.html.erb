@@ -1,10 +1,18 @@
+<%# 11-Jun-2105 ashwini@ added bgcolor with sidebar_header
+    12-Jun-2105 uebele@ moved sidebar_header styles to stylesheets, fixed '/'
+-%>
+<!-- Resouces Sidebar
+       used for content in /resources/
+       updated by uebele@ Jun-2015 -->
+
 <div class="panel-group" id="accordion">
   <div class="panel panel-default" >
 
-    <ul id="sidebar1" class="ugrad_menu">
+    <ul id="sidebar1" class="sidebar_menu">
 
-      <!-- Title Block: never expand for submenu -->
-      <li class="panel-title"><%= link_to 'RESOURCES', '/', class: 'collapsed', style: 'font-size:110%; text-align:center;' %></li>
+      <li class="panel-title sidebar_header">
+        <%= link_to 'Resources', '/resources/', class: 'header' %>
+      </li>
 
       <li class="panel-title">
         <a class="collapsed" target="_self" href="/resources/school_links">Intra-School Links</a>

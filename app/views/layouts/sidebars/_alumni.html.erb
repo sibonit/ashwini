@@ -1,10 +1,13 @@
+<!--KA: Added bgcolor to sidebar header-->
+
 <div class="panel-group" id="accordion">
   <div class="panel panel-default" >
 
-    <ul id="sidebar1" class="ugrad_menu">
+    <ul id="sidebar1" class="sidebar_menu">
 
-      <!-- Title Block: never expand for submenu -->
-      <li class="panel-title"><%= link_to 'ALUMNI', '/', class: 'collapsed', style: 'font-size:110%; text-align:center;' %></li>
+      <li class="panel-title sidebar_header">
+        <%= link_to "Alumni", '/', class: 'header' %>
+      </li>
 
       <li class="panel-title">
        	<a class="collapsed" target="_self" id="giving_ex" href="/alumni/donations">Giving to SIB</a>

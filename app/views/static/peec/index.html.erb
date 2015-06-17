@@ -1,34 +1,40 @@
-<% content_for( :title, 'PEEC Home' ) %>
-<% content_for( :sidebar, 'peec' ) %>
-<% content_for( :expand, 'peec_ex' ) %>
+<%# 12-Jun-2015 uebele@ validated (2 errors),
+      removed content_for :expand since its now a sidebar_header link
+-%>
+<!-- PEEC Index page content
+       in /peec/
+       updated by uebele@ Jun-2015 -->
 
+<% # rails variables for title and sidebar
+content_for( :title, 'PEEC Home' )
+content_for( :sidebar, 'peec' )
+-%>
 <p>
-  <%= image_tag 'peec/peec_banner.jpg', alt: "Program in Ecology, Evolution, and Conservation Biology", width: "98%" %>
+  <%= image_tag 'peec/peec_banner.jpg',
+                alt: "Program in Ecology, Evolution, and Conservation Biology",
+                style: "max-width:98%;" %>
 </p>
+<br>
 
-<div style="width: 100%;">
-  <div class="peec">
-    <p>The <strong>Program in Ecology, Evolution, and Conservation Biology (PEEC)</strong> is an interdisciplinary, campuswide program designed to provide individualized training for graduate students. This program prepares individuals for research and teaching careers in ecology and evolutionary biology and produces scientists who are both technically competent and broadly educated in ecology and evolutionary biology.</p>
+<p>The <strong>Program in Ecology, Evolution, and Conservation Biology (PEEC)</strong> is an interdisciplinary, campuswide program designed to provide individualized training for graduate students. This program prepares individuals for research and teaching careers in ecology and evolutionary biology and produces scientists who are both technically competent and broadly educated in ecology and evolutionary biology.</p>
     <h3>A Ph.D. student declares three areas of emphasis:</h3>
     <ul>
       <li>A general area of ecology or evolution</li>
       <li>A complementary general area (e.g., behavior, systematics, physiology, genetics)</li>
       <li>A specific area related to the dissertation</li>
     </ul>
-    <p>See program <a href="/peec/bylaws" target="_blank">by-laws</a>, <a href="/peec/handbook" target="_blank">handbook</a>, and <a href="/peec/faqs" target="_blank">FAQs</a>.</p>
-    <p><span style="color: #333399;"><strong>Congratulations to PEEC student Kelsey Witt and her advisor Ripan Malhi on the article "</strong><a href="http://news.illinois.edu/news/15/0107AncientDogs_RipanMahli.html" target="_blank">Study of ancient dogs in the Americas yields insights into human, dog migration</a><strong>" on the front page of Inside Illinois!</strong></span>
-    </p>
-    <p style="color: #ff6600;"><a href="/peec/student_research" target="_blank">Click here</a> to see what some of our students are working on.</p>
-    <p style="color: #ff6600;"><a href="/peec/alumni_featured" target="_blank">Click here</a> to see where some of our alumni are now.</p>
-    <p>&nbsp;</p>
-  </div>
-</div>
-<center>
-  <p style="font-size: 85%;"><strong>Contact us at:</strong></p>
-  <p style="font-size: 85%;">265 Morrill Hall, MC-116<br /> 
+<br>
+
+<div style="border: 1px solid #666666; padding: 1em; margin: 1em; background-color:lightgray"><p>Congratulations to PEEC student Kelsey Witt and her advisor Ripan Malhi on the article "<a href="http://news.illinois.edu/news/15/0107AncientDogs_RipanMahli.html" target="_blank">Study of ancient dogs in the Americas yields insights into human, dog migration</a>" on the front page of Inside Illinois!.</p></div>
+
+<hr>
+
+
+  <h3><strong>Contact Us:</strong></h3>
+  <p>265 Morrill Hall, MC-116<br /> 
     505 South Goodwin Ave.<br /> 
     Urbana, IL 61801&nbsp; USA<br /> 
     phone: 217/ 300-1166; fax: 217/ 244-7246<br /> 
     <a href="mailto:ecoevo@life.illinois.edu">ecoevo@life.illinois.edu</a>
   </p>
-</center>
+

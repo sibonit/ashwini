@@ -1,0 +1,22 @@
+<%# KA: Show Person %>
+
+<p> Show Person </p>
+
+<% provide(:title, @person.last_name) %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+   	<h1>
+  	  <%= gravatar_for @person %>
+	  <%= @person.last_name %>
+	</h1>
+	 Email: <%= @person.email %>
+         NetID: <%= @person.netid %>
+
+    </section>
+  </aside>
+</div>
+
+<h4><%= link_to 'Show All People', '/people' %></h4>
+
+

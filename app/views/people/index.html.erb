@@ -1,1 +1,60 @@
-<p> People Home </p>
+<%# KA: People index %>
+
+<link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css"></style>
+<script type="text/javascript" src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
+
+<script>
+$(document).ready(function(){
+    $('#sort_table').dataTable();
+});
+</script>
+
+<% provide(:title, 'All people') %>
+<h1>People Listing</h1>
+
+
+<h4><%= link_to 'Create New Person', people_new_path %></h4>
+
+<div class="table-responsive">
+<table id="sort_table" class="display table" width="100%" >
+        <thead>  
+          <tr> 
+	    <th> </th> 
+            <th>Last Name</th>  
+            <th>Email</th>
+	    <th>NetID</th>  
+	    <th> </th> 
+	    <th> </th> 
+	    <th> </th> 
+          </tr>
+	</thead>  
+        <tbody> 
+ 		<% @people.each do |person| %> 
+          <tr>  
+   	       <td><%= image_tag( person.photo.url( :thumb ) ) %></td>  
+               <td><%= link_to person.last_name, person %></td> 
+		<td><%= link_to person.email, person %></td>
+	       <td><%= link_to person.netid, person %></td>
+	       <td><%= link_to 'Show', person %></td>
+		<td><%= link_to 'Edit',edit_person_path(person)%></td>
+		<td><%= link_to "Delete", person, method: :delete, data: { confirm: "You sure?" } %></td>
+	  </tr>  
+	  <% end %>
+
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

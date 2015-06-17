@@ -1,8 +1,7 @@
 <%# 01-Jun-2015 uebele@ validated, changed a-tags to Rails link_to 
+    11-Jun-2105 ashwini@  added bgcolor with sidebar_header
 
-TODO: change ul class to "menu" for all menus
-      create better menu title style
-      make class-level icon-variables or adjust CSS to get rid of variables
+TODO: make class-level icon-variables or adjust CSS to get rid of variables
 -%>
 <!-- Graduate Sidebar
        used for content in /graduate/
@@ -13,12 +12,11 @@ ext_icon='<span class="fa fa-external-link" style="margin-left:1em;"></span>'
 -%>
 <div class="panel-group" id="accordion">
   <div class="panel panel-default" >
-    <ul id="sidebar1" class="ugrad_menu">
+    <ul id="sidebar1" class="sidebar_menu">
 
-      <li class="panel-title">
-        <%= link_to 'GRADUATE', '/graduate/', class: 'collapsed',
-                    style: 'font-size:110%; text-align:center;' %>
-      </li><!-- Title Block: never expand for submenu -->
+      <li class="panel-title sidebar_header">
+        <%= link_to "Graduate", '/graduate/', class: 'header' %>
+      </li>
 
       <li class="panel-title">
         <%= link_to 'Prospective Applicants', '/graduate/prospective',
@@ -26,10 +24,13 @@ ext_icon='<span class="fa fa-external-link" style="margin-left:1em;"></span>'
       </li><!-- no submenu, prospective.html only -->
 
       <li class="panel-title">
-        <%= link_to 'Current Students', '/graduate/students/',
+        <%= link_to 'Current Students', '/graduate/current',
                     id: 'students_ex', class: 'collapsed' %>
-      </li>
-<!-- in development, unknown submenu -->
+      </li><!-- no submenu, current.html only -->
+
+      <li class="panel-title">
+        <%= link_to "PEEC - Program in Ecology, Evolution, and Conservation Biology",'/peec/', class: 'collapsed' %>
+      </li><!-- no submenu, prospective.html only -->
 
       <li class="panel-title">
         <%= link_to 'Grants & Awards', '/graduate/grants/',
@@ -54,7 +55,7 @@ ext_icon='<span class="fa fa-external-link" style="margin-left:1em;"></span>'
       </li>
 
       <li class="panel-title">
-        <%= link_to raw('The Graduate College'+ext_icon),
+        <%= link_to raw("The Graduate College"+ext_icon),
                     'http://www.grad.illinois.edu/',
                     class: 'collapsed', target: '_blank' %>
       </li><!-- no submenu, external link only -->

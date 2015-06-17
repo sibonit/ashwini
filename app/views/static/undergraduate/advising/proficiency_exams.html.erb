@@ -1,0 +1,24 @@
+<%# 10-Jun-2015 uebele@ moved/renamed, Rails content_for, accessable h-tags
+      added course titles and rails mail_to's to clear junk, added to sidebar
+-%>
+<!-- Proficiency Exams page content
+       in /undergraduate/advising/
+       updated by uebele@ Jun-2015 -->
+
+<% # rails variables for title and sidebar
+content_for( :title, 'Proficiency Exams' )
+content_for( :sidebar, 'undergraduate' )
+content_for( :expand,  'advising_ex' )
+-%>
+<h2>Proficiency Exams - Fall 2015</h2>
+
+To sign up for an exam, please email applicable instructor:
+
+<h3>IB 100 - Biological Sciences</h3>
+<%= mail_to 'sdownie@illinois.edu' %>
+
+<h3>IB 104 - Animal Biology</h3>
+<%= mail_to 'bfrancis@illinois.edu' %>
+
+<h3>IB 150 - Organismal & Evolutionary Biology</h3>
+<%= mail_to 'bclegg@illinois.edu' %>

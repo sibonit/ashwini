@@ -1,8 +1,11 @@
-<!--
-03-Jun-2015: uebele@ moved, rails variables & links, validated, accessable
--->
+<%# 03-Jun-2015 uebele@ moved/renamed, Rails content_for, accessable h-tags
+-%>
+<!-- Grant Detail page content
+       in /graduate/grants
+       updated by uebele@ Jun-2015 -->
+
 <% # rails variables for title and sidebar
-content_for( :title, 'Smith Memorial Fund for Graduate Students' )
+content_for( :title, 'Smith Memorial Fund' )
 content_for( :sidebar, 'grad' )
 content_for( :expand, 'grants_ex' )
 -%>
@@ -18,17 +21,21 @@ For the last 14 years of his career, he also served as a Professor of Zoology at
 He produced over 100 scientific publications.
 He is probably best known for his two authoritative monographs, The Amphibians and Reptiles of Illinois (1961) and The Fishes of Illinois (1979).</p>
 
-<p><strong>Purpose:</strong> The Philip W. Smith Memorial Fund supports research in any area of natural history, including, but not limited to, ecology, behavior, conservation biology, and systematics.
+<h3>Purpose:</h3> 
+<p>The Philip W. Smith Memorial Fund supports research in any area of natural history, including, but not limited to, ecology, behavior, conservation biology, and systematics.
 Award amounts are typically $800 - $1,000.</p>
 
-<p><strong>Eligibility:</strong> Staff, faculty, and graduate students of the Illinois Natural History Survey and the University of Illinois at Urbana-Champaign are eligible for this award.
+<h3>Eligibility:</h3> 
+<p>Staff, faculty, and graduate students of the Illinois Natural History Survey and the University of Illinois at Urbana-Champaign are eligible for this award.
 Multi-investigator proposals must have as the principle investigator (PI) someone who meets these eligibility requirements.</p>
 
-<p><strong>Application:</strong> Submit proposal as either Microsoft Word or Adobe PDF files to
+<h3>Application:</h3> 
+<p>Submit proposal as either Microsoft Word or Adobe PDF files to
 <%= mail_to "smithaward@inhs.uiuc.edu" -%>.</p>
-
 <p><%= link_to "Click here", "Smith_instructions" %>
 for additional application instructions.</p>
 
-<p><strong>Closing Date:</strong> April 3, 2015</p>
+
+<h3>Closing Date:</h3> 
+<p>April 3, 2015</p>
 

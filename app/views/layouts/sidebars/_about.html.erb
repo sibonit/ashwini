@@ -1,24 +1,23 @@
-<!-- 
-  KA: May 2015
-  05-Jun-2015: uebele@ rails link_to and indented and icons
--->
-<%# TODO: there is no /about/ index page -%>
+<%# 05-Jun-2015: uebele@ added rails link_to and icons
+    11-jun-2105: ashwini@ added bgcolor with sidebar_header
+    12-jun-2105: uebele@ deleted _default sidebar and symlinked this file
+ -%>
+<!-- About Sidebar
+       used for /people/, /research/, /departments/, /programs/ & /about/
+       updated by ashwini@ Jun-2015 -->
 
 <% # variables for spans to show icons
   ext_icon='<span class="fa fa-external-link" style="margin-left:1em;"></span>'
 -%>
-
-<!-- About Sidebar -->
 <div class="panel-group" id="accordion">
   <div class="panel panel-default" >
-    <ul id="sidebar1" class="ugrad_menu">
+    <ul id="sidebar1" class="sidebar_menu">
 
-      <!-- Title Block: never expand for submenu -->
-      <li class="panel-title sidebar_header"> <%= link_to 'ABOUT', '/', class: 'collapsed', style: 'font-size:110%; text-align:center;' %></li>
+      <li class="panel-title sidebar_header">
+        <%= link_to "About", '/', class: 'header' %>
+      </li>
 
-      <li class="panel-title">
-        <%= link_to "People", '/people',
-                    id: "people_ex", class: "collapsed" %>
+      <li class="panel-title"><%= link_to "People", '/people',id: "people_ex", class: "collapsed" %>
         <ul>
           <li><%= link_to 'Faculty',            '/people/faculty' %>
           <li><%= link_to 'Staff',              '#' %>
@@ -29,14 +28,16 @@
         </ul>
       </li>
 
-      <li class="panel-title">
-        <%= link_to "Research", '/undergraduate/options/research',
-                    id:"research_ex", class:"collapsed" %>
-      </li>
+      <li class="panel-title"><%= link_to "Research", '/research',id:"research_ex", class:"collapsed" %>
+	<ul>
+           <li><%= link_to 'Undergraduate Research', '/research/undergraduate' %>
+           <li><%= link_to 'Working with Non-SIB Faculty', '/research/non_sib' %>
+	   <li><%= link_to 'Intro to Research Course', '/undergraduate/special_programs/research_intro' %>
+	   <li><%= link_to 'Features', '/research/features' %>
+	</ul>
+	</li>
 
-      <li class="panel-title">
-        <%= link_to "Departments", '/departments',
-                    id: "departments_ex", class: "collapsed" %>
+      <li class="panel-title"><%= link_to "Departments", '/departments',id: "departments_ex", class: "collapsed" %>
         <ul>
           <li><strong><%= link_to raw('Animal Biology'+ext_icon),'http://www.life.illinois.edu/animalbiology', target: '_blank' %></strong></li>
   	  <li><strong><%= link_to raw('Entomology'+ext_icon),'http://www.life.illinois.edu/entomology/index.html', target: '_blank' %></strong></li>
@@ -44,9 +45,7 @@
          </ul>              
       </li>
 
-      <li class="panel-title">
-        <%= link_to "Programs", '/programs',  
-                    id: 'programs_ex', class: 'collapsed' %>
+      <li class="panel-title"><%= link_to "Programs", '/programs', id: 'programs_ex', class: 'collapsed' %>
         <ul>
           <li><%= link_to 'Program in Ecology, Evolution, & Conservation Biology (PEEC)', 'http://dev.sib.illinois.edu/peec/' %>
           <li><strong><%= link_to raw('Neuroscience'+ext_icon),'http://neuroscience.illinois.edu/', target: '_blank' %></strong></li>
@@ -55,25 +54,18 @@
         </ul>              
       </li>
 
-      <li class="panel-title">
-        <%= link_to "Contact Us", '/about/contact',
-                    id: 'contact_ex', class: "collapsed" %>
-      </li>
+      <li class="panel-title"> <%= link_to "Contact Us", '/about/contact',id: 'contact_ex', class: "collapsed" %></li>
 
-      <li class="panel-title">
-        <%= link_to "FAQs", '/about/faq',
-                    id: "faq_ex",  class: "collapsed" %>
+      <li class="panel-title"><%= link_to "FAQs", '/about/faq', id: "faq_ex",  class: "collapsed" %>
         <ul>
-          <li><%= link_to 'Current IB Undergraduate',
-                '/undergraduate/advising/faq' %>
-          <li><%= link_to 'Prospective Undergraduate Majors',
-                '/undergraduate/prospective/faq' %>
-          <li><%= link_to 'Prospective Transfer Students',
-                '/undergraduate/prospective/transfer_faq' %>
-          <li><%= link_to 'Prospective Graduate Students',
-                '/graduate/prospective' %>
+          <li><%= link_to 'Current IB Undergraduate', '/undergraduate/advising/faq' %>
+          <li><%= link_to 'Prospective Undergraduate Majors', '/undergraduate/prospective/faq' %>
+          <li><%= link_to 'Prospective Transfer Students','/undergraduate/prospective/transfer_faq' %>
+          <li><%= link_to 'Prospective Graduate Students','/graduate/faq' %>
         </ul>              
       </li>
+
+ 	<li class="panel-title"> <%= link_to "Convocation", '/about/convocation', class: "collapsed" %></li>
   
 
     </ul>
