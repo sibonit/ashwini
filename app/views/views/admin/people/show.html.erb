@@ -1,0 +1,51 @@
+<%# KA: Show Person %>
+<% provide(:title, @person.last_name) %>
+
+
+<h4><%= link_to 'Show All People', '/admin/people' %></h4>
+<h5><%= link_to 'Admin Home', '/admin' %></h5>
+
+
+	<h1>
+  	  <%= image_tag( @person.photo.url( :thumb ) ) %>
+	  <%= @person.first_name %> <%= @person.last_name %>
+	</h1><br>
+
+
+<center>
+<table border="1" cellpadding="2" width: "98%" class="peec_table">
+<tbody>
+
+	<tr><td><strong>Middle Name:</strong> </td><td><%= @person.middle_name %></td></tr>
+	<tr><td><strong>Nickname:</strong> </td><td><%= @person.nickname %></td></tr>
+	<tr><td><strong>Email:</strong></td><td><%= @person.email %></td></tr>
+	<tr><td><strong>Net ID:</strong></td><td><%= @person.netid %></td></tr>
+	<tr><td><strong>Position Status:</strong></td><td><%= @person.position_status %></td></tr>
+
+<%#KA: Passing the ids for department and Res Areas. When you have time, change this to show names instead %>
+<tr><td><strong>Departments:</strong> </td><td><%=  @person.department_ids %></td></tr>
+<tr><td><strong>Research Areas:</strong> </td><td><%=  @person.research_area_ids %></td></tr>
+
+	<tr><td><strong>Primary Department: </td><td><%= @person.primary_department %></td></tr>
+	<tr><td><strong>Titles: </strong></td><td><%= @person.titles %></td></tr>
+	<tr><td><strong>Education:</strong> </td><td><%= @person.education %></td></tr>
+	<tr><td><strong>Awards: </strong></td><td><%= @person.awards %></td></tr>
+	<tr><td><strong>Address-Mail: </strong></td><td><%= @person.address_mail %></td></tr>
+	<tr><td><strong>Address-Office: </strong></td><td><%= @person.address_office %></td></tr>
+	<tr><td><strong>Address-Lab:</strong></td><td><%= @person.address_lab %></td></tr>
+	<tr><td><strong>Mail Code:</strong></td><td><%= @person.mail_code %></td></tr>
+	<tr><td><strong>Phone-Office:</strong></td><td><%= @person.phone_office %></td></tr>
+	<tr><td><strong>Phone-Lab:</strong></td><td><%= @person.phone_lab %></td></tr>
+	<tr><td><strong>Phone-Fax:</strong></td><td><%= @person.phone_fax %></td></tr>
+	<tr><td><strong>Link to CV:</strong></td><td><%= @person.url_cv %></td></tr>
+	<tr><td><strong>Link to Lab page:</strong></td><td><%= @person.url_lab %></td></tr>
+	<tr><td><strong>Link to publications:</strong></td><td><%= @person.url_pubs %></td></tr>
+	<tr><td><strong>Link to External Profile:</strong></td><td><%= @person.url_external_profile %></td></tr>
+</tbody>
+</table>
+</center>
+
+
+<h4><%= link_to 'Show All People', '/admin/people' %></h4>
+
+

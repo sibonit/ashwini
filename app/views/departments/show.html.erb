@@ -1,0 +1,17 @@
+<%# KA: June 2015 %>
+<% content_for( :title, 'People' ) %>
+<% content_for( :sidebar, 'about' ) %>
+<% content_for( :expand,  'people_ex' ) %>
+
+
+
+<%# KA: If page requested is Faculty by Department%>
+
+	<h2> Faculty by Department</h2>
+	<h4 style="text-align:center" > <%= @dept_name %> </h4>
+
+<p><a href="/people/faculty"> Back to Faculty Search </a></p>
+
+
+<%# KA: Show table for the department%>
+	<%= render '/people/table_with_blurb' %>	

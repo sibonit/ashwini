@@ -1,0 +1,14 @@
+<!--KA: June 2015-->
+
+<% content_for( :title, 'PEEC Home' ) %>
+<% content_for( :sidebar, 'peec' ) %>
+<% content_for( :expand, 'peec_dir_ex' ) %>
+
+<h2>PEEC Directory</h2>
+<h4 style="text-align:center">Staff</h2>
+
+
+<% @people = Person.joins('inner join departments_people on (people.id=departments_people.person_id) inner join departments on (departments.id = departments_people.department_id) where people.position_status="staff" and  departments_people.department_id= 11 order by people.last_name').uniq %>
+
+<%= render '/people/table' %>	
+

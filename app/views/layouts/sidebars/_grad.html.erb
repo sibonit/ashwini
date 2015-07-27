@@ -14,51 +14,36 @@ ext_icon='<span class="fa fa-external-link" style="margin-left:1em;"></span>'
   <div class="panel panel-default" >
     <ul id="sidebar1" class="sidebar_menu">
 
-      <li class="panel-title sidebar_header">
-        <%= link_to "Graduate", '/graduate/', class: 'header' %>
-      </li>
+      <li class="panel-title sidebar_header"><%= link_to "Graduate", '/graduate/', class: 'header' %></li>
 
-      <li class="panel-title">
-        <%= link_to 'Prospective Applicants', '/graduate/prospective',
-                    id: 'prospective_ex', class: 'collapsed' %>
-      </li><!-- no submenu, prospective.html only -->
+      <li class="panel-title"><%= link_to 'Prospective Applicants', '/graduate/prospective', id: 'prospective_ex', class: 'collapsed' %></li><!-- no submenu, prospective.html only -->
 
-      <li class="panel-title">
-        <%= link_to 'Current Students', '/graduate/current',
-                    id: 'students_ex', class: 'collapsed' %>
-      </li><!-- no submenu, current.html only -->
+      <li class="panel-title"><%= link_to "Courses", '/courses/graduate',  class: "collapsed", target: "_self" %></li>
 
-      <li class="panel-title">
-        <%= link_to "PEEC - Program in Ecology, Evolution, and Conservation Biology",'/peec/', class: 'collapsed' %>
-      </li><!-- no submenu, prospective.html only -->
 
-      <li class="panel-title">
-        <%= link_to 'Grants & Awards', '/graduate/grants/',
-                    id: 'grants_ex', class: 'collapsed' %>
+      <li class="panel-title"><%= link_to "PEEC - Program in Ecology, Evolution, and Conservation Biology",'/peec/', class: 'collapsed' %></li><!-- no submenu, prospective.html only -->
+
+      <li class="panel-title"><%= link_to 'Grants & Awards', '/graduate/grants/',id: 'grants_ex', class: 'collapsed' %>
         <ul>
-<li><%= link_to 'Banks Memorial Fund',            'Banks' %></li>
-<li><%= link_to 'Clark Research Support Grant',   'Clark_research' %></li>
-<li><%= link_to 'Clark Summer Fellowship',        'Clark_summer' %></li>
-<li><%= link_to 'Emerson Memorial Award',         'Emerson' %></li>
-<li><%= link_to 'Govindjee Award for Excellence', 'Govindjee' %></li>
-<li><%= link_to 'Labinsky Award in Plant Biology','Labinsky' %></li>
-<li><%= link_to 'Larimore Scholarship',           'Larimore' %></li>
-<li><%= link_to 'Laughnan Fund in Plant Biology', 'Laughnan' %></li>
-<li><%= link_to 'Lebus Fund Award',               'Lebus' %></li>
-<li><%= link_to 'Luckmann Award',                 'Luckmann' %></li>
-<li><%= link_to 'Norton Award',                   'Norton' %></li>
-<li><%= link_to 'Odum-Kendeigh Fund',             'Odum-Kendeigh' %></li>
-<li><%= link_to 'Ross Memorial Fund',             'Ross' %></li>
-<li><%= link_to 'Smith Memorial Fund',            'Smith' %></li>
-<li><%= link_to 'Van Cleave Research Award',      'Van_Cleave' %></li>
+		<li><%= link_to 'Banks Memorial Fund',            'Banks' %></li>
+		<li><%= link_to 'Clark Research Support Grant',   'Clark_research' %></li>
+		<li><%= link_to 'Clark Summer Fellowship',        'Clark_summer' %></li>
+		<li><%= link_to 'Emerson Memorial Award',         'Emerson' %></li>
+		<li><%= link_to 'Govindjee Award for Excellence', 'Govindjee' %></li>
+		<li><%= link_to 'Labinsky Award in Plant Biology','Labinsky' %></li>
+		<li><%= link_to 'Larimore Scholarship',           'Larimore' %></li>
+		<li><%= link_to 'Laughnan Fund in Plant Biology', 'Laughnan' %></li>
+		<li><%= link_to 'Lebus Fund Award',               'Lebus' %></li>
+		<li><%= link_to 'Luckmann Award',                 'Luckmann' %></li>
+		<li><%= link_to 'Norton Award',                   'Norton' %></li>
+		<li><%= link_to 'Odum-Kendeigh Fund',             'Odum-Kendeigh' %></li>
+		<li><%= link_to 'Ross Memorial Fund',             'Ross' %></li>
+		<li><%= link_to 'Smith Memorial Fund',            'Smith' %></li>
+		<li><%= link_to 'Van Cleave Research Award',      'Van_Cleave' %></li>
         </ul>
       </li>
 
-      <li class="panel-title">
-        <%= link_to raw("The Graduate College"+ext_icon),
-                    'http://www.grad.illinois.edu/',
-                    class: 'collapsed', target: '_blank' %>
-      </li><!-- no submenu, external link only -->
+      <li class="panel-title"> <%= link_to raw("The Graduate College"+ext_icon), 'http://www.grad.illinois.edu/', class: 'collapsed', target: '_blank' %></li><!-- no submenu, external link only -->
 
     </ul>
   </div>

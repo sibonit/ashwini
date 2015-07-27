@@ -7,6 +7,8 @@
        used for content in sib.illinois.edu
        updated by uebele@ Jun-2015 -->
 
+
+
 <% # spans show icons
   ext_icon='<span class="fa fa-external-link" style="margin-left:1em;"></span>'
 -%>
@@ -49,19 +51,31 @@
         
 
 <!--Menu item 1 -->
-          <li class="dropdown supermenu" id = "navitem1"><a  href="/" class="dropdown-toggle disabled">School of Integrative Biology</a>
-
-            <ul id="SIB_ul" class="dropdown-menu" >
+          <li class="dropdown supermenu" ><a href="/departments" class="dropdown-toggle disabled">School of Integrative Biology</a>
+	<!--<li class="dropdown supermenu "><a href="/" data-toggle="dropdown" class="dropdown-toggle">School of Integrative Biology</a>-->
+            <ul id="sib_ul" class="dropdown-menu" >
               <li>
-                <div class="supermenu-content">
-                  <div class="row">
+                <div class="supermenu-content header-item1">
+                  <div class="row row-no-padding" >
                     <ul class="col-md-5 list-unstyled ul_navbar">
-			<li><strong><%= link_to "People", '/people' %></strong><hr></li>
-			<li><strong><%= link_to "Research", '/research' %></strong><hr></li>
-			<li><strong><%= link_to "Departments", '/departments' %></strong><hr></li>
-			<li><strong><%= link_to "Programs", '/programs' %></strong><hr></li>
-			<li><strong><%= link_to "Contact Us", '/about/contact' %></strong><hr></li>
-			<li><strong><%= link_to "FAQs", '/about/faq' %></strong></li>
+			<%= link_to '/departments' do %>
+			  <li>Departments</li>
+                        <% end %>
+			<%= link_to '/programs' do %>
+			  <li>Programs</li>
+                        <% end %>
+			<%= link_to '/people' do %>
+			  <li>People</li>
+                        <% end %>
+			<%= link_to '/research/undergraduate' do %>
+			  <li>Research</li>
+                        <% end %>
+			<%= link_to '/about/contact' do %>
+			  <li>Contact Us</li>
+                        <% end %>
+			<%= link_to '/about/faq' do %>
+			  <li>FAQ</li>
+                        <% end %>
                     </ul>
                   </div>
                 </div>
@@ -75,17 +89,30 @@
           <!--<li class="dropdown supermenu "><a href="/undergraduate" data-toggle="dropdown" class="dropdown-toggle">Undergraduate</a>-->  
             <ul class="dropdown-menu">
               <li>
-                <div class="supermenu-content">
-                  <div class="row"  >
-                    <ul class="col-md-5 list-unstyled ul_navbar">
-			<li><strong><%= link_to "Advising", '/undergraduate/advising' %></strong><hr></li>
-			<li><strong><%= link_to "Prospective", '/undergraduate/prospective' %></strong><hr></li>
-			<li><strong><%= link_to "Options", '/undergraduate/options' %></strong><hr></li>
-			<li><strong><%= link_to "Programs", '/undergraduate/programs' %></strong><hr></li>
-			<li><strong><%= link_to "Courses", 'ugrad_courses_path' %></strong></li>
+                <div class="supermenu-content header-item2">
+                  <div class="row row-no-padding">
+		     <ul class="col-md-5 list-unstyled ul_navbar">
+			<%= link_to '/undergraduate/advising' do %>
+			  <li>Advising</li>
+                        <% end %>
+			<%= link_to '/undergraduate/prospective' do %>
+			  <li>Prospective Students</li>
+                        <% end %>
+			<%= link_to '/undergraduate/options' do %>
+			  <li>Options</li>
+                        <% end %>
+			<%= link_to '/undergraduate/programs' do %>
+			  <li>Programs</li>
+                        <% end %>
+			<%= link_to '/courses' do %>
+			  <li>Courses</li>
+                        <% end %>
+			<%= link_to '/undergraduate/support' do %>
+			  <li>Financial Support</li>
+                        <% end %>
                     </ul>
-                  </div>
-                </div>
+  		  </div>
+	         </div>
               </li>
             </ul>
           </li>
@@ -96,25 +123,24 @@
           <!-- <li class="dropdown supermenu"><a href="/graduate" data-toggle="dropdown"  class="dropdown-toggle">Graduate</a> -->
             <ul class="dropdown-menu">
               <li>
-                <div class="supermenu-content">
+                <div class="supermenu-content header-item3">
                   <div class="row">
                     <ul class="col-md-5 list-unstyled ul_navbar">
-                      <li><strong>
-<%= link_to "Prospective Applicants", '/graduate/prospective' %>
-                      </strong><hr></li>
-                      <li><strong>
-<%= link_to "Current Students", '/graduate/current' %>
-                      </strong><hr></li>
-                      <li><strong>
-<%= link_to "PEEC - Program in Ecology, Evolution, and Conservation Biology",'/peec/' %>
-                      </strong><hr></li>
-                      <li><strong>
-<%= link_to "Grants & Awards", '/graduate/grants/' %>
-                      </strong><hr></li>
-                      <li><strong>
-<%= link_to raw("The Graduate College"+ext_icon),
-            'http://www.grad.illinois.edu/', target: '_blank' %>
-                      </strong></li>
+			<%= link_to '/graduate/prospective' do %>
+			  <li>Prospective Applicants</li>
+                        <% end %>
+			<%= link_to '/courses/graduate' do %>
+			  <li>Courses</li>
+                        <% end %>
+			<%= link_to '/peec/' do %>
+			  <li>PEEC - Program in Ecology, Evolution, and Conservation Biology</li>
+                        <% end %>
+			<%= link_to '/graduate/grants' do %>
+			  <li>Grants &amp; Awards</li>
+                        <% end %>
+			<%= link_to 'http://www.grad.illinois.edu/', target: '_blank' do %>
+			  <li><%= ("The Graduate College" + ext_icon ).html_safe %></li>
+                        <% end %>
                     </ul>
                   </div>
                 </div>
@@ -128,11 +154,25 @@
           <!--<li class="dropdown supermenu"><a href="/alumni" data-toggle="dropdown"  class="dropdown-toggle">Alumni & Friends</a></li>-->
             <ul class="dropdown-menu">
               <li>
-                <div class="supermenu-content">
+                <div class="supermenu-content header-item4">
                   <div class="row">
                     <ul class="col-md-5 list-unstyled ul_navbar">
-			<li><strong><a  href="/alumni/donations"> Giving to SIB </a></strong><hr></li>
-			<li><strong><a  href="/alumni/featured"> Featured Alumni </a></strong></li>
+			<%= link_to '/alumni/donations' do %>
+			  <li>Giving to SIB</li>
+                        <% end %>
+			<%= link_to '/alumni/featured' do %>
+			  <li>Featured Alumni</li>
+                        <% end %>
+			<%= link_to '/news/index' do %>
+			  <li>News &amp; Features</li>
+                        <% end %>
+			<%= link_to 'http://www.uiaa.org/illinois/', target: '_blank' do %>
+			  <li><%= ("UI Alumni Association" + ext_icon ).html_safe %></li>
+                        <% end %>
+			<%= link_to 'http://www.las.illinois.edu/alumni/', target: '_blank' do %>
+			  <li><%= ("LAS Alumni" + ext_icon ).html_safe %></li>
+                        <% end %>
+
                     </ul>
                   </div>
                 </div>
@@ -143,13 +183,21 @@
 
 <!-- Menu Item-5 -->
           <li class="dropdown supermenu"><a href="/resources" class="dropdown-toggle disabled">Resources</a>
-          <!--<li class="dropdown supermenu"><a href="/people" data-toggle="dropdown"  class="dropdown-toggle">Resources</a>-->
+          <!--<li class="dropdown supermenu"><a href="/resources" data-toggle="dropdown"  class="dropdown-toggle">Resources</a>-->
             <ul class="dropdown-menu">
               <li>
-                <div class="supermenu-content">
+                <div class="supermenu-content header-item5">
                   <div class="row">
                     <ul class="col-md-5 list-unstyled ul_navbar">
-			<li><strong><a  href="/resources"> For Faculty & Staff </a></strong><hr></li>  
+			<%= link_to '/resources/school_links' do %>
+			  <li>Intra School Links</li>
+                        <% end %>
+			<%= link_to '/resources/business' do %>
+			  <li>Business Office</li>
+                        <% end %>
+			<%= link_to 'http://www.life.illinois.edu/help/', target: '_blank' do %>
+			  <li><%= ("Office of Information Technology" + ext_icon ).html_safe %></li>
+                        <% end %>
                     </ul>
                   </div>
                 </div>
@@ -163,3 +211,71 @@
     </div>
   </div>
 </header>
+
+
+
+<script>
+
+
+
+
+var timer = setTimeout( callback, 700 );
+function callback() {
+
+  $('ul.nav li.dropdown').hover(function () {
+
+	//function callback() {
+	//alert("fish")
+        $('ul.nav li.dropdown:hover > ul.dropdown-menu').css('display','block');
+        //$( this ).children( 'ul.dropdown-menu' ).css('display','block');
+	//}
+  },
+  function () {
+	//alert("fish")
+	$('ul.nav li.dropdown > ul.dropdown-menu').css('display','none');
+     //   $('ul.nav li.dropdown:hover > ul.dropdown-menu').css('display','none');
+        //$( this ).children( 'ul.dropdown-menu' ).css('display','none');
+
+  });
+}
+
+
+/*
+
+$(".nav").on("click", ".dropdown", function(event){
+//   alert('fish')
+   $( 'ul.nav li.dropdown > ul.dropdown-menu' ).css('display','none');
+});
+
+
+
+
+var hovered_obj = null;
+$('ul.nav li.dropdown').hover( 
+  function() {
+    hovered_obj = this;
+    var timer1 = setTimeout( 
+      function() {
+        $( 'ul.nav li.dropdown' ).children( 'ul.dropdown-menu' ).css('display','none');
+        $( hovered_obj ).children( 'ul.dropdown-menu' ).css('display','block');
+      }
+      , 700 );
+  },
+  function() {
+    var timer2 = setTimeout( 
+      function() {
+        
+	// $( 'ul.nav li.dropdown' ).children( 'ul.dropdown-menu' ).css('display','none');
+	 $( 'ul.nav li.dropdown > ul.dropdown-menu' ).css('display','none');
+
+        //$( hovered_obj ).children( 'ul.dropdown-menu' ).css('display','none');
+      }
+      , 0 );
+  }
+);
+
+*/
+
+
+</script>
+

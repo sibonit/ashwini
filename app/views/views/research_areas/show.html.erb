@@ -1,0 +1,26 @@
+<%# KA: June 2015 %>
+
+<%#KA:TBD: The array should NOT be hardcoded like this below. The include code does not work. Need to find out the right syntax %>
+<%# if @res_area_id_non_peec.include? @res_area_id %>
+<% if @res_area_id.in?(['1','2','3','4','5']) %>
+	<% content_for( :title, 'People' ) %>
+	<% content_for( :sidebar, 'about' ) %>
+	<% content_for( :expand,  'people_ex' ) %>
+
+
+<%else%>
+	<% content_for( :title, 'Peec-Research Area' ) %>
+	<% content_for( :sidebar, 'peec' ) %>
+<%end%>
+
+
+<%# KA: If page requested is Faculty by Department%>
+
+	<h2> Faculty by Research Area</h2>
+	<h4 style="text-align:center" > <%= @res_area_name %> </h4>
+
+	<p><a href="/people/faculty"> Back to Faculty Search </a></p>
+
+
+<%# KA: Show table for the department%>
+	<%= render '/people/table_with_blurb' %>	

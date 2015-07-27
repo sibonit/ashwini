@@ -1,0 +1,57 @@
+<!--
+<script type="text/javascript" src="/javascripts/jwplayer/jwplayer.js"></script>
+-->
+
+<script src="http://api.html5media.info/1.1.5/html5media.min.js"></script>
+
+<script type="text/javascript">
+
+  function changeVideo( netid ) {
+//set opacity of video div to 0.5
+//spnning gif
+// make visible
+// change opacity
+    //reset height of video_div - surrounds title image or video
+    $( '#video_div' ).height( 360 );
+    
+    //prepare html for video container
+    video_html = "<video \
+      height=\"360\" \
+      id=\"video_container\" \
+      width=\"480 \" \
+      controls preload autoplay > \
+      <source src=\"/videos/faculty/" + netid + ".webm\"></source> \
+      <source src=\"/videos/faculty/" + netid + ".mp4\"></source> \
+    </video>";
+
+    // fill video_div with video_html
+    $( '#video_div' ).html( video_html );
+    html5media();
+    
+  }
+</script>
+
+<% @page_title = "SIB Faculty Video Interviews" %>
+<% @page_description = "Interviews with faculty of the School of Integrative Biologyts" %> 
+<h1>Video Interviews</h1>
+
+<p id="video_div">
+  <%= image_tag "faculty_videos_title.jpg", :id => "video", :width => 480 -%>
+</p>
+
+<% @people.each do |p| -%>
+  <p style="float: left; width: 180px; text-align: center" >
+    <% img = image_tag '/faculty_research/images/headshots/' + p.picture_name,
+          :alt => p.full_name,
+          :height => 100, :border => 0,
+          :class => "right"
+
+       # strip off all URL parts except for the 'src' value
+       # will wrap in JavaScript function 'wrap_src_in_obj'
+       src = p.url_video.sub( /\&.*/, '' )
+       src = src.sub( /^.*src=/, '' )
+    %>
+    <%= link_to "#{ img }<br />#{ p.full_name }".html_safe, '#', :onClick => "changeVideo( '#{ p.netid }' );" %>
+  </p>
+
+<% end -%>

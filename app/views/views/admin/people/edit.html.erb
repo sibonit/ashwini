@@ -1,0 +1,166 @@
+<%# KA: Edit Person %>
+
+<% provide(:title, "Edit People") %>
+
+<h4><%= link_to 'Show All People', '/admin/people' %></h4>
+<h5><%= link_to 'Admin Home', '/admin' %></h5>
+
+
+<h1>Update your profile</h1>
+
+	<center><%= image_tag( @person.photo.url( :thumb ) ) %><a href="#" target="_blank">change</a></center>
+
+
+<% form_for :person, :html => { :multipart => true } do |f| %>
+  <%= f.file_field :photo%>
+<% end %>
+
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for [@person], :url => admin_person_path do |f| %>
+      <%= render 'shared/error_messages' %>
+
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name, class: 'form-control' %>
+
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name, class: 'form-control' %>
+
+      <%= f.label :middle_name %>
+      <%= f.text_field :middle_name, class: 'form-control' %>
+
+      <%= f.label :nickname %>
+      <%= f.text_field :nickname, class: 'form-control' %>
+
+      <%= f.label :email %>
+      <%= f.email_field :email, class: 'form-control' %>
+
+      <%= f.label :netid %>
+      <%= f.text_field :netid, class: 'form-control' %>
+
+      <%= f.label :position_status %>
+      <%= f.text_field :position_status, class: 'form-control' %>
+
+      <%= f.label :Departments %>
+	<%@dept = Department.all %>
+             <% @dept.each do |dept| %>
+		<div>
+<%#KA: The 3 parameters for the checkbox: name of CBx,value of CBx, boolean value that determines if CBx should be checked %>
+		     <%=check_box_tag "person[department_ids][]", dept.id , @person.departments.include?(dept)%>
+		      <%= dept.name %>
+		</div>
+      	  <% end %>
+
+	<br>
+
+      <p><strong> Research Areas </strong></p>
+	<%@area = ResearchArea.all %>
+             <% @area.each do |area| %>
+		<div>
+<%#KA: The 3 parameters for the checkbox: name of CBx,value of CBx, boolean value that determines if CBx should be checked %>
+		     <%=check_box_tag "person[research_area_ids][]", area.id , @person.research_areas.include?(area)%>
+		      <%= area.name %>
+		</div>
+      	  <% end %>
+
+	<br>
+
+
+
+      <%= f.label :primary_department %>
+      <%= f.text_field :primary_department, class: 'form-control' %>
+     
+      <%= f.label :titles %>
+      <%= f.text_field :titles, class: 'form-control' %>
+
+      <%= f.label :education %>
+      <%= f.text_field :education, class: 'form-control' %>
+
+      <%= f.label :awards %>
+      <%= f.text_field :awards, class: 'form-control' %>
+
+      <%= f.label :profile_header %>
+      <%= f.text_field :profile_header, class: 'form-control' %>
+
+      <%= f.label :profile_blurb %>
+      <%= f.text_area :profile_blurb, class: 'form-control', :size => "10x10"%>
+
+      <%= f.label :publications_blurb %>
+      <%= f.text_field :publications_blurb, class: 'form-control' %>
+
+      <%= f.label :address_mail %>
+      <%= f.text_field :address_mail, class: 'form-control' %>
+
+      <%= f.label :address_office %>
+      <%= f.text_field :address_office, class: 'form-control' %>
+
+      <%= f.label :address_lab %>
+      <%= f.text_field :address_lab, class: 'form-control' %>
+
+      <%= f.label :mail_code %>
+      <%= f.text_field :mail_code, class: 'form-control' %>
+
+      <%= f.label :phone_office %>
+      <%= f.text_field :phone_office, class: 'form-control' %>
+
+      <%= f.label :phone_lab %>
+      <%= f.text_field :phone_lab, class: 'form-control' %>
+
+      <%= f.label :phone_fax %>
+      <%= f.text_field :phone_fax, class: 'form-control' %>
+
+      <%= f.label :url_cv %>
+      <%= f.text_field :url_cv, class: 'form-control' %>
+
+      <%= f.label :url_lab %>
+      <%= f.text_field :url_lab, class: 'form-control' %>
+
+      <%= f.label :url_pubs %>
+      <%= f.text_field :url_pubs, class: 'form-control' %>
+
+      <%= f.label :url_video %>
+      <%= f.text_field :url_video, class: 'form-control' %>
+
+      <%= f.label :url_external_profile %>
+      <%= f.text_field :url_external_profile, class: 'form-control' %>
+
+      <%= f.label :auth %>
+      <%= f.text_field :auth, class: 'form-control' %><br>
+
+      <%= f.label :show_profile %>
+      <%= f.check_box :show_profile, class: 'form-control' %><hr>
+
+      <%= f.label :show_in_ib_directory %>
+      <%= f.check_box :show_in_ib_directory, class: 'form-control' %><hr>
+
+      <%= f.label :show_in_peec_directory %>
+      <%= f.check_box :show_in_peec_directory, class: 'form-control' %><hr>
+
+      <%= f.label :show_in_peec_conservation_directory %>
+      <%= f.check_box :show_in_peec_conservation_directory, class: 'form-control' %><hr>
+
+      <%= f.label :show_in_peec_ecology_directory %>
+      <%= f.check_box :show_in_peec_ecology_directory, class: 'form-control' %><hr>
+
+      <%= f.label :show_in_peec_evolution_directory %>
+      <%= f.check_box :show_in_peec_evolution_directory, class: 'form-control' %><hr>
+
+      <%= f.label :faculty_390_490 %>
+      <%= f.check_box :faculty_390_490, class: 'form-control' %><br><br>
+
+ 
+
+      <%= f.submit "Save changes", class: "btn btn-primary" %>
+    <% end %>
+
+
+
+  </div>
+</div>
+
+
+
+<h4><%= link_to 'Show All People', '/admin/people' %></h4>
+
+

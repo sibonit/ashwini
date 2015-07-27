@@ -1,0 +1,41 @@
+<%# KA: New Person %>
+
+<h4><%= link_to 'Show All People', '/admin/people' %></h4>
+<h5><%= link_to 'Admin Home', '/admin' %></h5>
+
+<% provide(:title, 'New Person') %>
+<h1>Create New Person</h1>
+
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for [@person], :url => admin_people_path do |f| %>
+      
+      <%= render 'shared/error_messages' %>
+
+
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name, class: 'form-control' %>
+
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name, class: 'form-control' %>
+
+      <%= f.label :email %>
+      <%= f.email_field :email, class: 'form-control' %>
+
+      <%= f.label :position_status %>
+      <%= f.text_field :position_status, class: 'form-control' %>
+
+
+      <%= f.label :netid %>
+      <%= f.text_field :netid, class: 'form-control' %>
+
+
+
+      <%= f.submit "Create my account", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+
+<h4><%= link_to 'Show All People', '/admin/people' %></h4>
+

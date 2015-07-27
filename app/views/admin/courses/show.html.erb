@@ -1,0 +1,40 @@
+<%# KA: Show Course %>
+
+<h4><%= link_to 'Show All Courses', '/admin/courses' %></h4>
+<h5><%= link_to 'Admin Home', '/admin' %></h5>
+
+<center>
+<table border="1" cellpadding="2" width="80%" class="peec_table">
+<tbody>
+	<tr><td><strong>Course Number:</strong> </td><td><%= @course.course_number %></td></tr>
+	<tr><td><strong>Title:</strong> </td><td><%= @course.title %></td></tr>
+	<tr><td><strong>Description:</strong></td><td width= "500px"><%= @course.description %></td></tr>
+	<tr><td><strong>Subject Code:</strong></td><td><%= @course.subject_code %></td></tr>
+	<tr><td><strong>Hours:</strong></td><td><%= @course.hours %></td></tr>
+	<tr><td><strong>Cross List: </td><td><%= @course.crosslist %></td></tr>
+	<tr><td><strong>Has Lab?: </strong></td><td><%= @course.lab %></td></tr>
+	<tr><td><strong>Advanced Course:</strong> </td><td><%= @course.advanced %></td></tr>
+	<tr><td><strong>Spring: </strong></td><td><%= @course.spring %></td></tr>
+	<tr><td><strong>Fall: </strong></td><td><%= @course.fall %></td></tr>
+	<tr><td><strong>Summer: </strong></td><td><%= @course.summer %></td></tr>
+	<tr><td><strong>Course URL:</strong></td><td><%= @course.url %></td></tr>
+	<tr><td><strong>Additional Notes:</strong></td><td><%= @course.note %></td></tr>
+	<tr><td><strong>Course Document Name:</strong></td><td><%= @course.document_file_name %></td></tr>
+	<tr><td><strong>Course Document Type:</strong></td><td><%= @course.document_content_type %></td></tr>
+	<tr><td><strong>Course Document Size:</strong></td><td><%= @course.document_file_size %></td></tr>
+	<tr><td><strong>Course Document Updated at:</strong></td><td><%= @course.document_updated_at %></td></tr>
+	<tr><td><strong>Offered Online:</strong></td><td><%= @course.online %></td></tr>
+	<tr><td><strong>IB Area(s):</strong></td><td><%= @course.ib_area %></td></tr>
+	<tr><td><strong>Offered Odd Years Only:</strong></td><td><%= @course.odd_years_only %></td></tr>
+	<tr><td><strong>Offered Even Years Only:</strong></td><td><%= @course.even_years_only %></td></tr>
+	<tr><td><strong>Honors Only:</strong></td><td><%= @course.honors_only %></td></tr>
+	<tr><td><strong>Merit Program:</strong></td><td><%= @course.merit_program %></td></tr>
+
+</tbody>
+</table>
+</center>
+
+
+<h4><%= link_to 'Show All Courses', '/admin/courses' %></h4>
+
+

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!-- 03-Jun-2015: uebele@ confirmed divs & documented, validated HTML5 -->
+<%#
+TODO: solve bouncing problem in _footer & graduate/index list-group menus 
+  uebele@ disabled footer while working on graduate/index
+-%>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+
+    <title>
+      <%= full_title( yield( :title ) ) -%>
+    </title>
+
+<%= stylesheet_link_tag "application", media: "all",
+                        "data-turbolinks-track" => true %>
+<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+<%= csrf_meta_tags %>
+<%= render 'layouts/shim' %>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="/path/to/jquery.browser.js"></script>
+-->
+
+    <style type="text/css">
+      body {background-color: #EEE}
+    </style> 
+
+  </head>
+  
+  <body>
+    <div id ="container">
+      <div id ="content">
+
+        <!-- Header Menus BEGIN -->
+<%= render 'layouts/header' -%>  
+        <!-- Header Menus END -->
+
+        <div id ="main_content">
+          <div class="row">
+            <div class="col-lg-12">
+              <p>
+            </div><!-- col-lg-12 -->
+            <div class="col-md-4">
+              <!-- Sidebar Menus BEGIN -->
+<%= render sidebar_path( yield( :sidebar ) ) -%>
+<%= expand_sidebar_id( yield( :expand ) ) %>
+              <!-- Sidebar Menus END -->
+
+            </div><!-- col-med-4 -->
+            <div class="col-md-8 no-gutter">
+
+              <!-- Main Content BEGINS -->
+<%= yield -%>
+              <!-- Main Content ENDS -->
+
+            </div><!-- col-med-8 no-gutter -->
+          </div><!-- row -->
+        </div><!-- main_content -->
+
+        <!-- Footer BEGINS -->
+	<%= render 'layouts/footer' -%>
+        <!-- Footer ENDS -->
+
+      </div><!-- content -->
+    </div><!-- container -->
+  </body>
+</html>
+

@@ -1,0 +1,142 @@
+<%#KA:Courses by Area %>
+
+
+
+<center><h4>Area I:  Organismal & Evolutionary Biology</h4></center>
+<%= render '/courses/table_header' %>	
+
+<% @courses_a1.each do |course| %>
+  <tr>
+    <td width ="20px" ><%= course.course_number %></td>
+    <td><%= link_to course.title, course_path(course) %></td> 
+    <td><%= course.hours %></td>    
+    <td><%= 
+	if course.advanced == true
+	then course.advanced = 'ADV'
+	else course.advanced = ''
+	end 
+	%></td>
+    <td><%= 
+	if course.lab == true
+	then course.lab = 'LAB'
+	else course.lab = ''
+	end 
+	%></td>
+    <td><%=  
+	if course.spring == true
+	then course.spring = 'SP'
+	else course.spring = ''
+	end 
+	%></td>
+    <td><%=  
+	if course.fall == true
+	then course.fall = 'FA'
+	else course.fall = ''
+	end 
+	%></td>
+    <td><%= 
+	if course.summer == true
+	then course.summer = 'SU'
+	else course.summer = ''
+	end 
+	%></td>
+    <td><a href= "<%= course.url %>">Website</td>
+
+  </tr>
+<% end %>
+</table>
+
+
+
+<center><h4>Area II:  Behavior, Ecology, & the Environment</h4></center>
+<%= render '/courses/table_header' %>
+
+<% @courses_a2.each do |course| %>
+  <tr>
+    <td width ="20px" ><%= course.course_number %></td>
+    <td><%= link_to course.title, course_path(course) %></td> 
+    <td><%= course.hours %></td>    
+    <td><%= 
+	if course.advanced == true
+	then course.advanced = 'ADV'
+	else course.advanced = ''
+	end 
+	%></td>
+    <td><%= 
+	if course.lab == true
+	then course.lab = 'LAB'
+	else course.lab = ''
+	end 
+	%></td>
+    <td><%=  
+	if course.spring == true
+	then course.spring = 'SP'
+	else course.spring = ''
+	end 
+	%></td>
+    <td><%=  
+	if course.fall == true
+	then course.fall = 'FA'
+	else course.fall = ''
+	end 
+	%></td>
+    <td><%= 
+	if course.summer == true
+	then course.summer = 'SU'
+	else course.summer = ''
+	end 
+	%></td>
+    <td><a href= "<%= course.url %>">Website</td>
+
+  </tr>
+<% end %>
+</table>
+
+
+
+<center><h4>Area III:  Integrative Anatomy, Physiology, & Molecular Biology</h4></center>
+<%= render '/courses/table_header' %>
+
+<% @courses_a3.each do |course| %>
+  <tr>
+    <td width ="20px" ><%= course.course_number %></td>
+    <td><%= link_to course.title, course_path(course) %></td> 
+    <td><%= course.hours %></td>    
+    <td><%= 
+	if course.advanced == true
+	then course.advanced = 'ADV'
+	else course.advanced = ''
+	end 
+	%></td>
+    <td><%= 
+	if course.lab == true
+	then course.lab = 'LAB'
+	else course.lab = ''
+	end 
+	%></td>
+    <td><%=  
+	if course.spring == true
+	then course.spring = 'SP'
+	else course.spring = ''
+	end 
+	%></td>
+    <td><%=  
+	if course.fall == true
+	then course.fall = 'FA'
+	else course.fall = ''
+	end 
+	%></td>
+    <td><%= 
+	if course.summer == true
+	then course.summer = 'SU'
+	else course.summer = ''
+	end 
+	%></td>
+    <td><a href= "<%= course.url %>">Website</td>
+
+  </tr>
+<% end %>
+</table>
+
+
+

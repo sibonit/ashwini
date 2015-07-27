@@ -1,0 +1,105 @@
+<!--KA: Adding the Bootstrap3 Carousel to show the news slider -->
+
+
+<div class="news_slider">
+    <div id="newsItem" class="carousel slide" data-interval="3000" data-ride="carousel">
+    	<!-- Carousel indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#newsItem" data-slide-to="0" class="active"></li>
+            <li data-target="#newsItem" data-slide-to="1"></li>
+            <li data-target="#newsItem" data-slide-to="2"></li>
+	    <li data-target="#newsItem" data-slide-to="3"></li>
+	    <li data-target="#newsItem" data-slide-to="4"></li>
+        </ol>   
+
+       <!-- KA: Loop through the news items and set the class for the first item as 'active' -->
+       <div class="carousel-inner">
+	  <%@news.each_with_index do |t,i|%>
+            <% # set which image is shown first
+               active = ''
+               active = "active" if i == 0 %>
+               <div class="item <%= active %>">
+		<div class="fill" style="background-image:url('http://sib.illinois.edu/images/Graduation%20UI%20Database.jpg');" ></div>  
+		<!--<div class="fill" style="background-image:url('http://blog.speakupmovement.org/university/wp-content/uploads/2010/07/university-of-Illinois.jpg');" ></div>  -->
+	<!-- <div class="fill" style="background-image:url(assets/home_carousel1.png);" ></div> -->
+                <div class="carousel-caption">
+                    <h3> <a class="links" href="newsitem.html"><%= t.headline.html_safe %></a></h3>
+                </div>
+            </div>
+	  <% i+=1 
+	     break if i == 5
+  	     end%>
+	</div>
+
+
+
+        <!-- News Slider navigation -->
+        <a class="carousel-control left" href="#newsItem" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="carousel-control right" href="#newsItem" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+    </div>
+</div>
+
+<!-- END: News Slider loop -->
+            <div class="col-lg-12">
+		<h4 style="text-align: center;"><%= link_to "See All News", newslist_path %></h4></p>
+            </div>
+
+
+
+<!--KA: START: Calendar events Loop-->
+
+        <div class="row">
+
+            <div class="col-lg-12">
+                <h1 class="page-header" style="color:gray"> Calendar </h1>
+            </div>
+
+	<%@events.take(4).each do |t|%>
+            <div class="col-md-3 cal-panel">
+                <div class="panel panel-warning">
+                    <div class="panel-heading">
+                        <h4 align = "center" ><%= (t.startDate)%></h4>
+			<h6 align = "center" ><%= (t.startTime)%></h6>
+                    </div>
+                    <div class="panel-body fixed-panel">
+                        <p><%= t.titleLong %> </p>   
+			                   
+                    </div>
+                </div>
+            </div>
+	<%end%>
+
+	
+	</div>
+
+<!--KA: END: Calendar events loop-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

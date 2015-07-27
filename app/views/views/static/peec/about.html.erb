@@ -1,0 +1,101 @@
+<!--KA: Modified: June 2015: Restyled the Depts and Programs section at the bottom-->
+
+<% content_for( :title, 'About Peec' ) %>
+<% content_for( :sidebar, 'peec' ) %>
+<% content_for( :expand, 'peec_ex' ) %>
+
+<h2>About</h2>
+<h4 style="text-align:center">Program in Ecology, Evolution, and Conservation Biology (PEEC)</h4>
+
+<p>PEEC is an interdisciplinary, campuswide program designed to provide individualized training for graduate students. This program prepares individuals for research and teaching careers in ecology and evolutionary biology and produces scientists who are both technically competent and broadly educated in ecology and evolutionary biology.</p>
+
+<h3>A Ph.D. PEEC student declares three areas of emphasis:</h3>
+
+<ul>
+  <li>A general area of ecology or evolution</li>
+  <li>A complementary general area (e.g., behavior, systematics, physiology, genetics)</li>
+  <li>A specific area related to the dissertation</li>
+</ul>
+
+<p>Because of the breadth of fields covered by this program, there are no fixed courses required of all students. The goal is to allow maximum flexibility while providing close supervision.</p>
+<p>The number of courses and the particular courses taken depend on the individual's previous training and knowledge. <a href="/peec/courses" target="_blank">Courses</a> and laboratory and field experiences are supplemented by <a href="http://illinois.edu/calendar/list/4109" target="_blank">seminars</a> on current topics in ecology and evolutionary biology.</p>
+
+<p>For more information about PEEC, see program <a href="/peec/faqs" target="_blank">FAQs</a>.</p>
+<hr>
+<h3><strong>Cooperating Departments &amp; Programs</strong></h3>
+
+<p>The Program in Ecology, Evolution, and Conservation Biology serves as a focal point for interaction between basic and applied ecologists on campus that are housed in several colleges, departments, and governmental agencies listed below. The program is housed in the School of Integrative Biology in College of Liberal Arts and Sciences.</p>
+
+	<div id="menu">
+		<div class="panel list-group"> 	
+		  <a href="#/" class="list-group-item" data-toggle="collapse" data-target="#link1" data-parent="#menu"><strong>College of Liberal Arts and Science</strong> <span class="glyphicon glyphicon-tags pull-right"></span></a>
+ 			<div id="link1" class="sublinks collapse">
+			  <ul><h3><strong><a href="http://www.las.illinois.edu/" target="_blank">College of Liberal Arts and Sciences</a></strong></h3>
+		             <ul>
+				<li><a href="/">School of Integrative Biology</a></li>
+				   <ul>
+				      <li><a href="http://www.life.illinois.edu/animalbiology/" target="_blank">Department of Animal Biology</a></li>
+				      <li><a href="http://www.life.illinois.edu/entomology/home.html" target="_blank">Department of Entomoloty</a></li>
+				      <li><a href="http://www.life.illinois.edu/plantbio/" target="_blank">Department of Plant Biology</a></li><br>
+				    </ul>
+			     </ul>
+			     <ul>
+				<li><a href="http://www.anthro.illinois.edu/" target="_blank">Department of Anthropology</a></li><br>
+				<li><a href="http://www.geog.illinois.edu/" target="_blank">Department of Geography</a></li><br>
+				<li><a href="http://www.stat.illinois.edu/" target="_blank">Department of Statistics</a></li>
+			     </ul>
+		           </ul><br>
+		</div>
+
+		<a href="#/" class="list-group-item" data-toggle="collapse" data-target="#link2" data-parent="#menu"><strong>College of Agricultural, Consumer and Environmental Sciences</strong> <span class="glyphicon glyphicon-tags pull-right"></span></a>
+ 			<div id="link2" class="sublinks collapse">
+			 <ul><h3><strong><a href="http://www.aces.illinois.edu/" target="_blank">College of Agricultural, Consumer and Environmental Sciences</a></strong></h3>
+				<ul>
+				  <li><a href="http://www.nres.illinois.edu/" target="_blank">Department of Natural Resources and Environmental Sciences</a> </li>
+				  <li><a href="http://www.cropsci.illinois.edu/" target="_blank">Department of Crop Sciences</a> </li>
+				  <li><a href="http://www.ansci.illinois.edu/" target="_blank">Department of Animal Science</a> </li>
+			       </ul>
+			  </ul>
+	 		</div>
+
+
+		<a href="#/" class="list-group-item" data-toggle="collapse" data-target="#link3" data-parent="#menu"><strong>College of Engineering</strong> <span class="glyphicon glyphicon-tags pull-right"></span></a>
+ 			<div id="link3" class="sublinks collapse">
+			 <ul><h3><strong><%= link_to 'College of Engineering', 'http://www.engr.illinois.edu/' , target:'_blank'  %></strong></h3>
+				<ul>
+				  <li><%= link_to 'Department of Civil and Environmental Engineering','http://cee.illinois.edu/' , target:'_blank'  %></li>
+			       </ul>
+			  </ul>
+	 		</div>
+
+
+
+			<a href="#/" class="list-group-item" data-toggle="collapse" data-target="#link4" data-parent="#menu"><strong>College of Fine and Applied Arts</strong> <span class="glyphicon glyphicon-tags pull-right"></span></a>
+ 			<div id="link4" class="sublinks collapse">
+			 <ul><h3><strong><%= link_to 'College of Fine and Applied Arts', 'http://www.faa.illinois.edu/', target:'_blank'  %></strong></h3>
+				<ul>
+				   <li><%= link_to 'Department of Urban and Regional Planning', 'http://www.urban.illinois.edu' , target:'_blank' %></li>
+			       </ul>
+			  </ul>
+	 		</div>
+
+
+			<a href="#/" class="list-group-item" data-toggle="collapse" data-target="#link5" data-parent="#menu"><strong>College of Veterinary Medicine</strong> <span class="glyphicon glyphicon-tags pull-right"></span></a>
+ 			<div id="link5" class="sublinks collapse">
+			 <ul><h3><strong><%= link_to 'College of Veterinary Medicine', 'http://www.cvm.illinois.edu/' , target:'_blank' %></strong></h3>
+				<ul>
+				  <li><%= link_to 'Department of Veterinary Pathobiology', 'http://www.cvm.illinois.edu/vp/' , target:'_blank' %></li>
+			       </ul>
+			  </ul>
+	 		</div>
+	
+		       <a href="http://www.inhs.illinois.edu/" target="_blank" class="list-group-item" data-target="#link6" data-toggle="collapse" data-parent="#menu"><strong>Illinois Natural History Survey</strong> <span class="pull-right fa fa-external-link"></span></a>
+ 	
+			<a href="http://www.life.illinois.edu/programs/SBE/" target="_blank" class="list-group-item" data-target="#link7" data-toggle="collapse" data-parent="#menu"><strong>Systematics and Biodiversity Group</strong> <span class="fa fa-external-link pull-right "></span></a>
+
+
+
+</div>
+
+
+

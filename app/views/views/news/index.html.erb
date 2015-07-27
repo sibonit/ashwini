@@ -1,0 +1,20 @@
+<h2> </h2>
+
+<ul>
+<%@news.each do |t|%>
+
+    <div class="row">
+            <div class="col-md-3 ">
+               	  <%= image_tag 'advising/IBspotlight.png',  alt: "IB Spotlight", width: "100" %>
+             </div>
+            <div class="col-md-9 no-gutter">
+                <h4>
+                    <a href="newsitem.html"><%=t.headline%></a>
+                </h4>
+                 <p><%=t.headline%></p>               
+		<hr>
+            </div>
+        </div>
+<%end%>
+</ul>
+

@@ -1,0 +1,155 @@
+<%# KA: Created: MAy 2015
+    KA: Modified: 18-May-2015: Changing the About in Navbar to
+      School of Integrative Biology
+    01-Jun-2015: uebele@ validated, added div's, put hr's inside li's
+-%>
+<!-- Header Banner and Menus 
+       used for content in sib.illinois.edu
+       updated by uebele@ Jun-2015 -->
+
+<% # spans show icons
+  ext_icon='<span class="fa fa-external-link" style="margin-left:1em;"></span>'
+-%>
+<header class="header"> 
+
+  <div class="container" id="banner"  >
+    <div class="row"> 
+      <%= image_tag "imark_blue.jpg", id: 'imark' %> 
+      <%#= image_tag "cells.png", id: 'cells' %> 
+      <%= image_tag "ib_header_background.png", id: 'cells' %> 
+      <div id="school_of">School of</div>
+      <div id="integrative">Integrative</div>
+      <div id="biology">Biology</div>
+    </div>
+  </div>
+
+
+  <!--<div class="navbar supermenu navbar-inverse navbar-fixed-top">-->
+  <div class="navbar supermenu navbar-static-top" role ="navigation" id="topnavbar" >
+
+    <!--KA: Use container-fluid if you want a full page width menu
+    <div class="container-fluid"> -->
+    <div class="container">
+
+      <div id ="logo_div" class="navbar-header" >
+        <button id ="logo_btn" type="button" data-toggle="collapse" data-target="#navbar-collapse-1" class="navbar-toggle" >
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <!-- <a href="/" class="navbar-brand"> School of Integrative Biology</a> -->
+      </div>
+
+<!-- Supermenu Navbar -->
+      <div id="navbar-collapse-1" class="navbar-collapse collapse" >
+        <ul class="nav navbar-nav">
+
+<!-- Navbar Home button -->
+          <li class="dropdown supermenu" id="navbar_home"><a href="/" class="dropdown-toggle"><i class="fa fa-home"></i></a></li>
+        
+
+<!--Menu item 1 -->
+          <li class="dropdown supermenu" id = "navitem1"><a  href="/" class="dropdown-toggle disabled">School of Integrative Biology</a>
+
+            <ul id="SIB_ul" class="dropdown-menu" >
+              <li>
+                <div class="supermenu-content">
+                  <div class="row">
+                    <ul class="col-md-5 list-unstyled ul_navbar">
+			<li><strong><%= link_to "People", '/people' %></strong><hr></li>
+			<li><strong><%= link_to "Research", '/research' %></strong><hr></li>
+			<li><strong><%= link_to "Departments", '/departments' %></strong><hr></li>
+			<li><strong><%= link_to "Programs", '/programs' %></strong><hr></li>
+			<li><strong><%= link_to "Contact Us", '/about/contact' %></strong><hr></li>
+			<li><strong><%= link_to "FAQ", '/about/faq' %></strong></li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </li>
+
+
+<!-- Menu Item-2 -->
+          <li class="dropdown supermenu "><a href="/undergraduate" class="dropdown-toggle disabled">Undergraduate</a>
+          <!--<li class="dropdown supermenu "><a href="/undergraduate" data-toggle="dropdown" class="dropdown-toggle">Undergraduate</a>-->  
+            <ul class="dropdown-menu">
+              <li>
+                <div class="supermenu-content">
+                  <div class="row"  >
+                    <ul class="col-md-5 list-unstyled ul_navbar">
+			<li><strong><%= link_to "Advising", '/undergraduate/advising' %></strong><hr></li>
+			<li><strong><%= link_to "Prospective", '/undergraduate/prospective' %></strong><hr></li>
+			<li><strong><%= link_to "Options", '/undergraduate/options' %></strong><hr></li>
+			<li><strong><%= link_to "Programs", '/undergraduate/programs' %></strong><hr></li>
+			<li><strong><%= link_to "Courses", '/courses' %></strong></li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </li>
+
+
+<!-- Menu Item-3 -->
+          <li class="dropdown supermenu"><a href="/graduate" class="dropdown-toggle disabled">Graduate</a>
+          <!-- <li class="dropdown supermenu"><a href="/graduate" data-toggle="dropdown"  class="dropdown-toggle">Graduate</a> -->
+            <ul class="dropdown-menu">
+              <li>
+                <div class="supermenu-content">
+                  <div class="row">
+                    <ul class="col-md-5 list-unstyled ul_navbar">
+                      <li><strong><%= link_to "Prospective Applicants", '/graduate/prospective' %></strong><hr></li>
+                      <li><strong><%= link_to "Current Students", '/graduate/current' %></strong><hr></li>
+		      <li><strong><%= link_to "Courses", '/courses/graduate' %></strong><hr></li>
+                      <li><strong><%= link_to "PEEC - Program in Ecology, Evolution, and Conservation Biology",'/peec/' %></strong><hr></li>
+                      <li><strong><%= link_to "Grants & Awards", '/graduate/grants/' %></strong><hr></li>
+                      <li><strong><%= link_to raw("The Graduate College"+ext_icon),'http://www.grad.illinois.edu/', target: '_blank' %></strong></li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </li>
+
+
+<!-- Menu Item-4 -->
+          <li class="dropdown supermenu"><a href="/alumni" class="dropdown-toggle disabled">Alumni & Friends</a>
+          <!--<li class="dropdown supermenu"><a href="/alumni" data-toggle="dropdown"  class="dropdown-toggle">Alumni & Friends</a></li>-->
+            <ul class="dropdown-menu">
+              <li>
+                <div class="supermenu-content">
+                  <div class="row">
+                    <ul class="col-md-5 list-unstyled ul_navbar">
+			<li><strong><a  href="/alumni/donations"> Giving to SIB </a></strong><hr></li>
+			<li><strong><a  href="/alumni/featured"> Featured Alumni </a></strong></li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </li>
+
+
+<!-- Menu Item-5 -->
+          <li class="dropdown supermenu"><a href="/resources" class="dropdown-toggle disabled">Resources</a>
+          <!--<li class="dropdown supermenu"><a href="/people" data-toggle="dropdown"  class="dropdown-toggle">Resources</a>-->
+            <ul class="dropdown-menu">
+              <li>
+                <div class="supermenu-content">
+                  <div class="row">
+                    <ul class="col-md-5 list-unstyled ul_navbar">
+			<li><strong><a  href="/resources"> For Faculty & Staff </a></strong><hr></li>  
+                    </ul>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </li>
+
+
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,75 @@
+<%# KA: June 2015: Show Courses %>
+
+<% content_for( :title, 'Courses' ) %>
+
+<%# KA: Show the right sidebar based on the page requested. %>
+<% if params[:id].in?(['graduate']) %>
+	<% content_for( :sidebar, 'grad' ) %>
+<% else %>
+	<% content_for( :sidebar, 'undergraduate' ) %>
+	<% content_for( :expand,  'courses_ex' ) %>
+<%end%>
+
+<%#KA:If the requested page is a course number (integer) then show the course details   %>
+<% if params[:id].match(/\A[+-]?\d+?(\.\d+)?\Z/) == nil ? false : true %>
+    <h2><%= @course.course_number %>: <%=  @course.title  %></h2>
+    <h4 style="text-align:center">Course Details </h4>
+    <center>
+    <table class="table table-striped">
+      <tbody>
+	<tr><td><strong>Description:</strong></td><td width= "500px"><%= @course.description %></td></tr>
+	<tr><td><strong>Hours:</strong></td><td><%= @course.hours %></td></tr>
+   <% if (@course.crosslist).present? %>
+	<tr><td><strong>Cross List: </td><td><%= @course.crosslist %></td></tr>
+   <% end %>
+	<tr><td><strong>Course Schedule:</strong></td><td><a href="https://courses.illinois.edu/schedule/terms/<%= @course.subject_code %>/<%= @course.course_number %>" target="_blank" >See Course Schedule</a></td></tr>
+  <% if (@course.note).present? %>
+	<tr><td><strong>Additional Notes:</strong></td><td><%= @course.note %></td></tr>
+  <% end %>
+   <% if (@course.ib_area).present? %>
+	<tr><td><strong>IB Area(s):</strong></td><td><%= @course.ib_area %></td></tr>
+   <% end %>
+  <% if @course.online == true %>
+	<tr><td><strong>Offered Online:</strong></td><td><%= @course.online %></td></tr>
+   <% end %>
+   <% if @course.odd_years_only == true %>
+	<tr><td><strong>Offered Odd Years Only:</strong></td><td><%= @course.odd_years_only %></td></tr>
+   <% end %>
+   <% if @course.even_years_only == true %>
+	<tr><td><strong>Offered Even Years Only:</strong></td><td><%= @course.even_years_only %></td></tr>
+   <% end %>
+   <% if @course.honors_only == true %>
+ 	<tr><td><strong>Honors Only:</strong></td><td><%= @course.honors_only %></td></tr>
+   <% end %>
+   <% if @course.merit_program == true %>
+	<tr><td><strong>Merit Program:</strong></td><td><%= @course.merit_program %></td></tr>
+   <% end %>
+
+</tbody>
+</table>
+</center>
+
+
+
+
+<%#KA:Else If the requested page IS NOT a course number(integer) then show the courses list %>
+<% else %>
+   <h2> <%= @title %> </h2> 
+
+<%#KA:Other course filter pages%>
+
+	<% if params[:id] == 'area'%>
+		<%= render '/courses/area' %>	
+	<% elsif params[:id] == 'semester'%>
+		<%= render '/courses/semester' %>							
+	<%else %>
+		<%#KA: Show other Level 100/200/300/400 and graduate courses %>
+	  	<%= render '/courses/courses' %>
+	<% end %> 
+
+<% end %>
+
+<p> &nbsp; </p>
+<p> &nbsp; </p>
+
+

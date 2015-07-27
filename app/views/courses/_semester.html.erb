@@ -1,0 +1,103 @@
+<%# KA: Courses by Semester %>
+<%# KA: The following codes are to show the course list for Spring and Fall (NOT Summer) for the next 2 years. %>
+
+<%#KA: Find current year, month and term %>
+	<%@current_date = Date.today%>
+	<%@current_year= @current_date.strftime("%Y")%>
+	<%@current_year = @current_year.to_i%>
+	<%@two_years= @current_year + 2 %>
+
+	<%@current_month= @current_date.strftime("%B")%>
+	<%@fall_months=['August', 'September', 'October', 'November', 'December']%>
+	<%@spring_months=['January', 'February', 'March', 'April', 'May']%>
+
+	<%  #KA: Get the term name 
+	    if @current_month.in?(@spring_months) 
+		 @current_term = 'Spring'
+	    else 
+		 @current_term = 'Fall'
+	   end
+	%>
+
+
+<% #KA: SHow courses list for future 2 years %>
+<% while @current_year <= @two_years  do %>
+
+
+	<% #KA: Find out if current year is even or odd and set the values
+	   if @current_year.even? 
+		 @even_years_only = 1
+		 @odd_years_only = 0
+	   else 
+		 @even_years_only = 0
+		 @odd_years_only = 1
+	   end
+	%>
+
+	<%if  @current_term == 'Spring'%>
+
+		<%#If current term is Spring, get the course list for Spring and Fall for current year.%>
+		<%#Spring courses%>
+		<center><h4>Spring <%=@current_year%></h4></center>
+	
+		<%#KA: Advanced Courses %>
+		<% @courses1 = Course.where(fall:0, spring:1 ,odd_years_only:0, even_years_only:0, advanced:1)%>
+		<% @courses2 = Course.where(fall:0, spring:1 ,odd_years_only:@odd_years_only, even_years_only:@even_years_only, advanced:1)%>
+		
+		<%#KA: Additional Advanced Courses %>
+		<% @courses3 = Course.where(fall:0, spring:1 ,odd_years_only:0, even_years_only:0, ib_area:'AA')%>
+		<% @courses4 = Course.where(fall:0, spring:1 ,odd_years_only:@odd_years_only, even_years_only:@even_years_only, ib_area:'AA')%>
+
+		<% @courses = (@courses1 | @courses2 | @courses3 | @courses4).uniq %>
+		<% @courses = @courses.sort %>
+		<%= render '/courses/table_courses' %>
+			
+		<%#Fall courses%>
+		<center><h4>Fall  <%=@current_year%></h4></center>
+		
+		<%#KA: Advanced Courses %>
+		<% @courses1 = Course.where(fall:1, spring:0 ,odd_years_only:0, even_years_only:0, advanced:1)%>
+		<% @courses2 = Course.where(fall:1, spring:0 ,odd_years_only:@odd_years_only, even_years_only:@even_years_only, advanced:1)%>
+
+		<%#KA: Additional Advanced Courses %>
+		<% @courses3 = Course.where(fall:1, spring:0 ,odd_years_only:0, even_years_only:0, ib_area:'AA')%>	
+		<% @courses4 = Course.where(fall:1, spring:0 ,odd_years_only:@odd_years_only, even_years_only:@even_years_only, ib_area:'AA')%>
+
+		<% @courses = (@courses1 | @courses2 | @courses3 | @courses4).uniq %>
+		<% @courses = @courses.sort %>
+		<%= render '/courses/table_courses' %>
+
+	
+	<%elsif  @current_term == 'Fall' %>
+		<%#If current term is Fall, get the course list for just Fall for current year.%>
+		<%#Fall courses %>
+		<center><h4>Fall <%=@current_year%></h4></center>
+
+		<%#KA: Advanced Courses %>
+		<% @courses1 = Course.where(fall:1, spring:0 ,odd_years_only:0, even_years_only:0, advanced:1)%>
+		<% @courses2 = Course.where(fall:1, spring:0 ,odd_years_only:@odd_years_only, even_years_only:@even_years_only, advanced:1)%>
+
+		<%#KA: Additional Advanced Courses %>
+		<% @courses3 = Course.where(fall:1, spring:0 ,odd_years_only:0, even_years_only:0, ib_area:'AA')%>
+		<% @courses4 = Course.where(fall:1, spring:0 ,odd_years_only:@odd_years_only, even_years_only:@even_years_only, ib_area:'AA')%>
+
+		<% @courses = (@courses1 | @courses2 | @courses3 | @courses4).uniq %>
+		<% @courses = @courses.sort %>
+		<%= render '/courses/table_courses' %>
+
+	<%end %>
+
+	<% #KA: Set NEXT term name 
+	   if @current_term = 'Fall'
+		@next_term='Spring'
+	   elsif @current_term = 'Spring'
+		@next_term='Fall'
+	   end
+	%>
+
+	<% @current_term =@next_term%>
+	<%@current_year +=1 %>
+
+	<%end %>
+
+

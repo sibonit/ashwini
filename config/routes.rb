@@ -4,47 +4,57 @@ get 'news/index' => 'news#index', as: 'newslist'
 get 'calendar/index'
 get 'welcome/index'
 
-get 'alumni' => 'welcome#alumni', as: 'alumni'
-get 'alumni_2' => 'welcome#alumni_2', as: 'alumni_2'
+#get 'alumni' => 'welcome#alumni', as: 'alumni'
+#get 'alumni_2' => 'welcome#alumni_2', as: 'alumni_2'
+#get 'resources' => 'welcome#resources', as: 'resources'
+#get 'business_HR' => 'welcome#business_HR', as: 'business_HR'
+#get 'business_purchasing' => 'welcome#business_purchasing', as: 'business_purchasing'
+#get 'business_reimbursements' => 'welcome#business_reimbursements', as: 'business_reimbursements'
+#get 'business_grants' => 'welcome#business_grants', as: 'business_grants'
 
-#KA: Assign named routed to About pages
-get 'about'  => 'about#index', as: 'about_home'
-get 'about/contact' => 'about#contact', as: 'about_contact'
-get 'about/convocation' => 'about#convocation', as: 'about_convocation'
-get 'about/departments' => 'about#departments', as: 'about_depts'
-get 'about/faq' => 'about#faq', as: 'about_faq'
-get 'about/whyib' => 'about#whyib', as: 'about_whyib'
-
-
-#KA: Assign named routed to Ugrad pages
-get 'undergraduate'  => 'ugrad#index', as: 'undergrad_home'
-get 'ugrad/advising' => 'ugrad#advising', as: 'advising'
-get 'ugrad/prospective' => 'ugrad#prospective', as: 'prospective'
-get 'ugrad/options' => 'ugrad#options', as: 'options'
-get 'ugrad/programs' => 'ugrad#programs', as: 'programs'
-get 'ugrad/special_programs' => 'ugrad#special_programs', as: 'special_programs'
-get 'ugrad/courses' => 'ugrad#courses', as: 'ugrad_courses'
-get 'ugrad/honors' => 'ugrad#honors', as: 'ugrad_honors'
-
-
-#KA: Assign named routed to Graduate pages
-get 'graduate'  => 'graduate#index', as: 'grad_home'
-get 'graduate/departments' => 'graduate#departments', as: 'grad_depts'
-get 'graduate/grants' => 'graduate#grants', as: 'grad_grants'
-get 'graduate/news' => 'graduate#news', as: 'grad_news'
-get 'graduate/support' => 'graduate#support', as: 'grad_support'
-get 'graduate/prospective' => 'graduate#prospective', as: 'grad_prospective'
-get 'graduate/courses' => 'graduate#courses', as: 'grad_courses'
 
 
 #KA: Assign named routed to People pages
-get 'people'  => 'people#index', as: 'people_home'
-get 'people/academics' => 'people#academics', as: 'people_academics'
-get 'people/faculty' => 'people#faculty', as: 'people_faculty'
-get 'people/faculty_interviews' => 'people#faculty_interviews', as: 'people_faculty_interviews'
-get 'people/faculty_other' => 'people#faculty_other', as: 'people_faculty_other'
-get 'people/grad_students' => 'people#grad_students', as: 'people_grad_students'
-get 'people/staff' => 'people#staff', as: 'people_staff'
+
+scope 'people', as: 'people' do
+	resources :departments
+end
+
+scope 'people', as: 'people' do
+	resources :research_areas
+end
+
+resources :people 
+
+
+#resources :people, path: "people/admin"
+#get 'people/faculty'  => 'people#faculty', as: 'faculty'
+
+
+resources :courses do
+  collection do
+    get :special
+    get :proficiency_exams
+    end
+end
+#get 'courses/test'  => 'courses#test', as: 'test'
+
+
+#KA: Resources for Admin pages
+namespace :admin do
+    resources :people
+    resources :courses
+   end
+
+#resources :people, path: "/admin/people"
+
+
+#get 'people/admin'  => 'people#admin#index', as: 'people_admin'
+#get 'people/admin/new'  => 'people#admin#new', as: 'people_admin_new'
+#get 'people/edit'  => 'people#edit', as: 'people_edit'
+#get 'people/show'  => 'people#show', as: 'people_show'
+
+#resources :admin
 
 
 #=====================================================================================
@@ -57,7 +67,8 @@ get 'static_pages/contact' => 'static_pages#contact', as: 'contact'
 get 'signup'  => 'users#new'
 
 get 'removed' => 'welcome#removed', as: 'removed'
-
+get 'new_pages' => 'welcome#new_pages', as: 'new_pages'
+get 'admin' => 'welcome#admin', as: 'admin'
 
 #=================================================================================
 

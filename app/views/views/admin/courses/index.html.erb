@@ -1,0 +1,62 @@
+<%# KA: Courses index %>
+
+<link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css"></style>
+<script type="text/javascript" src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
+
+
+
+<div id="container">
+<div id="content">
+<% provide(:title, 'All courses') %>
+<center><h2>SIB Courses</h2></center><br>
+
+<h4><%= link_to 'Create New Course', new_admin_course_path %></h4>
+<h5><%= link_to 'Admin Home', '/admin' %></h5>
+
+
+<br><br>
+<div class="table-responsive">
+<table id="courses_table" class="display table" style="max-width: 850px" >
+        <thead>  
+          <tr> 
+	    <th>Course Number</th>  
+            <th>Course Title</th>               
+	    <th> </th> 
+	    <th> </th> 
+	    <th> </th> 
+          </tr>
+	</thead>  
+        <tbody> 
+ 		<% @courses.each do |course| %> 
+          <tr>  
+   	       <td><%= link_to course.course_number, admin_course_path(course) %></td>
+               <td><%= link_to course.title, admin_course_path(course) %></td> 
+	       <td><%= link_to 'Show', admin_course_path(course) %></td>
+	       <td><%= link_to 'Edit',edit_admin_course_path(course)%></td>
+	       <td><%= link_to "Delete", admin_course_path(course), method: :delete, data: { confirm: "You sure?" } %></td>
+	  </tr>  
+	  <% end %>
+
+</tbody>
+</table>
+
+</div>
+</div>
+
+
+
+<p> &nbsp; </p>
+<p> &nbsp; </p>
+
+
+
+
+
+
+
+
+
+
+
+
+

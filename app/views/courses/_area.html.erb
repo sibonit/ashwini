@@ -1,0 +1,16 @@
+<%#KA:Courses by Area %>
+
+<center><h4>Area I:  Organismal & Evolutionary Biology</h4></center>
+<% @courses = Course.where("ib_area IN (?)", ['a1']).order("course_number ASC") %>
+<%= render '/courses/table_courses' %>	
+
+
+<center><h4>Area II:  Behavior, Ecology, & the Environment</h4></center>
+<% @courses = Course.where("ib_area IN (?)", ['a2']).order("course_number ASC") %>
+<%= render '/courses/table_courses' %>
+
+
+<center><h4>Area III:  Integrative Anatomy, Physiology, & Molecular Biology</h4></center>	
+<% @courses = Course.where("ib_area IN (?)", ['a3']).order("course_number ASC") %>
+<%= render '/courses/table_courses' %>
+

@@ -1,0 +1,57 @@
+  <center><p><strong> | ADV: Advanced | SP: Spring | FA: Fall | SU: Summer | </strong></p></center>
+   <table class="table table-bordered peec_table">
+    <thead>
+    <tr>
+	<th>Course #</th>
+      	<th>Course Name</th>
+	<th>Hours</th>
+	<th>ADV</th>
+	<th>LAB</th>
+	<th>SP</th>
+	<th>FA</th>
+	<th>SU</th>
+	<th>Website</th>
+    </tr>
+  </thead>
+
+<% @courses.each do |course| %>
+  <tr>
+    <td width ="20px" ><%= course.course_number %></td>
+    <td><%= link_to course.title, course_path(course) %></td> 
+    <td><%= course.hours %></td>    
+    <td><%= 
+	if course.advanced == true
+	then course.advanced = 'ADV'
+	else course.advanced = ''
+	end 
+	%></td>
+    <td><%= 
+	if course.lab == true
+	then course.lab = 'LAB'
+	else course.lab = ''
+	end 
+	%></td>
+    <td><%=  
+	if course.spring == true
+	then course.spring = 'SP'
+	else course.spring = ''
+	end 
+	%></td>
+    <td><%=  
+	if course.fall == true
+	then course.fall = 'FA'
+	else course.fall = ''
+	end 
+	%></td>
+    <td><%= 
+	if course.summer == true
+	then course.summer = 'SU'
+	else course.summer = ''
+	end 
+	%></td>
+    <td><a href= "<%= course.url %>" target="_blank" >Website</td>
+
+  </tr>
+<% end %>
+</table>
+

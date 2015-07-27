@@ -1,0 +1,39 @@
+<%#KA: June 2015: People table %>
+
+
+<div id="people_dir">
+ <table class="table table-striped">
+        <tbody>
+          <%# @people.where(position_status: 'faculty').find_each do |person| %>
+	 <% @people.order("last_name").each do |person| %>
+	   <tr>
+		<td><%= image_tag( person.photo.url( :thumb ) ) %></td>
+		<% if person.url_external_profile.blank? %>
+		<td width="50px"><strong><%= person.last_name%>, &nbsp;<%= person.first_name %></strong>
+                            <p><%#= person.titles %><br>
+			       <a href="mailto:<%= person.email %>"><%= person.email %></a><br>
+ 		               <%= person.address_office %><br>
+			       <%= person.phone_office %>
+			    </p>
+		</td>
+		<% else %>
+                <td width="50px" ><strong><a target="_blank" href= <%= person.url_external_profile%>><%= person.last_name%>, &nbsp;<%= person.first_name %></a></strong>
+                             <p><%#= person.titles %><br>
+			       <a href="mailto:<%= person.email %>"><%= person.email %></a><br>
+ 		               <%= person.address_office %><br>
+			       <%= person.phone_office %>
+			    </p>
+</td>
+		<% end %>
+
+
+		<td>
+			<%= person.titles %> <br><br>
+			<%= person.profile_blurb %>
+		</td>
+            </tr>
+           <% end %>
+        </tbody>
+</table>  
+</div>   
+

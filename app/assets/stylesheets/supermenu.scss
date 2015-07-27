@@ -18,20 +18,93 @@
 	  left: auto;
   }
 
+
+
 .supermenu .supermenu-content {
+
+
 	padding: 20px 30px; 
-    /* KA: Set background image for only big screens */	
+/* KA: Set background image for only big screens */	
     @media (min-width: 768px) {
-	background-image: url("students-faded.png");
-	background-repeat: no-repeat;
-	background-position: right;
-	}
+	    	background-size: contain;	   
+		background-repeat: no-repeat;
+		background-position: right;
+}
  }
+
+/*KA:Background image of the top header item 1   */
+.supermenu .header-item1 {
+	@media (min-width: 768px) {
+	background-image: url("supermenu/trapjaw_600x600.jpg");}}
+
+/*KA:Background image of the top header item 2   */
+.supermenu .header-item2 {
+	@media (min-width: 768px) {
+		background-image: url("supermenu/d200-grass.jpg"); 
+		}}
+
+/*KA:Background image of the top header item 3   */
+.supermenu .header-item3 {
+	@media (min-width: 768px) {
+		background-image: url("supermenu/butterfly.jpg"); 
+		}}
+
+
+/*KA:Background image of the top header item 4   */
+.supermenu .header-item4 {
+	@media (min-width: 768px) {
+		background-image: url("supermenu/d200-dragonfly-zoom.jpg"); 
+		}}
+
+
+
+/*KA:Background image of the top header item 5   */
+.supermenu .header-item5 {
+	@media (min-width: 768px) {
+		background-image: url("supermenu/monkey.jpg"); 
+		}}
+
+
+
+
+
+
+
+/*
+
+leaves-2
+mouse3
+leaves-horizontal.jpg
+cactus-horizontal
+
+	background-image: url("students-faded.png");  
+	background-image: url("trapjaw.jpg"); 
+	background-image: url("trapjaw_600x600.jpg"); 
+	background-image: url("mcb410.jpg");
+	background-image: url("evolution_600x600.jpg"); 
+	background-image: url("biology_tree.png"); 
+	background-image: url("aboutIB.png"); 
+	background-image: url("leaves.jpg"); 
+	background-image: url("brain.jpg"); 
+	background-image: url("leaves-2.jpg"); 
+	background-image: url("bee.jpg");
+	background-image: url("bee_on_flower.jpg"); 
+	background-image: url("beetle.jpg"); 
+	background-image: url("big_eye_bugs.jpg"); 
+	background-image: url("insect.jpg"); 
+	background-image: url("leaf_bug.jpg"); 
+	background-image: url("mating.png"); 
+	background-image: url("orange_bug.jpg"); 
+	background-image: url("worm.png"); 
+	background-image: url("trapjaw_600x600.jpg"); 
+*/ 
+
 
 .supermenu .dropdown.supermenu .dropdown-menu {
 	  left: 0;
 	  right: 0;
  	  max-width: 960px;
+
   }
 
 /*Top navbar-level 1-menu font styles  */
@@ -40,49 +113,56 @@
 	font-size: 14px;
 	font-weight: bold;
  &:hover{
+	
 	background-color: white; 
-	color: black;		
+	color: black;	
 	}
       }
 
-.ul_navbar{
-	font-size: 14px;}
+.ul_navbar {
+	font-size: 16px;
+        font-weight: bold;
+  a {
+	display: block;
+        padding: 10px 10px 10px 20px;
+        border-top: #ddd dotted 1px;
+	margin-left: 12px;
+  }
+  // no border for first <a>
+  a:first-of-type {
+	border-top: none;
+  }
+}
 
 
 	
-/*
-// KA:Show menu options on hover 
-	 @media (min-width: 768px) {
-		ul.nav li.dropdown:hover > ul.dropdown-menu {
-	     	display: block;   	    
-		   }
-	}
-
-*/
-
-
 /* Navbar-level 2 - menu styes */
 	.list-unstyled,
 	.list-unstyled ul { min-width: 50px }
-	.column-width {width: 400px }
+	.column-width { width: 400px }
 
 //KA: Navbar list items on hover
+	.list-unstyled a:hover { 			 
+	//	color: #E87722;
+	   	background-color: #e0e0e0;
+		text-decoration: none;
+	   	background-color: #f1f1ea;
+	}
+/*
 	.list-unstyled li:hover { 			 
- 				padding: 0px 10px 0px 0px;
-				a {
-				color: #E87722;
-				display: block;	
-			   	background-color: #f6f6f6;}
-				}
+		//color: #E87722;
+	   	//background-color: #e0e0e0;
+	}
+*/
 
-/* Navbar toggle button on right (3 horizontal lines)*/
-.navbar-toggle .icon-bar{
+/* ka: Navbar toggle button on right (3 horizontal lines)*/
+.navbar-toggle .icon-bar {
  	display: block;
 	background-color: #cccccc;
-	}
+}
 
 /*=================*/
-/* TopNav bar background color & level 2 menu heading color */
+/* ka: TopNav bar background color & level 2 menu heading color */
 #topnavbar {
     margin: 0;
     background-color: #E87722;	/* illinois orange */
@@ -104,26 +184,72 @@
 
 
 
+/*
+.dropdown-menu {
+.row {
+.container{
+.navbar
+.navbar-header
+.navbar-collapse
+.navbar-nav
+.dropdown
+.supermenu
+.col-md-5
+.collapse
+.nav
+
+
+
+.row .supermenu .supermenu-content{
+        margin-bottom: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin-top: 0 !important;
+
+
+
+}
+*/
+
+
+
+
+/*
+.row-no-padding {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important; 
+
+ [class*="col-"] {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+
+  }
+}
+
+*/
+
+
  @media (min-width: 768px) {
 
-		/*18-May-2015: Changing the About in Navbar to School of Integrative Biology*/
+		/*KA: 18-May-2015: Changing the About in Navbar to School of Integrative Biology*/
+		/*KA: Spacing between home icon and First item on the top nav bar	
 		#navitem1{
-	 		/*padding-left: 245px;*/
-			padding-left: 50px;
+	 		padding-left: 50px;
 		}
-		
+
+	*/
+	
 		/* KA:Show menu options on hover */
-		ul.nav li.dropdown:hover > ul.dropdown-menu {
-	     	display: block;   	    
-		   }
-		
-		/* Hide the carets on big screen */
-		#navbar_caret { 
-		     display: none;
-		}
+/*ul.nav : List on the main top bar (level 1) 
+li.dropdown: Entire area of the top bar list (level 1)
+*/
 
+ul.nav li.dropdown:hover > ul.dropdown-menu{
+/*	display:block;   */
 
+ }
 
+	  	   	
 }
 
 
@@ -132,6 +258,15 @@
 
 /*==============*/
 /*
+
+Hide the carets on big screen
+#navbar_caret { 
+	     display: none;
+		}
+
+
+
+
 #banner {
      	padding-bottom: 15px;
 	text-align: center;

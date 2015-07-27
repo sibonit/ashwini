@@ -1,4 +1,23 @@
-/* Home */
+/* Home 
 .peec p {
   font-size: 1.2em;
 }
+
+*/
+
+//KA: Style for table(s) in PEEC pages
+.peec_table {
+		background-color: #f1f1f1; 
+		float: none;			
+	}
+
+.peec_table tr{height:40px}
+.peec_table td{ text-align:center;
+		vertical-align: top;
+		}
+#col1{width:35%}
+#col2{width:65%}
+
+.peec_table th{text-align:center;
+		background-color: #d7d7d7;
+		}

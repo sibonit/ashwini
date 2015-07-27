@@ -1,0 +1,89 @@
+<%# KA: Edit Course %>
+
+
+
+<% provide(:title, "Edit Courses") %>
+
+<h4><%= link_to 'Show All Courses', '/admin/courses' %></h4>
+<h5><%= link_to 'Admin Home', '/admin' %></h5>
+
+<h1>Update Course</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for [@course], :url => admin_course_path do |f| %>
+      <%= render 'shared/error_messages_course' %>
+
+      <%= f.label :course_number %>
+      <%= f.text_field :course_number, class: 'form-control' %>
+
+      <%= f.label :subject_code %>
+      <%= f.text_field :subject_code, class: 'form-control' %>
+
+      <%= f.label :title %>
+      <%= f.text_field :title, class: 'form-control' %>
+
+      <%= f.label :description %>
+      <%= f.text_area :description, class: 'form-control', :size => "10x10"%>
+
+      <%= f.label :additional_notes %>
+      <%= f.text_area :note, class: 'form-control', :size => "10x10"%>
+  
+      <%= f.label :hours %>
+      <%= f.text_field :hours, class: 'form-control' %>
+
+      <%= f.label :crosslist %>
+      <%= f.text_field :crosslist, class: 'form-control' %>
+
+      <%= f.label :url %>
+      <%= f.text_field :url, class: 'form-control'%>
+
+      <%= f.label :ib_area %>
+      <%= f.text_field :ib_area, class: 'form-control' %><br>
+	
+      <%= f.label :lab %>
+      <%= f.check_box :lab, class: 'form-control' %><hr>
+     
+      <%= f.label :advanced %>
+      <%= f.check_box :advanced, class: 'form-control' %><hr>
+
+      <%= f.label :spring %>
+      <%= f.check_box :spring, class: 'form-control' %><hr>
+
+      <%= f.label :fall %>
+      <%= f.check_box :fall, class: 'form-control' %><hr>
+
+      <%= f.label :summer %>
+      <%= f.check_box :summer, class: 'form-control' %><hr>
+         
+      <%= f.label :online %>
+      <%= f.check_box :online, class: 'form-control' %><hr>
+
+      <%= f.label :odd_years_only %>
+      <%= f.check_box :odd_years_only, class: 'form-control' %><hr>
+
+      <%= f.label :even_years_only %>
+      <%= f.check_box :even_years_only, class: 'form-control' %><hr>
+
+      <%= f.label :honors_only %>
+      <%= f.check_box :honors_only, class: 'form-control' %><hr>
+
+      <%= f.label :merit_program %>
+      <%= f.check_box :merit_program, class: 'form-control' %><br><br>
+
+
+   
+
+      <%= f.submit "Save changes", class: "btn btn-primary" %>
+    <% end %>
+
+
+
+  </div>
+</div>
+
+
+
+<h4><%= link_to 'Show All Courses', '/admin/courses' %></h4>
+
+

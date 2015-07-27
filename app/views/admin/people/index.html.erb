@@ -1,0 +1,69 @@
+<%# KA: People index %>
+
+
+<script type="text/javascript">
+       $(document).ready(function() {
+          $('#people_table').DataTable();
+        } );    
+</script>
+
+
+<div id="container">
+<div id="content">
+<% provide(:title, 'All people') %>
+<center><h2>SIB People</h2></center><br>
+<h4><%= link_to 'Create New Person', new_admin_person_path %></h4>
+<h5><%= link_to 'Admin Home', '/admin' %></h5>
+
+
+
+<br><br>
+<div class="table-responsive">
+<table id="people_table" class="display table" style="max-width: 850px" >
+        <thead>  
+          <tr> 
+	    <th> </th> 
+	    <th>First Name</th>  
+            <th>Last Name</th>  
+            <th>Email</th>
+	    <th>Position</th>
+	    <th>NetID</th>  
+	    <th> </th> 
+	    <th> </th> 
+	    <th> </th> 
+          </tr>
+	</thead>  
+        <tbody> 
+ 		<% @people.each do |person| %> 
+          <tr>  
+   	       <td><%= image_tag( person.photo.url( :thumb ) ) %></td>  
+	       <td><%= link_to person.first_name, admin_person_path(person) %></td>
+               <td><%= link_to person.last_name, admin_person_path(person) %></td> 
+	       <td><%= link_to person.email, admin_person_path(person) %></td>
+	       <td><%= link_to person.position_status, admin_person_path(person) %></td>
+	       <td><%= link_to person.netid, admin_person_path(person) %></td>
+	       <td><%= link_to 'Show', admin_person_path(person) %></td>
+		<td><%= link_to 'Edit',edit_admin_person_path(person)%></td>
+		<td><%= link_to "Delete", admin_person_path(person), method: :delete, data: { confirm: "You sure?" } %></td>
+	  </tr>  
+	  <% end %>
+
+</tbody>
+</table>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

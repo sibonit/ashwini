@@ -1,6 +1,6 @@
 class StaticController < ApplicationController
 
-#  layout :choose_layout
+  layout :choose_layout
 
 # Notes:
 # calling "render :file" will cause some sort of caching
@@ -72,6 +72,13 @@ class StaticController < ApplicationController
 #            "Recognition failed for #{request.path.inspect} #{ path }"
     end
 
+  end
+
+
+  private
+
+  def choose_layout
+    'two_column'
   end
 
 

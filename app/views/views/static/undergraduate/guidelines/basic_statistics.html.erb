@@ -1,0 +1,165 @@
+<!--KA: June 2015-->
+
+<% content_for( :title, 'Guidelines-Statistics' ) %>
+<% content_for( :sidebar, 'undergraduate' ) %>
+<% content_for( :expand,  'guidelines_ex' ) %>
+
+		
+	<h2>Guidelines for Basic Statistics</h2>
+	<em>(These guidelines are modified from materials developed by C. Caceres for IB 449 Limnology).</em>
+	<h4 style= "text-align: center">Introduction</h4>
+	<h3>Asking questions in a scientifically meaningful way</h3>
+	<p>Statistics are of little use unless you first have a clear hypothesis and a specific quantitative prediction to test. Consider a simple example. You suspect that herbivores affect the amount of algae present in lake water. You make that a bit more specific and develop a general <strong>hypothesis</strong>: The presence of herbivores reduces the abundance of algae in lake water. Now you have something you can work with, but it's still a pretty vague notion. What you need to do is apply this hypothesis to a specific system. You know from surveys of local lakes that some lakes have <em>Daphnia</em> (large herbivorous zooplankton) whereas others do not. So, based on your hypothesis, you can now make a specific, testable <strong>prediction</strong>: The mean abundance of algae will be greater in lakes without <em>Daphnia</em> than in lakes where <em>Daphnia</em> are present. The <strong>hypothesis/prediction</strong> can be stated formally as follows:</p>
+	
+	<div style="border: 1px solid #666666; padding: 1em; margin: 1em;"><p>If herbivores affect the amount of algae in lake water, then the mean abundance of algae will be greater in lakes without Daphnia than in lakes with Daphnia.</p></div><hr>
+
+<h3>All predictions are built upon underlying assumptions.</h3>
+<p>An <strong>assumption</strong> is a condition upon which the prediction stands, but which is not directly tested. It is a fact taken for granted in an experiment. For example, you might ask whether you have to control for nutrient differences between the lakes with and without <em>Daphnia</em>. Answer: No, you will not be controlling for nutrients in your experimental design. So you assume that the nutrients are either the same in the lakes or that nutrients are not a factor that affects algal abundance.</p>
+<p>If you get a significant effect of <em>Daphnia</em> on algal abundance, then at least one of your assumptions must have been valid. HOWEVER, when you get a non-significant result, then you examine your assumptions. Perhaps they were not valid. Perhaps no difference arose because the nutrients were not the same and nutrients were a factor that affects algal abundance. The next phase of the research would be to explicitly test the assumption (turning it into an explicit hypothesis to test next).</p>
+<p>So try to think of any underlying factors/arguments that may be present and underpinning your prediction, but not being directly tested. Assumptions are really a part of the logical argument you are building when constructing a hypothesis/prediction.</p>
+<p>Once you have a quantitative prediction firmly in mind for your experiment or study system, you can proceed to the next step &ndash; forming <strong><em>statistical</em> hypotheses</strong> for testing. Statistical hypotheses are possible quantitative relationships among means or associations among variables. The <strong>null hypothesis</strong> states that there is no association between variables or no difference among means. For our example, it would be stated as Ho: algal abundance in <em>Daphnia</em>-absent lakes = algal abundance in <em>Daphnia</em>-present lakes (Ho: A = B). The <strong>alternative hypothesis</strong> states the pattern in the data that is expected if your predictions hold true. For our example, HA: algal abundance in <em>Daphnia</em>-absent lakes &gt; algal abundance in <em>Daphnia</em>-present lakes (HA: A&gt;B).</p>
+<hr>
+
+<h3>Answering your questions</h3>
+<p>Now you have to go out, gather data, and evaluate whether or not the data support your hypothesis. Our problem, essentially, is that we can't know the mean abundance of algae in ALL lakes with and without <em>Daphnia</em>. Instead, we have to pick a handful of each type of lake (a sample) and measure algae in each. We then calculate mean (average) algal abundance within each group of lakes and compare the two means. Inevitably one group's mean WILL be higher than the other's, just by random chance. <span style="text-decoration: underline;">Repeat the last sentence 10 times</span>. If you don't understand why we asked you to repeat that sentence, ASK, this is a key aspect of the entire course.</p>
+<p>After you have collected your data and calculated your two means (<em>Daphnia</em>-absent, <em>Daphnia</em>-present), you notice that the mean for the <em>Daphnia</em>-absent group appears to be higher than the mean for the <em>Daphnia</em>-present group. That's nice, but it doesn't tell us much. As we just got through saying 10 times over, one or the other group's mean was going to be greater even if only by random chance. Our problem is to decide, based on the data, whether the difference we observed was likely to be caused by chance alone or whether we can conclude that there probably is some real difference between the two groups.</p>
+<p>Statistics help us make this decision by assigning <strong>p-values</strong> to tests for differences between means. P-values range between zero (impossible for difference to be due to chance) and 1 (certain that difference is due to chance). They can be thought of as the probability that the differences among means observed were caused by chance variation. If the p-value is very small (traditionally, and for this class, &lt; 0.05), you conclude that there is some systematic difference among means. You have measured a difference that was probably NOT caused by chance. "Something else" (maybe grazing by <em>Daphnia</em>?) is going on. You <strong>reject the null hypothesis</strong> (Ho A = B) and claim evidence for the alternative hypothesis: (HA A&gt;B); algal abundance was significantly greater in the <em>Daphnia</em>-absent lakes than in the <em>Daphnia</em>-present lakes. If, on the other hand, the p-value is &gt; 0.05 there is a good chance that, if you tried the experiment again with two new samples of lakes, you would have gotten the opposite result. You have to <strong>accept the null hypothesis</strong>. You really have no strong evidence for a difference in algal abundance between the two groups of lakes.</p>
+<hr>
+
+<h3>Types of variables</h3>
+<p>There are three different types of variables: discrete, continuous and categorical. Discrete variables are those that cannot be subdivided. They must be a whole number. E.g. cats would be discrete data because there cannot be a fraction of a cat. We count or tally these data. <em>Continuous</em> variables are those values that cover an uninterrupted and large range of scales. A good example of a continuous variable is pH. It can be 2.4, 7.0, 8.5, etc. - any of a wide range of values between 0 and 14. <em>Categorical</em> variables are arbitrarily assigned by the experimenter. An example of a categorical variable is in an experiment with two treatments: you supplement a certain number of plants with nitrogen (treatment 1), and another number of plants get no nitrogen (treatment 2). So your categorical variable has two levels: nitrogen and no nitrogen. Note that categorical variables have distinct, mutually exclusive categories that lack quantitative intermediaries (e.g. present vs. absent; blonde vs. brown vs. red hair.)</p>
+
+<hr>
+
+<h3>Descriptive statistics</h3>
+<p>There are several commonly used descriptive statistics to use on discrete and continuous variables. These include the mean (average), variance, standard deviation, and standard error. A brief description of each follows below (Adapted from Hampton 1994).</p>
+<span style="text-decoration: underline;">Mean:</span><p>The mean is the sum of all the data, divided by the number of data points. In the list 10, 30, 20, the mean is 20.</p>
+<p>&nbsp;</p>
+<center>
+<%= image_tag 'guidelines/basicStats1.jpg',  alt: "basicStats1" %>
+</center>
+<p>&nbsp;</p>
+<span style="text-decoration: underline;">Variance:</span><p>the average of the squared deviations in a sample or population. The variance considers how far each point differs from the mean. The variance for a population is denoted by &sigma;2 and is calculated as:</p>
+<p>&nbsp;</p>
+<center>
+<%= image_tag 'guidelines/basicStats2.jpg',  alt: "basicStats2" %>
+</center>
+<p>&nbsp;</p>
+<span style="text-decoration: underline;">Where:</span>
+<p>&nbsp;</p>
+<center>
+<%= image_tag 'guidelines/basicStats3.jpg',  alt: "basicStats3" %>
+</center>
+<p>&nbsp;</p>
+The best estimate of the population variance is the sample variance, s<sup>2</sup>:
+<p>&nbsp;</p>
+<center>
+<%= image_tag 'guidelines/basicStats4.jpg',  alt: "basicStats4" %>
+</center>
+<p>&nbsp;</p>
+<span style="text-decoration: underline;">Standard deviation</span>: A measure of the average amount by which each observation in a series of observations differs from the mean.
+<p>&nbsp;</p>
+<center>
+<%= image_tag 'guidelines/basicStats5.jpg',  alt: "basicStats5" %>
+</center>
+<p>&nbsp;</p>
+<span style="text-decoration: underline;">Standard error</span>: A measure of the uncertainty of the estimate of the true mean of a sample that takes into account the sample size.
+<p>&nbsp;</p>
+SE = standard deviation / 
+<%= image_tag 'guidelines/basicStats6.jpg',  alt: "basicStats6" %>
+
+<hr>
+
+<h3>Analytical (Inferential) Statistics.</h3>
+<p>We will be using four basic statistical tools for this class: &chi;<sup>2</sup> (chi-square) tests, t-tests, analysis of variance (ANOVA), and correlation (and regressions). Chi-square tests determine whether a relationship exists between two categorical variables. t-tests are used to make comparisons of mean values of 2 groups, ANOVA is used to make comparisons of mean values of &gt;2 groups, while correlations look for associations between two continuous variables. Details about each and examples follow below.</p>
+<p>&nbsp;</p>
+<em>X<sup>2</sup>test (chi-square test)(contingency test for independence)</em>
+<p>A chi-square (&chi;<sup>2</sup>) test determines whether a relationship exists between two categorical variables. All other statistics (see below) apply to dependent variables that are <em>continuous</em>, i.e. they can take on many different values with an obvious ordering to the values (e.g. a height of 60 is greater than one of 50). Examples are: pH, height, chemical concentration).</p>
+<p>Categorical data fall into distinct, mutually exclusive categories that lack quantitative intermediates: (present vs. absent; male vs. female; brown vs. blue vs. green eyes).</p>
+<p>A p-value of less than 0.05 indicates that the variables are not independent; i.e. two categorical variables are related.</p>
+<span style="text-decoration: underline;">An example:</span>
+<div id="main_content">
+<ul class="ul_list">
+<li style="list-style: none;">We observe people to see if hair color and eye color are related. Do people with blond hair have blue eyes, etc? We develop a two-way (contingency) table to categorize each person into one group for each of the two categorical variables (e.g. brown eyes and brown hair; green eyes and red hair, etc.) We then study the table to see which combinations of variables have more or less observations than would be expected if the two variables were independent. To calculate this test, you must first find the expected value for the number of observations for each combination of the two variables based on the null hypothesis that the two variables are independent. Then you compare the differences in distribution of values for the expected and observed values.</li>
+</ul>
+<p>&nbsp;</p>
+<em>t-tests </em>
+<ul class="ul_list">
+<li style="list-style: none;">A t-test is, most simply, a test to determine whether there is a significant difference between two treatment means. A p-value of less than 0.05 is usually considered to indicate a significant difference between the treatment means.</li>
+</ul>
+<span style="text-decoration: underline;">An example:</span>
+<ul class="ul_list">
+<li style="list-style: none;">Let's say we want to see how the presence of a predator affects the amount of food consumed by a dragonfly larva. We could set up an experiment with 10 tanks with just the dragonfly and 10 with both the dragonfly and predator (a total of two treatments). We could then measure the amount of food in each tank and use a t-test to see whether there was any difference in the mean amount of food in the 10 tanks with just dragonflies (treatment 1) and in the mean amount of food in the 10 tanks with predators (treatment 2).</li>
+</ul>
+<p>&nbsp;</p>
+<em>ANOVA (Analysis of Variance)</em>
+<ul class="ul_list">
+<li style="list-style: none;">ANOVA looks for differences among treatments (like a t-test), by examining the variance around the mean. The main difference from a t-test is that ANOVA can look for differences in more than two treatment means. In fact, a t-test is really just a simple type of ANOVA. What you need to know is that if the ANOVA is significant, then there is a difference among the treatments. However, if there is a significant difference, ANOVA does not tell you anything about which treatments are significantly different from the others, and you must use other tests, such as multiple comparisons, to determine which are significantly different from the others.</li>
+</ul>
+<span style="text-decoration: underline;">An example:</span>
+<ul class="ul_list">
+<li style="list-style: none;">Let's modify the experiment above that had two treatments and used a t-test. Instead, we have three treatments: dragonflies alone (treatment 1), dragonflies and predator 1 (treatment 2), and dragonflies and predator 2 (treatment 3). We would use an ANOVA to see if there is a difference among the three treatments in the mean amount of food.</li>
+<li style="list-style: none;"></li>
+</ul>
+<em>Correlation </em> <em>&nbsp;</em>
+<ul class="ul_list">
+<li style="list-style: none;">A t-test is used to test whether a difference between two group means is statistically significant. Correlations require a different kind of data. Here you have a list of subjects (individual animals, sites, ponds) and take measures of two different continuous variables for each subject. Do subjects with a high level of variable X also tend to have a high level of variable Y? These kinds of systematic associations between two variables are described by correlation.</li>
+</ul>
+<ul class="ul_list">
+<li style="list-style: none;">A correlation establishes whether there is some relationship between two continuous variables - but does not determine the nature of that relationship, i.e. it cannot be translated into cause and effect. The intensity of the relationship is measured by the correlation coefficient or "r". The value of r varies between -1 and 1. -1 indicates a strong negative relationship between the two variables, 0 indicates no relationship, and 1 a strong positive relationship.</li>
+</ul>
+<span style="text-decoration: underline;">An example:</span>
+<ul class="ul_list">
+<li style="list-style: none;">You suspect that there is some relationship between degrees Fahrenheit and degrees Celsius. To test this, you take an F and a C thermometer and measure water baths at 10 different temperatures. We then run a correlation using degrees F as your x variable and degrees C as your y variable, or vice versa. (For a correlation, it doesn't matter which variable is on which axis.) We would probably find a strong positive correlation - an r-value above 0.9, in this case.</li>
+</ul>
+<ul class="ul_list">
+<li style="list-style: none;">Remember - correlations only tell you that there is some association between the two variables, but not the nature of that association.</li>
+</ul>
+<p>&nbsp;</p>
+<em>Regression </em>
+<ul class="ul_list">
+<li style="list-style: none;">Regression is similar to correlation, but regressions do assume that changes in one variable are predictive of changes in the other, resulting in an equation for a line. For simple linear regression, this is the old y=mx + b line (m=slope, b= y-intercept). Once this line is established, values of y can be found from values of x.</li>
+</ul>
+<ul class="ul_list">
+<li style="list-style: none;">The strength of this relationship is measured by the coefficient of determination or "R2" (the correlation coefficient squared). R2 ranges from 0 to 1.0, with 1.0 indicating that the values of x perfectly predict y (this never happens in ecology).</li>
+</ul>
+<span style="text-decoration: underline;">An example:</span>
+<ul class="ul_list">
+<li style="list-style: none;">We have data on light intensity and algal biomass for twenty locations within a reach of stream. We suspect that higher light intensities may lead to more algal biomass. So we could run a regression on light intensity and algal biomass, using light as our x variable and algal biomass as our y variable. We end up with an equation for the line and an R2. The R2 will probably be quite high. With a high R2 we can feel confident in using the equation for predicting values of y, based on x. In this case, we would say we could predict algal biomass based on light intensity.</li>
+</ul>
+<ul class="ul_list">
+<li style="list-style: none;">It is very important to point out, however, that although there may be a statistical relationship between the values, without an experiment, we cannot say for sure that light causes the increase in algal biomass. In other words, correlation is not causation! Although in this case, increased light most likely does result in increased algal biomass, a manipulative experiment is necessary to determine the causal relationship.</li>
+</ul>
+<p>&nbsp;</p>
+<h3>Reference:</h3>
+<p>Hampton, R.E. 1994. Introductory Biological Statistics. Wm. C. Brown Publishers. Dubuque, Iowa.</p>
+<hr>
+<h4 style="text-align:center">Summary: How to Choose Among Statistical Tests:</h4>
+<h3>Chi-square</h3>
+<ul class="ul_list">
+<li style="list-style: none;">(done on count data collected for two categorical variables. Do distributions differ?)<br /> Are eye color and hair color related? Or are they independent?<br /> Is the distribution of eye color independent of the distribution of hair color?</li>
+</ul>
+<h3>t-test</h3>
+<ul class="ul_list">
+<li style="list-style: none;">(done on discrete or continuous data collected for one categorical variable with only two treatments. Do means of two treatments differ?)<br /> Does the presence of a predator affect the amount of food consumed by a dragonfly larva? <br /> Does the mean amount of food eaten differ in the presence vs. absence of a predator?</li>
+</ul>
+<h3>ANOVA</h3>
+<ul class="ul_list">
+<li style="list-style: none;">(done on discrete or continuous data collected for one categorical variable with more than two treatments. Do means of &gt;2 treatments differ?)<br /> Does the predator type affect the amount of food consumed by a dragonfly larva?<br /> Does the mean amount of food eaten differ among three predator species?</li>
+</ul>
+<h3>Correlation</h3>
+<ul class="ul_list">
+<li style="list-style: none;">(done on two continuous variables; no independent-dependent variables; Is there a relationship, but no cause-effect)<br /> Are these Fahrenheit temperatures related to these Celsius temperatures?</li>
+</ul>
+<h3>Regression</h3>
+<ul class="ul_list">
+<li style="list-style: none;">(done on two continuous variables; clear independent-dependent variables; Is there a relationship, and with cause-effect) <br /> Do higher light intensities lead to greater algal biomass?</li>
+</ul>
+<center>
+<%= image_tag 'guidelines/StatsTestFlowDiagram.jpg',  alt: "statsTestFlowDiagram" %>
+
+</center></div>
+</div>
+
+
+<p> &nbsp; </p>

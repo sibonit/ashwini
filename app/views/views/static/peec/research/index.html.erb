@@ -1,0 +1,53 @@
+<% content_for( :title, 'PEEC Research Areas' ) %>
+<% content_for( :sidebar, 'peec' ) %>
+<% content_for( :expand, 'research_ex' ) %>
+
+
+
+  <h2>Research Areas</h2>
+  <h3>Click on the research area you are interested in to see the list of faculty for that area:</h3>
+  <br>
+
+
+<h4> Ecology </h4>
+<div style="border: 1px solid #666666; padding: 1em; margin: 1em; background-color:lightgray"><p>
+
+	<%@res_area = ResearchArea.where(area: 'Ecology').order("name ASC") %>
+             <% @res_area.each do |area| %>
+		<a href="/people/research_areas/<%= area.id%>"><%= area.name%> </a> &nbsp;&nbsp; | &nbsp;&nbsp;
+	      <% end %>
+
+
+</div>
+<hr>
+
+<h4> Evolution and Systematics </h4>
+<div style="border: 1px solid #666666; padding: 1em; margin: 1em; background-color:lightgray"><p>
+
+	<%@res_area = ResearchArea.where(area: 'Evolution & Systematics').order("name ASC") %>
+             <% @res_area.each do |area| %>
+		<a href="/people/research_areas/<%= area.id%>"><%= area.name%> </a> &nbsp;&nbsp; | &nbsp;&nbsp;
+	      <% end %>
+</div>
+<hr>
+
+<h4> Conservation </h4>
+<div style="border: 1px solid #666666; padding: 1em; margin: 1em; background-color:lightgray"><p>
+
+	<%@res_area = ResearchArea.where(area: 'Conservation Biology').order("name ASC") %>
+             <% @res_area.each do |area| %>
+		<a href="/people/research_areas/<%= area.id%>"><%= area.name%> </a> &nbsp;&nbsp; | &nbsp;&nbsp;
+	      <% end %>
+
+
+</div>
+
+
+<p> &nbsp; </p>
+<p> &nbsp; </p>
+<p> &nbsp; </p>
+
+
+
+
+

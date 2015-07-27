@@ -1,0 +1,141 @@
+<style>
+	.td_font_size{font-size: 8pt}
+
+</style>
+
+
+
+ <center><p><strong> 
+<% if params[:id] =="all" %>
+	| ADV: Advanced | SP: Spring | FA: Fall | SU: Summer | 
+<%elsif params[:id] !="semester"%>
+	| SP: Spring | FA: Fall | SU: Summer | 
+<%end%>
+
+</strong></p></center>
+
+   <table class="table table-bordered peec_table">
+    <thead>
+    <tr>
+	<th>Course #</th>
+      	<th>Course Name</th>
+	<th>Hours</th>
+
+<%#KA: SHow cross-list and Advanced columns only on the full list  %>
+<%#if current_page?('/courses') %>
+<% if params[:id] =="all" %>
+	<th>Cross List</th>
+	<th >ADV</th>
+<%end%>
+	<th>LAB</th>
+
+<%#KA: Do NOT show semester columns in Semester page, because it is already broken down into semesters.  %>
+<% if params[:id] !="semester" %>
+	<th>FA</th>
+	<th>SP</th>
+	<th>SU</th>
+<%end%>
+
+<%#KA: Show odd or even years in Semester page.  %>
+<% if params[:id] =="semester" %>
+	<th width ="30px">Odd Years Only</th>
+	<th width ="30px">Even Years Only</th>	
+<%end%>
+
+	<th>Website</th>
+    </tr>
+  </thead>
+
+
+
+<% @courses.each do |course| %>
+  <tr>
+
+<%#KA: There are three 599 courses with different subject code %>
+<% if course.course_number == '599' %>
+    <td width ="20px" ><%= course.subject_code %> <%= course.course_number %></td>
+<%else%>
+    <td width ="20px" ><%= course.course_number %></td>
+<%end%>
+
+
+    <td><%= link_to course.title, course_path(course) %></td>    
+    <td><%= course.hours %></td>   
+
+
+<%#if current_page?('/courses') %>
+<% if params[:id] =="all" %>
+
+    <td class="td_font_size" width ="70px"><%= course.crosslist %></td>   
+
+    <td class="td_font_size"><%= 
+	if course.advanced == true || course.ib_area == 'AA'
+	then course.advanced = 'ADV'
+	else course.advanced = ''
+	end 
+	%></td>
+
+<%end%>
+
+    <td class="td_font_size"><%= 
+	if course.lab == true
+	then course.lab = 'LAB'
+	else course.lab = ''
+	end 
+	%></td>
+
+<% if params[:id] !="semester" %>
+
+    <td class="td_font_size"><%=  
+	if course.fall == true
+	then course.fall = 'FA'
+	else course.fall = ''
+	end 
+	%></td>
+    <td class="td_font_size"><%=  
+	if course.spring == true
+	then course.spring = 'SP'
+	else course.spring = ''
+	end 
+	%></td>
+    <td class="td_font_size"><%= 
+	if course.summer == true
+	then course.summer = 'SU'
+	else course.summer = ''
+	end 
+	%></td>
+
+<%end%>
+<% @check_mark ='<i class="fa fa-check"></i>'.html_safe %>
+<% if params[:id] =="semester" %>
+	<td class="td_font_size"><%=  
+	if course.odd_years_only == true
+#	then course.odd_years_only = @check_mark
+	then course.odd_years_only = 'Odd'
+	else course.odd_years_only = ''
+	end 
+	%></td>
+    <td class="td_font_size"><%=  
+	if course.even_years_only == true
+#	then course.even_years_only = @check_mark
+	then course.even_years_only = 'Even'
+	else course.even_years_only = ''
+	end 
+	%></td>
+
+
+<%end%>
+
+
+
+  <% if course.url.blank? %>
+    <td><p> </p></td>
+  <% else %>
+    <td><a href= "<%= course.url %>" target="_blank" >Website</a></td>
+  <% end %>
+
+
+  </tr>
+<% end %>
+</table>
+

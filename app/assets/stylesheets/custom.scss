@@ -38,14 +38,16 @@ body{
 //Footer
 
 footer {
+  background-color:#F9F9F9;
+  height: 50px;
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid #eaeaea;
   color: #777;
   a {
-    color: #555;
+    color: #4F7292 ;
     &:hover {
-      color: #fff;
+      color: #000;
     }
   }
   small {
@@ -90,7 +92,7 @@ h1 {
 
 .row h4 {
    font-family: 'Ubuntu', sans-serif;
-  font-size: 1.3em;
+  font-size: 1.4em;
   letter-spacing: -1px;
   margin-bottom: 30px;
   font-weight: normal;
@@ -98,11 +100,12 @@ h1 {
 }
 
 .row h3 {
-   font-family: 'Ubuntu', sans-serif;
+//  font-family: 'Ubuntu', sans-serif;
+   font-family: Arial, Helvetica, sans-serif;
    font-size: 1.0em;
-   letter-spacing: 0.19px;
+//   letter-spacing: 0.19px;
    margin-bottom: 10px;
-   font-weight: normal;
+   font-weight: bold;
    color: #002058;
 }
 
@@ -154,18 +157,6 @@ textarea {
 }
 
 
-
-//KA: column divs padding
-
-//KA: Adding this class will reduce the gap between 2 divs a little bit, but when the window is resized it will not wrap the contents well. Hence, commenting this for now.
-/*
-.col-md-8.no-gutter{
-   	padding-left: 0px;
- 	margin-left: 0px;
-
-}
-*/
-
 .col-md-9.no-gutter{
    	padding-left: 0px;
  	margin-left: 0px;
@@ -179,7 +170,7 @@ textarea {
 .fa-lightbulb-o,
 .fa-user,
 .fa-external-link,
-.fa-star   
+.fa-star
 	{
 	    color: #E87722;
 	    text-shadow: 1px 1px 1px #ccc;
@@ -193,6 +184,16 @@ textarea {
 			    color: #E87722;
 			    text-shadow: 1px 1px 1px #ccc;
 			 }
+
+
+
+.fa-facebook-square,
+.fa-twitter-square,
+.fa-linkedin-square,
+.fa-bold
+	{
+	    color: #4F7292;
+	}
 
 
 //=============================
@@ -211,14 +212,19 @@ textarea {
 	padding: 10px;
 	 font-size: 12px;
 }
+.sib_tables tr td 
+{ 
+	padding: 5px;
+	background-color: #f9f9f9;
+
+}
 
 
-//from original================
+
+//KA: styles for tables from old SIB================
 
 div.course_table
-{ border-spacing: 0px;
-	
-	
+{ border-spacing: 0px;	
 }
 
 div.course_table tr th { text-decoration: none; font-weight: normal; color: #2657c0;  }
@@ -232,6 +238,67 @@ div.course_table tr td
 	background-color: #f9f9f9;
 }
 
+
+#course_col2{text-align: left;}
+
 div.course_table tr h1, div.directory_table tr h1 { background-color: #FFFFF6; float: none; }
 
 div.course_table tr td + td { border-left: 1px solid #7C9BDF; }
+
+div.course_table_left tr td 
+
+{ text-align: left;;	
+}
+
+//===============================
+
+
+.item_height a{height: 100%;}
+
+.div_height{ margin-top: 0px;
+	     padding-top: 5px}
+
+
+//KA: People admin table
+
+.dataTables_filter label{
+   width: 70%;
+   float: left;
+   margin-left:0.0em;
+   text-align:left;
+
+}
+
+.dataTables_length label{
+margin-left: 4.0em;
+}
+
+
+
+
+
+/*
+min-height: 100px; 
+	   overflow: auto;
+	   overflow-x: hidden;
+  	   overflow-y: hidden;
+
+
+
+
+
+*/
+
+.blue_heading {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 1.4em;
+  letter-spacing: -1px;
+  margin-bottom: 15px;
+  font-weight: normal;
+  color: #002058;
+}
+
+ul.directory li {
+  list-style: none;
+  padding-bottom: 1.2em;
+}
